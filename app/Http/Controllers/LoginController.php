@@ -53,7 +53,7 @@ class LoginController extends Controller
             }
         }
         if(view()->exists('login')){
-            return View::make('login', []);
+            return View::make('login', array());
         }
     }
     
@@ -81,38 +81,42 @@ class LoginController extends Controller
         } else {
             // do process
             try {
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                DB::beginTransaction();
+                
+                $dataArray = array(
+                    'code' => $request->input('code'),
+                    'password' => $request->input('password')
+                );
+
+                $is_match = auth()->attempt( $dataArray );
+                unset($dataArray);
+                
+                if( $is_match ){
+                    //auth()->user()->user
+                    $auth_object = auth()->user()->loadMissing(['user', 'userAPITokenDatas']);
+                    $data['auth_object'] = $auth_object;
+                }else{
+                    throw new Exception('exception');
+                }
+
+                unset($dataArray);
+                // Commit transaction!
+                DB::commit();
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                
                 // Start transaction!
-                //DB::beginTransaction();
+                DB::beginTransaction();
                 $client = new Client([
                     // Base URI is used with relative requests
                     'base_uri' => $this->app_url_api,
                 ]);
                 
                 $dataArray = array(
+                    'is_active' => $request->input('is_active', true),
                     'code' => $request->input('code'),
                     'password' => $request->input('password')
                 );
-                
-                $response = $client->request('GET', 'logins/do-login', [
-                    //'debug' => false,
-                    //'verify' => false,
-                    //'decode_content' => false,
-                    //'stream' => false,
-                    //'sink' => null,
-                    //'save_to' => null,
-                    //'timeout' => 0,
-                    //'version' => 1.0,
-                    //'config' => [],
-                    //'proxy' => [],
-                    //'curl' => [],
-                    //'headers' => [],
-                    //'body' => json_encode([]),
-                    //'json' => [],
-                    //'query' => [],
-                    //'form_params' => [],
-                    //'multipart' => [],
-                    'query' => $dataArray
-                ]);
                 
                 if($response->getStatusCode() == HTTPStatusCodeEnum::HTTP_OK){
                     $body = $response->getBody();
@@ -146,10 +150,10 @@ class LoginController extends Controller
                 
                 unset($dataArray);
                 // Commit transaction!
-                //DB::commit();
+                DB::commit();
             }catch(Exception $e){
                 // Rollback transaction!
-                //DB::rollback(); 
+                DB::rollback(); 
                 return redirect()->back()->withInput();
             }
         }
