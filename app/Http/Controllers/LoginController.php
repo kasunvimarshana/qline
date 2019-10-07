@@ -44,16 +44,23 @@ class LoginController extends Controller
     public function index(Request $request){ /*return response()->json( $request );*/ }
     
     public function showLogin(Request $request){
+        //
+        $dataArray = array();
+        $rules = array();
+        $date_today = Carbon::now();//->format('Y-m-d');
+        $current_user = null;
+        $data = array();
+        
         if( (auth()->check()) ){
             //return (request()->header('referer')) ? redirect()->back()->withInput() : redirect()->home()->withInput();
             if( (Route::has('home')) ){
                 return redirect()->route('home');
-            }else{
-                return redirect()->back()->withInput();
             }
         }
         if(view()->exists('login')){
             return View::make('login', array());
+        }else{
+            return redirect()->back()->withInput();
         }
     }
     
@@ -81,36 +88,8 @@ class LoginController extends Controller
         } else {
             // do process
             try {
-                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                DB::beginTransaction();
-                
-                $dataArray = array(
-                    'code' => $request->input('code'),
-                    'password' => $request->input('password')
-                );
-
-                $is_match = auth()->attempt( $dataArray );
-                unset($dataArray);
-                
-                if( $is_match ){
-                    //auth()->user()->user
-                    $auth_object = auth()->user()->loadMissing(['user', 'userAPITokenDatas']);
-                    $data['auth_object'] = $auth_object;
-                }else{
-                    throw new Exception('exception');
-                }
-
-                unset($dataArray);
-                // Commit transaction!
-                DB::commit();
-                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                
                 // Start transaction!
                 DB::beginTransaction();
-                $client = new Client([
-                    // Base URI is used with relative requests
-                    'base_uri' => $this->app_url_api,
-                ]);
                 
                 $dataArray = array(
                     'is_active' => $request->input('is_active', true),
@@ -118,43 +97,53 @@ class LoginController extends Controller
                     'password' => $request->input('password')
                 );
                 
-                if($response->getStatusCode() == HTTPStatusCodeEnum::HTTP_OK){
-                    $body = $response->getBody();
-                    $contents = $body->getContents();
-                    $contents = json_decode((string) $contents, false);
-                    if( ($contents->meta->status_code == HTTPStatusCodeEnum::HTTP_OK) ){
-                        $auth_object = $contents->data->auth_object;
-                        $request->session()->put('input_key_token', $auth_object->access_token);
-                        $request->session()->put('input_key_user', $auth_object->user_id);
-                        $request->session()->put('is_login', true);
-                        
-                        if( ($auth_object->user) ){
-                            $user = $auth_object->user;
-                            $request->session()->put('authorized_user_id', $user->id);
-                            $request->session()->put('authorized_user_code', $user->code);
-                            $request->session()->put('authorized_user_code_epf', $user->code_epf);
-                            $request->session()->put('authorized_user_name_first', $user->name_first);
-                            $request->session()->put('authorized_user_name_last', $user->name_last);
-                            $request->session()->put('authorized_user_phone_mobile', $user->phone_mobile);
-                            $request->session()->put('authorized_user_display_name', $user->display_name);
-                            $request->session()->put('authorized_user_image_uri', $user->image_uri);
-                            $request->session()->put('authorized_user_email', $user->email);
-                            $request->session()->put('authorized_user_company_id', $user->company_id);
-                            $request->session()->put('authorized_user_strategic_business_unit_id', $user->strategic_business_unit_id);
-                            $request->session()->put('authorized_user_department_id', $user->department_id);
-                            $request->session()->put('authorized_user_section_id', $user->section_id);
-                            $request->session()->put('authorized_user_grade', $user->grade);
-                        }
-                    }
+                auth()->attempt( $dataArray );
+                unset($dataArray);
+                
+                if( (auth()->check()) ){
+                    $userAPITokenObject = auth()->user()->userApiTokens()->create([
+                        'is_visible' => true,
+                        'is_active' => true,
+                        //'is_deactivatable' => null,
+                        //'is_notifiable' => null,
+                        //'access_token' => null,
+                        //'refresh_token' => null,
+                        'code_active' => (mt_rand(0, 10000)),
+                        //'ip_address' => $request->getClientIp(true),
+                        'ip_address' => $request->ip(),
+                        'active_role' => null,
+                        //'time_create' => null,
+                        //'time_active' => null,
+                        //'time_deactive' => null,
+                        //'duration_active' => null,
+                        //'time_last_activity' => null,
+                        //'user_id' => auth()->user()->id,
+                        'user_agent' => $request->userAgent()
+                    ]);
+                    //auth()->user()->userApiTokens()->save( $userAPITokenObject );
+                    $userAPITokenObject->user()->associate( auth()->user() )->save();
+                    
+                    $userAPITokenDataObject = $userAPITokenObject->userAPITokenData()->create([
+                        'is_visible' => true,
+                        'is_active' => true,
+                        'data_key' => 'time_login',
+                        'data_value' => $date_today->format('Y-m-d h:i:s'),
+                        //'user_a_p_i_token_id' => ''
+                    ]);
+                    $userAPITokenObject->userAPITokenData()->save( $userAPITokenDataObject );
+                    
+                    $request->session()->put('authorized_token_id', $userAPITokenObject->id);
+                }else{
+                    throw new Exception('exception');
                 }
                 
                 unset($dataArray);
                 // Commit transaction!
                 DB::commit();
-            }catch(Exception $e){
+            }catch(Exception $e){dd($e);
                 // Rollback transaction!
                 DB::rollback(); 
-                return redirect()->back()->withInput();
+                return redirect()->back()->withInput(Input::except('password'));
             }
         }
         
@@ -173,12 +162,21 @@ class LoginController extends Controller
     }
     
     public function doLogout(Request $request){
+        $dataArray = array();
+        $rules = array();
+        $date_today = Carbon::now();//->format('Y-m-d');
+        $current_user = null;
+        $data = array();
+        
         //$exitCode = Artisan::call('cache:clear');
         //$request->session()->forget([]);
-        $request->session()->flush();
-        $request->session()->regenerate();
+        //$request->session()->flush();
+        //$request->session()->regenerate();
+        //auth()->logout();
         
-        return $this->showLogin();
+        auth()->logout();
+        
+        return $this->showLogin($request);
     }
     
 }

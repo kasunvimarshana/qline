@@ -30,7 +30,7 @@ Route::get('logout', array('uses' => 'LoginController@doLogout'))->name('login.d
 
 Route::group(['middleware' => ['authorizedUserMiddleware', 'disablePreventBackMiddleware', 'corsMiddleware']], function(){
     
-    Route::get('/home', array('uses' => 'SetupConfigurationController@index'))->name('home');
+    Route::get('/home', array('uses' => 'HomeController@index'))->name('home');
     
     Route::get('companies/select/all', array('uses' => 'CompanyController@selectAllCompanies'))->name('company.selectAllCompanies');
     Route::get('strategic-business-units/select/all', array('uses' => 'StrategicBusinessUnitController@selectAllStrategicBusinessUnits'))->name('strategicBusinessUnit.selectAllStrategicBusinessUnits');

@@ -38,7 +38,8 @@
             <ul class="list-unstyled nav navbar-nav mr-auto navbar-left">
                 <li class="nav-item">
                     <div class="btn-group">
-                        <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="id_accordion_nav_container id_nav_container_1" role="button" type="button">
+                        <button id="control_button_home" class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="id_accordion_nav_container" role="button" type="button">
+                            <!-- aria-controls="id id_accordion_nav_container id_nav_container_1" -->
                             <i class="fa fa-home fa-fw"></i>
                         </button>
                     </div>

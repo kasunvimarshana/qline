@@ -179,7 +179,7 @@ class UserAPIToken extends Model implements AuthenticatableContract
     }
     
     //one to many
-    public function userAPITokenDatas(){
+    public function userAPITokenData(){
         return $this->hasMany('App\UserAPITokenData', 'user_a_p_i_token_id', 'id');
     }
     

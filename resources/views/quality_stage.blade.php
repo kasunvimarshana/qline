@@ -136,3 +136,23 @@
 </div>
 <!-- /.row -->
 @endsection
+
+@section('section_script_document')
+    @parent
+@endsection
+
+@push('stack_script')
+<script>
+    $(function(){
+        "use strict";
+        var control_button_home = $("#control_button_home");
+        control_button_home.attr("aria-controls", function(index, currentvalue){
+            return (currentvalue + "");
+        });
+        $("#id_nav_container_1").removeClass("collapse");
+        $("#id_nav_container_1").removeClass("multi-collapse");
+        $("#id_nav_container_1").removeClass("show");
+        $("#id_nav_container_1").addClass("show");
+    });
+</script>
+@endpush
