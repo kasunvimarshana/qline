@@ -457,7 +457,7 @@ class DefectCategoryController extends Controller
                 //DB::beginTransaction();
                 //DB::transaction(function () use (&$data){});
                 $defectCategoryObject = new DefectCategory();
-                $query = $defectCategoryObject;
+                $query = $defectCategoryObject; 
                 /*
                 $query = $company->where('is_visible', '=', true);
                 $query = $company->where('is_active', '=', true);
@@ -606,6 +606,7 @@ class DefectCategoryController extends Controller
 
                 // get data
                 $queryResult = $query->get();
+                $queryResult->load(['defects']);
 
                 $recordsTotal = $recordsFiltered;
                 
@@ -621,7 +622,7 @@ class DefectCategoryController extends Controller
                     'recordsFiltered' => $recordsFiltered,
                     'data' => $queryResult,
                     'pagination' => array(
-                        'more' => ( ($start * $length) < $recordsFiltered ) ? true : false
+                        'more' => ( ($start) < ($recordsFiltered) ) ? true : false
                     )
                 );
 

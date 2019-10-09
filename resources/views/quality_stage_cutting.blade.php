@@ -2,6 +2,7 @@
 
 @section('section_stylesheet_optional')
     @parent
+    <link rel="stylesheet" type="text/css" href="{!! asset('css/custom_style_select2_1.css') !!}"/>
 @endsection
 
 @section('section_script_optional')
@@ -44,39 +45,8 @@
                                         <!-- tab-nav -->
                                         <div class="row collapse multi-collapse" id="id_nav_container_1">
                                         <!-- --- -->
-                                        <ul class="nav nav-pills nav-pills-danger nav-fill nav-justified flex-column flex-sm-row w-100" id="id_nav" role="tablist">
-                                            <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                <a id="id_nav_link_1" class="nav-link m-1 btn btn-outline-danger active" data-toggle="false" href="{!! url('quality_stage_cutting') !!}" role="tab" aria-controls="id_tab_content_1" aria-selected="true">
-                                                    <span><i class="fas fa-anchor"></i> Cutting</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                <a id="id_nav_link_2" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! url('quality_stage_rqc') !!}" role="tab" aria-controls="id_tab_content_2" aria-selected="false">
-                                                    <span><i class="fas fa-anchor"></i> RQC</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                <a id="id_nav_link_3" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! url('quality_stage_sewing_hundred_percent') !!}" role="tab" aria-controls="id_tab_content_3" aria-selected="false">
-                                                    <span><i class="fas fa-anchor"></i> SC 100%</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                <a id="id_nav_link_4" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! url('quality_stage_sewing_aql_audit') !!}" role="tab" aria-controls="id_tab_content_4" aria-selected="false">
-                                                    <span><i class="fas fa-anchor"></i> Sewing AQL Audit</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                <a id="id_nav_link_5" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! url('quality_stage_finishing') !!}" role="tab" aria-controls="id_tab_content_5" aria-selected="false">
-                                                    <span><i class="fas fa-anchor"></i> Finishing</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                <a id="id_nav_link_6" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! url('quality_stage_cni') !!}" role="tab" aria-controls="id_tab_content_6" aria-selected="false">
-                                                    <span><i class="fas fa-anchor"></i> CNI</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <!-- --- -->
+                                        <!-- @includeIf('partials.navigation_quality_stage_', array()); -->
+                                        <!-- --- -->    
                                         </div>
                                         <!-- /.tab-nav -->
                                         
@@ -109,33 +79,25 @@
                                                                     <!-- -->
                                                                     <!-- form-group -->
                                                                     <div class="form-group row col-sm-4">
-                                                                        <label for="defect" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect</label>
+                                                                        <label for="defect_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <select class="form-control form-control-md select2" id="defect" name="defect" value="{{ old('defect') }}" data-placeholder="Defect" style="width: 100%;" required>
-
-                                                                                <!-- @for($i =1; $i <= 5; $i++) -->
-                                                                                <option>Defect {{ $i }}</option>
-                                                                                <!-- @endfor -->
-
-                                                                            </select>
+                                                                            <div class="input-group h-100">
+                                                                                <select class="form-control form-control-md select2" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" data-placeholder="Defect" style="width: 100%;" required="required">
+                                                                                    <!-- option> Option </option -->
+                                                                                </select>
+                                                                            </div>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
                                                                     <!-- /.form-group -->
-
+                                                                    
                                                                     <!-- form-group -->
                                                                     <div class="form-group row col-sm-4">
-                                                                        <label for="severity" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Severity</label>
+                                                                        <label for="severity_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Severity</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <select class="form-control form-control-md select2" id="severity" name="severity" value="{{ old('severity') }}" data-placeholder="Severity" style="width: 100%;" required>
-
-                                                                                <!-- @for($i =1; $i <= 5; $i++) -->
-                                                                                <option>Severity {{ $i }}</option>
-                                                                                <!-- @endfor -->
-
-                                                                            </select>
+                                                                            <input type="text" class="form-control form-control-md" id="severity_id" name="severity_id" placeholder="Severity" value="{{ old('severity_id') }}" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -223,3 +185,24 @@
 </div>
 <!-- /.row -->
 @endsection
+
+@section('section_script_document')
+    @parent
+    @includeIf('partials.script.select_defect', array());
+@endsection
+
+@push('stack_script')
+<script>
+    $(function(){
+        "use strict";
+        var control_button_home = $("#control_button_home");
+        control_button_home.attr("aria-controls", function(index, currentvalue){
+            return (currentvalue + "");
+        });
+        $("#id_nav_container_1").removeClass("collapse");
+        $("#id_nav_container_1").removeClass("multi-collapse");
+        $("#id_nav_container_1").removeClass("show");
+        $("#id_nav_container_1").addClass("show");
+    });
+</script>
+@endpush

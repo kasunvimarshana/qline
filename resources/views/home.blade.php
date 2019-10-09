@@ -275,16 +275,18 @@
                                         <!-- /.form-group-row -->
                                         
                                         <!-- form-group-row -->
-                                        <div class="row">
+                                        <div class="row col">
                                             <!-- -->
                                             <!-- form-group -->
                                             <div class="form-group row col-sm-12">
-                                                <!-- btn-toolbar -->
-                                                <div class="col text-right">
-                                                    <!-- div class="btn-group btn-group-lg pull-right" -->
-                                                        <button type="submit" class="btn btn-primary ml-auto" id="submit">Submit</button>
-                                                    <!-- /div -->
-                                                </div>
+                                                <div class="input-group h-100">
+                                                    <!-- btn-toolbar -->
+                                                    <div class="col text-center">
+                                                        <!-- div class="btn-group btn-group-lg pull-right" -->
+                                                        <button type="submit" class="btn btn-primary btn-lg" id="submit">Submit</button>
+                                                        <!-- /div -->
+                                                    </div>
+                                                </div>      
                                             </div>
                                             <!-- /.form-group -->
                                             <!-- -->

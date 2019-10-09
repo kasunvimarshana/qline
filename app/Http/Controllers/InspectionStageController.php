@@ -621,7 +621,7 @@ class InspectionStageController extends Controller
                     'recordsFiltered' => $recordsFiltered,
                     'data' => $queryResult,
                     'pagination' => array(
-                        'more' => ( ($start * $length) < $recordsFiltered ) ? true : false
+                        'more' => ( ($start) < ($recordsFiltered) ) ? true : false
                     )
                 );
 

@@ -24,7 +24,7 @@
                         <h5 class="mb-0">
                             <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse_accordion_1_content_1" aria-expanded="true" aria-controls="idCollapse_accordion_1_content_1" role="button" type="button">
                             <i class="fab fa-buromobelexperte fa-fw"></i>
-                            <span class="text-decoration-none text-justify small"> Quality ( Stage )</span>
+                            <span class="text-decoration-none text-justify small"> Quality ( RQC )</span>
                             </button>
                         </h5>
                     </div>
@@ -44,39 +44,8 @@
                                         <!-- tab-nav -->
                                         <div class="row collapse multi-collapse" id="id_nav_container_1">
                                         <!-- --- -->
-                                        <ul class="nav nav-pills nav-pills-danger nav-fill nav-justified flex-column flex-sm-row w-100" id="id_nav" role="tablist">
-                                            <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                <a id="id_nav_link_1" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! url('quality_stage_cutting') !!}" role="tab" aria-controls="id_tab_content_1" aria-selected="false">
-                                                    <span><i class="fas fa-anchor"></i> Cutting</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                <a id="id_nav_link_2" class="nav-link m-1 btn btn-outline-danger active" data-toggle="false" href="{!! url('quality_stage_rqc') !!}" role="tab" aria-controls="id_tab_content_2" aria-selected="true">
-                                                    <span><i class="fas fa-anchor"></i> RQC</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                <a id="id_nav_link_3" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! url('quality_stage_sewing_hundred_percent') !!}" role="tab" aria-controls="id_tab_content_3" aria-selected="false">
-                                                    <span><i class="fas fa-anchor"></i> SC 100%</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                <a id="id_nav_link_4" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! url('quality_stage_sewing_aql_audit') !!}" role="tab" aria-controls="id_tab_content_4" aria-selected="false">
-                                                    <span><i class="fas fa-anchor"></i> Sewing AQL Audit</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                <a id="id_nav_link_5" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! url('quality_stage_finishing') !!}" role="tab" aria-controls="id_tab_content_5" aria-selected="false">
-                                                    <span><i class="fas fa-anchor"></i> Finishing</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                <a id="id_nav_link_6" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! url('quality_stage_cni') !!}" role="tab" aria-controls="id_tab_content_6" aria-selected="false">
-                                                    <span><i class="fas fa-anchor"></i> CNI</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <!-- --- -->
+                                        <!-- @includeIf('partials.navigation_quality_stage_', array()); -->
+                                        <!-- --- -->    
                                         </div>
                                         <!-- /.tab-nav -->
                                         
@@ -93,7 +62,7 @@
                                                     <!-- col -->
                                                     <div class="col-sm-12 p-0 m-0">
                                                         <!-- form -->
-                                                        <form action="{!! url('quality_stage_rqc_create') !!}" method="GET" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
+                                                        <form action="{!! route('qualityRecordRQC.create', []) !!}" method="GET" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
                                                             @csrf
                                                             <!-- form-group-row -->
                                                             <div class="row col border border-danger rounded shadow-sm m-1">
@@ -109,11 +78,11 @@
                                                                     <!-- -->
                                                                     <!-- form-group -->
                                                                     <div class="form-group row col">
-                                                                        <label for="name" class="col-lg-2 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">EMP No</label>
+                                                                        <label for="code" class="col-lg-2 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">EMP No</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group">
-                                                                                <input type="text" class="form-control form-control-md" id="name" name="name" placeholder="EMP No" value="{{ old('name') }}" aria-label="EMP No" aria-describedby="id_input_addon" required/>
+                                                                                <input type="text" class="form-control form-control-md" id="code" name="code" placeholder="EMP No" value="{{ old('code') }}" aria-label="EMP No" aria-describedby="id_input_addon" required="required"/>
                                                                                 <div class="input-group-addon input-group-append">
                                                                                     <!-- div class="input-group-text" -->
                                                                                         <button type="submit" class="btn btn btn-outline-danger" id="submit">Search</button>
@@ -168,3 +137,19 @@
 </div>
 <!-- /.row -->
 @endsection
+
+@push('stack_script')
+<script>
+    $(function(){
+        "use strict";
+        var control_button_home = $("#control_button_home");
+        control_button_home.attr("aria-controls", function(index, currentvalue){
+            return (currentvalue + "");
+        });
+        $("#id_nav_container_1").removeClass("collapse");
+        $("#id_nav_container_1").removeClass("multi-collapse");
+        $("#id_nav_container_1").removeClass("show");
+        $("#id_nav_container_1").addClass("show");
+    });
+</script>
+@endpush

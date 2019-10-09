@@ -47,7 +47,19 @@ class SetupConfigurationController extends Controller
         */
     }
     
-    public function index(Request $request){ /*return response()->json( $request );*/ }
+    public function index(Request $request){ /*return response()->json( $request );*/ 
+        $dataArray = array();
+        $rules = array();
+        $date_today = Carbon::now();//->format('Y-m-d');
+        $current_user = null;
+        $data = array();
+        
+        if(view()->exists('setup_configuration_default')){
+            return View::make('setup_configuration_default', array());
+        }else{
+            return redirect()->back()->withInput();
+        }
+    }
     
     /**
      * Show the form for creating a new resource.

@@ -32,6 +32,7 @@ class CreateQualityRecordSewingAuditsTable extends Migration
             //$table->string('code')->nullable()->comment('comment');//->index()
             //$table->double('count_data')->nullable()->default(0)->comment('comment');//->index()
             //$table->double('count_attempt')->nullable()->default(0)->comment('comment');//->index()
+            $table->unsignedBigInteger('attempt')->unsigned()->nullable()->default(0)->comment('comment');//->index()
             $table->double('count_sample')->nullable()->default(0)->comment('comment');//->index()
             $table->string('inspection_stage_id')->nullable()->comment('comment');//->index()
             $table->string('standard_a_q_l_id')->nullable()->comment('comment');//->index()

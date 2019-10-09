@@ -118,4 +118,9 @@ class Defect extends Model
     public function defectCategory(){
         return $this->belongsTo('App\DefectCategory', 'defect_category_id', 'id');
     }
+    
+    //one to many (inverse)
+    public function colour(){
+        return $this->belongsTo('App\Colour', 'colour_id', 'id');
+    }
 }

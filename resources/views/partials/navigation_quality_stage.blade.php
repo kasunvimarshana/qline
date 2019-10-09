@@ -1,0 +1,42 @@
+<!-- tab-nav -->
+<!-- div class="row collapse multi-collapse" id="id_nav_container_1" -->
+    
+<div class="col">
+<!-- --- -->
+<ul class="nav nav-pills nav-pills-danger nav-fill nav-justified flex-column flex-sm-row w-100" id="id_nav" role="tablist">
+    <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
+        <a id="id_nav_link_1" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! route('setupConfigurationCutting.index', []) !!}" role="tab" aria-controls="id_tab_content_1" aria-selected="false">
+            <span><i class="fas fa-anchor"></i> Cutting</span>
+        </a>
+    </li>
+    <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
+        <a id="id_nav_link_2" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! route('setupConfigurationRQC.index', []) !!}" role="tab" aria-controls="id_tab_content_2" aria-selected="false">
+            <span><i class="fas fa-anchor"></i> RQC</span>
+        </a>
+    </li>
+    <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
+        <a id="id_nav_link_3" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! route('setupConfigurationSewingCheck.index', []) !!}" role="tab" aria-controls="id_tab_content_3" aria-selected="false">
+            <span><i class="fas fa-anchor"></i> SC 100%</span>
+        </a>
+    </li>
+    <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
+        <a id="id_nav_link_4" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! route('setupConfigurationSewingAudit.index', []) !!}" role="tab" aria-controls="id_tab_content_4" aria-selected="false">
+            <span><i class="fas fa-anchor"></i> Sewing AQL Audit</span>
+        </a>
+    </li>
+    <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
+        <a id="id_nav_link_5" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! route('setupConfigurationFinishing.index', []) !!}" role="tab" aria-controls="id_tab_content_5" aria-selected="false">
+            <span><i class="fas fa-anchor"></i> Finishing</span>
+        </a>
+    </li>
+    <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
+        <a id="id_nav_link_6" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! route('setupConfigurationCNI.index', []) !!}" role="tab" aria-controls="id_tab_content_6" aria-selected="false">
+            <span><i class="fas fa-anchor"></i> CNI</span>
+        </a>
+    </li>
+</ul>
+<!-- --- -->   
+</div>
+    
+<!-- /div -->
+<!-- /.tab-nav -->

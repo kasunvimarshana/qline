@@ -614,6 +614,7 @@ class DefectController extends Controller
 
                 // get data
                 $queryResult = $query->get();
+                $queryResult->load(['defectCategory', 'colour', 'defectCategory.colour']);
 
                 $recordsTotal = $recordsFiltered;
                 
@@ -625,11 +626,11 @@ class DefectController extends Controller
                     'page' => $start,
                     'length' => $length,
                     'search' => $search,
-                    'recordsTotal' => $recordsTotal,
+                    'recordsTotal' => $recordsFiltered,
                     'recordsFiltered' => $recordsFiltered,
                     'data' => $queryResult,
                     'pagination' => array(
-                        'more' => ( ($start * $length) < $recordsFiltered ) ? true : false
+                        'more' => ( ($start) < ($recordsFiltered) ) ? true : false
                     )
                 );
 
