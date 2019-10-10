@@ -32,6 +32,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Resources\CommonResponseResource as CommonResponseResource;
 use App\Enums\HTTPStatusCodeEnum as HTTPStatusCodeEnum;
 use App\User;
+use App\StandardRQC;
+use App\QualityRecordRQC;
 
 class QualityRecordRQCController extends Controller
 {
@@ -105,7 +107,21 @@ class QualityRecordRQCController extends Controller
                 $userObject = new User();
                 $userObject = $userObject->where('code', '=', $request->input('code'))->first();
                 
+                $standardRQCObject = new StandardRQC();
+                $standard_rqc_id = $request->session()->get('setup_configuration_standard_r_q_c_id', null);
+                $standardRQCObject = $standardRQCObject->where('id', '=', $standard_rqc_id)->first();
+                $standardRQCObject->load(['standardDataRQC']);
+                
+                $qualityRecordRQCObject = new QualityRecordRQC();
+                $attempt = $qualityRecordRQCObject
+                    ->where('user_id_record', '=', $userObject->id)
+                    ->whereDate('time_create', '=', $date_today->format('Y-m-d'))
+                    ->count();
+                
+                $attempt = ($attempt + 1);
                 $data['user_object'] = $userObject;
+                $data['attempt'] = $attempt;
+                $data['standardRQCObject'] = $standardRQCObject;
                 unset($dataArray);
                 
                 // Commit transaction!

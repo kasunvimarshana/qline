@@ -48,7 +48,9 @@ class CreateQualityRecordSewingAuditsTable extends Migration
             $table->string('ip_address')->nullable()->comment('comment');//->index()
             $table->unsignedBigInteger('status_id')->unsigned()->nullable()->comment('comment');//->index()
             $table->text('description')->default(null)->nullable()->comment('comment'); 
-            //$table->morphs('recordable');
+            //$table->nullableMorphs('recordable');
+            //$table->json('quality_record_input_scan_data_ids')->nullable()->comment('comment');
+            $table->text('quality_record_input_scan_data_ids')->default(null)->nullable()->comment('comment'); 
         });
         
         Schema::table($this->table_name_1, function($table) {

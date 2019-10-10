@@ -48,7 +48,14 @@ class CreateQualityRecordCNISTable extends Migration
             $table->string('ip_address')->nullable()->comment('comment');//->index()
             $table->unsignedBigInteger('status_id')->unsigned()->nullable()->comment('comment');//->index()
             $table->text('description')->default(null)->nullable()->comment('comment'); 
-            //$table->morphs('recordable');
+            //$table->nullableMorphs('recordable');
+            $table->string('p_o_id')->nullable()->comment('comment');//->index()
+            $table->double('count_total_pieces')->nullable()->default(0)->comment('comment');//->index()
+            $table->double('count_total_carton')->nullable()->default(0)->comment('comment');//->index()
+            $table->double('count_check_carton')->nullable()->default(0)->comment('comment');//->index()
+            $table->double('count_check_pieces')->nullable()->default(0)->comment('comment');//->index()
+            $table->double('count_defect_carton')->nullable()->default(0)->comment('comment');//->index()
+            $table->double('count_defect_pieces')->nullable()->default(0)->comment('comment');//->index()
         });
         
         Schema::table($this->table_name_1, function($table) {

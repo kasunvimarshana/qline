@@ -48,7 +48,9 @@ class CreateQualityRecordCuttingsTable extends Migration
             $table->string('ip_address')->nullable()->comment('comment');//->index()
             $table->unsignedBigInteger('status_id')->unsigned()->nullable()->comment('comment');//->index()
             $table->text('description')->default(null)->nullable()->comment('comment'); 
-            //$table->morphs('recordable');
+            //$table->nullableMorphs('recordable');
+            $table->string('severity')->nullable()->default(0)->comment('comment');//->index()
+            $table->text('action_to_be_taken')->default(null)->nullable()->comment('comment'); 
         });
         
         Schema::table($this->table_name_1, function($table) {

@@ -175,6 +175,8 @@ class LoginController extends Controller
         //auth()->logout();
         
         auth()->logout();
+        $request->session()->flush();
+        $request->session()->regenerate();
         
         return $this->showLogin($request);
     }

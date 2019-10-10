@@ -48,7 +48,7 @@ class CreateQualityRecordRQCSTable extends Migration
             $table->string('ip_address')->nullable()->comment('comment');//->index()
             $table->unsignedBigInteger('status_id')->unsigned()->nullable()->comment('comment');//->index()
             $table->text('description')->default(null)->nullable()->comment('comment'); 
-            //$table->morphs('recordable');
+            //$table->nullableMorphs('recordable');
             $table->string('user_id_record')->nullable()->comment('comment');//->index()
         });
         

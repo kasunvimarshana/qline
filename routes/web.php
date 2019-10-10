@@ -64,6 +64,7 @@ Route::post('setup-configurations/c-n-i/store', array('uses' => 'CNIController@s
 
 Route::get('defect-categories/select/all', array('uses' => 'DefectCategoryController@selectAllDefectCategories'))->name('defectCategory.selectAllDefectCategories');
 Route::get('defects/select/all', array('uses' => 'DefectController@selectAllDefects'))->name('defect.selectAllDefects');
+Route::get('measre-points/select/all', array('uses' => 'MeasurePointController@selectAllMeasurePoints'))->name('measurePoint.selectAllMeasurePoints');
 
 Route::get('setup-configurations/cutting/index', array('uses' => 'QualityRecordCuttingController@index'))->name('qualityRecordCutting.index');
 Route::get('setup-configurations/r-q-c/index', array('uses' => 'QualityRecordRQCController@index'))->name('qualityRecordRQC.index');

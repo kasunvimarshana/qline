@@ -34,7 +34,7 @@ class CreateQualityRecordInputScanDataStatusSewingAuditsTable extends Migration
             $table->text('description')->default(null)->nullable()->comment('comment'); 
             $table->string('user_id_create')->nullable()->comment('comment');//->index()
             //$table->string('standard_a_q_l_id')->nullable()->comment('comment');//->index()
-            //$table->morphs('statusable');
+            //$table->nullableMorphs('statusable');
         });
         
         Schema::table($this->table_name_1, function($table) {

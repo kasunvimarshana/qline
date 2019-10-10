@@ -294,7 +294,7 @@ class MeasurePointController extends Controller
                 $measurePointObject = new MeasurePoint();
                 $measurePointObject = $measurePointObject->where('id', '=', $request->input('id'))->first();
                 
-                $measurePointObject = $measurePointObject->update( $dataArray );
+                $measurePointObject->update( $dataArray );
                 unset($dataArray);
                 $data['measure_point_object'] = $measurePointObject;
 

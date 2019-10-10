@@ -44,6 +44,36 @@ class PermissionSeeder extends Seeder
         
         //$newPermission->roles()->attach($newRole);
         //$newPermission->roles()->sync($newRole);
-        $newPermission->roles()->syncWithoutDetaching($newRole);
+        $newPermission->roles()->syncWithoutDetaching($newRole
+                                                      
+        $newPermission = Permission::firstOrCreate([
+            'slug' => 'create-quality_record_cutting',
+            'name' => 'Create Quality Record Cutting'
+        ]);
+                                                      
+        $newPermission = Permission::firstOrCreate([
+            'slug' => 'create-quality_record_r_q_c',
+            'name' => 'Create Quality Record RQC'
+        ]);
+                                                      
+        $newPermission = Permission::firstOrCreate([
+            'slug' => 'create-quality_record_sewing_check',
+            'name' => 'Create Quality Record Sewing Check'
+        ]);
+                                                      
+        $newPermission = Permission::firstOrCreate([
+            'slug' => 'create-quality_record_sewing_audit',
+            'name' => 'Create Quality Record Sewing Audit'
+        ]);
+                                                      
+        $newPermission = Permission::firstOrCreate([
+            'slug' => 'create-quality_record_finishing',
+            'name' => 'Create Quality Record Finishing'
+        ]);
+                                                      
+        $newPermission = Permission::firstOrCreate([
+            'slug' => 'create-quality_record_c_n_i',
+            'name' => 'Create Quality Record CNI'
+        ]);
     }
 }

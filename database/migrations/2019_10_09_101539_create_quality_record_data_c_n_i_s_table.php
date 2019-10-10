@@ -4,12 +4,9 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
-
-class CreateQualityRecordInputScanDataStatusesTable extends Migration
+class CreateQualityRecordDataCNISTable extends Migration
 {
-    protected $table_name_1 = "quality_record_input_scan_data_statuses";
+    protected $table_name_1 = "quality_record_data_c_n_i_s";
     /**
      * Run the migrations.
      *
@@ -17,7 +14,7 @@ class CreateQualityRecordInputScanDataStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create($this->table_name_1, function (Blueprint $table) {
+        Schema::create('quality_record_data_c_n_i_s', function (Blueprint $table) {
             /*
             $table->bigIncrements('id');
             $table->timestamps();
@@ -32,12 +29,15 @@ class CreateQualityRecordInputScanDataStatusesTable extends Migration
             $table->boolean('is_visible')->default(false)->nullable()->comment('comment');//->index()
             $table->boolean('is_active')->default(false)->nullable()->comment('comment');//->index()
             $table->timestamp('time_create')->nullable()->default(DB::raw('CURRENT_TIMESTAMP'))->useCurrent()->comment('comment');//->index()
-            $table->unsignedBigInteger('quality_record_input_scan_data_id')->unsigned()->nullable()->comment('comment');//->index()
+            $table->unsignedBigInteger('quality_record_c_n_i_id')->unsigned()->nullable()->comment('comment');//->index()
             $table->unsignedBigInteger('status_id')->unsigned()->nullable()->comment('comment');//->index()
             $table->text('description')->default(null)->nullable()->comment('comment'); 
             $table->string('user_id_create')->nullable()->comment('comment');//->index()
-            $table->string('standard_a_q_l_id')->nullable()->comment('comment');//->index()
             //$table->nullableMorphs('statusable');
+            $table->string('measure_point_id')->nullable()->comment('comment');//->index()
+            $table->string('defect_category_id')->nullable()->comment('comment');//->index()
+            $table->string('defect_id')->nullable()->comment('comment');//->index()
+            $table->double('count_defect')->nullable()->default(0)->comment('comment');//->index()
         });
         
         Schema::table($this->table_name_1, function($table) {
@@ -47,15 +47,16 @@ class CreateQualityRecordInputScanDataStatusesTable extends Migration
             //$table->foreign('status_id', ('fk'.time().Str::uuid()->toString()))->references('id')->on('statuses')->onUpdate('cascade')->onDelete('set null');
             
             //$table->primary(array('id'), ('pk'.time().Str::uuid()->toString()));
-            $table->foreign('status_id', ('fk'.time().Str::uuid()->toString()))->references('id')->on('statuses')->onUpdate('cascade');
-            $table->foreign('quality_record_input_scan_data_id', ('fk'.time().Str::uuid()->toString()))->references('id')->on('quality_record_input_scan_data')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('user_id_create', ('fk'.time().Str::uuid()->toString()))->references('id')->on('users')->onUpdate('cascade');
+            $table->foreign('quality_record_c_n_i_id', ('fk'.time().Str::uuid()->toString()))->references('id')->on('quality_record_c_n_i_s')->onUpdate('cascade')->onDelete('cascade');
             $table->index(array('is_visible'), ('index'.time().Str::uuid()->toString()));
             $table->index(array('is_active'), ('index'.time().Str::uuid()->toString()));
             $table->index(array('time_create'), ('index'.time().Str::uuid()->toString()));
-            $table->index(array('quality_record_input_scan_data_id'), ('index'.time().Str::uuid()->toString()));
+            $table->index(array('quality_record_c_n_i_id'), ('index'.time().Str::uuid()->toString()));
             $table->index(array('status_id'), ('index'.time().Str::uuid()->toString()));
             $table->index(array('user_id_create'), ('index'.time().Str::uuid()->toString()));
+            $table->index(array('measure_point_id'), ('index'.time().Str::uuid()->toString()));
+            $table->index(array('defect_category_id'), ('index'.time().Str::uuid()->toString()));
+            $table->index(array('defect_id'), ('index'.time().Str::uuid()->toString()));
         });
         
         Schema::table($this->table_name_1, function($table) {

@@ -7,168 +7,6 @@
 
 @section('section_script_optional')
     @parent
-    <!-- -->
-    <!-- --------test-script-------- -->
-    <script>
-        $(function(){
-            $("button[data-select2-open-control]").each(function() {
-                var element = $( this );
-                var select2_id = element.attr("data-select2-open-control");
-                element.on("click", function(){
-                    var element_id = "#" + select2_id;
-                    //console.log( $(element_id).data('select2').isOpen() );
-                    //$(element_id).select2('isOpen');
-                    //$(element_id).hasClass("select2-hidden-accessible");
-                    //$(element_id).data('select2').toggleDropdown();
-                    if( (!$(element_id).select2('isOpen')) ){
-                        $(element_id).select2('open');
-                    }
-                });
-            });
-        });
-    </script>
-    <script>
-        $(function(){
-            $("button[data-select2-close-control]").each(function() {
-                var element = $( this );
-                var select2_id = element.attr("data-select2-close-control");
-                element.on("click", function(){
-                    var element_id = "#" + select2_id;
-                    //console.log( $(element_id).data('select2').isOpen() );
-                    //$(element_id).select2('isOpen');
-                    //$(element_id).hasClass("select2-hidden-accessible");
-                    //$(element_id).data('select2').toggleDropdown();
-                    if( ($(element_id).select2('isOpen')) ){
-                        $(element_id).select2('close');
-                    }
-                });
-            });
-        });
-    </script>
-    <!-- --------test-script-------- -->
-    <!-- --------test-script-------- -->
-    <script>
-        $(function(){
-            function format(param) {
-                if (!param.id){
-                    return param.text; // optgroup
-                }
-
-                var tempOptionObject = "<div class='text-wrap text-break w-100'>"
-                + "<p>" + param.text + "</p>"
-                + "</div>";
-
-                var optionObject = $(tempOptionObject);
-                return optionObject;
-            }
-
-            //$.fn.select2.defaults.set( "theme", "bootstrap" );
-            $("#defect").select2({
-            theme: 'bootstrap',
-            placeholder: "Select",
-            //disabled: false,
-            //scrollAfterSelect: true,
-            //closeOnSelect: false,
-            //containerCssClass: ':all:',
-            width: 'resolve',
-            scrollAfterSelect: true,
-            closeOnSelect: false,
-            allowClear: true,
-
-            formatResult: format,
-            formatSelection: format,
-            escapeMarkup: function(markup) {
-                return markup;
-            },
-            templateResult: function(data) {
-                //console.log(data);
-                //return data.text;
-                return format(data);
-            },
-            templateSelection: function(data) {
-                //console.log(data);
-                //return data.text;
-                return format(data);
-            },
-            data: []
-            });
-        });
-    </script>
-    <!-- --------test-script-------- -->
-    <!-- --------test-script-------- -->
-    <script>
-        $(function(){
-            function format(param) {
-                if (!param.id){
-                    return param.text; // optgroup
-                }
-
-                var tempOptionObject = "<div class='text-wrap text-break w-100'>"
-                + "<p>" + param.text + "</p>"
-                + "</div>";
-
-                var optionObject = $(tempOptionObject);
-                return optionObject;
-            }
-
-
-            var dataArray = [
-                {
-                    "id": 1,
-                    "text": "Operation 1",
-                    "selected": false
-                },{
-                    "id": 2,
-                    "text": "Operation 2",
-                    "selected": false
-                },{
-                    "id": 3,
-                    "text": "Operation 3",
-                    "disabled": false
-                },{
-                    "id": 4,
-                    "text": "Operation 4",
-                    "disabled": false
-                },{
-                    "id": 5,
-                    "text": "Operation 5",
-                    "disabled": false
-                }
-            ];
-
-            $("#operation").select2({
-                theme: 'bootstrap',
-                placeholder: "Select",
-                //disabled: false,
-                //scrollAfterSelect: true,
-                //closeOnSelect: false,
-                //containerCssClass: ':all:',
-                width: 'resolve',
-                scrollAfterSelect: true,
-                closeOnSelect: true,
-                allowClear: true,
-
-                formatResult: format,
-                formatSelection: format,
-                escapeMarkup: function(markup) {
-                    return markup;
-                },
-                templateResult: function(data) {
-                    //console.log(data);
-                    //return data.text;
-                    return format(data);
-                },
-                templateSelection: function(data) {
-                    //console.log(data);
-                    //return data.text;
-                    return format(data);
-                },
-                data: dataArray
-            }).setSelect2OptionDataAttribute(dataArray);
-        });
-    </script>
-    <!-- --------test-script-------- -->
-    <!-- -->
 @endsection
 
 @section('contant')
@@ -207,39 +45,8 @@
                                         <!-- tab-nav -->
                                         <div class="row collapse multi-collapse" id="id_nav_container_1">
                                         <!-- --- -->
-                                        <ul class="nav nav-pills nav-pills-danger nav-fill nav-justified flex-column flex-sm-row w-100" id="id_nav" role="tablist">
-                                            <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                <a id="id_nav_link_1" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! url('quality_stage_cutting') !!}" role="tab" aria-controls="id_tab_content_1" aria-selected="false">
-                                                    <span><i class="fas fa-anchor"></i> Cutting</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                <a id="id_nav_link_2" class="nav-link m-1 btn btn-outline-danger active" data-toggle="false" href="{!! url('quality_stage_rqc') !!}" role="tab" aria-controls="id_tab_content_2" aria-selected="true">
-                                                    <span><i class="fas fa-anchor"></i> RQC</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                <a id="id_nav_link_3" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! url('quality_stage_sewing_hundred_percent') !!}" role="tab" aria-controls="id_tab_content_3" aria-selected="false">
-                                                    <span><i class="fas fa-anchor"></i> SC 100%</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                <a id="id_nav_link_4" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! url('quality_stage_sewing_aql_audit') !!}" role="tab" aria-controls="id_tab_content_4" aria-selected="false">
-                                                    <span><i class="fas fa-anchor"></i> Sewing AQL Audit</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                <a id="id_nav_link_5" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! url('quality_stage_finishing') !!}" role="tab" aria-controls="id_tab_content_5" aria-selected="false">
-                                                    <span><i class="fas fa-anchor"></i> Finishing</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                <a id="id_nav_link_6" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! url('quality_stage_cni') !!}" role="tab" aria-controls="id_tab_content_6" aria-selected="false">
-                                                    <span><i class="fas fa-anchor"></i> CNI</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <!-- --- -->
+                                        <!-- @includeIf('partials.navigation_quality_stage_', array()); -->
+                                        <!-- --- -->    
                                         </div>
                                         <!-- /.tab-nav -->
                                         
@@ -258,6 +65,12 @@
                                                         <!-- form -->
                                                         <form action="{!! route('home') !!}" method="POST" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
                                                             @csrf
+                                                            <div id="form1_hidden_input_group" name="form1_hidden_input_group" class="d-none">
+                                                                @isset($user_object)
+                                                                <input type="hidden" id="user_id_record" name="user_id_record" value="{!! $user_object->id !!}" required="required" readonly="readonly"/>
+                                                                @endisset
+                                                            </div>
+                                                            
                                                             <!-- form-group-row -->
                                                             <div class="row col border border-danger rounded shadow-sm m-1">
                                                                 
@@ -274,14 +87,14 @@
                                                                         
                                                                     <!-- form-group -->
                                                                     <div class="form-group row col-12">
-                                                                        <label for="name" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">EMP No</label>
+                                                                        <label for="code" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">EMP No</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group">
-                                                                                <input type="text" class="form-control form-control-md" id="name" name="name" placeholder="EMP No" value="{{ old('name') }}" aria-label="EMP No" aria-describedby="id_input_addon" required/>
+                                                                                <input type="text" class="form-control form-control-md" id="code" name="code" placeholder="EMP No" value="{!! $user_object->code !!}" aria-label="EMP No" aria-describedby="id_input_addon" required="required" readonly="readonly"/>
                                                                                 <div class="input-group-addon input-group-append">
                                                                                     <!-- div class="input-group-text" -->
-                                                                                        <button type="submit" class="btn btn btn-outline-danger" id="submit" aria-disabled="true" disabled>
+                                                                                        <button type="submit" class="btn btn btn-outline-danger" id="submit" aria-disabled="true" disabled="disabled">
                                                                                             <i class="fa fa-asterisk" aria-hidden="true"></i>
                                                                                         </button>
                                                                                     <!-- /div -->
@@ -294,14 +107,14 @@
                                                                         
                                                                     <!-- form-group -->
                                                                     <div class="form-group row col-12">
-                                                                        <label for="name" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Attempt</label>
+                                                                        <label for="attempt" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Attempt</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group">
-                                                                                <input type="text" class="form-control form-control-md" id="name" name="name" placeholder="Attempt" value="{{ old('name') }}" aria-label="Attempt" aria-describedby="id_input_addon" required/>
+                                                                                <input type="text" class="form-control form-control-md" id="attempt" name="attempt" placeholder="Attempt" value="{!! $attempt !!}" aria-label="Attempt" aria-describedby="id_input_addon" required="required"/>
                                                                                 <div class="input-group-addon input-group-append">
                                                                                     <!-- div class="input-group-text" -->
-                                                                                        <button type="submit" class="btn btn btn-outline-danger" id="submit" aria-disabled="true" disabled>
+                                                                                        <button type="submit" class="btn btn btn-outline-danger" id="submit" aria-disabled="true" disabled="disabled">
                                                                                             <i class="fa fa-asterisk" aria-hidden="true"></i>
                                                                                         </button>
                                                                                     <!-- /div -->
@@ -314,23 +127,19 @@
                                                                         
                                                                     <!-- form-group -->
                                                                     <div class="form-group row col-12">
-                                                                        <label for="operation" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Operation</label>
+                                                                        <label for="measure_point_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Operation</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group">
                                                                                 <div class="input-group-addon input-group-prepend">
                                                                                     <!-- div class="input-group-text" -->
-                                                                                        <button type="button" class="btn btn-outline-danger" id="submit" data-select2-open-control="operation" aria-disabled="false">
+                                                                                        <button type="button" class="btn btn-outline-danger" id="submit" data-select2-open-control="measure_point_id" aria-disabled="false">
                                                                                             <i class="fa fa-search" aria-hidden="true"></i>
                                                                                         </button>
                                                                                     <!-- /div -->
                                                                                 </div>
-                                                                                <select class="form-control select2" id="operation" name="operation" value="{{ old('operation') }}" data-placeholder="Operation" required>
-
-                                                                                    <!-- @for($i =1; $i <= 5; $i++) -->
-                                                                                    <option>Operations {{ $i }}</option>
-                                                                                    <!-- @endfor -->
-
+                                                                                <select class="form-control select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" data-placeholder="Operation" required="required">
+                                                                                    <!-- option> Option </option -->
                                                                                 </select>
                                                                             </div>
                                                                         </div>
@@ -340,27 +149,23 @@
                                                                         
                                                                     <!-- form-group -->
                                                                     <div class="form-group row col-12">
-                                                                        <label for="defect" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect</label>
+                                                                        <label for="defect_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group">
                                                                                 <div class="input-group-addon input-group-prepend">
                                                                                     <!-- div class="input-group-text" -->
-                                                                                        <button type="button" class="btn btn-outline-danger" id="submit" data-select2-open-control="defect" aria-disabled="false">
+                                                                                        <button type="button" class="btn btn-outline-danger" id="submit" data-select2-open-control="defect_id" aria-disabled="false">
                                                                                             <i class="fa fa-search" aria-hidden="true"></i>
                                                                                         </button>
                                                                                     <!-- /div -->
                                                                                 </div>
-                                                                                <select class="form-control select2 select2-multiple select2-allow-clear" id="defect" name="defect" value="{{ old('defect') }}" data-placeholder="Defect" aria-hidden="true" multiple="multiple" required>
-
-                                                                                    <!-- @for($i =1; $i <= 5; $i++) -->
-                                                                                    <option>Defect {{ $i }}</option>
-                                                                                    <!-- @endfor -->
-
+                                                                                <select class="form-control select2 select2-multiple select2-allow-clear" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" data-placeholder="Defect" aria-hidden="true" multiple="multiple" required="required">
+                                                                                    <!-- option> Option </option -->
                                                                                 </select>
                                                                                 <div class="input-group-addon input-group-append">
                                                                                     <!-- div class="input-group-text" -->
-                                                                                        <button type="button" class="btn btn-outline-danger" id="submit" data-select2-close-control="defect" aria-disabled="false">
+                                                                                        <button type="button" class="btn btn-outline-danger" id="submit_temp" data-select2-close-control="defect_id" aria-disabled="false">
                                                                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                                                                         </button>
                                                                                     <!-- /div -->
@@ -377,21 +182,28 @@
                                                                         
                                                                     <!-- form-group -->
                                                                     <div class="form-group row col-md-6">
-                                                                        <label for="qty_defect" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect Qty</label>
+                                                                        <label for="count_defect" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect Qty</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-md" id="qty_defect" name="qty_defect" placeholder="Defect Qty" value="{{ old('qty_defect') }}" required/>
+                                                                            <input type="text" class="form-control form-control-md" id="count_defect" name="count_defect" placeholder="Defect Qty" value="{{ old('count_defect') }}" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
                                                                     <!-- /.form-group -->
                                                                         
                                                                     <!-- form-group -->
+                                                                    @php
+                                                                        $count_sample = 0;
+                                                                        if( ($standardRQCObject->standardDataRQC) ){
+                                                                            $standardDataRQC = $standardRQCObject->standardDataRQC->first();
+                                                                            $count_sample = $standardDataRQC->count_sample;
+                                                                        }
+                                                                    @endphp
                                                                     <div class="form-group row col-md-6">
-                                                                        <label for="qty_check" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Check Qty</label>
+                                                                        <label for="count_sample" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Check Qty</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-md" id="qty_check" name="qty_check" placeholder="Check Qty" value="{{ old('qty_check') }}" required/>
+                                                                            <input type="text" class="form-control form-control-md" id="count_sample" name="count_sample" placeholder="Check Qty" value="{!! $count_sample !!}" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -438,14 +250,14 @@
                                                                     
                                                                     <!-- fieldset -->
                                                                     <div class="form-group row w-100">
-                                                                    <fieldset class="w-100" disabled>
+                                                                    <fieldset class="w-100" disabled="disabled">
                                                                         
                                                                         <!-- form-group -->
                                                                         <div class="form-group row col-sm-12 m-1">
                                                                             <label for="name" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Name</label>
                                                                             <div class="col">
                                                                                 <!-- p class="form-control-static"></p -->
-                                                                                <input type="text" class="form-control form-control-md" id="name" name="name" placeholder="Name" value="{{ old('name') }}" disabled/>
+                                                                                <input type="text" class="form-control form-control-md" id="name" name="name" placeholder="Name" value="{!! $user_object->name_first !!}" disabled="disabled"/>
                                                                             </div>
                                                                             <!-- span id="form-control" class="help-block"></span -->
                                                                         </div>
@@ -456,7 +268,7 @@
                                                                             <label for="grade" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Operator Grade</label>
                                                                             <div class="col">
                                                                                 <!-- p class="form-control-static"></p -->
-                                                                                <input type="text" class="form-control form-control-md" id="grade" name="grade" placeholder="Operator Grade" value="{{ old('grade') }}" disabled/>
+                                                                                <input type="text" class="form-control form-control-md" id="grade" name="grade" placeholder="Operator Grade" value="{!! $user_object->grade !!}" disabled="disabled"/>
                                                                             </div>
                                                                             <!-- span id="form-control" class="help-block"></span -->
                                                                         </div>
@@ -516,7 +328,7 @@
                                                                                         <th scope="col"></th>
                                                                                     </tr>
                                                                                 </thead>
-                                                                                <tbody>
+                                                                                <tbody id="tableId_1_tbody">
                                                                                    <!-- @for($i =1; $i <= 5; $i++) -->                 
                                                                                    <!-- tr -->
                                                                                    <tr>
@@ -534,12 +346,6 @@
                                                                                                     <div class="dropdown-menu text-wrap text-break bg-light border-light" aria-labelledby="btnGroupDrop_1_{{ $i }}">
                                                                                                         <!-- span class="dropdown-item-text ">Title</span -->
                                                                                                         <!-- div class="dropdown-item dropdown-divider"></div -->
-                                                                                                        <div class="dropdown-item btn-group  pl-1 pr-1 m-0" role="group" aria-label="Button Group">
-                                                                                                            <button type="button" role="button" class="btn btn-outline-primary btn-block waves-effect">
-                                                                                                            <i class="far fa-edit fa-fw" aria-hidden="true"></i>
-                                                                                                            <span class="sr-only">Action</span>
-                                                                                                            </button>
-                                                                                                        </div>
                                                                                                         <div class="dropdown-item btn-group  pl-1 pr-1 m-0" role="group" aria-label="Button Group">
                                                                                                             <button type="button" role="button" class="btn btn-outline-primary btn-block waves-effect">
                                                                                                             <i class="far fa-trash-alt fa-fw" aria-hidden="true"></i>
@@ -607,3 +413,177 @@
 </div>
 <!-- /.row -->
 @endsection
+
+@section('section_script_document')
+    @parent
+    @includeIf('partials.script.select_measure_point', array());
+    @includeIf('partials.script.select_multiple_defect', array());
+@endsection
+
+@push('stack_script')
+<script>
+    $(function(){
+        $("button[data-select2-open-control]").each(function() {
+            var element = $( this );
+            var select2_id = element.attr("data-select2-open-control");
+            element.on("click", function(){
+                var element_id = "#" + select2_id;
+                //console.log( $(element_id).data('select2').isOpen() );
+                //$(element_id).select2('isOpen');
+                //$(element_id).hasClass("select2-hidden-accessible");
+                //$(element_id).data('select2').toggleDropdown();
+                if( (!$(element_id).select2('isOpen')) ){
+                    $(element_id).select2('open');
+                }
+            });
+        });
+    });
+</script>
+@endpush
+
+@push('stack_script')
+<script>
+    $(function(){
+        $("button[data-select2-close-control]").each(function() {
+            var element = $( this );
+            var select2_id = element.attr("data-select2-close-control");
+            element.on("click", function(){
+                var element_id = "#" + select2_id;
+                //console.log( $(element_id).data('select2').isOpen() );
+                //$(element_id).select2('isOpen');
+                //$(element_id).hasClass("select2-hidden-accessible");
+                //$(element_id).data('select2').toggleDropdown();
+                if( ($(element_id).select2('isOpen')) ){
+                    $(element_id).select2('close');
+                }
+            });
+        });
+    });
+</script>
+@endpush
+
+@push('stack_script')
+<script>
+    $(function(){
+        var submit_temp = $("#submit_temp");
+        submit_temp.on("click", function(event){
+            try{
+                submit_temp.attr("disabled", true);
+            
+                var measure_point_id = $("#measure_point_id");
+                var defect_id = $("#defect_id");
+                var count_defect = $("#count_defect");
+                var measure_point_id_value = null;
+                var defect_id_value = null;
+
+                var id_temp = null;
+                var id_defect_id_prefix = "defect_id_array";
+                var id_measure_point_id_prefix = "measure_point_id_array";
+                var id_tr_prefix = "tr";
+
+                var form1_hidden_input_group = $("#form1_hidden_input_group");
+                var tableId_1_tbody = $("#tableId_1_tbody");
+
+                measure_point_id_value = measure_point_id.val();
+                defect_id_value = defect_id.val();
+
+                if( (typeof measure_point_id_value === "undefined") || 
+                    (measure_point_id_value === void(0)) || 
+                    (measure_point_id_value == "") || 
+                    (measure_point_id_value == null) ){
+                    //console.log(measure_point_id_value);
+                    throw "error";
+                    //return false;
+                }else if( (typeof defect_id_value === "undefined") || 
+                    (defect_id_value === void(0)) || 
+                    (defect_id_value == "") || 
+                    (defect_id_value == null) ){
+                    //console.log(defect_id_value);
+                    throw "error";
+                    //return false;
+                }else{
+                    id_temp = (Date.now() + "_" + (Math.floor(Math.random() * 26) + Date.now()));
+                    defect_id_value = $.makeArray( defect_id_value );
+
+                    $.each(defect_id_value, function( index, value ) {
+                        //console.log(index);
+                        //console.log(value);
+                        var input_temp = $("<input/>");
+                        input_temp.attr("id", (id_defect_id_prefix + id_temp));
+                        input_temp.attr("name", (id_defect_id_prefix + "[]"));
+                        input_temp.attr("value", (value));
+                        input_temp.attr("required", ("required"));
+                        input_temp.attr("readonly", ("readonly"));
+                        input_temp.addClass( id_defect_id_prefix );
+                        form1_hidden_input_group.append(input_temp);
+                        
+                        var input_temp = $("<input/>");
+                        input_temp.attr("id", (id_measure_point_id_prefix + id_temp));
+                        input_temp.attr("name", (id_measure_point_id_prefix + "[]"));
+                        input_temp.attr("value", (measure_point_id.val()));
+                        input_temp.attr("required", ("required"));
+                        input_temp.attr("readonly", ("readonly"));
+                        input_temp.addClass( id_measure_point_id_prefix );
+                        form1_hidden_input_group.append(input_temp);
+                        //input_temp = null;
+                        var tr_temp = $("<tr></tr>");
+                        var td_temp = $("<td></td>");
+                        ////////////////////////////////////////////////////////////////////////////////////////////////////////
+                        var temp = measure_point_id.find( ("[value=" + value + "]") );
+                        console.log(temp);
+                        console.log(temp.text);
+                        ////////////////////////////////////////////////////////////////////////////////////////////////////////
+                        ////////////////////////////////////////////////////////////////////////////////////////////////////////
+                        var vv = measure_point_id;     
+                        var label = $(vv).children("option[value='"+$(vv).select2("val")+"']").first().data;
+                        console.log(label);
+                        var a = $("#measure_point_id option:selected").data();
+                        console.log(a.id);
+                        console.log($('#measure_point_id').select2('data'));
+                        //$('#all_contacts').select2('data', {id: '123', text: 'res_data.primary_email'});
+                        //$('#measure_point_id').select2('data')
+                        console.log( measure_point_id.find(":selected").data("id") );
+                        console.log(measure_point_id.select2().find(":selected").data("id"));
+                        ////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    });
+
+                    /*form1_hidden_input_group.find( ("." + id_defect_id_prefix) ).each(function( index, value ){
+                        //console.log(index);
+                        //console.log(value);
+                    });*/
+                    
+                    measure_point_id.val(null).trigger("change");
+                    defect_id.val(null).trigger("change");
+                }
+                var count_defect_value = form1_hidden_input_group.find( ("." + id_defect_id_prefix) ).length;
+                count_defect.val(function(index, currentvalue){
+                    return count_defect_value;
+                });
+            }catch(error){
+                console.log("error");
+                console.log(error);
+            }finally{
+                //console.log("finally");
+                submit_temp.attr("disabled", false);
+                //delete variable;
+            }
+        });
+    });
+</script>
+@endpush
+
+@push('stack_script')
+<script>
+    $(function(){
+        "use strict";
+        var control_button_home = $("#control_button_home");
+        control_button_home.attr("aria-controls", function(index, currentvalue){
+            return (currentvalue + "");
+        });
+        $("#id_nav_container_1").removeClass("collapse");
+        $("#id_nav_container_1").removeClass("multi-collapse");
+        $("#id_nav_container_1").removeClass("show");
+        $("#id_nav_container_1").addClass("show");
+    });
+</script>
+@endpush

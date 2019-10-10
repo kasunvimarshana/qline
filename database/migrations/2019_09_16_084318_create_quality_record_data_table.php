@@ -36,12 +36,12 @@ class CreateQualityRecordDataTable extends Migration
             $table->unsignedBigInteger('status_id')->unsigned()->nullable()->comment('comment');//->index()
             $table->text('description')->default(null)->nullable()->comment('comment'); 
             $table->string('user_id_create')->nullable()->comment('comment');//->index()
-            //$table->morphs('statusable');
+            //$table->nullableMorphs('statusable');
             $table->string('measure_point_id')->nullable()->comment('comment');//->index()
             $table->string('defect_category_id')->nullable()->comment('comment');//->index()
             $table->string('defect_id')->nullable()->comment('comment');//->index()
             $table->double('count_defect')->nullable()->default(0)->comment('comment');//->index()
-            $table->morphs('recordable');
+            $table->nullableMorphs('recordable');
         });
         
         Schema::table($this->table_name_1, function($table) {

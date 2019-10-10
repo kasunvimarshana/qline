@@ -138,6 +138,10 @@
 <!-- /.row -->
 @endsection
 
+@section('section_script_document')
+    @parent
+@endsection
+
 @push('stack_script')
 <script>
     $(function(){

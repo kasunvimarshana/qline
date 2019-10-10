@@ -34,7 +34,7 @@ class CreateUserAttachmentsTable extends Migration
             //$table->unsignedBigInteger('user_id_attached_by')->index()->nullable()->comment('comment');
             $table->string('attached_by')->index()->nullable()->comment('comment');
             $table->string('file_original_name')->index()->nullable()->comment('comment');
-            $table->morphs('attachable');
+            $table->nullableMorphs('attachable');
             $table->string('file_type')->index()->nullable()->comment('comment');
             $table->text('link_url')->comment('comment');
             $table->string('data_key')->index()->nullable()->comment('comment');

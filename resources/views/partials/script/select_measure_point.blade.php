@@ -6,35 +6,8 @@ $(function(){
         theme: "bootstrap"
     });*/
     var optionData = new Object();//{};
-    optionData.url = "{!! route('defect.selectAllDefects', []) !!}";
-    optionData.id = "#defect_id";
-    
-    function getFormatResult(param){
-        if (!param.id){
-            return param.text; // optgroup
-        }
-        var colour_code = null;
-        if( (param.data) ){
-            var data = param.data;
-            if( (data.defect_category) ){
-                var defect_category = data.defect_category;
-                if( (defect_category.colour) ){
-                    var colour = defect_category.colour;
-                    colour_code = colour.code;
-                }
-            }else if( (data.colour) ){
-                var colour = data.colour;
-                colour_code = colour.code;
-            }
-        }
-
-        var tempOptionObject = "<div class='text-wrap text-break w-100 h-100 m-1' style='background-color:"+colour_code+"'>"
-            + "<p class='text-center'>" + param.text + "</p>"
-            + "</div>";
-
-        var optionObject = $(tempOptionObject);
-        return optionObject;
-    }
+    optionData.url = "{!! route('measurePoint.selectAllMeasurePoints', []) !!}";
+    optionData.id = "#measure_point_id";
     
     var selectOptionObject = $( optionData.id ).select2({
         //theme : 'bootstrap',
@@ -45,18 +18,10 @@ $(function(){
         //dropdownCssClass : 'class',
         width : 'resolve',
         //allowClear : true,
-        formatResult : function(param){
-            return getFormatResult(param);
-        },
-        formatSelection : function(param){
-            return getFormatResult(param);
-        },
-        templateResult : function(data) {
-            return getFormatResult(data);
-        },
-        templateSelection : function(data) {
-            return getFormatResult(data);
-        },
+        //formatResult : function(param){},
+        //formatSelection : function(param){},
+        //templateResult : function(data) {},
+        //templateSelection : function(data) {},
         placeholder	: {
             //id : '-1',
             placeholder : 'Option'
@@ -74,7 +39,7 @@ $(function(){
             quietMillis: 10,
             // dataType: 'json',
             delay : 10,
-            data : function (params) {console.log(params.page);
+            data : function (params) {
                 var query = {
                     search : params.term, // $.trim(params.term)
                     active : true,
