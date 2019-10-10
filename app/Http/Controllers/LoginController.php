@@ -127,7 +127,7 @@ class LoginController extends Controller
                         'is_visible' => true,
                         'is_active' => true,
                         'data_key' => 'time_login',
-                        'data_value' => $date_today->format('Y-m-d h:i:s'),
+                        'data_value' => $date_today->format('Y-m-d H:i:s'),
                         //'user_a_p_i_token_id' => ''
                     ]);
                     $userAPITokenObject->userAPITokenData()->save( $userAPITokenDataObject );

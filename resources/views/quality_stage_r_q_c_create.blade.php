@@ -63,7 +63,7 @@
                                                     <!-- col -->
                                                     <div class="col-sm-12 p-0 m-0">
                                                         <!-- form -->
-                                                        <form action="{!! route('home') !!}" method="POST" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
+                                                        <form action="{!! route('qualityRecordRQC.store', []) !!}" method="POST" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
                                                             @csrf
                                                             <div id="form1_hidden_input_group" name="form1_hidden_input_group" class="d-none">
                                                                 @isset($user_object)
@@ -138,7 +138,7 @@
                                                                                         </button>
                                                                                     <!-- /div -->
                                                                                 </div>
-                                                                                <select class="form-control select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" data-placeholder="Operation" required="required">
+                                                                                <select class="form-control select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" data-placeholder="Operation">
                                                                                     <!-- option> Option </option -->
                                                                                 </select>
                                                                             </div>
@@ -160,7 +160,7 @@
                                                                                         </button>
                                                                                     <!-- /div -->
                                                                                 </div>
-                                                                                <select class="form-control select2 select2-multiple select2-allow-clear" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" data-placeholder="Defect" aria-hidden="true" multiple="multiple" required="required">
+                                                                                <select class="form-control select2 select2-multiple select2-allow-clear" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" data-placeholder="Defect" aria-hidden="true" multiple="multiple">
                                                                                     <!-- option> Option </option -->
                                                                                 </select>
                                                                                 <div class="input-group-addon input-group-append">
@@ -310,7 +310,7 @@
                                                                 <!-- form-group-col -->
                                                                 <!-- fieldset -->
                                                                 <div class="form-group row w-100 m-1">
-                                                                    <fieldset class="w-100" disabled>
+                                                                    <fieldset class="w-100">
                                                                         
                                                                     <!-- --- -->
                                                                     <!-- row -->
@@ -328,37 +328,9 @@
                                                                                         <th scope="col"></th>
                                                                                     </tr>
                                                                                 </thead>
-                                                                                <tbody id="tableId_1_tbody">
-                                                                                   <!-- @for($i =1; $i <= 5; $i++) -->                 
-                                                                                   <!-- tr -->
-                                                                                   <tr>
-                                                                                        <th scope="row">Operation {{ $i }}</th>
-                                                                                        <td>Defect {{ $i }}</td>
-                                                                                        <td class="text-center">
-                                                                                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown" tabindex="-1">
-                                                                                                <div class="btn-group" role="group">
-                                                                                                    <!-- button type="button" role="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split">Action</button -->
-                                                                                                    <button id="btnGroupDrop_1_{{ $i }}" type="button" role="button" class="btn btn-outline-primary" data-toggle="dropdown"
-                                                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                                                        <i class="fas fa-cogs fa-fw" aria-hidden="true"></i>
-                                                                                                        <span class="sr-only">Toggle Dropdown</span>
-                                                                                                    </button>
-                                                                                                    <div class="dropdown-menu text-wrap text-break bg-light border-light" aria-labelledby="btnGroupDrop_1_{{ $i }}">
-                                                                                                        <!-- span class="dropdown-item-text ">Title</span -->
-                                                                                                        <!-- div class="dropdown-item dropdown-divider"></div -->
-                                                                                                        <div class="dropdown-item btn-group  pl-1 pr-1 m-0" role="group" aria-label="Button Group">
-                                                                                                            <button type="button" role="button" class="btn btn-outline-primary btn-block waves-effect">
-                                                                                                            <i class="far fa-trash-alt fa-fw" aria-hidden="true"></i>
-                                                                                                            <span class="sr-only">Action</span>
-                                                                                                            </button>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </td>
-                                                                                    </tr>
+                                                                                <tbody id="tableId_1_tbody">     
+                                                                                    <!-- tr -->
                                                                                     <!-- /.tr -->                 
-                                                                                    <!-- @endfor -->
                                                                                 </tbody>
 
                                                                             </table>
@@ -416,8 +388,8 @@
 
 @section('section_script_document')
     @parent
-    @includeIf('partials.script.select_measure_point', array());
-    @includeIf('partials.script.select_multiple_defect', array());
+    @includeIf('partials.script.select_measure_point', array())
+    @includeIf('partials.script.select_multiple_defect', array())
 @endsection
 
 @push('stack_script')
@@ -528,23 +500,111 @@
                         //input_temp = null;
                         var tr_temp = $("<tr></tr>");
                         var td_temp = $("<td></td>");
-                        ////////////////////////////////////////////////////////////////////////////////////////////////////////
-                        var temp = measure_point_id.find( ("[value=" + value + "]") );
-                        console.log(temp);
-                        console.log(temp.text);
-                        ////////////////////////////////////////////////////////////////////////////////////////////////////////
-                        ////////////////////////////////////////////////////////////////////////////////////////////////////////
-                        var vv = measure_point_id;     
-                        var label = $(vv).children("option[value='"+$(vv).select2("val")+"']").first().data;
-                        console.log(label);
-                        var a = $("#measure_point_id option:selected").data();
-                        console.log(a.id);
-                        console.log($('#measure_point_id').select2('data'));
-                        //$('#all_contacts').select2('data', {id: '123', text: 'res_data.primary_email'});
-                        //$('#measure_point_id').select2('data')
-                        console.log( measure_point_id.find(":selected").data("id") );
-                        console.log(measure_point_id.select2().find(":selected").data("id"));
-                        ////////////////////////////////////////////////////////////////////////////////////////////////////////
+                        
+                        var measure_point_id_data_temp = measure_point_id.select2('data');
+                        var defect_id_data_temp = defect_id.select2('data');
+                        measure_point_id_data_temp = $.makeArray(measure_point_id_data_temp);
+                        defect_id_data_temp = $.makeArray(defect_id_data_temp);
+                        $.each(measure_point_id_data_temp, function( k, v ){
+                            //console.log(key);
+                            //console.log(value);
+                            if( ((measure_point_id_value.localeCompare(v.id)) == 0) ){
+                                td_temp = $("<td></td>");
+                                td_temp.html(v.data.name);
+                                tr_temp.append(td_temp);
+                            }
+                        });
+                        $.each(defect_id_data_temp, function( k, v ){
+                            //console.log(key);
+                            //console.log(value);
+                            if( ((value.localeCompare(v.id)) == 0) ){
+                                td_temp = $("<td></td>");
+                                td_temp.html(v.data.name);
+                                tr_temp.append(td_temp);
+                            }
+                        });
+                        
+                        td_temp = $("<td></td>");
+                        td_temp.addClass("text-center");
+                        var btn_group_1 = $("<div></div>");
+                        btn_group_1.addClass("btn-group");
+                        btn_group_1.attr("role", "group");
+                        btn_group_1.attr("aria-label", "button group");
+                        btn_group_1.attr("tabindex", "-1");
+                        
+                        var btn_group_2 = $("<div></div>");
+                        btn_group_2.addClass("btn-group");
+                        btn_group_2.attr("role", "group");
+                        
+                        var button_1 = $("<button></button>");
+                        button_1.addClass("btn btn-outline-primary");
+                        button_1.attr("type", "button");
+                        button_1.attr("role", "button");
+                        button_1.attr("data-toggle", "dropdown");
+                        button_1.attr("aria-haspopup", "true");
+                        button_1.attr("aria-expanded", "false");
+                        button_1.attr("id", ("btn" + id_temp));
+                        
+                        var i_1 = $("<i></i>");
+                        i_1.addClass("fas fa-cogs fa-fw");
+                        i_1.attr("aria-hidden", "true");
+                        
+                        var span_1 = $("<span></span>");
+                        span_1.addClass("sr-only");
+                        span_1.text("Toggle Dropdown");
+                        
+                        button_1.append(i_1);
+                        button_1.append(span_1);
+                        
+                        var drop_down_menu_1 = $("<div></div>");
+                        drop_down_menu_1.addClass("dropdown-menu text-wrap text-break bg-light border-light");
+                        drop_down_menu_1.attr("aria-labelledby", ("btn" + id_temp));
+                        
+                        var drop_down_item_1 = $("<div></div>");
+                        drop_down_item_1.addClass("dropdown-item btn-group  pl-1 pr-1 m-0");
+                        drop_down_item_1.attr("role", "group");
+                        drop_down_item_1.attr("aria-label", "Button Group");
+                        
+                        var button_2 = $("<button></button>");
+                        button_2.addClass("btn btn-outline-primary btn-block waves-effect");
+                        button_2.attr("type", "button");
+                        button_2.attr("role", "button");
+                        button_2.off("click").on("click", function(e){
+                            e.preventDefault();
+                            //e.stopPropagation();
+                            var parent_tr = button_2.closest("tr");
+                            var control_input_id = parent_tr.data("control_input_id");
+                            form1_hidden_input_group.find( ("#" + id_defect_id_prefix + control_input_id) ).remove();
+                            form1_hidden_input_group.find( ("#" + id_measure_point_id_prefix + control_input_id) ).remove();
+                            parent_tr.remove();
+                            
+                            var count_defect_value = form1_hidden_input_group.find( ("." + id_defect_id_prefix) ).length;
+                            count_defect.val(function(index, currentvalue){
+                                return count_defect_value;
+                            });
+                        });
+                        
+                        var i_2 = $("<i></i>");
+                        i_2.addClass("far fa-trash-alt fa-fw");
+                        i_2.attr("aria-hidden", "true");
+                        
+                        var span_2 = $("<span></span>");
+                        span_2.addClass("sr-only");
+                        span_2.text("Action");
+                        
+                        button_2.append(i_2);
+                        button_2.append(span_2);
+                        
+                        drop_down_item_1.append(button_2);
+                        drop_down_menu_1.append(drop_down_item_1);
+                        btn_group_2.append(drop_down_menu_1);
+                        btn_group_2.append(button_1);
+                        btn_group_1.append(btn_group_2);
+                        td_temp.append(btn_group_1);
+                        tr_temp.append(td_temp);
+                        
+                        tr_temp.data("control_input_id", id_temp);
+                        tableId_1_tbody.append(tr_temp);
                     });
 
                     /*form1_hidden_input_group.find( ("." + id_defect_id_prefix) ).each(function( index, value ){

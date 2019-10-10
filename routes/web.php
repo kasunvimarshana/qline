@@ -74,3 +74,4 @@ Route::get('setup-configurations/finishing/index', array('uses' => 'QualityRecor
 Route::get('setup-configurations/c-n-i/index', array('uses' => 'QualityRecordCNIController@index'))->name('qualityRecordCNI.index');
 
 Route::get('setup-configurations/r-q-c/create', array('uses' => 'QualityRecordRQCController@create'))->name('qualityRecordRQC.create');
+Route::post('setup-configurations/r-q-c/store', array('uses' => 'QualityRecordRQCController@store'))->name('qualityRecordRQC.store');

@@ -125,6 +125,11 @@ class RQCController extends Controller
             $request->session()->put('setup_configuration_standard_r_q_c_id', $standard_r_q_c_id);
         }
         
+        if( ($request->has('inspection_stage_id')) && ($request->filled('inspection_stage_id')) ){
+            $inspection_stage_id = $request->input('inspection_stage_id', null);
+            $request->session()->put('setup_configuration_inspection_stage_id', $inspection_stage_id);
+        }
+        
         if( (Route::has('qualityRecordRQC.index')) ){
             return redirect()->route('qualityRecordRQC.index');
         }else{

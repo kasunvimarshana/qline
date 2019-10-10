@@ -125,6 +125,11 @@ class SewingAuditController extends Controller
             $request->session()->put('setup_configuration_standard_sewing_audit_id', $standard_sewing_audit_id);
         }
         
+        if( ($request->has('inspection_stage_id')) && ($request->filled('inspection_stage_id')) ){
+            $inspection_stage_id = $request->input('inspection_stage_id', null);
+            $request->session()->put('setup_configuration_inspection_stage_id', $inspection_stage_id);
+        }
+        
         if( (Route::has('qualityRecordSewingAudit.index')) ){
             return redirect()->route('qualityRecordSewingAudit.index');
         }else{

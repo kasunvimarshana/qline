@@ -100,6 +100,11 @@ class CNIController extends Controller
             $request->session()->put('setup_configuration_time_create', $time_create);
         }
         
+        if( ($request->has('inspection_stage_id')) && ($request->filled('inspection_stage_id')) ){
+            $inspection_stage_id = $request->input('inspection_stage_id', null);
+            $request->session()->put('setup_configuration_inspection_stage_id', $inspection_stage_id);
+        }
+        
         if( (Route::has('qualityRecordCNI.index')) ){
             return redirect()->route('qualityRecordCNI.index');
         }else{

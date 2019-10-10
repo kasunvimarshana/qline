@@ -120,6 +120,11 @@ class FinishingController extends Controller
             $request->session()->put('setup_configuration_export_id', $export_id);
         }
         
+        if( ($request->has('inspection_stage_id')) && ($request->filled('inspection_stage_id')) ){
+            $inspection_stage_id = $request->input('inspection_stage_id', null);
+            $request->session()->put('setup_configuration_inspection_stage_id', $inspection_stage_id);
+        }
+        
         if( (Route::has('qualityRecordFinishing.index')) ){
             return redirect()->route('qualityRecordFinishing.index');
         }else{
