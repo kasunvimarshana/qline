@@ -273,20 +273,26 @@
                                                                     <th scope="col">Offered Qty For AQL</th>
                                                                     <th scope="col">Line</th>
                                                                     <th scope="col">Style</th>
-                                                                    <th scope="col">Size</th>
                                                                     <th scope="col">Select to Audit</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                               <!-- @for($i =1; $i <= 5; $i++) -->                 
+                                                               <!-- @foreach($quality_record_input_scan_data_array as $key => $value) -->                 
                                                                <!-- tr -->
                                                                <tr>
-                                                                    <th scope="row"># {{ $i }}</th>
-                                                                    <td>Bar Code {{ $i }}</td>
-                                                                    <td>{{ $i }}</td>
-                                                                    <td>Line {{ $i }}</td>
-                                                                    <td>Style {{ $i }}</td>
-                                                                    <td>{{ $i }}</td>
+                                                                    <th scope="row"># {{ ($key + 1) }}</th>
+                                                                    <td>{{ $value->code }}</td>
+                                                                    <td>{{ $value->count_data }}</td>
+                                                                    <td>
+                                                                        @if($value->line)
+                                                                        {{ $value->line->name }}
+                                                                        @endif
+                                                                    </td>
+                                                                    <td>
+                                                                        @if($value->style)
+                                                                        {{ $value->style->name }}
+                                                                        @endif
+                                                                    </td>
                                                                     <td>
                                                                         <!-- -->
                                                                         <!-- form-group -->
@@ -294,7 +300,7 @@
                                                                             <!-- label for="name" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Label</label -->
                                                                             <div class="col">
                                                                                 <!-- p class="form-control-static"></p -->
-                                                                                <input type="checkbox" class="form-control form-check-input" id="id_{{ $i }}" name="name_{{ $i }}" data-toggle="toggle" data-size="md" data-onstyle="primary" data-offstyle="light" data-on="<i class='fas fa-toggle-on'></i>" data-off="<i class='fas fa-toggle-off'></i>"/>
+                                                                                <input type="checkbox" class="form-control form-check-input" id="id_{{ $key }}" name="name_{{ $key }}" data-toggle="toggle" data-size="md" data-onstyle="primary" data-offstyle="light" data-on="<i class='fas fa-toggle-on'></i>" data-off="<i class='fas fa-toggle-off'></i>"/>
                                                                             </div>
                                                                             <!-- span id="form-control" class="help-block"></span -->
                                                                         </div>
@@ -303,7 +309,7 @@
                                                                     </td>
                                                                 </tr>
                                                                 <!-- /.tr -->                 
-                                                                <!-- @endfor -->
+                                                                <!-- @endforeach -->
                                                             </tbody>
 
                                                         </table>

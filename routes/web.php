@@ -73,5 +73,13 @@ Route::get('setup-configurations/sewing-audit/index', array('uses' => 'QualityRe
 Route::get('setup-configurations/finishing/index', array('uses' => 'QualityRecordFinishingController@index'))->name('qualityRecordFinishing.index');
 Route::get('setup-configurations/c-n-i/index', array('uses' => 'QualityRecordCNIController@index'))->name('qualityRecordCNI.index');
 
-Route::get('setup-configurations/r-q-c/create', array('uses' => 'QualityRecordRQCController@create'))->name('qualityRecordRQC.create');
-Route::post('setup-configurations/r-q-c/store', array('uses' => 'QualityRecordRQCController@store'))->name('qualityRecordRQC.store');
+Route::get('quality-record/r-q-c/create', array('uses' => 'QualityRecordRQCController@create'))->name('qualityRecordRQC.create');
+Route::post('quality-record/r-q-c/store', array('uses' => 'QualityRecordRQCController@store'))->name('qualityRecordRQC.store');
+
+Route::post('quality-record/cutting/store', array('uses' => 'QualityRecordCuttingController@store'))->name('qualityRecordCutting.store');
+Route::post('quality-record/sewing-check/store', array('uses' => 'QualityRecordSewingCheckController@store'))->name('qualityRecordSewingCheck.store');
+
+Route::get('quality-record-input-scan-data/create', array('uses' => 'QualityRecordInputScanDataController@create'))->name('qualityRecordInputScanData.create');
+Route::post('quality-record-input-scan-data/store', array('uses' => 'QualityRecordInputScanDataController@store'))->name('qualityRecordInputScanData.store');
+
+Route::get('quality-record-sewing-audits/create', array('uses' => 'QualityRecordSewingAuditController@create'))->name('qualityRecordSewingAudit.create');

@@ -65,11 +65,13 @@
                                                         <!-- form -->
                                                         <form action="{!! route('qualityRecordRQC.store', []) !!}" method="POST" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
                                                             @csrf
+                                                            <!-- ------------------------------------------------------------------------------------- -->
                                                             <div id="form1_hidden_input_group" name="form1_hidden_input_group" class="d-none">
                                                                 @isset($user_object)
                                                                 <input type="hidden" id="user_id_record" name="user_id_record" value="{!! $user_object->id !!}" required="required" readonly="readonly"/>
                                                                 @endisset
                                                             </div>
+                                                            <!-- ------------------------------------------------------------------------------------- -->
                                                             
                                                             <!-- form-group-row -->
                                                             <div class="row col border border-danger rounded shadow-sm m-1">
@@ -165,7 +167,7 @@
                                                                                 </select>
                                                                                 <div class="input-group-addon input-group-append">
                                                                                     <!-- div class="input-group-text" -->
-                                                                                        <button type="button" class="btn btn-outline-danger" id="submit_temp" data-select2-close-control="defect_id" aria-disabled="false">
+                                                                                        <button type="button" class="btn btn-outline-danger" id="form_submit_id_1" data-select2-close-control="defect_id" aria-disabled="false">
                                                                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                                                                         </button>
                                                                                     <!-- /div -->
@@ -437,10 +439,10 @@
 @push('stack_script')
 <script>
     $(function(){
-        var submit_temp = $("#submit_temp");
-        submit_temp.on("click", function(event){
+        var form_submit_id_1 = $("#form_submit_id_1");
+        form_submit_id_1.on("click", function(event){
             try{
-                submit_temp.attr("disabled", true);
+                form_submit_id_1.attr("disabled", true);
             
                 var measure_point_id = $("#measure_point_id");
                 var defect_id = $("#defect_id");
@@ -620,11 +622,11 @@
                     return count_defect_value;
                 });
             }catch(error){
-                console.log("error");
-                console.log(error);
+                //console.log("error");
+                //console.log(error);
             }finally{
                 //console.log("finally");
-                submit_temp.attr("disabled", false);
+                form_submit_id_1.attr("disabled", false);
                 //delete variable;
             }
         });

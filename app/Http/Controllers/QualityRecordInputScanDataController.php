@@ -39,12 +39,10 @@ use App\Customer;
 use App\Style;
 use App\Colour;
 use App\Export;
-use App\StandardSewingAudit;
 use App\Defect;
-use App\QualityRecordSewingAudit;
 use App\QualityRecordInputScanData;
 
-class QualityRecordSewingAuditController extends Controller
+class QualityRecordInputScanDataController extends Controller
 {
     //
     protected $app_file_storage_uri;
@@ -59,159 +57,7 @@ class QualityRecordSewingAuditController extends Controller
         */
     }
     
-    public function index(Request $request){
-        //
-        $dataArray = array();
-        $rules = array();
-        $date_today = Carbon::now();//->format('Y-m-d');
-        $current_user = null;
-        $data = array();
-        
-        // validate the info, create rules for the inputs
-        $rules = array();
-        // run the validation rules on the inputs from the form
-        $validator = Validator::make(Input::all(), $rules);
-        // if the validator fails, redirect back to the form
-        if ($validator->fails()) {
-            /*
-            $data = array(
-                'title' => 'error',
-                'text' => $validator->errors()->first(),
-                'type' => 'warning',
-                'timer' => 3000
-            );
-            return (new CommonResponseResource( $data ))->additional(array(
-                'meta' => ['status_code' => HTTPStatusCodeEnum::HTTP_BAD_REQUEST]
-            ));
-            */
-            return redirect()->back()->withErrors($validator)->withInput();
-        } else {
-            // do process
-            try {
-                // Start transaction!
-                DB::beginTransaction();
-                
-                $companyObject = new Company();
-                $company_id = $request->session()->get('setup_configuration_company_id', null);
-                $companyObject = $companyObject->where('id', '=', $company_id)->first();
-                $companyObject->load(['strategicBusinessUnits']);
-                
-                $strategicBusinessUnitObject = new StrategicBusinessUnit();
-                $strategic_business_unit_id = $request->session()->get('setup_configuration_strategic_business_unit_id', null);
-                $strategicBusinessUnitObject = $strategicBusinessUnitObject->where('id', '=', $strategic_business_unit_id)->first();
-                
-                $factoryObject = new Factory();
-                $factory_id = $request->session()->get('setup_configuration_factory_id', null);
-                $factoryObject = $factoryObject->where('id', '=', $factory_id)->first();
-                
-                $lineObject = new Line();
-                $line_id = $request->session()->get('setup_configuration_line_id', null);
-                $lineObject = $lineObject->where('id', '=', $line_id)->first();
-                
-                $customerObject = new Customer();
-                $customer_id = $request->session()->get('setup_configuration_customer_id', null);
-                $customerObject = $customerObject->where('id', '=', $customer_id)->first();
-                
-                $styleObject = new Style();
-                $style_id = $request->session()->get('setup_configuration_style_id', null);
-                $styleObject = $styleObject->where('id', '=', $style_id)->first();
-                
-                $colourObject = new Colour();
-                $colour_id = $request->session()->get('setup_configuration_colour_id', null);
-                $colourObject = $colourObject->where('id', '=', $colour_id)->first();
-                
-                $exportObject = new Export();
-                $export_id = $request->session()->get('setup_configuration_export_id', null);
-                $exportObject = $exportObject->where('id', '=', $export_id)->first();
-                
-                $standardSewingAuditObject = new StandardSewingAudit();
-                $standard_sewing_audit_id = $request->session()->get('setup_configuration_standard_sewing_audit_id', null);
-                $standardSewingAuditObject = $standardSewingAuditObject
-                    ->where('id', '=', $standard_sewing_audit_id)
-                    ->whereHas('standardDataSewingAudit', function($query){
-                        //$query->where('key', '=', 'value');
-                    })
-                    ->first();
-                $standardSewingAuditObject->load(['standardDataSewingAudit']);
-                
-                $qualityRecordInputScanDataObject = new QualityRecordInputScanData();
-                $count_data_sum = $qualityRecordInputScanDataObject
-                    ->where('company_id', '=', $companyObject->id)
-                    ->where('strategic_business_unit_id', '=', $strategicBusinessUnitObject->id)
-                    ->where('factory_id', '=', $factoryObject->id)
-                    ->where('line_id', '=', $lineObject->id)
-                    ->whereDate('time_create', '=', $date_today->format('Y-m-d'))
-                    ->whereDoesntHave('qualityRecordInputScanDataStatusSewingAudit', function($query){
-                        //$query->where('key', '=', 'value');
-                    })
-                    ->sum('count_data');
-                
-                $standardSewingAuditObjectClone = clone $standardSewingAuditObject;
-                $standardDataSewingAuditArray = $standardSewingAuditObjectClone->standardDataSewingAudit()
-                    ->orderBy("batch_count_min", "asc")
-                    ->get();
-                $standardDataSewingAuditObject = null;
-                $standardDataSewingAuditArray->each(function($value, $key) use(&$standardDataSewingAuditObject, $count_data_sum){
-                    if( ($value->batch_count_min <= $count_data_sum) ){
-                        if( ($standardDataSewingAuditObject == null) ){
-                            $standardDataSewingAuditObject = $value;
-                        }else if( ($value->batch_count_min > $standardDataSewingAuditObject->batch_count_min) ){
-                            $standardDataSewingAuditObject = $value;
-                        }
-                    }
-                });
-                
-                $data['company_object'] = $companyObject;
-                $data['strategic_business_unit_object'] = $strategicBusinessUnitObject;
-                $data['factory_object'] = $factoryObject;
-                $data['line_object'] = $lineObject;
-                $data['customer_object'] = $customerObject;
-                $data['style_object'] = $styleObject;
-                $data['colour_object'] = $colourObject;
-                $data['export_object'] = $exportObject;
-                $data['standard_sewing_audit_object'] = $standardSewingAuditObject;
-                $data['count_data_sum'] = $count_data_sum;
-                $data['standard_data_sewing_audit_array'] = $standardDataSewingAuditArray;
-                $data['standard_data_sewing_audit_object'] = $standardDataSewingAuditObject;
-                unset($dataArray);
-                
-                // Commit transaction!
-                DB::commit();
-            }catch(Exception $e){
-                // Rollback transaction!
-                DB::rollback(); 
-                /*
-                $data = array(
-                    'title' => 'error',
-                    'text' => 'error',
-                    'type' => 'warning',
-                    'timer' => 3000
-                );
-                return (new CommonResponseResource( $data ))->additional(array(
-                    'meta' => ['status_code' => HTTPStatusCodeEnum::HTTP_BAD_REQUEST]
-                ));
-                */
-                return redirect()->back()->withInput();
-            }
-        }
-        
-        //unset data
-        unset( $dataArray );
-        unset( $rules );
-        unset( $date_today );
-        unset( $current_user );
-        //unset( $data );
-        
-        //return Response::json( $data );
-        //return redirect()->back();
-        //$http_response_code = http_response_code();
-        if(view()->exists('quality_stage_sewing_audit')){
-            return View::make('quality_stage_sewing_audit', $data);
-        }else{
-            return redirect()->back()->withInput();
-        }
-        
-    }
+    public function index(Request $request){ /*return response()->json( $request );*/ }
     
     /**
      * Show the form for creating a new resource.
@@ -283,36 +129,15 @@ class QualityRecordSewingAuditController extends Controller
                 $export_id = $request->session()->get('setup_configuration_export_id', null);
                 $exportObject = $exportObject->where('id', '=', $export_id)->first();
                 
-                $standardSewingAuditObject = new StandardSewingAudit();
-                $standard_sewing_audit_id = $request->session()->get('setup_configuration_standard_sewing_audit_id', null);
-                $standardSewingAuditObject = $standardSewingAuditObject
-                    ->where('id', '=', $standard_sewing_audit_id)
-                    ->whereHas('standardDataSewingAudit', function($query){
-                        //$query->where('key', '=', 'value');
-                    })
-                    ->first();
-                $standardSewingAuditObject->load(['standardDataSewingAudit']);
-                
                 $qualityRecordInputScanDataObject = new QualityRecordInputScanData();
-                $qualityRecordInputScanDataArray = $qualityRecordInputScanDataObject
+                $aualityRecordInputScanDataArray = $qualityRecordInputScanDataObject
                     ->where('company_id', '=', $companyObject->id)
                     ->where('strategic_business_unit_id', '=', $strategicBusinessUnitObject->id)
                     ->where('factory_id', '=', $factoryObject->id)
                     ->where('line_id', '=', $lineObject->id)
                     ->whereDate('time_create', '=', $date_today->format('Y-m-d'))
-                    ->whereDoesntHave('qualityRecordInputScanDataStatusSewingAudit', function($query){
-                        //$query->where('key', '=', 'value');
-                    })
-                    ->whereDoesntHave('qualityRecordInputScanDataStatusFinishing', function($query){
-                        //$query->where('key', '=', 'value');
-                    })
                     ->get();
-                $qualityRecordInputScanDataArray->load(['company', 'strategicBusinessUnit', 'factory', 'line', 'customer', 'style', 'colour', 'export']);
-                
-                $standardSewingAuditObjectClone = clone $standardSewingAuditObject;
-                $standardDataSewingAuditArray = $standardSewingAuditObjectClone->standardDataSewingAudit()
-                    ->orderBy("batch_count_min", "asc")
-                    ->get();
+                $aualityRecordInputScanDataArray->load(['style']);
                 
                 $data['company_object'] = $companyObject;
                 $data['strategic_business_unit_object'] = $strategicBusinessUnitObject;
@@ -322,9 +147,7 @@ class QualityRecordSewingAuditController extends Controller
                 $data['style_object'] = $styleObject;
                 $data['colour_object'] = $colourObject;
                 $data['export_object'] = $exportObject;
-                $data['standard_sewing_audit_object'] = $standardSewingAuditObject;
-                $data['quality_record_input_scan_data_array'] = $qualityRecordInputScanDataArray;
-                $data['standard_data_sewing_audit_array'] = $standardDataSewingAuditArray;
+                $data['quality_record_input_scan_data_array'] = $aualityRecordInputScanDataArray;
                 unset($dataArray);
                 
                 // Commit transaction!
@@ -357,12 +180,103 @@ class QualityRecordSewingAuditController extends Controller
         //return Response::json( $data );
         //return redirect()->back();
         //$http_response_code = http_response_code();
-        if(view()->exists('quality_stage_sewing_audit_create')){
-            return View::make('quality_stage_sewing_audit_create', $data);
+        if(view()->exists('quality_record_input_scan_data')){
+            return View::make('quality_record_input_scan_data', $data);
         }else{
             return redirect()->back()->withInput();
         }
         
+    }
+    
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+        $dataArray = array();
+        $rules = array();
+        $date_today = Carbon::now();//->format('Y-m-d');
+        $current_user = null;
+        $data = array();
+        
+        // validate the info, create rules for the inputs
+        $rules = array(
+            'code' => 'required'
+        );
+        // run the validation rules on the inputs from the form
+        $validator = Validator::make(Input::all(), $rules);
+        // if the validator fails, redirect back to the form
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+            /*$data = array(
+                'title' => 'error',
+                'text' => $validator->errors()->first(),
+                'type' => 'warning',
+                'timer' => 3000
+            );
+            return (new CommonResponseResource( $data ))->additional(array(
+                'meta' => ['status_code' => HTTPStatusCodeEnum::HTTP_BAD_REQUEST]
+            ));*/
+        } else {
+            // do process
+            try {
+                // Start transaction!
+                DB::beginTransaction();
+                
+                $dataArray = array(
+                    'is_visible' => $request->input('is_visible', true),
+                    'is_active' => $request->input('is_active', true),
+                    'time_create' => $request->input('time_create', $date_today->format('Y-m-d H:i:s')),
+                    'code' => $request->input('code'),
+                    'count_data' => $request->input('count_data'),
+                    'company_id' => $request->session()->get('setup_configuration_company_id'),
+                    'strategic_business_unit_id' => $request->session()->get('setup_configuration_strategic_business_unit_id'),
+                    'factory_id' => $request->session()->get('setup_configuration_factory_id'),
+                    'line_id' => $request->session()->get('setup_configuration_line_id'),
+                    'style_id' => $request->input('style_id'),
+                    'user_id_create' => auth()->user()->id,
+                    'ip_address' => $request->ip()
+                );
+                
+                $qualityRecordInputScanDataObject = QualityRecordInputScanData::create( $dataArray );
+                unset($dataArray);
+                $data['quality_record_input_scan_data_object'] = $qualityRecordInputScanDataObject;
+
+                unset($dataArray);
+                // Commit transaction!
+                DB::commit();
+            }catch(Exception $e){
+                // Rollback transaction!
+                DB::rollback(); 
+                //return redirect()->back()->withInput();
+                $data = array(
+                    'title' => 'error',
+                    'text' => 'error',
+                    'type' => 'warning',
+                    'timer' => 3000
+                );
+                return (new CommonResponseResource( $data ))->additional(array(
+                    'meta' => ['status_code' => HTTPStatusCodeEnum::HTTP_BAD_REQUEST]
+                ));
+            }
+        }
+        
+        //unset data
+        unset( $dataArray );
+        unset( $rules );
+        unset( $date_today );
+        unset( $current_user );
+        //unset( $data );
+        
+        if( (Route::has('qualityRecordInputScanData.create')) ){
+            return redirect()->route('qualityRecordInputScanData.create');
+        }else{
+            return redirect()->back()->withInput();
+        }
     }
     
 }

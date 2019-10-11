@@ -75,6 +75,8 @@ class FinishingController extends Controller
         $current_user = null;
         $data = array();
         
+        //$request->session()->flush();
+        
         if( ($request->has('company_id')) && ($request->filled('company_id')) ){
             $company_id = $request->input('company_id', null);
             $request->session()->put('setup_configuration_company_id', $company_id);

@@ -45,6 +45,7 @@ class CreateQualityRecordInputScanDataTable extends Migration
             $table->string('user_id_create')->nullable()->comment('comment');//->index()
             $table->string('ip_address')->nullable()->comment('comment');//->index()
             $table->unsignedBigInteger('status_id')->unsigned()->nullable()->comment('comment');//->index()
+            $table->string('size_id')->nullable()->comment('comment');//->index()
             //$table->text('description')->default(null)->nullable()->comment('comment'); 
             //$table->nullableMorphs('scannable');
         });

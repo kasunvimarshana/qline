@@ -606,7 +606,7 @@ class DefectCategoryController extends Controller
 
                 // get data
                 $queryResult = $query->get();
-                $queryResult->load(['defects']);
+                $queryResult->load(['defects', 'colour']);
 
                 $recordsTotal = $recordsFiltered;
                 

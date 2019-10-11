@@ -37,7 +37,7 @@ $(function(){
     }
     
     var selectOptionObject = $( optionData.id ).select2({
-        //theme : 'bootstrap',
+        theme : 'bootstrap',
         //disabled : false,
         scrollAfterSelect : true,
         closeOnSelect : false,

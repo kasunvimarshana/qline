@@ -10,7 +10,7 @@ $(function(){
     optionData.id = "#standard_sewing_audit_id";
     
     var selectOptionObject = $( optionData.id ).select2({
-        //theme : 'bootstrap',
+        theme : 'bootstrap',
         //disabled : false,
         //scrollAfterSelect : true,
         closeOnSelect : true,

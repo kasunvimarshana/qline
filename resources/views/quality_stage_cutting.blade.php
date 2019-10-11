@@ -63,7 +63,7 @@
                                                     <!-- col -->
                                                     <div class="col-sm-12 p-0 m-0">
                                                         <!-- form -->
-                                                        <form action="{!! route('home') !!}" method="POST" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
+                                                        <form action="{!! route('qualityRecordCutting.store', []) !!}" method="POST" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
                                                             @csrf
                                                             <!-- form-group-row -->
                                                             <div class="row col border border-danger rounded shadow-sm m-1">
@@ -94,10 +94,10 @@
                                                                     
                                                                     <!-- form-group -->
                                                                     <div class="form-group row col-sm-4">
-                                                                        <label for="severity_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Severity</label>
+                                                                        <label for="severity" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Severity</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-md" id="severity_id" name="severity_id" placeholder="Severity" value="{{ old('severity_id') }}" required="required"/>
+                                                                            <input type="text" class="form-control form-control-md" id="severity" name="severity" placeholder="Severity" value="{{ old('severity') }}" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -105,10 +105,10 @@
                                                                     
                                                                     <!-- form-group -->
                                                                     <div class="form-group row col-sm-4">
-                                                                        <label for="count" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Count</label>
+                                                                        <label for="count_defect" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Count</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-md" id="count" name="count" placeholder="Count" value="{{ old('count') }}" required/>
+                                                                            <input type="text" class="form-control form-control-md" id="count_defect" name="count_defect" placeholder="Count" value="{{ old('count_defect') }}" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -119,7 +119,7 @@
                                                                         <!-- label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Label</label -->
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <textarea type="text" class="form-control form-control-md" id="description" name="description" placeholder="Corrective / Preventive Action to be taken" value="{{ old('description') }}" rows="5" required></textarea>
+                                                                            <textarea type="text" class="form-control form-control-md" id="action_to_be_taken" name="action_to_be_taken" placeholder="Corrective / Preventive Action to be taken" value="{{ old('action_to_be_taken') }}" rows="5" required="required"></textarea>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>

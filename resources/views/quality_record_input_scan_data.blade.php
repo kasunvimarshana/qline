@@ -88,7 +88,7 @@
                                                                                 <!-- col -->
                                                                                 <div class="col-sm-12">
                                                                                     <!-- form -->
-                                                                                    <form action="{!! route('home') !!}" method="POST" class="col col-sm-8" autocomplete="off" id="form1" enctype="multipart/form-data">
+                                                                                    <form action="{!! route('qualityRecordInputScanData.store', []) !!}" method="POST" class="col col-sm-8" autocomplete="off" id="form1" enctype="multipart/form-data">
                                                                                         @csrf
                                                                                         <!-- form-group-row -->
                                                                                         <div class="row">
@@ -98,7 +98,7 @@
                                                                                                 <label for="code" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Code</label>
                                                                                                 <div class="col">
                                                                                                     <!-- p class="form-control-static"></p -->
-                                                                                                    <input type="text" class="form-control form-control-md" id="code" name="code" placeholder="Code" value="{{ old('code') }}" required/>
+                                                                                                    <input type="text" class="form-control form-control-md" id="code" name="code" placeholder="Code" value="{{ old('code') }}" required="required"/>
                                                                                                 </div>
                                                                                                 <!-- span id="form-control" class="help-block"></span -->
                                                                                             </div>
@@ -106,10 +106,10 @@
                                                                                             
                                                                                             <!-- form-group -->
                                                                                             <div class="form-group row col-sm-12 m-1">
-                                                                                                <label for="size" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Size</label>
+                                                                                                <label for="count_data" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Size</label>
                                                                                                 <div class="col">
                                                                                                     <!-- p class="form-control-static"></p -->
-                                                                                                    <input type="text" class="form-control form-control-md" id="size" name="size" placeholder="Size" value="{{ old('size') }}" required/>
+                                                                                                    <input type="text" class="form-control form-control-md" id="count_data" name="count_data" placeholder="Size" value="{{ old('count_data') }}" required="required"/>
                                                                                                 </div>
                                                                                                 <!-- span id="form-control" class="help-block"></span -->
                                                                                             </div>
@@ -117,10 +117,14 @@
                                                                                             
                                                                                             <!-- form-group -->
                                                                                             <div class="form-group row col-sm-12 m-1">
-                                                                                                <label for="style" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Style</label>
+                                                                                                <label for="style_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Style</label>
                                                                                                 <div class="col">
                                                                                                     <!-- p class="form-control-static"></p -->
-                                                                                                    <input type="text" class="form-control form-control-md" id="style" name="style" placeholder="Style" value="{{ old('style') }}" required/>
+                                                                                                    <div class="input-group h-100">
+                                                                                                        <select class="form-control form-control-md select2" id="style_id" name="style_id" value="{{ old('style_id') }}" data-placeholder="Style" style="width: 100%;" required="required" readonly="readonly">
+                                                                                                            <!-- option> Option </option -->
+                                                                                                        </select>
+                                                                                                    </div>
                                                                                                 </div>
                                                                                                 <!-- span id="form-control" class="help-block"></span -->
                                                                                             </div>
@@ -190,31 +194,29 @@
                                                                                             </tr>
                                                                                         </thead>
                                                                                         <tbody>
-                                                                                           <!-- @for($i =1; $i <= 5; $i++) -->                 
+                                                                                           <!-- @foreach($quality_record_input_scan_data_array as $key => $value) -->                 
                                                                                            <!-- tr -->
                                                                                            <tr>
-                                                                                                <th scope="row"># {{ $i }}</th>
-                                                                                                <td>Code {{ $i }}</td>
-                                                                                                <td>Style {{ $i }}</td>
-                                                                                                <td>{{ $i }}</td>
+                                                                                                <th scope="row"># {{ ($key + 1) }}</th>
+                                                                                                <td>{{ $value->code }}</td>
+                                                                                                <td>
+                                                                                                    @if($value->style)
+                                                                                                    {{ $value->style->name }}
+                                                                                                    @endif
+                                                                                                </td>
+                                                                                                <td>{{ $value->count_data }}</td>
                                                                                                 <td>
                                                                                                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown" tabindex="-1">
                                                                                                         <div class="btn-group" role="group">
                                                                                                             <!-- button type="button" role="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split">Action</button -->
-                                                                                                            <button id="btnGroupDrop_1_{{ $i }}" type="button" role="button" class="btn btn-outline-primary" data-toggle="dropdown"
+                                                                                                            <button id="group_drop_1_{{ $key }}" type="button" role="button" class="btn btn-outline-primary" data-toggle="dropdown"
                                                                                                             aria-haspopup="true" aria-expanded="false">
                                                                                                                 <i class="fas fa-cogs fa-fw" aria-hidden="true"></i>
                                                                                                                 <span class="sr-only">Toggle Dropdown</span>
                                                                                                             </button>
-                                                                                                            <div class="dropdown-menu text-wrap text-break bg-light border-light" aria-labelledby="btnGroupDrop_1_{{ $i }}">
+                                                                                                            <div class="dropdown-menu text-wrap text-break bg-light border-light" aria-labelledby="group_drop_1_{{ $key }}">
                                                                                                                 <!-- span class="dropdown-item-text ">Title</span -->
                                                                                                                 <!-- div class="dropdown-item dropdown-divider"></div -->
-                                                                                                                <div class="dropdown-item btn-group  pl-1 pr-1 m-0" role="group" aria-label="Button Group">
-                                                                                                                    <button type="button" role="button" class="btn btn-outline-primary btn-block waves-effect">
-                                                                                                                    <i class="far fa-edit fa-fw" aria-hidden="true"></i>
-                                                                                                                    <span class="sr-only">Action</span>
-                                                                                                                    </button>
-                                                                                                                </div>
                                                                                                                 <div class="dropdown-item btn-group  pl-1 pr-1 m-0" role="group" aria-label="Button Group">
                                                                                                                     <button type="button" role="button" class="btn btn-outline-primary btn-block waves-effect">
                                                                                                                     <i class="far fa-trash-alt fa-fw" aria-hidden="true"></i>
@@ -227,7 +229,7 @@
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <!-- /.tr -->                 
-                                                                                            <!-- @endfor -->
+                                                                                            <!-- @endforeach -->
                                                                                         </tbody>
 
                                                                                     </table>
@@ -284,3 +286,45 @@
 </div>
 <!-- /.row -->
 @endsection
+
+@section('section_script_document')
+    @parent
+    @includeIf('partials.script.select_style', array());
+@endsection
+
+@push('stack_script')
+<script>
+    $(function(){
+        "use strict";
+        @php
+            $setup_configuration_style_id = null;
+            if( (session()->has('setup_configuration_style_id')) && (session()->exists('setup_configuration_style_id')) ){
+                $setup_configuration_style_id = session()->get('setup_configuration_style_id', null);
+            }else if( (old('style_id')) ){
+                $setup_configuration_style_id = old('style_id');
+            }else{
+                $setup_configuration_style_id = null;
+            }
+        @endphp
+        $("#style_id").select2("trigger", "select", {
+            data: { id: "{!! $setup_configuration_style_id !!}" }
+        });
+    });
+</script>
+@endpush
+
+@push('stack_script')
+<script>
+    $(function(){
+        "use strict";
+        var control_button_home = $("#control_button_home");
+        control_button_home.attr("aria-controls", function(index, currentvalue){
+            return (currentvalue + "");
+        });
+        $("#id_nav_container_1").removeClass("collapse");
+        $("#id_nav_container_1").removeClass("multi-collapse");
+        $("#id_nav_container_1").removeClass("show");
+        $("#id_nav_container_1").addClass("show");
+    });
+</script>
+@endpush

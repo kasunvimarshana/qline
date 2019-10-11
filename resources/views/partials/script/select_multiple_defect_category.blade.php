@@ -6,8 +6,8 @@ $(function(){
         theme: "bootstrap"
     });*/
     var optionData = new Object();//{};
-    optionData.url = "{!! route('defect.selectAllDefects', []) !!}";
-    optionData.id = "#defect_id";
+    optionData.url = "{!! route('defectCategory.selectAllDefectCategories', []) !!}";
+    optionData.id = "#defect_category_id";
     
     function getFormatResult(param){
         if (!param.id){
@@ -16,13 +16,7 @@ $(function(){
         var colour_code = null;
         if( (param.data) ){
             var data = param.data;
-            if( (data.defect_category) ){
-                var defect_category = data.defect_category;
-                if( (defect_category.colour) ){
-                    var colour = defect_category.colour;
-                    colour_code = colour.code;
-                }
-            }else if( (data.colour) ){
+            if( (data.colour) ){
                 var colour = data.colour;
                 colour_code = colour.code;
             }
@@ -39,18 +33,14 @@ $(function(){
     var selectOptionObject = $( optionData.id ).select2({
         theme : 'bootstrap',
         //disabled : false,
-        //scrollAfterSelect : true,
-        closeOnSelect : true,
+        scrollAfterSelect : true,
+        closeOnSelect : false,
         //containerCssClass : ':all:',
         //dropdownCssClass : 'class',
         width : 'resolve',
-        //allowClear : true,
-        formatResult : function(param){
-            return getFormatResult(param);
-        },
-        formatSelection : function(param){
-            return getFormatResult(param);
-        },
+        allowClear : true,
+        formatResult : getFormatResult,
+        formatSelection : getFormatResult,
         templateResult : function(data) {
             return getFormatResult(data);
         },
@@ -64,7 +54,7 @@ $(function(){
         //tags : [],
         //tokenSeparators : [],
         //minimumInputLength : 2,
-        multiple : false,
+        multiple : true,
         escapeMarkup : function (markup) { return markup; },
         data : [],
         //data : function(){ return {results: selections} },
@@ -74,7 +64,7 @@ $(function(){
             quietMillis: 10,
             // dataType: 'json',
             delay : 10,
-            data : function (params) {console.log(params.page);
+            data : function (params) {
                 var query = {
                     search : params.term, // $.trim(params.term)
                     active : true,
@@ -101,54 +91,7 @@ $(function(){
                 };
             }
         },
-        initSelection: function(element, callback) {
-            // the input tag has a value attribute preloaded that points to a preselected repository's id
-            // this function resolves that id attribute to an object that select2 can render
-            // using its formatResult renderer - that way the repository name is shown preselected
-            /*
-            var data = [];
-            $(element.val()).each(function () {
-                data.push({id: this, text: this});
-            });
-            */
-            var element_value = $(element).val();
-            if( (typeof element_value === "undefined") || (element_value === void(0)) || (element_value == "") || (element_value == null) ){
-                //console.log(element_value);
-            }else{
-                $.ajax({
-                    type : 'GET', // define the type of HTTP verb we want to use (POST for our form)
-                    url : optionData.url, // the url where we want to POST
-                    data : {
-                        'id' : element_value
-                    }, // our data object
-                    quietMillis: 10,
-                    delay : 10,
-                    //dataType : 'json', // what type of data do we expect back from the server
-                    //encode : true,
-                    //processData : false,
-                    //contentType : false,
-                    cache : false
-                })
-                // using the done promise callback
-                .done(function(data) {
-                    //console.log(data);
-                    var data = $.map(data.data, function (obj) {
-                        return {
-                            id : obj.id, 
-                            text : ( obj.name || obj.code ), 
-                            data: obj
-                        };
-                    });
-                    callback(data);
-                })
-                .fail(function() {
-                    //console.log("error");
-                })
-                .always(function() {
-                    //console.log("complete" );
-                });
-            }
-        },
+        //initSelection: function(element, callback) {},
         //sortResults: function(results, container, query) {},
         /*query: function (query) {
             var data = {results: []}, i, j, s;

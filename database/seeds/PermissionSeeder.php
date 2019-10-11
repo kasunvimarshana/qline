@@ -44,7 +44,7 @@ class PermissionSeeder extends Seeder
         
         //$newPermission->roles()->attach($newRole);
         //$newPermission->roles()->sync($newRole);
-        $newPermission->roles()->syncWithoutDetaching($newRole
+        $newPermission->roles()->syncWithoutDetaching($newRole);
                                                       
         $newPermission = Permission::firstOrCreate([
             'slug' => 'create-quality_record_cutting',

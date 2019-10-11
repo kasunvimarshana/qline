@@ -26,7 +26,7 @@ class QualityRecordDataCutting extends Model
     //protected $appends = array('field1', 'field2');
     //protected $attributes = array();
     //protected $guarded = array();
-    protected $fillable = array('id', 'is_visible', 'is_active', 'time_create', 'quality_record_cutting_id', 'status_id', 'description', 'user_id_create', 'measure_point_id', 'defect_category_id', 'defect_id', 'count_defect');
+    protected $fillable = array('id', 'is_visible', 'is_active', 'time_create', 'quality_record_cutting_id', 'status_id', 'description', 'user_id_create', 'measure_point_id', 'defect_category_id', 'defect_id', 'count_defect', 'severity', 'action_to_be_taken');
     //protected $hidden = array();
     //protected $casts = array();
     /**

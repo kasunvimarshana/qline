@@ -8,11 +8,11 @@
 .select2-selection{
     width: 100%;
 }
-.select2-selection, .select2-selection--single{
+.select2-selection, .select2-selection--single, .select2-selection--multiple{
     height: 100% !important;
     max-width: 100% !important;
 }
-.select2-container .wrap.select2-selection--single .select2-selection__rendered .select2-selection--multiple .select2-selection__choice{
+.select2-container, .wrap.select2-selection--single, .select2-selection__rendered, .select2-selection--multiple, .select2-selection__choice{
     white-space: normal !important;
     word-break: break-word!important;
     overflow-wrap: break-word!important;
@@ -65,4 +65,8 @@
     background-repeat: no-repeat;
     background-blend-mode: screen;
     backdrop-filter: none;
+}
+
+span.selection{
+    height: 100% !important;
 }

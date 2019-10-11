@@ -83,7 +83,11 @@
                                                                                                     <span class="text-wrap text-break">Team </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="badge badge-secondary text-wrap text-break">#Team</span>
+                                                                                                    <span class="badge badge-secondary text-wrap text-break">
+                                                                                                        @isset($line_object)
+                                                                                                        {{ $line_object->name }}
+                                                                                                        @endisset
+                                                                                                    </span>
                                                                                                 </span>
                                                                                             </div>
                                                                                         </li>
@@ -96,7 +100,11 @@
                                                                                                     <span class="text-wrap text-break">Buyer </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="badge badge-secondary text-wrap text-break">#Buyer</span>
+                                                                                                    <span class="badge badge-secondary text-wrap text-break">
+                                                                                                        @isset($customer_object)
+                                                                                                        {{ $customer_object->name }}
+                                                                                                        @endisset
+                                                                                                    </span>
                                                                                                 </span>
                                                                                             </div>
                                                                                         </li>
@@ -109,7 +117,11 @@
                                                                                                     <span class="text-wrap text-break">Style </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="badge badge-secondary text-wrap text-break">#Style</span>
+                                                                                                    <span class="badge badge-secondary text-wrap text-break">
+                                                                                                        @isset($style_object)
+                                                                                                        {{ $style_object->name }}
+                                                                                                        @endisset
+                                                                                                    </span>
                                                                                                 </span>
                                                                                             </div>
                                                                                         </li>
@@ -122,7 +134,11 @@
                                                                                                     <span class="text-wrap text-break">Colour </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="badge badge-secondary text-wrap text-break">#Colour</span>
+                                                                                                    <span class="badge badge-secondary text-wrap text-break">
+                                                                                                        @isset($colour_object)
+                                                                                                        {{ $colour_object->name }}
+                                                                                                        @endisset
+                                                                                                    </span>
                                                                                                 </span>
                                                                                             </div>
                                                                                         </li>
@@ -135,7 +151,11 @@
                                                                                                     <span class="text-wrap text-break">Export </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="badge badge-secondary text-wrap text-break">#Export</span>
+                                                                                                    <span class="badge badge-secondary text-wrap text-break">
+                                                                                                        @isset($export_object)
+                                                                                                        {{ $export_object->name }}
+                                                                                                        @endisset
+                                                                                                    </span>
                                                                                                 </span>
                                                                                             </div>
                                                                                         </li>
@@ -148,7 +168,11 @@
                                                                                                     <span class="text-wrap text-break">AQL </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="badge badge-secondary text-wrap text-break">#AQL</span>
+                                                                                                    <span class="badge badge-secondary text-wrap text-break">
+                                                                                                        @isset($standard_sewing_audit_object)
+                                                                                                        {{ $standard_sewing_audit_object->name }}
+                                                                                                        @endisset
+                                                                                                    </span>
                                                                                                 </span>
                                                                                             </div>
                                                                                         </li>
@@ -201,7 +225,7 @@
             <!-- col -->
             <div class="col col-sm-12">
                 <!-- form -->
-                <form action="{!! url('quality_stage_sewing_aql_audit_data') !!}" method="GET" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
+                <form action="{!! route('qualityRecordSewingAudit.create', []) !!}" method="GET" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
                     @csrf
                     <!-- form-group-row -->
                     <div class="row">
@@ -229,7 +253,7 @@
                                                 </button>
                                             <!-- /div -->
                                         </div>
-                                        <input type="text" class="form-control form-control-md" id="audit_frequency_time" name="audit_frequency_time" placeholder="Audit Seq" aria-label="Audit Seq" value="{{ old('audit_frequency_time') }}" aria-describedby="id_input_addon" readonly/>
+                                        <input type="text" class="form-control form-control-md" id="audit_frequency_time" name="audit_frequency_time" placeholder="Audit Seq" aria-label="Audit Seq" value="{{ old('audit_frequency_time') }}" aria-describedby="id_input_addon" readonly="readonly"/>
                                     </div>
                                 </div>
                                 <!-- span id="form-control" class="help-block"></span -->
@@ -250,7 +274,7 @@
                                                 </button>
                                             <!-- /div -->
                                         </div>
-                                        <input type="text" class="form-control form-control-md" id="batch_count" name="batch_count" placeholder="Lot Size Pcs" aria-label="Lot Size Pcs" value="{{ old('batch_count') }}" aria-describedby="id_input_addon" readonly/>
+                                        <input type="text" class="form-control form-control-md" id="batch_count" name="batch_count" placeholder="Lot Size Pcs" aria-label="Lot Size Pcs" value="{{ number_format( $count_data_sum ) }}" aria-describedby="id_input_addon" readonly="readonly"/>
                                     </div>
                                 </div>
                                 <!-- span id="form-control" class="help-block"></span -->
@@ -271,7 +295,7 @@
                                                 </button>
                                             <!-- /div -->
                                         </div>
-                                        <input type="text" class="form-control form-control-md" id="sample_count" name="sample_count" placeholder="Sample Pcs" aria-label="Sample Pcs" value="{{ old('sample_count') }}" aria-describedby="id_input_addon" readonly/>
+                                        <input type="text" class="form-control form-control-md" id="sample_count" name="sample_count" placeholder="Sample Pcs" aria-label="Sample Pcs" value="{{ number_format($standard_data_sewing_audit_object->count_sample) }}" aria-describedby="id_input_addon" readonly="readonly"/>
                                     </div>
                                 </div>
                                 <!-- span id="form-control" class="help-block"></span -->

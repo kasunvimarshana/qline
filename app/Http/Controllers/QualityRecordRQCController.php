@@ -178,7 +178,10 @@ class QualityRecordRQCController extends Controller
         $data = array();
         
         // validate the info, create rules for the inputs
-        $rules = array();
+        $rules = array(
+            'measure_point_id_array' => 'required',
+            'defect_id_array' => 'required'
+        );
         // run the validation rules on the inputs from the form
         $validator = Validator::make(Input::all(), $rules);
         // if the validator fails, redirect back to the form
@@ -206,7 +209,6 @@ class QualityRecordRQCController extends Controller
                     'attempt' => $request->input('attempt'),
                     'count_sample' => $request->input('count_sample'),
                     'inspection_stage_id' => $request->session()->get('setup_configuration_inspection_stage_id'),
-                    'standard_a_q_l_id' => $request->session()->get('setup_configuration_standard_r_q_c_id'),
                     'company_id' => $request->session()->get('setup_configuration_company_id'),
                     'strategic_business_unit_id' => $request->session()->get('setup_configuration_strategic_business_unit_id'),
                     'factory_id' => $request->session()->get('setup_configuration_factory_id'),
@@ -246,7 +248,7 @@ class QualityRecordRQCController extends Controller
                         'user_id_create' => auth()->user()->id,
                         'measure_point_id' => $measure_point_id_array[$key],
                         'defect_category_id' => $defectObject->defect_category_id,
-                        'defect_id' => $value
+                        'defect_id' => $defectObject->id
                     ]);
                     
                     $qualityRecordRQCObject->qualityRecordDataRQC()->save($qualityRecordDataRQCObject);
