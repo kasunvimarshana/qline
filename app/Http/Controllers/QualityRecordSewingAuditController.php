@@ -404,7 +404,20 @@ class QualityRecordSewingAuditController extends Controller
                 // Start transaction!
                 DB::beginTransaction();
                 
-                dd( $request->input("submit") );
+                if( ($request->has('submit')) && ($request->filled('submit')) ){
+                    $submit_value = $request->input("submit", null);
+                    $submit_value_pass = "pass";
+                    $submit_value_fail = "fail";
+                    $submit_value_suspend = "suspend";
+                    
+                    if( (strcasecmp($submit_value, $submit_value_pass) == 0) ){
+                        $query = $query->where('is_visible', '=', true);
+                    }else if( (strcasecmp($submit_value, $submit_value_fail) == 0) ){
+                        $query = $query->where('is_visible', '=', false);
+                    }else if( (strcasecmp($submit_value, $submit_value_suspend) == 0) ){
+                        $query = $query->where('is_visible', '=', true);
+                    }
+                }
 
                 unset($dataArray);
                 // Commit transaction!
@@ -438,5 +451,10 @@ class QualityRecordSewingAuditController extends Controller
             return redirect()->back()->withInput();
         }
     }
+    
+    /*
+    *
+    **/
+    protected function store_
     
 }
