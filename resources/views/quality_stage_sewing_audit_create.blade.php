@@ -7,208 +7,6 @@
 
 @section('section_script_optional')
     @parent
-    <!-- -->
-    <!-- --------test-script-------- -->
-    <script>
-        $(function(){
-            $("button[data-select2-open-control]").each(function() {
-                var element = $( this );
-                var select2_id = element.attr("data-select2-open-control");
-                element.on("click", function(){
-                    var element_id = "#" + select2_id;
-                    //console.log( $(element_id).data('select2').isOpen() );
-                    //$(element_id).select2('isOpen');
-                    //$(element_id).hasClass("select2-hidden-accessible");
-                    //$(element_id).data('select2').toggleDropdown();
-                    if( (!$(element_id).select2('isOpen')) ){
-                        $(element_id).select2('open');
-                    }
-                });
-            });
-        });
-    </script>
-    <script>
-        $(function(){
-            $("button[data-select2-close-control]").each(function() {
-                var element = $( this );
-                var select2_id = element.attr("data-select2-close-control");
-                element.on("click", function(){
-                    var element_id = "#" + select2_id;
-                    //console.log( $(element_id).data('select2').isOpen() );
-                    //$(element_id).select2('isOpen');
-                    //$(element_id).hasClass("select2-hidden-accessible");
-                    //$(element_id).data('select2').toggleDropdown();
-                    if( ($(element_id).select2('isOpen')) ){
-                        $(element_id).select2('close');
-                    }
-                });
-            });
-        });
-    </script>
-    <!-- --------test-script-------- -->
-    <!-- --------test-script-------- -->
-    <script>
-        $(function(){
-            function format(param) {
-                if (!param.id){
-                    return param.text; // optgroup
-                }
-
-                var tempOptionObject = "<div class='text-wrap text-break w-100'>"
-                + "<p>" + param.text + "</p>"
-                + "</div>";
-
-                var optionObject = $(tempOptionObject);
-                return optionObject;
-            }
-
-            //$.fn.select2.defaults.set( "theme", "bootstrap" );
-            $("#defect_category").select2({
-            theme: 'bootstrap',
-            placeholder: "Select",
-            //disabled: false,
-            //scrollAfterSelect: true,
-            //closeOnSelect: false,
-            //containerCssClass: ':all:',
-            width: 'resolve',
-            scrollAfterSelect: true,
-            closeOnSelect: false,
-            allowClear: true,
-
-            formatResult: format,
-            formatSelection: format,
-            escapeMarkup: function(markup) {
-                return markup;
-            },
-            templateResult: function(data) {
-                //console.log(data);
-                //return data.text;
-                return format(data);
-            },
-            templateSelection: function(data) {
-                //console.log(data);
-                //return data.text;
-                return format(data);
-            },
-            data: []
-            });
-        });
-    </script>
-    <!-- --------test-script-------- -->
-    <!-- --------test-script-------- -->
-    <script>
-        $(function(){
-            function format(param) {
-                if (!param.id){
-                    return param.text; // optgroup
-                }
-
-                var tempOptionObject = "<div class='text-wrap text-break w-100'>"
-                + "<p>" + param.text + "</p>"
-                + "</div>";
-
-                var optionObject = $(tempOptionObject);
-                return optionObject;
-            }
-
-            //$.fn.select2.defaults.set( "theme", "bootstrap" );
-            $("#defect").select2({
-            theme: 'bootstrap',
-            placeholder: "Select",
-            //disabled: false,
-            //scrollAfterSelect: true,
-            //closeOnSelect: false,
-            //containerCssClass: ':all:',
-            width: 'resolve',
-            scrollAfterSelect: true,
-            closeOnSelect: false,
-            allowClear: true,
-
-            formatResult: format,
-            formatSelection: format,
-            escapeMarkup: function(markup) {
-                return markup;
-            },
-            templateResult: function(data) {
-                //console.log(data);
-                //return data.text;
-                return format(data);
-            },
-            templateSelection: function(data) {
-                //console.log(data);
-                //return data.text;
-                return format(data);
-            },
-            data: []
-            });
-        });
-    </script>
-    <!-- --------test-script-------- -->
-    <!-- --------test-script-------- -->
-    <script>
-        $(function(){
-            function format(param) {
-                if (!param.id){
-                    return param.text; // optgroup
-                }
-
-                var tempOptionObject = "<div class='text-wrap text-break w-100'>"
-                + "<p>" + param.text + "</p>"
-                + "</div>";
-
-                var optionObject = $(tempOptionObject);
-                return optionObject;
-            }
-
-            //$.fn.select2.defaults.set( "theme", "bootstrap" );
-            $("#operation").select2({
-            theme: 'bootstrap',
-            placeholder: "Select",
-            //disabled: false,
-            //scrollAfterSelect: true,
-            //closeOnSelect: false,
-            //containerCssClass: ':all:',
-            width: 'resolve',
-            scrollAfterSelect: true,
-            closeOnSelect: true,
-            allowClear: true,
-
-            formatResult: format,
-            formatSelection: format,
-            escapeMarkup: function(markup) {
-                return markup;
-            },
-            templateResult: function(data) {
-                //console.log(data);
-                //return data.text;
-                return format(data);
-            },
-            templateSelection: function(data) {
-                //console.log(data);
-                //return data.text;
-                return format(data);
-            },
-            data: []
-            });
-        });
-    </script>
-    <!-- --------test-script-------- -->
-    <!-- --------test-script-------- -->
-    <script>
-        $(function(){
-            $("#id_left_control_div").collapse("hide");
-            $("#id_right_control_div").collapse("hide");
-        });
-    </script>
-    <!-- --------test-script-------- -->
-    <!-- --------test-script-------- -->
-    <script>
-        $(document).ready(function(){
-            $('#tableId_1').DataTable();
-        }); 
-    </script>
-    <!-- --------test-script-------- -->
-    <!-- -->
 @endsection
 
 @section('contant')
@@ -300,7 +98,7 @@
                                                                             <!-- label for="name" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Label</label -->
                                                                             <div class="col">
                                                                                 <!-- p class="form-control-static"></p -->
-                                                                                <input type="checkbox" class="form-control form-check-input" id="id_{{ $key }}" name="name_{{ $key }}" data-toggle="toggle" data-size="md" data-onstyle="primary" data-offstyle="light" data-on="<i class='fas fa-toggle-on'></i>" data-off="<i class='fas fa-toggle-off'></i>"/>
+                                                                                <input type="checkbox" class="form-control form-check-input" id="input_check_id_{{ $key }}" name="name_{{ $key }}" data-toggle="toggle" data-size="md" data-onstyle="primary" data-offstyle="light" data-on="<i class='fas fa-toggle-on'></i>" data-off="<i class='fas fa-toggle-off'></i>"/>
                                                                             </div>
                                                                             <!-- span id="form-control" class="help-block"></span -->
                                                                         </div>
@@ -308,7 +106,43 @@
                                                                         <!-- -->
                                                                     </td>
                                                                 </tr>
-                                                                <!-- /.tr -->                 
+                                                                <!-- /.tr -->  
+                                                                
+                                                                @push('stack_script')
+                                                                <script>
+                                                                    $(function(){
+                                                                        $("#input_check_id_{{ $key }}").on("change", function(event){
+                                                                            var quality_record_input_scan_data_id = null;
+                                                                            var code = null;
+                                                                            var count_data = null;
+                                                                            @isset( ($value->code) ){
+                                                                                quality_record_input_scan_data_id = "{!! $value->id !!}";
+                                                                            }
+                                                                            @endisset
+                                                                            @isset( ($value->code) ){
+                                                                                code = "{!! $value->code !!}";
+                                                                            }
+                                                                            @endisset
+                                                                            @isset( ($value->code) ){
+                                                                                count_data = {!! $value->count_data !!};
+                                                                            }
+                                                                            @endisset
+                                                                            
+                                                                            var data = new Object();
+                                                                            data.code = code;
+                                                                            data.quality_record_input_scan_data_id = quality_record_input_scan_data_id;
+                                                                            data.count_data = count_data;
+                                                                            
+                                                                            if( ($(this).prop('checked')) ){
+                                                                               createInputScanDataElement( data );
+                                                                            }else{
+                                                                                deleteInputScanDataElement( data );
+                                                                            }
+                                                                            //var input_value = 
+                                                                        });
+                                                                    });
+                                                                </script>
+                                                                @endpush
                                                                 <!-- @endforeach -->
                                                             </tbody>
 
@@ -351,6 +185,18 @@
                             <i class="fab fa-buromobelexperte fa-fw"></i>
                             <!-- span class="text-decoration-none text-justify small"> - </span -->
                             </button>
+                            <span class="text-decoration-none text-justify small text-white"> Quality ( Selected ) : </span>
+                            <span class="text-monospace text-justify">
+                                <span class="badge badge-secondary text-wrap text-break" id="count_data">0</span>
+                            </span>
+                            <span class="text-decoration-none text-justify small text-white"> Count ( Sample ) : </span>
+                            <span class="text-monospace text-justify">
+                                <span class="badge badge-secondary text-wrap text-break" id="count_sample">0</span>
+                            </span>
+                            <span class="text-decoration-none text-justify small text-white"> Count ( Reject ) : </span>
+                            <span class="text-monospace text-justify">
+                                <span class="badge badge-secondary text-wrap text-break" id="count_reject">0</span>
+                            </span>
                         </h5>
                     </div>
 
@@ -365,8 +211,13 @@
                                 <!-- col -->
                                 <div class="col col-sm-8 align-self-center">
                                     <!-- form -->
-                                    <form action="{!! route('home') !!}" method="POST" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
+                                    <form action="{!! route('qualityRecordSewingAudit.store', []) !!}" method="POST" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
                                         @csrf
+                                        <!-- ------------------------------------------------------------------------------------- -->
+                                        <div id="form1_hidden_input_group" name="form1_hidden_input_group" class="d-none">
+
+                                        </div>
+                                        <!-- ------------------------------------------------------------------------------------- -->
                                         <!-- form-group-row -->
                                         <div class="row">
 
@@ -382,23 +233,19 @@
                                                 <!-- ------------------------------------------------------------------------- -->
                                                 <!-- form-group -->
                                                 <div class="form-group col col-12">
-                                                    <label for="operation" class="col col-lg-12 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Operation /Area /POM</label>
+                                                    <label for="measure_point_id" class="col col-lg-12 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Operation /Area /POM</label>
                                                     <div class="col col-lg-12">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group">
                                                             <div class="input-group-addon input-group-prepend">
                                                                 <!-- div class="input-group-text" -->
-                                                                    <button type="button" class="btn btn-outline-danger" id="submit" data-select2-open-control="operation" aria-disabled="false">
+                                                                    <button type="button" class="btn btn-outline-danger" id="submit" data-select2-open-control="measure_point_id" aria-disabled="false">
                                                                         <i class="fa fa-search" aria-hidden="true"></i>
                                                                     </button>
                                                                 <!-- /div -->
                                                             </div>
-                                                            <select class="form-control select2" id="operation" name="operation" value="{{ old('operation') }}" data-placeholder="Operation" required>
-
-                                                                <!-- @for($i =1; $i <= 5; $i++) -->
-                                                                <option>Operations {{ $i }}</option>
-                                                                <!-- @endfor -->
-
+                                                            <select class="form-control select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" data-placeholder="Operation">
+                                                                <!-- option> Option </option -->
                                                             </select>
                                                         </div>
                                                     </div>
@@ -409,27 +256,23 @@
                                                 <!-- ------------------------------------------------------------------------- -->
                                                 <!-- form-group -->
                                                 <div class="form-group col col-12">
-                                                    <label for="defect_category" class="col col-lg-12 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Defect Category</label>
+                                                    <label for="defect_category_id" class="col col-lg-12 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Defect Category</label>
                                                     <div class="col col-lg-12">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group">
                                                             <div class="input-group-addon input-group-prepend">
                                                                 <!-- div class="input-group-text" -->
-                                                                    <button type="button" class="btn btn-outline-danger" id="submit" data-select2-open-control="defect_category" aria-disabled="false">
+                                                                    <button type="button" class="btn btn-outline-danger" id="submit" data-select2-open-control="defect_category_id" aria-disabled="false">
                                                                         <i class="fa fa-search" aria-hidden="true"></i>
                                                                     </button>
                                                                 <!-- /div -->
                                                             </div>
-                                                            <select class="form-control select2 select2-multiple select2-allow-clear" id="defect_category" name="defect_category" value="{{ old('defect_category') }}" data-placeholder="Defect Category" aria-hidden="true" multiple="multiple" required>
-
-                                                                <!-- @for($i =1; $i <= 5; $i++) -->
-                                                                <option>Defect Category {{ $i }}</option>
-                                                                <!-- @endfor -->
-
+                                                            <select class="form-control select2 select2-multiple select2-allow-clear" id="defect_category_id" name="defect_category_id" value="{{ old('defect_category_id') }}" data-placeholder="Defect Category" aria-hidden="true" multiple="multiple">
+                                                                <!-- option> Option </option -->
                                                             </select>
                                                             <div class="input-group-addon input-group-append">
                                                                 <!-- div class="input-group-text" -->
-                                                                    <button type="button" class="btn btn-outline-danger" id="submit" data-select2-close-control="defect_category" aria-disabled="false">
+                                                                    <button type="button" class="btn btn-outline-danger" id="submit" data-select2-close-control="defect_category_id" aria-disabled="false">
                                                                         <i class="fa fa-plus" aria-hidden="true"></i>
                                                                     </button>
                                                                 <!-- /div -->
@@ -443,27 +286,23 @@
                                                 <!-- ------------------------------------------------------------------------- -->
                                                 <!-- form-group -->
                                                 <div class="form-group col col-12">
-                                                    <label for="defect" class="col col-lg-12 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Defect</label>
+                                                    <label for="defect_id" class="col col-lg-12 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Defect</label>
                                                     <div class="col col-lg-12">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group">
                                                             <div class="input-group-addon input-group-prepend">
                                                                 <!-- div class="input-group-text" -->
-                                                                    <button type="button" class="btn btn-outline-danger" id="submit" data-select2-open-control="defect" aria-disabled="false">
+                                                                    <button type="button" class="btn btn-outline-danger" id="submit" data-select2-open-control="defect_id" aria-disabled="false">
                                                                         <i class="fa fa-search" aria-hidden="true"></i>
                                                                     </button>
                                                                 <!-- /div -->
                                                             </div>
-                                                            <select class="form-control select2 select2-multiple select2-allow-clear" id="defect" name="defect" value="{{ old('defect') }}" data-placeholder="Defect" aria-hidden="true" multiple="multiple" required>
-
-                                                                <!-- @for($i =1; $i <= 5; $i++) -->
-                                                                <option>Defect {{ $i }}</option>
-                                                                <!-- @endfor -->
-
+                                                            <select class="form-control select2 select2-multiple select2-allow-clear" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" data-placeholder="Defect" aria-hidden="true" multiple="multiple">
+                                                                <!-- option> Option </option -->
                                                             </select>
                                                             <div class="input-group-addon input-group-append">
                                                                 <!-- div class="input-group-text" -->
-                                                                    <button type="button" class="btn btn-outline-danger" id="submit" data-select2-close-control="defect" aria-disabled="false">
+                                                                    <button type="button" class="btn btn-outline-danger" id="form_submit_id_1" data-select2-close-control="defect_id" aria-disabled="false">
                                                                         <i class="fa fa-plus" aria-hidden="true"></i>
                                                                     </button>
                                                                 <!-- /div -->
@@ -485,9 +324,9 @@
                                                             <!-- ------------------------------------------------------ -->
                                                             <div class="btn-toolbar" role="toolbar" aria-label="tool bar">
                                                                 <div class="btn-group btn-group-lg btn-group-justified w-100 m-1" role="group" aria-label="button group">
-                                                                    <button type="button" class="btn btn-success m-1" id="submit">Pass</button>
-                                                                    <button type="button" class="btn btn-danger m-1" id="submit">Fail</button>
-                                                                    <button type="button" class="btn btn-warning m-1" id="submit">Suspend</button>
+                                                                    <button type="submit" class="btn btn-success m-1" id="submit" name="submit" value="submit_pass">Pass</button>
+                                                                    <button type="submit" class="btn btn-danger m-1" id="submit" name="submit" value="submit_fail">Fail</button>
+                                                                    <button type="submit" class="btn btn-warning m-1" id="submit" name="submit" value="submit_suspend">Suspend</button>
                                                                 </div>
                                                             </div>
                                                             <!-- ------------------------------------------------------ -->
@@ -518,6 +357,62 @@
                 <!-- /.card -->
             </div>
             <!-- /.card-group -->
+            
+            <!-- ******************************************************************************************************************** -->
+            <!-- card-group -->
+            <div class="card-group">
+                <!-- card -->
+                <div class="card bg-secondary border-light">
+                    <div class="card-header" id="idCard_accordion_1_content_3">
+                        <h5 class="mb-0">
+                            <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse_accordion_1_content_3" aria-expanded="false" aria-controls="idCollapse_accordion_1_content_2" role="button" type="button">
+                            <i class="fab fa-buromobelexperte fa-fw"></i>
+                            <span class="text-decoration-none text-justify small"> List</span>
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="idCollapse_accordion_1_content_3" class="collapse hide" aria-labelledby="idCard_accordion_1_content_3" data-parent="#idCollapse_accordion_1_content_3">
+                        <div class="card-body bg-light" id="idCollapse_content_2_body">
+
+
+                            <!-- --- -->
+                            <!-- row -->
+                            <div class="row">
+                                <!-- col -->
+                                <div class="col-sm-12 table-responsive-sm">
+                                    <!-- table -->
+                                    <!-- class="table table-striped table-bordered dt-responsive nowrap" -->
+                                    <table id="tableId_1" class="table table-bordered" style="width:100%" width="100%" cellspacing="0" border="1" align="left">
+
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th scope="col">Operation</th>
+                                                <th scope="col">Defect Category</th>
+                                                <th scope="col">Defect</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableId_1_tbody">     
+                                            <!-- tr -->
+                                            <!-- /.tr -->                 
+                                        </tbody>
+
+                                    </table>
+                                    <!-- /.table -->
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- /.row -->
+                            <!-- --- -->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.card-group -->
+            <!-- ******************************************************************************************************************** -->
         </div>
         <!-- /.accordion -->
 
@@ -529,7 +424,352 @@
 
 @section('section_script_document')
     @parent
+    @includeIf('partials.script.select_measure_point', array())
+    @includeIf('partials.script.select_multiple_defect_category', array())
+    @includeIf('partials.script.select_multiple_defect', array())
+
+    <script>
+        function setQualityRecordInputScanDataValues( data ){
+            var standardDataSewingAuditArray = [];
+            @isset( $standard_data_sewing_audit_array )
+                @foreach( $standard_data_sewing_audit_array as $key => $value )
+                    @if( (isset($key)) && (isset($value)) )
+                        standardDataSewingAuditArray[{!! $key !!}] = {!! $value !!};
+                    @endif
+                @endforeach
+            @endisset
+            
+            //console.log("data");
+            var id_quality_record_input_scan_data_prefix = "quality_record_input_scan_data_id_array";
+            var form1_hidden_input_group = $("#form1_hidden_input_group");
+            var count_data = $("#count_data");
+            var count_sample = $("#count_sample");
+            var count_reject = $("#count_reject");
+            var count_data_sum = 0;
+            var input_quality_record_input_scan_data = form1_hidden_input_group.find( ("." + id_quality_record_input_scan_data_prefix) );
+            if( (input_quality_record_input_scan_data.length <= 0) ){
+                count_data.text( count_data_sum );
+            }else{
+                input_quality_record_input_scan_data.each(function( index, value ){
+                    var count_data_temp = $(value).data("count_data");
+                    count_data_temp = parseFloat(count_data_temp);
+                    count_data_sum = (count_data_sum + count_data_temp);
+                    count_data.text( count_data_sum );
+                });
+            }
+            
+            var standardDataSewingAuditObject = null;
+            $.each(standardDataSewingAuditArray, function(index, value){
+                if( (value.batch_count_min <= count_data_sum) ){
+                    if( (standardDataSewingAuditObject == null) ){
+                       standardDataSewingAuditObject = value;
+                    }else if( ((value.batch_count_min > standardDataSewingAuditObject.batch_count_min)) ){
+                        standardDataSewingAuditObject = value;
+                    }
+                }
+            });
+            
+            count_sample.text( standardDataSewingAuditObject.count_sample );
+            count_reject.text( standardDataSewingAuditObject.count_reject );
+        }
+        function createInputScanDataElement( data ){
+            //console.log( data );
+            var id_quality_record_input_scan_data_prefix = "quality_record_input_scan_data_id_array";
+            var form1_hidden_input_group = $("#form1_hidden_input_group");
+            deleteInputScanDataElement( data );
+            
+            var input_temp = $("<input/>");
+            input_temp.attr("id", (id_quality_record_input_scan_data_prefix + data.quality_record_input_scan_data_id));
+            input_temp.attr("name", (id_quality_record_input_scan_data_prefix + "[]"));
+            input_temp.attr("value", (data.quality_record_input_scan_data_id));
+            input_temp.attr("required", ("required"));
+            input_temp.attr("readonly", ("readonly"));
+            input_temp.data("count_data", data.count_data);
+            input_temp.addClass( id_quality_record_input_scan_data_prefix );
+            form1_hidden_input_group.append(input_temp);
+            setQualityRecordInputScanDataValues( data );
+        }
+    </script>
+    <script>
+        function deleteInputScanDataElement( data ){
+            //console.log( data );
+            var id_quality_record_input_scan_data_prefix = "quality_record_input_scan_data_id_array";
+            var form1_hidden_input_group = $("#form1_hidden_input_group");
+            form1_hidden_input_group.find( ("#" + id_quality_record_input_scan_data_prefix + data.quality_record_input_scan_data_id) ).remove();
+            setQualityRecordInputScanDataValues( data );
+        }
+    </script>
 @endsection
+
+@push('stack_script')
+<script>
+    $(function(){
+        $("button[data-select2-open-control]").each(function() {
+            var element = $( this );
+            var select2_id = element.attr("data-select2-open-control");
+            element.on("click", function(){
+                var element_id = "#" + select2_id;
+                //console.log( $(element_id).data('select2').isOpen() );
+                //$(element_id).select2('isOpen');
+                //$(element_id).hasClass("select2-hidden-accessible");
+                //$(element_id).data('select2').toggleDropdown();
+                if( (!$(element_id).select2('isOpen')) ){
+                    $(element_id).select2('open');
+                }
+            });
+        });
+    });
+</script>
+@endpush
+
+@push('stack_script')
+<script>
+    $(function(){
+        $("button[data-select2-close-control]").each(function() {
+            var element = $( this );
+            var select2_id = element.attr("data-select2-close-control");
+            element.on("click", function(){
+                var element_id = "#" + select2_id;
+                //console.log( $(element_id).data('select2').isOpen() );
+                //$(element_id).select2('isOpen');
+                //$(element_id).hasClass("select2-hidden-accessible");
+                //$(element_id).data('select2').toggleDropdown();
+                if( ($(element_id).select2('isOpen')) ){
+                    $(element_id).select2('close');
+                }
+            });
+        });
+    });
+</script>
+@endpush
+
+@push('stack_script')
+<script>
+    $(function(){
+        var form_submit_id_1 = $("#form_submit_id_1");
+        form_submit_id_1.on("click", function(event){
+            try{
+                form_submit_id_1.attr("disabled", true);
+            
+                var measure_point_id = $("#measure_point_id");
+                var defect_id = $("#defect_id");
+                var defect_category_id = $("#defect_category_id");
+                var count_defect = $("#count_defect");
+                var measure_point_id_value = null;
+                var defect_category_id_value = null;
+                var defect_id_value = null;
+
+                var id_temp = null;
+                var id_defect_id_prefix = "defect_id_array";
+                var id_measure_point_id_prefix = "measure_point_id_array";
+                var id_tr_prefix = "tr";
+
+                var form1_hidden_input_group = $("#form1_hidden_input_group");
+                var tableId_1_tbody = $("#tableId_1_tbody");
+
+                measure_point_id_value = measure_point_id.val();
+                defect_id_value = defect_id.val();
+
+                if( (typeof measure_point_id_value === "undefined") || 
+                    (measure_point_id_value === void(0)) || 
+                    (measure_point_id_value == "") || 
+                    (measure_point_id_value == null) ){
+                    //console.log(measure_point_id_value);
+                    throw "error";
+                    //return false;
+                }else if( (typeof defect_id_value === "undefined") || 
+                    (defect_id_value === void(0)) || 
+                    (defect_id_value == "") || 
+                    (defect_id_value == null) ){
+                    //console.log(defect_id_value);
+                    throw "error";
+                    //return false;
+                }else{
+                    id_temp = (Date.now() + "_" + (Math.floor(Math.random() * 26) + Date.now()));
+                    defect_id_value = $.makeArray( defect_id_value );
+
+                    $.each(defect_id_value, function( index, value ) {
+                        //console.log(index);
+                        //console.log(value);
+                        var input_temp = $("<input/>");
+                        input_temp.attr("id", (id_defect_id_prefix + id_temp));
+                        input_temp.attr("name", (id_defect_id_prefix + "[]"));
+                        input_temp.attr("value", (value));
+                        input_temp.attr("required", ("required"));
+                        input_temp.attr("readonly", ("readonly"));
+                        input_temp.addClass( id_defect_id_prefix );
+                        form1_hidden_input_group.append(input_temp);
+                        
+                        var input_temp = $("<input/>");
+                        input_temp.attr("id", (id_measure_point_id_prefix + id_temp));
+                        input_temp.attr("name", (id_measure_point_id_prefix + "[]"));
+                        input_temp.attr("value", (measure_point_id.val()));
+                        input_temp.attr("required", ("required"));
+                        input_temp.attr("readonly", ("readonly"));
+                        input_temp.addClass( id_measure_point_id_prefix );
+                        form1_hidden_input_group.append(input_temp);
+                        //input_temp = null;
+                        var tr_temp = $("<tr></tr>");
+                        var td_temp = $("<td></td>");
+                        
+                        var measure_point_id_data_temp = measure_point_id.select2('data');
+                        var defect_id_data_temp = defect_id.select2('data');
+                        measure_point_id_data_temp = $.makeArray(measure_point_id_data_temp);
+                        defect_id_data_temp = $.makeArray(defect_id_data_temp);
+                        $.each(measure_point_id_data_temp, function( k, v ){
+                            //console.log(key);
+                            //console.log(value);
+                            if( ((measure_point_id_value.localeCompare(v.id)) == 0) ){
+                                td_temp = $("<td></td>");
+                                td_temp.html(v.data.name);
+                                tr_temp.append(td_temp);
+                            }
+                        });
+                        $.each(defect_id_data_temp, function( k, v ){
+                            //console.log(key);
+                            //console.log(value);
+                            if( ((value.localeCompare(v.id)) == 0) ){
+                                td_temp = $("<td></td>");
+                                td_temp.html(v.data.name);
+                                tr_temp.append(td_temp);
+                                
+                                td_temp = $("<td></td>");
+                                if( (v.data) ){
+                                    var data = v.data;
+                                    if( (data.defect_category) ){
+                                        var defect_category = data.defect_category;
+                                        td_temp.html(defect_category.name);
+                                    }
+                                }
+                                tr_temp.append(td_temp);
+                            }
+                        });
+                        
+                        td_temp = $("<td></td>");
+                        td_temp.addClass("text-center");
+                        var btn_group_1 = $("<div></div>");
+                        btn_group_1.addClass("btn-group");
+                        btn_group_1.attr("role", "group");
+                        btn_group_1.attr("aria-label", "button group");
+                        btn_group_1.attr("tabindex", "-1");
+                        
+                        var btn_group_2 = $("<div></div>");
+                        btn_group_2.addClass("btn-group");
+                        btn_group_2.attr("role", "group");
+                        
+                        var button_1 = $("<button></button>");
+                        button_1.addClass("btn btn-outline-primary");
+                        button_1.attr("type", "button");
+                        button_1.attr("role", "button");
+                        button_1.attr("data-toggle", "dropdown");
+                        button_1.attr("aria-haspopup", "true");
+                        button_1.attr("aria-expanded", "false");
+                        button_1.attr("id", ("btn" + id_temp));
+                        
+                        var i_1 = $("<i></i>");
+                        i_1.addClass("fas fa-cogs fa-fw");
+                        i_1.attr("aria-hidden", "true");
+                        
+                        var span_1 = $("<span></span>");
+                        span_1.addClass("sr-only");
+                        span_1.text("Toggle Dropdown");
+                        
+                        button_1.append(i_1);
+                        button_1.append(span_1);
+                        
+                        var drop_down_menu_1 = $("<div></div>");
+                        drop_down_menu_1.addClass("dropdown-menu text-wrap text-break bg-light border-light");
+                        drop_down_menu_1.attr("aria-labelledby", ("btn" + id_temp));
+                        
+                        var drop_down_item_1 = $("<div></div>");
+                        drop_down_item_1.addClass("dropdown-item btn-group  pl-1 pr-1 m-0");
+                        drop_down_item_1.attr("role", "group");
+                        drop_down_item_1.attr("aria-label", "Button Group");
+                        
+                        var button_2 = $("<button></button>");
+                        button_2.addClass("btn btn-outline-primary btn-block waves-effect");
+                        button_2.attr("type", "button");
+                        button_2.attr("role", "button");
+                        button_2.off("click").on("click", function(e){
+                            e.preventDefault();
+                            //e.stopPropagation();
+                            var parent_tr = button_2.closest("tr");
+                            var control_input_id = parent_tr.data("control_input_id");
+                            form1_hidden_input_group.find( ("#" + id_defect_id_prefix + control_input_id) ).remove();
+                            form1_hidden_input_group.find( ("#" + id_measure_point_id_prefix + control_input_id) ).remove();
+                            parent_tr.remove();
+                            
+                            var count_defect_value = form1_hidden_input_group.find( ("." + id_defect_id_prefix) ).length;
+                            count_defect.val(function(index, currentvalue){
+                                return count_defect_value;
+                            });
+                        });
+                        
+                        var i_2 = $("<i></i>");
+                        i_2.addClass("far fa-trash-alt fa-fw");
+                        i_2.attr("aria-hidden", "true");
+                        
+                        var span_2 = $("<span></span>");
+                        span_2.addClass("sr-only");
+                        span_2.text("Action");
+                        
+                        button_2.append(i_2);
+                        button_2.append(span_2);
+                        
+                        drop_down_item_1.append(button_2);
+                        drop_down_menu_1.append(drop_down_item_1);
+                        btn_group_2.append(drop_down_menu_1);
+                        btn_group_2.append(button_1);
+                        btn_group_1.append(btn_group_2);
+                        td_temp.append(btn_group_1);
+                        tr_temp.append(td_temp);
+                        
+                        tr_temp.data("control_input_id", id_temp);
+                        tableId_1_tbody.append(tr_temp);
+                    });
+
+                    /*form1_hidden_input_group.find( ("." + id_defect_id_prefix) ).each(function( index, value ){
+                        //console.log(index);
+                        //console.log(value);
+                    });*/
+                    
+                    measure_point_id.val(null).trigger("change");
+                    defect_category_id.val(null).trigger("change");
+                    defect_id.val(null).trigger("change");
+                }
+                var count_defect_value = form1_hidden_input_group.find( ("." + id_defect_id_prefix) ).length;
+                count_defect.val(function(index, currentvalue){
+                    return count_defect_value;
+                });
+            }catch(error){
+                //console.log("error");
+                //console.log(error);
+            }finally{
+                //console.log("finally");
+                form_submit_id_1.attr("disabled", false);
+                //delete variable;
+            }
+        });
+    });
+</script>
+@endpush
+
+@push('stack_script')
+<script>
+    $(function(){
+        $("#id_left_control_div").collapse("hide");
+        $("#id_right_control_div").collapse("hide");
+    });
+</script>
+@endpush
+
+@push('stack_script')
+<script>
+    $(document).ready(function(){
+        $('#tableId_1').DataTable();
+    }); 
+</script>
+@endpush
 
 @push('stack_script')
 <script>

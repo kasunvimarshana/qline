@@ -238,7 +238,7 @@
                             <!-- -->
                             <!-- form-group -->
                             <div class="form-group col col-12">
-                                <label for="operation" class="col col-lg-12 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Operation /Area /POM</label>
+                                <label for="measure_point_id" class="col col-lg-12 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Operation /Area /POM</label>
                                 <div class="col col-lg-12">
                                     <!-- p class="form-control-static"></p -->
                                     <div class="input-group">

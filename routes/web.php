@@ -83,3 +83,4 @@ Route::get('quality-record-input-scan-data/create', array('uses' => 'QualityReco
 Route::post('quality-record-input-scan-data/store', array('uses' => 'QualityRecordInputScanDataController@store'))->name('qualityRecordInputScanData.store');
 
 Route::get('quality-record-sewing-audits/create', array('uses' => 'QualityRecordSewingAuditController@create'))->name('qualityRecordSewingAudit.create');
+Route::post('quality-record-sewing-audits/store', array('uses' => 'QualityRecordSewingAuditController@store'))->name('qualityRecordSewingAudit.store');
