@@ -255,7 +255,7 @@
                                                                 <td class="p-0 m-0">
                                                                     <i class="fa fa-arrow-alt-circle-right fa-fw text-white"></i>
                                                                     <span>
-                                                                        <a class="text-decoration-none text-justify text-white small" href="{!! url('user') !!}"> Add</a>
+                                                                        <a class="text-decoration-none text-justify text-white small" href="{!! route('user.create', []) !!}"> Add</a>
                                                                     </span>
                                                                 </td>
                                                             </tr>

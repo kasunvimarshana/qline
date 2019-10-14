@@ -6,11 +6,6 @@
 
 @section('section_script_optional')
     @parent
-    <script>
-        $(document).ready(function(){
-            $('#tableId_1').DataTable();
-        }); 
-    </script>
 @endsection
 
 @section('contant')
@@ -75,20 +70,26 @@
                                                                     <th scope="col">Booked Qty For Finishing</th>
                                                                     <th scope="col">Line</th>
                                                                     <th scope="col">Style</th>
-                                                                    <th scope="col">Size</th>
                                                                     <th scope="col">Select to Audit</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                               <!-- @for($i =1; $i <= 5; $i++) -->                 
+                                                               <!-- @foreach($quality_record_input_scan_data_array as $key => $value) -->                 
                                                                <!-- tr -->
                                                                <tr>
-                                                                    <th scope="row"># {{ $i }}</th>
-                                                                    <td>Bar Code {{ $i }}</td>
-                                                                    <td>{{ $i }}</td>
-                                                                    <td>Line {{ $i }}</td>
-                                                                    <td>Style {{ $i }}</td>
-                                                                    <td>{{ $i }}</td>
+                                                                    <th scope="row"># {{ ($key + 1) }}</th>
+                                                                    <td>{{ $value->code }}</td>
+                                                                    <td>{{ $value->count_data }}</td>
+                                                                    <td>
+                                                                        @if($value->line)
+                                                                        {{ $value->line->name }}
+                                                                        @endif
+                                                                    </td>
+                                                                    <td>
+                                                                        @if($value->style)
+                                                                        {{ $value->style->name }}
+                                                                        @endif
+                                                                    </td>
                                                                     <td>
                                                                         <!-- -->
                                                                         <!-- form-group -->
@@ -96,7 +97,7 @@
                                                                             <!-- label for="name" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Label</label -->
                                                                             <div class="col">
                                                                                 <!-- p class="form-control-static"></p -->
-                                                                                <input type="checkbox" class="form-control form-check-input" id="id_{{ $i }}" name="name_{{ $i }}" data-toggle="toggle" data-size="md" data-onstyle="primary" data-offstyle="light" data-on="<i class='fas fa-toggle-on'></i>" data-off="<i class='fas fa-toggle-off'></i>"/>
+                                                                                <input type="checkbox" class="form-control form-check-input" id="input_check_id_{{ $key }}" name="name_{{ $key }}" data-toggle="toggle" data-size="md" data-onstyle="primary" data-offstyle="light" data-on="<i class='fas fa-toggle-on'></i>" data-off="<i class='fas fa-toggle-off'></i>"/>
                                                                             </div>
                                                                             <!-- span id="form-control" class="help-block"></span -->
                                                                         </div>
@@ -104,8 +105,44 @@
                                                                         <!-- -->
                                                                     </td>
                                                                 </tr>
-                                                                <!-- /.tr -->                 
-                                                                <!-- @endfor -->
+                                                                <!-- /.tr -->  
+                                                                
+                                                                @push('stack_script')
+                                                                <script>
+                                                                    $(function(){
+                                                                        $("#input_check_id_{{ $key }}").on("change", function(event){
+                                                                            var quality_record_input_scan_data_id = null;
+                                                                            var code = null;
+                                                                            var count_data = null;
+                                                                            @isset( ($value->code) ){
+                                                                                quality_record_input_scan_data_id = "{!! $value->id !!}";
+                                                                            }
+                                                                            @endisset
+                                                                            @isset( ($value->code) ){
+                                                                                code = "{!! $value->code !!}";
+                                                                            }
+                                                                            @endisset
+                                                                            @isset( ($value->code) ){
+                                                                                count_data = {!! $value->count_data !!};
+                                                                            }
+                                                                            @endisset
+                                                                            
+                                                                            var data = new Object();
+                                                                            data.code = code;
+                                                                            data.quality_record_input_scan_data_id = quality_record_input_scan_data_id;
+                                                                            data.count_data = count_data;
+                                                                            
+                                                                            if( ($(this).prop('checked')) ){
+                                                                               createInputScanDataElement( data );
+                                                                            }else{
+                                                                                deleteInputScanDataElement( data );
+                                                                            }
+                                                                            //var input_value = 
+                                                                        });
+                                                                    });
+                                                                </script>
+                                                                @endpush
+                                                                <!-- @endforeach -->
                                                             </tbody>
 
                                                         </table>
@@ -161,8 +198,13 @@
                                 <!-- col -->
                                 <div class="col col-sm-8 align-self-center">
                                     <!-- form -->
-                                    <form action="{!! route('home') !!}" method="POST" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
+                                    <form action="{!! route('qualityRecordFinishing.store', []) !!}" method="POST" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
                                         @csrf
+                                        <!-- ------------------------------------------------------------------------------------- -->
+                                        <div id="form1_hidden_input_group" name="form1_hidden_input_group" class="d-none">
+
+                                        </div>
+                                        <!-- ------------------------------------------------------------------------------------- -->
                                         <!-- form-group-row -->
                                         <div class="row">
 
@@ -185,8 +227,8 @@
                                                             <!-- ------------------------------------------------------ -->
                                                             <div class="btn-toolbar" role="toolbar" aria-label="tool bar">
                                                                 <div class="btn-group btn-group-lg btn-group-justified w-100 m-1" role="group" aria-label="button group">
-                                                                    <button type="button" class="btn btn-success m-1" id="submit">Quantity Confirmed</button>
-                                                                    <button type="button" class="btn btn-warning m-1" id="submit">Suspend</button>
+                                                                    <button type="submit" class="btn btn-success m-1" id="submit" name="submit" value="submit_pass">Quantity Confirmed</button>
+                                                                    <button type="submit" class="btn btn-warning m-1" id="submit" name="submit" value="submit_suspend">Suspend</button>
                                                                 </div>
                                                             </div>
                                                             <!-- ------------------------------------------------------ -->
@@ -228,7 +270,62 @@
 
 @section('section_script_document')
     @parent
+
+    <script>
+        function setQualityRecordInputScanDataValues( data ){
+            //console.log("data");
+            var id_quality_record_input_scan_data_prefix = "quality_record_input_scan_data_id_array";
+            var form1_hidden_input_group = $("#form1_hidden_input_group");
+            var count_data = $("#count_data");
+            var count_data_sum = 0;
+            var input_quality_record_input_scan_data = form1_hidden_input_group.find( ("." + id_quality_record_input_scan_data_prefix) );
+            if( (input_quality_record_input_scan_data.length <= 0) ){
+                count_data.text( count_data_sum );
+            }else{
+                input_quality_record_input_scan_data.each(function( index, value ){
+                    var count_data_temp = $(value).data("count_data");
+                    count_data_temp = parseFloat(count_data_temp);
+                    count_data_sum = (count_data_sum + count_data_temp);
+                    count_data.text( count_data_sum );
+                });
+            }
+        }
+        function createInputScanDataElement( data ){
+            //console.log( data );
+            var id_quality_record_input_scan_data_prefix = "quality_record_input_scan_data_id_array";
+            var form1_hidden_input_group = $("#form1_hidden_input_group");
+            deleteInputScanDataElement( data );
+            
+            var input_temp = $("<input/>");
+            input_temp.attr("id", (id_quality_record_input_scan_data_prefix + data.quality_record_input_scan_data_id));
+            input_temp.attr("name", (id_quality_record_input_scan_data_prefix + "[]"));
+            input_temp.attr("value", (data.quality_record_input_scan_data_id));
+            input_temp.attr("required", ("required"));
+            input_temp.attr("readonly", ("readonly"));
+            input_temp.data("count_data", data.count_data);
+            input_temp.addClass( id_quality_record_input_scan_data_prefix );
+            form1_hidden_input_group.append(input_temp);
+            setQualityRecordInputScanDataValues( data );
+        }
+    </script>
+    <script>
+        function deleteInputScanDataElement( data ){
+            //console.log( data );
+            var id_quality_record_input_scan_data_prefix = "quality_record_input_scan_data_id_array";
+            var form1_hidden_input_group = $("#form1_hidden_input_group");
+            form1_hidden_input_group.find( ("#" + id_quality_record_input_scan_data_prefix + data.quality_record_input_scan_data_id) ).remove();
+            setQualityRecordInputScanDataValues( data );
+        }
+    </script>
 @endsection
+
+@push('stack_script')
+<script>
+    $(document).ready(function(){
+        $('#tableId_1').DataTable();
+    }); 
+</script>
+@endpush
 
 @push('stack_script')
 <script>

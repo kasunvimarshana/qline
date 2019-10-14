@@ -2,6 +2,7 @@
 
 @section('section_stylesheet_optional')
     @parent
+    <link rel="stylesheet" type="text/css" href="{!! asset('css/custom_style_select2_1.css') !!}"/>
     <!-- file-input-override-style -->
     <!-- some CSS styling changes and overrides -->
     <style>
@@ -107,7 +108,7 @@
                                 <!-- col -->
                                 <div class="col-sm-12">
                                     <!-- form -->
-                                    <form action="{!! route('home') !!}" method="POST" class="col col-sm-12" autocomplete="off" id="form1" enctype="multipart/form-data">
+                                    <form action="{!! route('user.store', []) !!}" method="POST" class="col col-sm-12" autocomplete="off" id="form1" enctype="multipart/form-data">
                                         @csrf
                                         <!-- form-group-row -->
                                         <div class="row">
@@ -148,19 +149,43 @@
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
                                                 <!-- /.form-group -->
-
+                                                
                                                 <!-- form-group -->
                                                 <div class="form-group row col-sm-12 m-1">
-                                                    <label for="company" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Company</label>
+                                                    <label for="password" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Password</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <select class="form-control form-control-md select2" id="company" name="company" value="{{ old('company') }}" data-placeholder="Company" style="width: 100%;" required>
-
-                                                            <!-- @for($i =1; $i <= 5; $i++) -->
-                                                            <option>Company {{ $i }}</option>
-                                                            <!-- @endfor -->
-
-                                                        </select>
+                                                        <input type="password" class="form-control form-control-md" id="password" name="password" placeholder="Password" value="{{ old('password') }}" required/>
+                                                    </div>
+                                                    <!-- span id="form-control" class="help-block"></span -->
+                                                </div>
+                                                <!-- /.form-group -->
+                                                
+                                                <!-- form-group -->
+                                                <div class="form-group row col-sm-12 m-1">
+                                                    <label for="company_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Company</label>
+                                                    <div class="col">
+                                                        <!-- p class="form-control-static"></p -->
+                                                        <div class="input-group h-100">
+                                                            <select class="form-control form-control-md select2" id="company_id" name="company_id" value="{{ old('company_id') }}" data-placeholder="Company" style="width: 100%;" required="required">
+                                                                <!-- option> Option </option -->
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <!-- span id="form-control" class="help-block"></span -->
+                                                </div>
+                                                <!-- /.form-group -->
+                                                
+                                                <!-- form-group -->
+                                                <div class="form-group row col-sm-12 m-1">
+                                                    <label for="strategic_business_unit_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">SBU</label>
+                                                    <div class="col">
+                                                        <!-- p class="form-control-static"></p -->
+                                                        <div class="input-group h-100">
+                                                            <select class="form-control form-control-md select2" id="strategic_business_unit_id" name="strategic_business_unit_id" value="{{ old('strategic_business_unit_id') }}" data-placeholder="SBU" style="width: 100%;" required="required">
+                                                                <!-- option> Option </option -->
+                                                            </select>
+                                                        </div>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
@@ -168,16 +193,14 @@
 
                                                 <!-- form-group -->
                                                 <div class="form-group row col-sm-12 m-1">
-                                                    <label for="department" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Department</label>
+                                                    <label for="department_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Department</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <select class="form-control form-control-md select2" id="department" name="department" value="{{ old('department') }}" data-placeholder="Department" style="width: 100%;" required>
-
-                                                            <!-- @for($i =1; $i <= 5; $i++) -->
-                                                            <option>Department {{ $i }}</option>
-                                                            <!-- @endfor -->
-
-                                                        </select>
+                                                        <div class="input-group h-100">
+                                                            <select class="form-control form-control-md select2" id="department_id" name="department_id" value="{{ old('department_id') }}" data-placeholder="Department" style="width: 100%;" required="required">
+                                                                <!-- option> Option </option -->
+                                                            </select>
+                                                        </div>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
@@ -185,16 +208,14 @@
 
                                                 <!-- form-group -->
                                                 <div class="form-group row col-sm-12 m-1">
-                                                    <label for="section" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Section</label>
+                                                    <label for="section_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Section</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <select class="form-control form-control-md select2" id="section" name="section" value="{{ old('section') }}" data-placeholder="Section" style="width: 100%;" required>
-
-                                                            <!-- @for($i =1; $i <= 5; $i++) -->
-                                                            <option>Section {{ $i }}</option>
-                                                            <!-- @endfor -->
-
-                                                        </select>
+                                                        <div class="input-group h-100">
+                                                            <select class="form-control form-control-md select2" id="section_id" name="section_id" value="{{ old('section_id') }}" data-placeholder="Section" style="width: 100%;" required="required">
+                                                                <!-- option> Option </option -->
+                                                            </select>
+                                                        </div>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
@@ -202,16 +223,14 @@
 
                                                 <!-- form-group -->
                                                 <div class="form-group row col-sm-12 m-1">
-                                                    <label for="factory" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Factory</label>
+                                                    <label for="factory_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Factory</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <select class="form-control form-control-md select2" id="factory" name="factory" value="{{ old('factory') }}" data-placeholder="Factory" style="width: 100%;" required>
-
-                                                            <!-- @for($i =1; $i <= 5; $i++) -->
-                                                            <option>Factory {{ $i }}</option>
-                                                            <!-- @endfor -->
-
-                                                        </select>
+                                                        <div class="input-group h-100">
+                                                            <select class="form-control form-control-md select2" id="factory_id" name="factory_id" value="{{ old('factory_id') }}" data-placeholder="Factory" style="width: 100%;" required="required">
+                                                                <!-- option> Option </option -->
+                                                            </select>
+                                                        </div>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
@@ -222,7 +241,7 @@
                                                     <label for="phone_mobile" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Mobile</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <input type="text" class="form-control form-control-md" id="phone_mobile" name="phone_mobile" placeholder="Mobile" value="{{ old('phone_mobile') }}" required/>
+                                                        <input type="text" class="form-control form-control-md" id="phone_mobile" name="phone_mobile" placeholder="Mobile" value="{{ old('phone_mobile') }}" required="required"/>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
@@ -290,8 +309,8 @@
                                                 <label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="role_1" name="role_1" value="{{ old('role_1') }}"/>
-                                                    <label class="custom-control-label form-check-label" for="role_1">Service Admin</label>
+                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="permission_1" name="permission_1" value="{{ old('permission_1') }}"/>
+                                                    <label class="custom-control-label form-check-label" for="permission_1">Service Admin</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
                                             </div>
@@ -302,8 +321,20 @@
                                                 <label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="role_2" name="role_2" value="{{ old('role_2') }}"/>
-                                                    <label class="custom-control-label form-check-label" for="role_2">Finishing 100% Measuring</label>
+                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_cutting" name="create-quality_record_cutting" value="create-quality_record_cutting"/>
+                                                    <label class="custom-control-label form-check-label" for="create-quality_record_cutting">Cutting</label>
+                                                </div>
+                                                <!-- span id="form-control" class="help-block"></span -->
+                                            </div>
+                                            <!-- /.form-group -->
+
+                                            <!-- form-group -->
+                                            <div class="form-group col col-md-6">
+                                                <label for="create-quality_record_sewing_check" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
+                                                <div class="col custom-control custom-switch form-check">
+                                                    <!-- p class="form-control-static"></p -->
+                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_sewing_check" name="create-quality_record_sewing_check" value="create-quality_record_sewing_check"/>
+                                                    <label class="custom-control-label form-check-label" for="create-quality_record_sewing_check">Sewing 100% Checking</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
                                             </div>
@@ -314,8 +345,20 @@
                                                 <label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="role_3" name="role_3" value="{{ old('role_3') }}"/>
-                                                    <label class="custom-control-label form-check-label" for="role_3">Sewing 100% Checking</label>
+                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="permission_4" name="permission_4" value="{{ old('permission_4') }}"/>
+                                                    <label class="custom-control-label form-check-label" for="permission_4">Finishing AQL Audit</label>
+                                                </div>
+                                                <!-- span id="form-control" class="help-block"></span -->
+                                            </div>
+                                            <!-- /.form-group -->
+
+                                            <!-- form-group -->
+                                            <div class="form-group col col-md-6">
+                                                <label for="create-quality_record_sewing_audit" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
+                                                <div class="col custom-control custom-switch form-check">
+                                                    <!-- p class="form-control-static"></p -->
+                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_sewing_audit" name="create-quality_record_sewing_audit" value="create-quality_record_sewing_audit"/>
+                                                    <label class="custom-control-label form-check-label" for="create-quality_record_sewing_audit">Sewing AQL Audit</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
                                             </div>
@@ -326,8 +369,8 @@
                                                 <label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="role_4" name="role_4" value="{{ old('role_4') }}"/>
-                                                    <label class="custom-control-label form-check-label" for="role_4">Finishing AQL Audit</label>
+                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="permission_6" name="permission_6" value="{{ old('permission_6') }}"/>
+                                                    <label class="custom-control-label form-check-label" for="permission_6">Dry Room 100% Checking</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
                                             </div>
@@ -335,11 +378,11 @@
 
                                             <!-- form-group -->
                                             <div class="form-group col col-md-6">
-                                                <label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
+                                                <label for="create-quality_record_finishing" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="role_5" name="role_5" value="{{ old('role_5') }}"/>
-                                                    <label class="custom-control-label form-check-label" for="role_5">Sewing AQL Audit</label>
+                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_finishing" name="create-quality_record_finishing" value="create-quality_record_finishing"/>
+                                                    <label class="custom-control-label form-check-label" for="create-quality_record_finishing">Finishing 100% Checking</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
                                             </div>
@@ -347,11 +390,11 @@
 
                                             <!-- form-group -->
                                             <div class="form-group col col-md-6">
-                                                <label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
+                                                <label for="create-quality_record_c_n_i" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="role_6" name="role_6" value="{{ old('role_6') }}"/>
-                                                    <label class="custom-control-label form-check-label" for="role_6">Dry Room 100% Checking</label>
+                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_c_n_i" name="create-quality_record_c_n_i" value="create-quality_record_c_n_i"/>
+                                                    <label class="custom-control-label form-check-label" for="create-quality_record_c_n_i">CTN Audit</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
                                             </div>
@@ -359,35 +402,11 @@
 
                                             <!-- form-group -->
                                             <div class="form-group col col-md-6">
-                                                <label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
+                                                <label for="create-quality_record_r_q_c" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="role_7" name="role_7" value="{{ old('role_7') }}"/>
-                                                    <label class="custom-control-label form-check-label" for="role_7">Finishing 100% Checking</label>
-                                                </div>
-                                                <!-- span id="form-control" class="help-block"></span -->
-                                            </div>
-                                            <!-- /.form-group -->
-
-                                            <!-- form-group -->
-                                            <div class="form-group col col-md-6">
-                                                <label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
-                                                <div class="col custom-control custom-switch form-check">
-                                                    <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="role_8" name="role_8" value="{{ old('role_8') }}"/>
-                                                    <label class="custom-control-label form-check-label" for="role_8">CTN Audit</label>
-                                                </div>
-                                                <!-- span id="form-control" class="help-block"></span -->
-                                            </div>
-                                            <!-- /.form-group -->
-
-                                            <!-- form-group -->
-                                            <div class="form-group col col-md-6">
-                                                <label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
-                                                <div class="col custom-control custom-switch form-check">
-                                                    <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="role_9" name="role_9" value="{{ old('role_9') }}"/>
-                                                    <label class="custom-control-label form-check-label" for="role_9">RQC</label>
+                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_r_q_c" name="create-quality_record_r_q_c" value="create-quality_record_r_q_c"/>
+                                                    <label class="custom-control-label form-check-label" for="create-quality_record_r_q_c">RQC</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
                                             </div>
@@ -503,4 +522,13 @@
     <!-- /.col -->
 </div>
 <!-- /.row -->
+@endsection
+
+@section('section_script_document')
+    @parent
+    @includeIf('partials.script.select_company', array())
+    @includeIf('partials.script.select_strategic_business_unit', array())
+    @includeIf('partials.script.select_department', array())
+    @includeIf('partials.script.select_section', array())
+    @includeIf('partials.script.select_factory', array())
 @endsection

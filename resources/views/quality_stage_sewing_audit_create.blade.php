@@ -185,17 +185,26 @@
                             <i class="fab fa-buromobelexperte fa-fw"></i>
                             <!-- span class="text-decoration-none text-justify small"> - </span -->
                             </button>
-                            <span class="text-decoration-none text-justify small text-white"> Quality ( Selected ) : </span>
+                            <span class="text-white"> | </span>
+                            <span class="text-decoration-none text-justify small text-white"> Booked Qty : </span>
                             <span class="text-monospace text-justify">
+                                <span class="text-white"> ( </span>
                                 <span class="badge badge-secondary text-wrap text-break" id="count_data">0</span>
+                                <span class="text-white"> ) pcs </span>
                             </span>
-                            <span class="text-decoration-none text-justify small text-white"> Count ( Sample ) : </span>
+                            <span class="text-white"> | </span>
+                            <span class="text-decoration-none text-justify small text-white"> AQL Audit Lot Size : </span>
                             <span class="text-monospace text-justify">
+                                <span class="text-white"> ( </span>
                                 <span class="badge badge-secondary text-wrap text-break" id="count_sample">0</span>
+                                <span class="text-white"> ) pcs </span>
                             </span>
-                            <span class="text-decoration-none text-justify small text-white"> Count ( Reject ) : </span>
+                            <span class="text-white"> | </span>
+                            <span class="text-decoration-none text-justify small text-white"> Pass Rate : </span>
                             <span class="text-monospace text-justify">
-                                <span class="badge badge-secondary text-wrap text-break" id="count_reject">0</span>
+                                <span class="text-white"> ( </span>
+                                <span class="badge badge-secondary text-wrap text-break" id="count_accept">0</span>
+                                <span class="text-white"> ) Defects </span>
                             </span>
                         </h5>
                     </div>
@@ -444,7 +453,7 @@
             var form1_hidden_input_group = $("#form1_hidden_input_group");
             var count_data = $("#count_data");
             var count_sample = $("#count_sample");
-            var count_reject = $("#count_reject");
+            var count_accept = $("#count_accept");
             var count_data_sum = 0;
             var input_quality_record_input_scan_data = form1_hidden_input_group.find( ("." + id_quality_record_input_scan_data_prefix) );
             if( (input_quality_record_input_scan_data.length <= 0) ){
@@ -470,7 +479,7 @@
             });
             
             count_sample.text( standardDataSewingAuditObject.count_sample );
-            count_reject.text( standardDataSewingAuditObject.count_reject );
+            count_accept.text( standardDataSewingAuditObject.count_accept );
         }
         function createInputScanDataElement( data ){
             //console.log( data );

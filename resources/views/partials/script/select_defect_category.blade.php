@@ -12,7 +12,7 @@ $(function(){
     var selectOptionObject = $( optionData.id ).select2({
         theme : 'bootstrap',
         //disabled : false,
-        //scrollAfterSelect : true,
+        scrollAfterSelect : false,
         closeOnSelect : true,
         //containerCssClass : ':all:',
         //dropdownCssClass : 'class',

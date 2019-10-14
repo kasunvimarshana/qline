@@ -55,7 +55,20 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(){}
+    public function create(Request $request){
+        //
+        $dataArray = array();
+        $rules = array();
+        $date_today = Carbon::now();//->format('Y-m-d');
+        $current_user = null;
+        $data = array();
+        
+        if(view()->exists('user')){
+            return View::make('user', array());
+        }else{
+            return redirect()->back()->withInput();
+        }
+    }
     
     /**
      * Store a newly created resource in storage.
@@ -104,7 +117,7 @@ class UserController extends Controller
                     'name_first' => $request->input('name_first'),
                     'name_last' => $request->input('name_last'),
                     'phone_mobile' => $request->input('phone_mobile'),
-                    'password' => $request->input('password'),
+                    'password' => Hash::make( $request->input('password') ),
                     'display_name' => $request->input('display_name'),
                     'image_uri' => $request->input('image_uri'),
                     'email' => $request->input('email'),
@@ -117,6 +130,37 @@ class UserController extends Controller
                 );
 
                 $userObject = User::create( $dataArray );
+                
+                if( (($request->has('create-quality_record_cutting')) && ($request->filled('create-quality_record_cutting'))) ){
+                    $create_quality_record_cutting = $request->input('create-quality_record_cutting');
+                    $userObject->givePermissionsTo( $create_quality_record_cutting );
+                }
+                
+                if( (($request->has('create-quality_record_sewing_check')) && ($request->filled('create-quality_record_sewing_check'))) ){
+                    $create_quality_record_sewing_check = $request->input('create-quality_record_sewing_check');
+                    $userObject->givePermissionsTo( $create_quality_record_sewing_check );
+                }
+                
+                if( (($request->has('create-quality_record_sewing_audit')) && ($request->filled('create-quality_record_sewing_audit'))) ){
+                    $create_quality_record_sewing_audit = $request->input('create-quality_record_sewing_audit');
+                    $userObject->givePermissionsTo( $create_quality_record_sewing_audit );
+                }
+                
+                if( (($request->has('create-quality_record_finishing')) && ($request->filled('create-quality_record_finishing'))) ){
+                    $create_quality_record_finishing = $request->input('create-quality_record_finishing');
+                    $userObject->givePermissionsTo( $create_quality_record_finishing );
+                }
+                
+                if( (($request->has('create-quality_record_c_n_i')) && ($request->filled('create-quality_record_c_n_i'))) ){
+                    $create_quality_record_c_n_i = $request->input('create-quality_record_c_n_i');
+                    $userObject->givePermissionsTo( $create_quality_record_c_n_i );
+                }
+                
+                if( (($request->has('create-quality_record_r_q_c')) && ($request->filled('create-quality_record_r_q_c'))) ){
+                    $create_quality_record_r_q_c = $request->input('create-quality_record_r_q_c');
+                    $userObject->givePermissionsTo( $create_quality_record_r_q_c );
+                }
+                
                 unset($dataArray);
                 $data['user_object'] = $userObject;
 
@@ -155,9 +199,10 @@ class UserController extends Controller
             'type' => 'success',
             'timer' => 3000
         );
-        return (new CommonResponseResource( $data ))->additional(array(
+        /*return (new CommonResponseResource( $data ))->additional(array(
             'meta' => ['status_code' => HTTPStatusCodeEnum::HTTP_OK]
-        ));
+        ));*/
+        return redirect()->back();
     }
     
     /**

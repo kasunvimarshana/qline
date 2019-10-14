@@ -6,8 +6,8 @@ $(function(){
         theme: "bootstrap"
     });*/
     var optionData = new Object();//{};
-    optionData.url = "{!! route('colour.selectAllColours', []) !!}";
-    optionData.id = "#colour_id";
+    optionData.url = "{!! route('section.selectAllSections', []) !!}";
+    optionData.id = "#section_id";
     
     var selectOptionObject = $( optionData.id ).select2({
         theme : 'bootstrap',
@@ -35,7 +35,7 @@ $(function(){
         //data : function(){ return {results: selections} },
         ajax : {
             url : optionData.url,
-            cache : false,
+            cache : true,
             quietMillis: 10,
             // dataType: 'json',
             delay : 10,
@@ -92,7 +92,7 @@ $(function(){
                     //encode : true,
                     //processData : false,
                     //contentType : false,
-                    cache : false
+                    //cache : false
                 })
                 // using the done promise callback
                 .done(function(data) {

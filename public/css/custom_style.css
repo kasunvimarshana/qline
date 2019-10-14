@@ -68,3 +68,11 @@ table.dataTable tbody td{
     background-color: rgba(255,190,0,1) !important;
     color: rgba(0, 0, 0, 1) !important;
 }
+
+.disabled_href{
+    color: inherit;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.5;
+    text-decoration: none;
+}

@@ -5,6 +5,9 @@ namespace App\Permissions;
 //use Illuminate\Database\Eloquent\Model;
 //use Illuminate\Database\Eloquent\Builder;
 
+use App\Permission;
+use App\Role;
+
 trait HasPermissionsTrait{
 
     //many to many
@@ -45,11 +48,15 @@ trait HasPermissionsTrait{
 
     //function
     protected function hasPermission($permission){
-        return (bool) $this->permissions->where('slug', $permission->slug)->count();
+        return (bool) $this->permissions->where('slug', "=", $permission)->count();
     }
     
     //function
     public function hasPermissionThroughRole($permission) {
+        $permission = $this->getPermission($permission);
+        if( (empty($permission)) ){
+            return false;
+        }
         foreach ($permission->roles as $role){
             if($this->roles->contains($role)) {
                 return true;
@@ -73,5 +80,20 @@ trait HasPermissionsTrait{
         $permissions = $this->getAllPermissions($permissions);
         $this->permissions()->detach($permissions);
         return $this;
+    }
+    
+    public function getPermission($slug){
+        $permissionObject = new Permission();
+        $permissionObject = $permissionObject->where("slug", "=", $slug)->first();
+        return $permissionObject;
+    }
+    
+    public function getAllPermissions($permissions){
+        $permissionArray = array();
+        $permissionObject = new Permission();
+        foreach( $permissions as $key => $value ){
+            $permissionArray[ $key ] = $permissionObject->where("slug", "=", $value)->first();
+        }
+        return $permissionArray;
     }
 }

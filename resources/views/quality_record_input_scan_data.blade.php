@@ -95,10 +95,10 @@
                                                                                             <!-- -->
                                                                                             <!-- form-group -->
                                                                                             <div class="form-group row col-sm-12 m-1">
-                                                                                                <label for="code" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Code</label>
+                                                                                                <label for="code" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Tag Reading</label>
                                                                                                 <div class="col">
                                                                                                     <!-- p class="form-control-static"></p -->
-                                                                                                    <input type="text" class="form-control form-control-md" id="code" name="code" placeholder="Code" value="{{ old('code') }}" required="required"/>
+                                                                                                    <input type="text" class="form-control form-control-md" id="code" name="code" placeholder="Tag Reading" value="{{ old('code') }}" required="required"/>
                                                                                                 </div>
                                                                                                 <!-- span id="form-control" class="help-block"></span -->
                                                                                             </div>
@@ -106,25 +106,10 @@
                                                                                             
                                                                                             <!-- form-group -->
                                                                                             <div class="form-group row col-sm-12 m-1">
-                                                                                                <label for="count_data" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Size</label>
+                                                                                                <label for="count_data" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Bundle Qty</label>
                                                                                                 <div class="col">
                                                                                                     <!-- p class="form-control-static"></p -->
-                                                                                                    <input type="text" class="form-control form-control-md" id="count_data" name="count_data" placeholder="Size" value="{{ old('count_data') }}" required="required"/>
-                                                                                                </div>
-                                                                                                <!-- span id="form-control" class="help-block"></span -->
-                                                                                            </div>
-                                                                                            <!-- /.form-group -->
-                                                                                            
-                                                                                            <!-- form-group -->
-                                                                                            <div class="form-group row col-sm-12 m-1">
-                                                                                                <label for="style_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Style</label>
-                                                                                                <div class="col">
-                                                                                                    <!-- p class="form-control-static"></p -->
-                                                                                                    <div class="input-group h-100">
-                                                                                                        <select class="form-control form-control-md select2" id="style_id" name="style_id" value="{{ old('style_id') }}" data-placeholder="Style" style="width: 100%;" required="required" readonly="readonly">
-                                                                                                            <!-- option> Option </option -->
-                                                                                                        </select>
-                                                                                                    </div>
+                                                                                                    <input type="number" class="form-control form-control-md" id="count_data" name="count_data" placeholder="Bundle Qty" value="{{ old('count_data') }}" required="required"/>
                                                                                                 </div>
                                                                                                 <!-- span id="form-control" class="help-block"></span -->
                                                                                             </div>

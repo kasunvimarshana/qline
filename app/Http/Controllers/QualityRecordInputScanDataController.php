@@ -136,6 +136,12 @@ class QualityRecordInputScanDataController extends Controller
                     ->where('factory_id', '=', $factoryObject->id)
                     ->where('line_id', '=', $lineObject->id)
                     ->whereDate('time_create', '=', $date_today->format('Y-m-d'))
+                    ->whereDoesntHave('qualityRecordInputScanDataStatusSewingAudit', function($query){
+                        //$query->where('key', '=', 'value');
+                    })
+                    ->whereDoesntHave('qualityRecordInputScanDataStatusFinishing', function($query){
+                        //$query->where('key', '=', 'value');
+                    })
                     ->get();
                 $aualityRecordInputScanDataArray->load(['style']);
                 

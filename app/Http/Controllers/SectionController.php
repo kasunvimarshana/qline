@@ -418,7 +418,7 @@ class SectionController extends Controller
     }
     
     //other
-    public function selectAllColours(Request $request){
+    public function selectAllSections(Request $request){
         //
         $dataArray = array();
         $rules = array();
@@ -456,8 +456,8 @@ class SectionController extends Controller
                 // Start transaction!
                 //DB::beginTransaction();
                 //DB::transaction(function () use (&$data){});
-                $colourObject = new Colour();
-                $query = $colourObject;
+                $sectionObject = new Section();
+                $query = $sectionObject;
                 /*
                 $query = $company->where('is_visible', '=', true);
                 $query = $company->where('is_active', '=', true);
@@ -553,10 +553,34 @@ class SectionController extends Controller
                     $query = $query->where('image_uri', '=', $image_uri);
                 }
                 
-                // colour_id_parent
-                if( ($request->has('colour_id_parent')) && ($request->filled('colour_id_parent')) ){
-                    $colour_id_parent = $request->input('colour_id_parent');
-                    $query = $query->where('colour_id_parent', '=', $colour_id_parent);
+                // colour_id
+                if( ($request->has('colour_id')) && ($request->filled('colour_id')) ){
+                    $colour_id = $request->input('colour_id');
+                    $query = $query->where('colour_id', '=', $colour_id);
+                }
+                
+                // section_id_parent
+                if( ($request->has('section_id_parent')) && ($request->filled('section_id_parent')) ){
+                    $section_id_parent = $request->input('section_id_parent');
+                    $query = $query->where('section_id_parent', '=', $section_id_parent);
+                }
+                
+                // company_id
+                if( ($request->has('company_id')) && ($request->filled('company_id')) ){
+                    $company_id = $request->input('company_id');
+                    $query = $query->where('company_id', '=', $company_id);
+                }
+                
+                // strategic_business_unit_id
+                if( ($request->has('strategic_business_unit_id')) && ($request->filled('strategic_business_unit_id')) ){
+                    $strategic_business_unit_id = $request->input('strategic_business_unit_id');
+                    $query = $query->where('strategic_business_unit_id', '=', $strategic_business_unit_id);
+                }
+                
+                // department_id
+                if( ($request->has('department_id')) && ($request->filled('department_id')) ){
+                    $department_id = $request->input('department_id');
+                    $query = $query->where('department_id', '=', $department_id);
                 }
 
                 // get filtered record count

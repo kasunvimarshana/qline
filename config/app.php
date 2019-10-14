@@ -181,6 +181,8 @@ return [
         App\Providers\AuthUserProvider::class,
         // provider for seesion object
         App\Providers\SessionObjectProvider::class,
+        // provider for permission
+        App\Providers\PermissionsServiceProvider::class,
         // provider for flash message
         Codecourse\Notify\NotifyServiceProvider::class,
         // provider for bensampo/laravel-enum (Laravel < 5.5)

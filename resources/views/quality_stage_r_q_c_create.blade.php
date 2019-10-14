@@ -113,7 +113,7 @@
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group">
-                                                                                <input type="text" class="form-control form-control-md" id="attempt" name="attempt" placeholder="Attempt" value="{!! $attempt !!}" aria-label="Attempt" aria-describedby="id_input_addon" required="required"/>
+                                                                                <input type="number" class="form-control form-control-md" id="attempt" name="attempt" placeholder="Attempt" value="{!! $attempt !!}" aria-label="Attempt" aria-describedby="id_input_addon" required="required"/>
                                                                                 <div class="input-group-addon input-group-append">
                                                                                     <!-- div class="input-group-text" -->
                                                                                         <button type="submit" class="btn btn btn-outline-danger" id="submit" aria-disabled="true" disabled="disabled">
@@ -184,10 +184,10 @@
                                                                         
                                                                     <!-- form-group -->
                                                                     <div class="form-group row col-md-6">
-                                                                        <label for="count_defect" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect Qty</label>
+                                                                        <label for="count_defect" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect Count</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-md" id="count_defect" name="count_defect" placeholder="Defect Qty" value="{{ old('count_defect') }}" required="required"/>
+                                                                            <input type="number" class="form-control form-control-md" id="count_defect" name="count_defect" placeholder="Defect Count" value="{{ old('count_defect') }}" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -205,7 +205,7 @@
                                                                         <label for="count_sample" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Check Qty</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-md" id="count_sample" name="count_sample" placeholder="Check Qty" value="{!! $count_sample !!}" required="required"/>
+                                                                            <input type="number" class="form-control form-control-md" id="count_sample" name="count_sample" placeholder="Check Qty" value="{!! $count_sample !!}" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>

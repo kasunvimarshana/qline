@@ -97,7 +97,13 @@
                                                                         <label for="severity" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Severity</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-md" id="severity" name="severity" placeholder="Severity" value="{{ old('severity') }}" required="required"/>
+                                                                            <div class="input-group h-100">
+                                                                                <select class="form-control form-control-md select2" id="severity" name="severity" value="{{ old('severity') }}" data-placeholder="Severity" style="width: 100%;" required="required">
+                                                                                    <option value="high"> High </option>
+                                                                                    <option value="low"> Low </option>
+                                                                                    <option value="moderate"> Moderate </option>
+                                                                                </select>
+                                                                            </div>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -108,7 +114,7 @@
                                                                         <label for="count_defect" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Count</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-md" id="count_defect" name="count_defect" placeholder="Count" value="{{ old('count_defect') }}" required="required"/>
+                                                                            <input type="number" class="form-control form-control-md" id="count_defect" name="count_defect" placeholder="Count" value="{{ old('count_defect') }}" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>

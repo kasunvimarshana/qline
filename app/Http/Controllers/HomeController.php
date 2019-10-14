@@ -54,7 +54,6 @@ class HomeController extends Controller
         $date_today = Carbon::now();//->format('Y-m-d');
         $current_user = null;
         $data = array();
-        
         if(view()->exists('quality_stage')){
             return View::make('quality_stage', array());
         }else{

@@ -43,6 +43,7 @@ use App\StandardSewingAudit;
 use App\Defect;
 use App\QualityRecordSewingAudit;
 use App\QualityRecordInputScanData;
+use App\Status;
 
 class QualityRecordSewingAuditController extends Controller
 {
@@ -382,7 +383,8 @@ class QualityRecordSewingAuditController extends Controller
         
         // validate the info, create rules for the inputs
         $rules = array(
-            'submit' => 'required'
+            'submit' => 'required',
+            'quality_record_input_scan_data_id_array' => 'required'
         );
         // run the validation rules on the inputs from the form
         $validator = Validator::make(Input::all(), $rules);
@@ -406,16 +408,93 @@ class QualityRecordSewingAuditController extends Controller
                 
                 if( ($request->has('submit')) && ($request->filled('submit')) ){
                     $submit_value = $request->input("submit", null);
-                    $submit_value_pass = "pass";
-                    $submit_value_fail = "fail";
-                    $submit_value_suspend = "suspend";
+                    $submit_value_pass = "submit_pass";
+                    $submit_value_fail = "submit_fail";
+                    $submit_value_suspend = "submit_suspend";
                     
+                    $defect_id_array = array();
+                    $measure_point_id_array = array();
+                    $quality_record_input_scan_data_id_array = array();
+                    
+                    if( (($request->has('defect_id_array')) && ($request->filled('defect_id_array'))) ){
+                        $defect_id_array = (array) $request->input('defect_id_array');
+                    }
+                    
+                    if( (($request->has('measure_point_id_array')) && ($request->filled('measure_point_id_array'))) ){
+                        $measure_point_id_array = (array) $request->input('measure_point_id_array');
+                    }
+                    
+                    if( (($request->has('quality_record_input_scan_data_id_array')) && ($request->filled('quality_record_input_scan_data_id_array'))) ){
+                        $quality_record_input_scan_data_id_array = (array) $request->input('quality_record_input_scan_data_id_array');
+                    }
+                    
+                    if( (!empty($defect_id_array)) && (!empty($measure_point_id_array)) ){
+                        $dataArray = array(
+                            'is_visible' => $request->input('is_visible', true),
+                            'is_active' => $request->input('is_active', true),
+                            'time_create' => $request->input('time_create', $date_today->format('Y-m-d H:i:s')),
+                            'inspection_stage_id' => $request->session()->get('setup_configuration_inspection_stage_id'),
+                            'standard_a_q_l_id' => $request->session()->get('setup_configuration_standard_sewing_audit_id'),
+                            'company_id' => $request->session()->get('setup_configuration_company_id'),
+                            'strategic_business_unit_id' => $request->session()->get('setup_configuration_strategic_business_unit_id'),
+                            'factory_id' => $request->session()->get('setup_configuration_factory_id'),
+                            'line_id' => $request->session()->get('setup_configuration_line_id'),
+                            'customer_id' => $request->session()->get('setup_configuration_customer_id'),
+                            'style_id' => $request->session()->get('setup_configuration_style_id'),
+                            'colour_id' => $request->session()->get('setup_configuration_colour_id'),
+                            'export_id' => $request->session()->get('setup_configuration_export_id'),
+                            'user_id_create' => auth()->user()->id,
+                            'ip_address' => $request->ip()
+                        );
+
+                        $qualityRecordSewingAuditObject = QualityRecordSewingAudit::create( $dataArray );
+                        unset($dataArray);
+                        $data['quality_record_sewing_audit_object'] = $qualityRecordSewingAuditObject;
+                        
+                        foreach($defect_id_array as $key => $value){
+                            $defectObject = Defect::where("id", "=", $value)->first();
+
+                            $qualityRecordDataSewingAuditObject = $qualityRecordSewingAuditObject->qualityRecordDataSewingAudit()->create([
+                                'is_visible' => true,
+                                'is_active' => true,
+                                'time_create' => $date_today->format('Y-m-d H:i:s'),
+                                'quality_record_sewing_audit_id' => $qualityRecordSewingAuditObject->id,
+                                'user_id_create' => auth()->user()->id,
+                                'measure_point_id' => $measure_point_id_array[$key],
+                                'defect_category_id' => $defectObject->defect_category_id,
+                                'defect_id' => $defectObject->id
+                            ]);
+
+                            $qualityRecordSewingAuditObject->qualityRecordDataSewingAudit()->save($qualityRecordDataSewingAuditObject);
+                        }
+
+                        unset($dataArray);
+                    }
+                    
+                    $statusObject = new Status();
                     if( (strcasecmp($submit_value, $submit_value_pass) == 0) ){
-                        $query = $query->where('is_visible', '=', true);
+                        //
+                        $statusObject = $statusObject->where("code", "=", "pass")->first();
                     }else if( (strcasecmp($submit_value, $submit_value_fail) == 0) ){
-                        $query = $query->where('is_visible', '=', false);
+                        //
+                        $statusObject = $statusObject->where("code", "=", "fail")->first();
                     }else if( (strcasecmp($submit_value, $submit_value_suspend) == 0) ){
-                        $query = $query->where('is_visible', '=', true);
+                        //
+                        $statusObject = $statusObject->where("code", "=", "suspend")->first();
+                    }
+                    
+                    foreach( $quality_record_input_scan_data_id_array as $key => $value ){
+                        $qualityRecordInputScanDataObject = new QualityRecordInputScanData();
+                        $qualityRecordInputScanDataObject = $qualityRecordInputScanDataObject->where("id", "=", $value)->first();
+                        $qualityRecordInputScanDataStatusSewingAuditObject = $qualityRecordInputScanDataObject->qualityRecordInputScanDataStatusSewingAudit()->create([
+                            'is_visible' => true,
+                            'is_active' => true,
+                            'time_create' => $date_today->format('Y-m-d H:i:s'),
+                            'status_id' => $statusObject->id,
+                            'user_id_create' => auth()->user()->id
+                        ]);
+                        
+                        $qualityRecordInputScanDataObject->qualityRecordInputScanDataStatusSewingAudit()->save($qualityRecordInputScanDataStatusSewingAuditObject);
                     }
                 }
 
@@ -445,16 +524,11 @@ class QualityRecordSewingAuditController extends Controller
         unset( $current_user );
         //unset( $data );
         
-        if( (Route::has('qualityRecordSewingCheck.index')) ){
-            return redirect()->route('qualityRecordSewingCheck.index');
+        if( (Route::has('qualityRecordSewingAudit.index')) ){
+            return redirect()->route('qualityRecordSewingAudit.index');
         }else{
             return redirect()->back()->withInput();
         }
     }
-    
-    /*
-    *
-    **/
-    protected function store_
     
 }

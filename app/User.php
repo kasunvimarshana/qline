@@ -14,7 +14,7 @@ class User extends Authenticatable
 {
     use Notifiable;
     //
-    use HasPermissionsTrait;
+    use Permissions\HasPermissionsTrait;
     
     //protected $table = "table";
     //protected $primaryKey = array('id');

@@ -21,5 +21,17 @@ class DepartmentSeeder extends Seeder
             'name' => 'quality',
             'display_name' => 'quality'
         ]);
+        
+        $sectionArray = array(
+            $newDepartment->sections()->firstOrCreate([
+                'is_visible' => true,
+                'is_active' => true,
+                'code' => 'section_1',
+                'name' => 'section_1',
+                'display_name' => 'section_1'
+            ])
+        );
+            
+        $newDepartment->sections()->saveMany($sectionArray);
     }
 }

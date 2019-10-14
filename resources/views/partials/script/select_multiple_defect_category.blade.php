@@ -33,7 +33,7 @@ $(function(){
     var selectOptionObject = $( optionData.id ).select2({
         theme : 'bootstrap',
         //disabled : false,
-        scrollAfterSelect : true,
+        scrollAfterSelect : false,
         closeOnSelect : false,
         //containerCssClass : ':all:',
         //dropdownCssClass : 'class',

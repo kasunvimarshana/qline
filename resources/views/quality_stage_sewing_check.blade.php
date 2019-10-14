@@ -187,8 +187,8 @@
                                                                                     </div>
                                                                                     <!-- ----------- -->
                                                                                     <h5 class="card-title">
-                                                                                        <span> Defect Time </span>
-                                                                                        <span class="badge badge-secondary"> YYYY-MM-DD HH:mm </span>
+                                                                                        <!-- span> Defect Time </span -->
+                                                                                        <!-- span class="badge badge-secondary"> YYYY-MM-DD HH:mm </span -->
                                                                                     </h5>
                                                                                     <!-- ----------- -->
                                                                                     <div class="btn-group ml-auto" role="group" aria-label="Second group">
