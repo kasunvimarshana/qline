@@ -45,6 +45,9 @@ use App\QualityRecordSewingAudit;
 use App\QualityRecordInputScanData;
 use App\Status;
 
+use App\Events\QualityRecordSewingAuditCreateEvent;
+use App\Jobs\SendMessageFinishingJob;
+
 class QualityRecordSewingAuditController extends Controller
 {
     //
@@ -483,6 +486,8 @@ class QualityRecordSewingAuditController extends Controller
                         $statusObject = $statusObject->where("code", "=", "suspend")->first();
                     }
                     
+                    $qualityRecordInputScanDataObjectArray = array();
+                    
                     foreach( $quality_record_input_scan_data_id_array as $key => $value ){
                         $qualityRecordInputScanDataObject = new QualityRecordInputScanData();
                         $qualityRecordInputScanDataObject = $qualityRecordInputScanDataObject->where("id", "=", $value)->first();
@@ -495,6 +500,15 @@ class QualityRecordSewingAuditController extends Controller
                         ]);
                         
                         $qualityRecordInputScanDataObject->qualityRecordInputScanDataStatusSewingAudit()->save($qualityRecordInputScanDataStatusSewingAuditObject);
+                        
+                        $qualityRecordInputScanDataObjectArray[$key] = $qualityRecordInputScanDataObject;
+                    }
+                    
+                    if( (strcasecmp($submit_value, $submit_value_pass) == 0) ){
+                        //event(new QualityRecordSewingAuditCreateEvent($qualityRecordInputScanDataObjectArray));
+                        $emailJob = (new SendMessageFinishingJob($qualityRecordInputScanDataObjectArray));
+                        //->delay(Carbon::now()->addSeconds(10));
+                        dispatch($emailJob);
                     }
                 }
 

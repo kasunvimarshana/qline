@@ -42,6 +42,9 @@ use App\Export;
 use App\Defect;
 use App\QualityRecordInputScanData;
 
+use App\Events\QualityRecordInputScanDataCreateEvent;
+use App\Jobs\SendMessageSewingAuditJob;
+
 class QualityRecordInputScanDataController extends Controller
 {
     //
@@ -253,6 +256,12 @@ class QualityRecordInputScanDataController extends Controller
                 $data['quality_record_input_scan_data_object'] = $qualityRecordInputScanDataObject;
 
                 unset($dataArray);
+                
+                //event(new QualityRecordInputScanDataCreateEvent($qualityRecordInputScanDataObject));
+                $emailJob = (new SendMessageSewingAuditJob($qualityRecordInputScanDataObject));
+                //->delay(Carbon::now()->addSeconds(10));
+                dispatch($emailJob);
+                
                 // Commit transaction!
                 DB::commit();
             }catch(Exception $e){

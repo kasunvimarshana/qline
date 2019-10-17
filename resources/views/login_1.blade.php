@@ -59,21 +59,6 @@
 
                 updateClock(); // initial call
             });
-            $(function(){
-                var submit_user_a_p_i_token = $("#submit_user_a_p_i_token");
-                var code = $("#code");
-                var code_value = null;
-                submit_user_a_p_i_token.on("click", function(event){
-                    event.preventDefault();
-                    //event.stopPropagation();
-                    code_value = code.val();
-                    var url = "{!! route('login.createUserAPIToken', ['code' => 'code_value']) !!}";
-                    url = url.replace("code_value", code_value);
-                    $( location ).attr("href", url);
-                    //var windowObject = window.open(url, '_blank', null, true);
-                    //windowObject.focus();
-                });
-            });
         </script>
     @show
     <!-- /.script -->
@@ -138,28 +123,24 @@
                                             <!-- col -->
                                             <div class="col col-sm-12 p-0 m-0">
                                                 <!-- form -->
-                                                <form action="{!! route('login.doLogin', []) !!}" method="POST" class="col col-sm-12" autocomplete="off" id="form1" enctype="multipart/form-data">
+                                                <form action="{!! route('login.doLoginUserAPIToken', []) !!}" method="POST" class="col col-sm-12" autocomplete="off" id="form1" enctype="multipart/form-data">
                                                     @csrf
+                                                    <!-- ------------------------------------------------------------------------------------- -->
+                                                    <div id="form1_hidden_input_group" name="form1_hidden_input_group" class="d-none">
+                                                        @isset($user_object)
+                                                        <input type="hidden" id="user_id" name="user_id" value="{!! $user_object->id !!}" required="required" readonly="readonly"/>
+                                                        @endisset
+                                                    </div>
+                                                    <!-- ------------------------------------------------------------------------------------- -->
                                                     <!-- form-group-row -->
                                                     <div class="row">
                                                         <!-- -->
                                                         <!-- form-group -->
                                                         <div class="form-group row col-sm-12">
-                                                            <label for="code" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">User ID</label>
+                                                            <label for="code_active" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Code</label>
                                                             <div class="col">
                                                                 <!-- p class="form-control-static"></p -->
-                                                                <input type="text" class="form-control form-control-md" id="code" name="code" placeholder="User ID" value="{{ old('code') }}" required="required"/>
-                                                            </div>
-                                                            <!-- span id="form-control" class="help-block"></span -->
-                                                        </div>
-                                                        <!-- /.form-group -->
-
-                                                        <!-- form-group -->
-                                                        <div class="form-group row col-sm-12">
-                                                            <label for="password" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Password</label>
-                                                            <div class="col">
-                                                                <!-- p class="form-control-static"></p -->
-                                                                <input type="password" class="form-control form-control-md" id="password" name="password" placeholder="Password" value="{{ old('password') }}" required="required"/>
+                                                                <input type="text" class="form-control form-control-md" id="code_active" name="code_active" placeholder="Code" value="{{ old('code_active') }}" required="required"/>
                                                             </div>
                                                             <!-- span id="form-control" class="help-block"></span -->
                                                         </div>
@@ -168,16 +149,10 @@
                                                         <!-- form-group -->
                                                         <div class="form-group row col-sm-12">
                                                             <!-- btn-toolbar -->
-                                                            <div class="row ml-auto">
+                                                            <div class="col">
                                                                 <!-- div class="btn-group btn-group-lg pull-right" -->
-                                                                    <div class="col text-right mb-3">
+                                                                    <div class="text-right mb-3">
                                                                         <button type="submit" class="btn btn-danger float-right pull-right ml-auto" id="submit">Login</button>
-                                                                    </div>               
-                                                                <!-- /div -->
-                                                                
-                                                                <!-- div class="btn-group btn-group-lg pull-right" -->
-                                                                    <div class="col text-right mb-3">
-                                                                        <button type="button" class="btn btn-danger float-right pull-right ml-auto" id="submit_user_a_p_i_token">Token</button>
                                                                     </div>               
                                                                 <!-- /div -->
                                                             </div>

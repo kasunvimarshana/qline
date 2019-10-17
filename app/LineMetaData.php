@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 
-class Line extends Model
+class LineMetaData extends Model
 {
     //
     //protected $table = "table";
     //protected $primaryKey = array('id');
-    protected $primaryKey = "id";
-    protected $keyType = 'string';
-    public $incrementing = false;
+    //protected $primaryKey = "id";
+    //protected $keyType = 'int';
+    //public $incrementing = true;
     //protected $connection = "mysql";
     //$this->setConnection("mysql");
     //protected $perPage = 25;
@@ -26,7 +26,7 @@ class Line extends Model
     //protected $appends = array('field1', 'field2');
     //protected $attributes = array();
     //protected $guarded = array();
-    protected $fillable = array('id', 'is_visible', 'is_active', 'colour_id', 'code', 'name', 'display_name', 'image_uri', 'line_id_parent', 'company_id', 'strategic_business_unit_id', 'factory_id');
+    protected $fillable = array('id', 'is_visible', 'is_active', 'data_key', 'data_value', 'line_id', 'company_id', 'strategic_business_unit_id', 'factory_id');
     //protected $hidden = array();
     //protected $casts = array();
     /**
@@ -83,51 +83,11 @@ class Line extends Model
     
     protected static function boot(){
         parent::boot();
-        
-        static::creating(function( $model ){
-            $id = null;
-            if( (isset($model->id)) ){
-                $id = $model->id;
-            }else{
-                $id = (bin2hex(time().Str::uuid()->toString()));
-            }
-            $model->id = $id;
-        });
     }
     
     //one to many (inverse)
-    public function lineParent(){
-        return $this->belongsTo('App\Line', 'line_id_parent', 'id');
-    }
-    
-    //one to many
-    public function lineChildren(){
-        return $this->hasMany('App\Line', 'line_id_parent', 'id');
-    }
-    
-    //one to many (inverse)
-    public function company(){
-        return $this->belongsTo('App\Company', 'company_id', 'id');
-    }
-    
-    //one to many (inverse)
-    public function strategicBusinessUnit(){
-        return $this->belongsTo('App\StrategicBusinessUnit', 'strategic_business_unit_id', 'id');
-    }
-    
-    //one to many (inverse)
-    public function factory(){
-        return $this->belongsTo('App\Factory', 'factory_id', 'id');
-    }
-    
-    //one to many
-    public function lineMetaData(){
-        return $this->hasMany('App\LineMetaData', 'line_id', 'id');
-    }
-    
-    //one to many
-    public function qualityRecoredInputDefectData(){
-        return $this->hasMany('App\QualityRecoredInputDefectData', 'line_id', 'id');
+    public function line(){
+        return $this->belongsTo('App\Line', 'line_id', 'id');
     }
     
 }

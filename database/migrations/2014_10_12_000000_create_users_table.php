@@ -53,6 +53,7 @@ class CreateUsersTable extends Migration
             $table->string('department_id')->index()->nullable()->comment('comment');
             $table->string('section_id')->index()->nullable()->comment('comment');
             $table->string('grade')->index()->nullable()->comment('comment');
+            $table->string('code_active')->index()->nullable()->comment('comment');
             //$table->softDeletes();
             //$table->dropPrimary('id');
             //$table->primary('name');

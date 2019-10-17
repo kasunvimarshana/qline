@@ -32,6 +32,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Resources\CommonResponseResource as CommonResponseResource;
 use App\Enums\HTTPStatusCodeEnum as HTTPStatusCodeEnum;
 
+use App\User;
+use App\Events\UserAPITokenRequestEvent;
+use App\Jobs\SendTokenCreateMessageJob;
+
 class LoginController extends Controller
 {
     //
@@ -179,6 +183,170 @@ class LoginController extends Controller
         $request->session()->regenerate();
         
         return $this->showLogin($request);
+    }
+    
+    public function createUserAPIToken(Request $request){
+        //
+        $dataArray = array();
+        $rules = array();
+        $date_today = Carbon::now();//->format('Y-m-d');
+        $current_user = null;
+        $data = array();
+        
+        // validate the info, create rules for the inputs
+        $rules = array(
+            'code' => 'required|exists:users,code'
+        );
+        // run the validation rules on the inputs from the form
+        $validator = Validator::make(Input::all(), $rules);
+        // if the validator fails, redirect back to the form
+        if ($validator->fails()) {
+            /*
+            $data = array(
+                'title' => 'error',
+                'text' => $validator->errors()->first(),
+                'type' => 'warning',
+                'timer' => 3000
+            );
+            return (new CommonResponseResource( $data ))->additional(array(
+                'meta' => ['status_code' => HTTPStatusCodeEnum::HTTP_BAD_REQUEST]
+            ));
+            */
+            return redirect()->back()->withErrors($validator)->withInput();
+        } else {
+            // do process
+            try {
+                // Start transaction!
+                DB::beginTransaction();
+                
+                $userObject = new User();
+                $userObject = $userObject->where('code', '=', $request->input('code'))->first();
+                $data["user_object"] = $userObject;
+                
+                if( ($userObject) ){
+                    $code_active = (mt_rand(0, 10000));
+                    $userAPITokenObject = $userObject->userApiTokens()->create([
+                        'is_visible' => true,
+                        'is_active' => true,
+                        'code_active' => $code_active,
+                        'ip_address' => $request->ip(),
+                        'user_agent' => $request->userAgent()
+                    ]);
+                    
+                    $userObject->update([
+                        'code_active' => $code_active
+                    ]);
+                    
+                    $userObject->userApiTokens()->save( $userAPITokenObject );
+                    
+                    //event(new UserAPITokenRequestEvent($userAPITokenObject));
+                    $emailJob = (new SendTokenCreateMessageJob($userAPITokenObject));
+                    //->delay(Carbon::now()->addSeconds(10));
+                    dispatch($emailJob);
+                }else{
+                    throw new Exception("exception");
+                }
+                
+                unset($dataArray);
+                
+                // Commit transaction!
+                DB::commit();
+            }catch(Exception $e){
+                // Rollback transaction!
+                DB::rollback(); 
+                /*
+                $data = array(
+                    'title' => 'error',
+                    'text' => 'error',
+                    'type' => 'warning',
+                    'timer' => 3000
+                );
+                return (new CommonResponseResource( $data ))->additional(array(
+                    'meta' => ['status_code' => HTTPStatusCodeEnum::HTTP_BAD_REQUEST]
+                ));
+                */
+                return redirect()->back()->withInput();
+            }
+        }
+        
+        //unset data
+        unset( $dataArray );
+        unset( $rules );
+        unset( $date_today );
+        unset( $current_user );
+        //unset( $data );
+        
+        //return Response::json( $data );
+        //return redirect()->back();
+        //$http_response_code = http_response_code();
+        if(view()->exists('login_1')){
+            return View::make('login_1', $data);
+        }else{
+            return redirect()->back()->withInput();
+        }
+    }
+    
+    public function doLoginUserAPIToken(Request $request){
+        //
+        $dataArray = array();
+        $rules = array();
+        $date_today = Carbon::now();//->format('Y-m-d');
+        $current_user = null;
+        $data = array();
+        
+        // validate the info, create rules for the inputs
+        $rules = array(
+            'user_id' => 'required|exists:users,id',
+            'code_active' => 'required|exists:users,code_active'
+        );
+        // run the validation rules on the inputs from the form
+        $validator = Validator::make(Input::all(), $rules);
+        // if the validator fails, redirect back to the form
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        } else {
+            // do process
+            try {
+                // Start transaction!
+                DB::beginTransaction();
+                
+                $userObject = new User();
+                $userObject = $userObject
+                    ->where("is_active", "=", $request->input('is_active', true))
+                    ->where("id", "=", $request->input('user_id'))
+                    ->where("code_active", "=", $request->input('code_active'))
+                    ->first();
+                
+                unset($dataArray);
+                
+                if( ($userObject) ){
+                    auth()->login( $userObject );
+                }else{
+                    throw new Exception("exception");
+                }
+                
+                unset($dataArray);
+                // Commit transaction!
+                DB::commit();
+            }catch(Exception $e){
+                // Rollback transaction!
+                DB::rollback(); 
+                return redirect()->back()->withInput();
+            }
+        }
+        
+        //unset data
+        unset( $dataArray );
+        unset( $rules );
+        unset( $date_today );
+        unset( $current_user );
+        //unset( $data );
+        
+        if( (Route::has('home')) ){
+            return redirect()->route('home');
+        }else{
+            return redirect()->back()->withInput();
+        }
     }
     
 }

@@ -40,7 +40,8 @@ class UserSeeder extends Seeder
                 'code' => '0admin',
                 'code_epf' => '0admin',
                 'name_first' => 'admin',
-                'name_last' => 'admin'
+                'name_last' => 'admin',
+                'email' => 'kasunvmail@gmail.com'
             ],
             [
                 'is_visible' => false,
@@ -49,7 +50,8 @@ class UserSeeder extends Seeder
                 'code_epf' => '0admin',
                 'name_first' => 'admin',
                 'name_last' => 'admin',
-                'password' => Hash::make('password')
+                'password' => Hash::make('password'),
+                'email' => 'kasunvmail@gmail.com'
             ]
         );
         

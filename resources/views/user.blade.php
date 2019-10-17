@@ -127,6 +127,17 @@
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
                                                 <!-- /.form-group -->
+                                                
+                                                <!-- form-group -->
+                                                <div class="form-group row col-sm-12 m-1">
+                                                    <label for="email" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">E-Mail</label>
+                                                    <div class="col">
+                                                        <!-- p class="form-control-static"></p -->
+                                                        <input type="text" class="form-control form-control-md" id="email" name="email" placeholder="E-Mail" value="{{ old('email') }}" required/>
+                                                    </div>
+                                                    <!-- span id="form-control" class="help-block"></span -->
+                                                </div>
+                                                <!-- /.form-group -->
 
                                                 <!-- form-group -->
                                                 <div class="form-group row col-sm-12 m-1">

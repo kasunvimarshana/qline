@@ -31,6 +31,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Resources\CommonResponseResource as CommonResponseResource;
 use App\Enums\HTTPStatusCodeEnum as HTTPStatusCodeEnum;
+use App\Line;
+use App\LineMetaData;
 
 class SewingAuditController extends Controller
 {
@@ -130,6 +132,32 @@ class SewingAuditController extends Controller
         if( ($request->has('inspection_stage_id')) && ($request->filled('inspection_stage_id')) ){
             $inspection_stage_id = $request->input('inspection_stage_id', null);
             $request->session()->put('setup_configuration_inspection_stage_id', $inspection_stage_id);
+        }
+        
+        try {
+            // Start transaction!
+            DB::beginTransaction();
+
+            $lineObject = new Line();
+            $lineObject = $lineObject->where("id", "=", $request->input('line_id'))->first();
+            $lineMetaDataObject = $lineObject->lineMetaData()->updateOrCreate(
+                [
+                    'data_key' => 'user_id_stage_sewing_audit',
+                    'line_id' => $lineObject->id
+                ], 
+                [
+                    'data_key' => 'user_id_stage_sewing_audit',
+                    'line_id' => $lineObject->id,
+                    'data_value' => auth()->user()->id
+                ]
+            );
+            $lineObject->lineMetaData()->save( $lineMetaDataObject );
+            
+            // Commit transaction!
+            DB::commit();
+        }catch(Exception $e){
+            // Rollback transaction!
+            DB::rollback(); 
         }
         
         if( (Route::has('qualityRecordSewingAudit.index')) ){

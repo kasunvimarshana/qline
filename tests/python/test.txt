@@ -1,0 +1,20 @@
+import requests
+url = "http://mock.kite.com/redirect"
+print requests.get(url, allow_redirects = False).text
+
+
+
+r = requests.post('https://httpbin.org/post', data = {'key':'value'})
+
+
+>>> payload = {'key1': 'value1', 'key2': 'value2'}
+>>> r = requests.get('https://httpbin.org/get', params=payload)
+
+
+>>> payload = {'key1': 'value1', 'key2': ['value2', 'value3']}
+
+>>> r = requests.get('https://httpbin.org/get', params=payload)
+>>> print(r.url)
+https://httpbin.org/get?key1=value1&key2=value2&key2=value3
+
+

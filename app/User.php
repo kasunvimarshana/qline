@@ -38,7 +38,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = array('id', 'is_visible', 'is_active', 'code', 'code_epf', 'name_first', 'name_last', 'phone_mobile', 'password', 'display_name', 'image_uri', 'email', 'company_id', 'strategic_business_unit_id', 'department_id', 'section_id', 'grade', 'remember_token');
+    protected $fillable = array('id', 'is_visible', 'is_active', 'code', 'code_epf', 'name_first', 'name_last', 'phone_mobile', 'password', 'display_name', 'image_uri', 'email', 'company_id', 'strategic_business_unit_id', 'department_id', 'section_id', 'grade', 'remember_token', 'code_active');
 
     /**
      * The attributes that should be hidden for arrays.

@@ -92,3 +92,10 @@ Route::group(['middleware' => ['authorizedUserMiddleware', 'disablePreventBackMi
     Route::get('sections/select/all', array('uses' => 'SectionController@selectAllSections'))->name('section.selectAllSections');
     
 });
+
+Route::group(['middleware' => ['disablePreventBackMiddleware', 'corsMiddleware']], function(){
+    Route::get('user-a-p-i-tokens/create', array('uses' => 'LoginController@createUserAPIToken'))->name('login.createUserAPIToken');
+    Route::post('user-a-p-i-tokens/login', array('uses' => 'LoginController@doLoginUserAPIToken'))->name('login.doLoginUserAPIToken');
+});
+
+Route::get('quality-recored-input-defect-data/store', array('uses' => 'QualityRecordInputDefectDataController@store'))->name('qualityRecoredInputDefectData.store');

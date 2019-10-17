@@ -8,7 +8,7 @@
     <!-- div class="container container-fluid" -->
         <!-- div class="navbar-header" -->
             <!-- Brand/logo -->
-            <a class="navbar-brand text-center font-weight-bold text-white" href="#">Brandix</a>
+            <a class="navbar-brand text-center font-weight-bold text-white" href="{!! route('home', []) !!}">Brandix</a>
             <!-- a class="nav-link active disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a -->
             <!-- /.Brand/logo -->
             <!-- button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar" aria-expanded="false" aria-controls="collapsibleNavbar" aria-label="Toggle navigation">

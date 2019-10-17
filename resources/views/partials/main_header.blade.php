@@ -8,7 +8,7 @@
     <!-- div class="container container-fluid" -->
         <!-- div class="navbar-header" -->
             <!-- Brand/logo -->
-            <a class="navbar-brand text-center font-weight-bold text-white" href="#">Brandix</a>
+            <a class="navbar-brand text-center font-weight-bold text-white" href="{!! route('home', []) !!}">Brandix</a>
             <!-- a class="nav-link active disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a -->
             <!-- /.Brand/logo -->
             <!-- button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar" aria-expanded="false" aria-controls="collapsibleNavbar" aria-label="Toggle navigation">
@@ -72,9 +72,19 @@
             <!-- nav lists -->
             <ul class="list-unstyled nav navbar-nav ml-auto navbar-right">
                 <li class="nav-item">
-                    <span class="navbar-text text-center font-weight-bold text-white p-1">
+                    <span class="navbar-text text-center font-weight-bold text-white p-1 mr-1">
                         <i class="fa fa-user-alt fa-fw"></i>
-                        <span> User </span>
+                        @if( (auth()->check()) )
+                            @if( (auth()->user()->strategicBusinessUnit) )
+                                <span> {{ auth()->user()->strategicBusinessUnit->name }} </span>
+                                <span> / </span>
+                            @endif
+                            @if( (auth()->user()->department) )
+                                <span> {{ auth()->user()->department->name }} </span>
+                                <span> / </span>
+                            @endif
+                            <span> {{ auth()->user()->name_first }} </span>
+                        @endif
                     </span>
                 </li>
                 
