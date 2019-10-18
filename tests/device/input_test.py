@@ -48,12 +48,17 @@ outputChannelArray_1 = [OUTPUT_LED_1, OUTPUT_LED_2, OUTPUT_LED_3, OUTPUT_LED_4, 
 outputAndonLEDStateArray = [GPIO.LOW for x in range(3)]
 outputAndonLEDArray = [OUTPUT_ANDON_LED_RED, OUTPUT_ANDON_LED_ORANGE, OUTPUT_ANDON_LED_GREEN]
 
-API_ADDRESS = "http://192.168.8.102/qline_project/qline/public/quality-recored-input-defect-data/store"
+API_HOST_1 = "192.168.8.102"
+API_SCHEME_1 = "http"
+API_PATH_1 = "qline_project/qline/public/quality-recored-input-defect-data/store"
+API_QUERY_1 = "?key=value"
+API_FRAGMENT_1 = "#"
+
+MODEL_NAME = "quality-recored-input-defect-data"
 COMPANY_ID = "company_id"
 STRATEGIC_BUSINESS_UNIT_ID = "strategic_business_unit_id"
 FACTORY_ID = "factory_id"
 LINE_ID = "line_1"
-MODEL_NAME = "quality-recored-input-defect-data"
 
 '''
 DEFINED FUNCTION
@@ -116,12 +121,26 @@ def triggerOutputControlBusinessLogic_1():
         
 #http request send function
 def triggerOutputControlBusinessLogic_2(reference_id):
-    url = 'https://www.w3schools.com/python/demopage.php'
-    myobj = {'somekey': 'somevalue'}
+    API_HOST_1 = "192.168.8.102"
+    API_SCHEME_1 = "http"
+    API_PATH_1 = "qline_project/qline/public/quality-recored-input-defect-data/store"
+    API_QUERY_1 = "?key=value"
+    API_FRAGMENT_1 = "#"
 
-    x = requests.post(url, data = myobj)
-
-    print(x.text)
+    MODEL_NAME = "quality-recored-input-defect-data"
+    COMPANY_ID = "company_id"
+    STRATEGIC_BUSINESS_UNIT_ID = "strategic_business_unit_id"
+    FACTORY_ID = "factory_id"
+    LINE_ID = "line_1"
+    
+    API_URL_1 = "{api_schema_1}://{api_host_1}/{api_path_1}"
+    API_URL_1 = API_URL_1.format(api_schema_1=API_SCHEME_1, api_host_1=API_HOST_1, api_path_1=API_PATH_1)
+    
+    #url = 'https://www.w3schools.com/python/demopage.php'
+    #myobj = {'somekey': 'somevalue'}
+    #x = requests.post(url, data = myobj)
+    #print(x.text)
+    #print("{str1} {str2}".format(str1=str_dict['str1'], str2=str_dict['str2']))  # Hello World
 
 #groove sensor callback function
 def inputGSCallback(channel, reference_id):
@@ -136,8 +155,7 @@ def inputGSCallback(channel, reference_id):
 		GPIO.output(outputChannelArray_1[reference_id], GPIO.LOW)
 		inputCurrentStateArray[reference_id] = GPIO.LOW
         #send http request
-        ####################################################################################################
-        ####################################################################################################
+        triggerOutputControlBusinessLogic_2(reference_id)
 	else:
 		GPIO.output(outputChannelArray_1[reference_id], GPIO.HIGH)
 		inputCurrentStateArray[reference_id] = GPIO.HIGH
