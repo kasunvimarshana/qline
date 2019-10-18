@@ -92,6 +92,7 @@ class QualityRecordInputDefectDataController extends Controller
                     $dataArray = array(
                         'is_visible' => true,
                         'is_active' => true,
+                        'time_create' => $request->input('time_create', $date_today->format('Y-m-d H:i:s')),
                         'code' => $request->input('code'),
                         'count_data' => $request->input('count_data'),
                         'line_id' => $lineObject->id,

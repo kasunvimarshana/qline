@@ -1,0 +1,91 @@
+#concat string
+"{}{}".format(s, y)
+
+#concat string
+print(s + str(y))
+
+#concat string
+print("%s%s" % (s, y))
+
+#concat string
+###################################################################
+def str_join(*args):
+    return ''.join(map(str, args))
+    
+str_join('Pine')  # Returns : Pine
+str_join('Pine', 'apple')  # Returns : Pineapple
+str_join('Pine', 'apple', 3)  # Returns : Pineapple3
+###################################################################
+
+####################################################################################
+str1 = "Hello"
+str2 = "World"
+str_list = ['Hello', 'World']
+str_dict = {'str1': 'Hello', 'str2': 'World'}
+
+# Concatenating With the + Operator
+print(str1 + ' ' + str2)  # Hello World
+
+# String Formatting with the % Operator
+print("%s %s" % (str1, str2))  # Hello World
+
+# String Formatting with the { } Operators with str.format()
+print("{}{}".format(str1, str2))  # Hello World
+print("{0}{1}".format(str1, str2))  # Hello World
+print("{str1} {str2}".format(str1=str_dict['str1'], str2=str_dict['str2']))  # Hello World
+print("{str1} {str2}".format(**str_dict))  # Hello World
+
+# Going From a List to a String in Python With .join()
+print(' '.join(str_list))  # Hello World
+
+# Python f'strings --> 3.6 onwards
+print(f"{str1} {str2}")  # Hello World
+####################################################################################
+
+####################################################################################
+str_a = 'String'
+str_b = 'Example'
+str_c = str_a + ' Concatenation ' + str_b
+print(str_c)
+####################################################################################
+
+####################################################################################
+str_a = 'Concat '
+str_b = 'Example'
+str_a += str_b
+print(str_a)
+####################################################################################
+
+####################################################################################
+lst_str = ['String', 'Concat', 'by', 'Join', 'Method']
+str_concat = " ".join(lst_str)
+print ("After join: ", str_concat)
+####################################################################################
+
+####################################################################################
+lst_str = ['List', 'with', 10, 'Mixed', 'Items', 25]
+str_concat = " ".join(lst_str)
+print ("After join: ", str_concat)
+####################################################################################
+
+####################################################################################
+from io import StringIO 
+concat = StringIO()
+concat.write('String ')
+concat.write('Concat ')
+concat.write('by ')
+concat.write('StringIO')
+print(concat.getvalue())
+####################################################################################
+
+####################################################################################
+# split
+'a,b,c'.split(',')
+####################################################################################
+
+####################################################################################
+# split
+s = "this is my string"
+s.split(maxsplit=1)
+>>>['this', 'is my string']
+####################################################################################

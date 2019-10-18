@@ -99,3 +99,4 @@ Route::group(['middleware' => ['disablePreventBackMiddleware', 'corsMiddleware']
 });
 
 Route::get('quality-recored-input-defect-data/store', array('uses' => 'QualityRecordInputDefectDataController@store'))->name('qualityRecoredInputDefectData.store');
+//Route::get('quality-recored-input-defect-data/all', array('uses' => 'QualityRecordInputDefectDataController@store'))->name('qualityRecoredInputDefectData.selectAllDefects');
