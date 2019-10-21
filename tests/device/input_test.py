@@ -136,11 +136,9 @@ def triggerOutputControlBusinessLogic_2(reference_id):
     API_URL_1 = "{api_schema_1}://{api_host_1}/{api_path_1}"
     API_URL_1 = API_URL_1.format(api_schema_1=API_SCHEME_1, api_host_1=API_HOST_1, api_path_1=API_PATH_1)
     
-    #url = 'https://www.w3schools.com/python/demopage.php'
-    #myobj = {'somekey': 'somevalue'}
-    #x = requests.post(url, data = myobj)
-    #print(x.text)
-    #print("{str1} {str2}".format(str1=str_dict['str1'], str2=str_dict['str2']))  # Hello World
+    data_param = {'code': (reference_id + 1), line_id: LINE_ID}
+    response = requests.get(API_URL_1, params=data_param)
+    #print(response.text)
 
 #groove sensor callback function
 def inputGSCallback(channel, reference_id):
@@ -231,8 +229,12 @@ def _main():
 	#pass
 	while True:
 		#pass
-		triggerOutputControlBusinessLogic_1()
-		time.sleep(5)
+        try:
+            triggerOutputControlBusinessLogic_1()
+        except:
+            print("An exception occurred")
+            
+        time.sleep(5)
 
 '''
 EXECUTE

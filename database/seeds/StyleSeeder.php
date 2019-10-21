@@ -22,7 +22,7 @@ class StyleSeeder extends Seeder
             'display_name' => 'style_1'
         ]);
         
-        $newStyle = Style::firstOrCreate([
+        /*$newStyle = Style::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
             'code' => 'style_2',
@@ -36,6 +36,6 @@ class StyleSeeder extends Seeder
             'code' => 'style_3',
             'name' => 'style_3',
             'display_name' => 'style_3'
-        ]);
+        ]);*/
     }
 }

@@ -324,7 +324,7 @@
                                     <!-- btn-toolbar -->
                                     <div class="col text-center">
                                         <!-- div class="btn-group btn-group-lg pull-right" -->
-                                            <button type="submit" class="btn btn-primary ml-auto mr-auto" id="submit">Submit</button>
+                                            <button type="submit" class="btn btn-primary ml-auto mr-auto" id="submit_form1">Submit</button>
                                         <!-- /div -->
                                     </div>
                                 </div>
@@ -589,6 +589,7 @@
     @includeIf('partials.script.select_measure_point', array())
     @includeIf('partials.script.select_multiple_defect_category', array())
     @includeIf('partials.script.select_multiple_defect', array())
+    @includeIf('partials.script.event_source_quality_record_input_defect_data_select', array())
 @endsection
 
 @push('stack_script')

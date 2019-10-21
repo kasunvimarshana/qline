@@ -42,6 +42,7 @@ use App\Export;
 use App\StandardSewingCheck;
 use App\Defect;
 use App\QualityRecordSewingCheck;
+use App\QualityRecoredInputDefectData as QualityRecoredInputDefectData;
 
 class QualityRecordSewingCheckController extends Controller
 {
@@ -194,7 +195,8 @@ class QualityRecordSewingCheckController extends Controller
         // validate the info, create rules for the inputs
         $rules = array(
             'measure_point_id_array' => 'required',
-            'defect_id_array' => 'required'
+            'defect_id_array' => 'required',
+            'quality_record_input_defect_data_id' => 'required|exists:quality_recored_input_defect_data,id'
         );
         // run the validation rules on the inputs from the form
         $validator = Validator::make(Input::all(), $rules);
@@ -215,6 +217,9 @@ class QualityRecordSewingCheckController extends Controller
             try {
                 // Start transaction!
                 DB::beginTransaction();
+                
+                $qualityRecoredInputDefectDataObject = new QualityRecoredInputDefectData();
+                $qualityRecoredInputDefectDataObject->where("id", "=", $request->input('quality_record_input_defect_data_id'))->delete();
                 
                 $dataArray = array(
                     'is_visible' => $request->input('is_visible', true),

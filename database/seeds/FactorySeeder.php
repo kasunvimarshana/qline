@@ -30,7 +30,7 @@ class FactorySeeder extends Seeder
                 'name' => 'line_1',
                 'display_name' => 'line_1'
             ]),
-            $newFactory->lines()->firstOrCreate([
+            /*$newFactory->lines()->firstOrCreate([
                 'is_visible' => true,
                 'is_active' => true,
                 'code' => 'line_2',
@@ -50,7 +50,7 @@ class FactorySeeder extends Seeder
                 'code' => 'line_4',
                 'name' => 'line_4',
                 'display_name' => 'line_4'
-            ])
+            ])*/
         );
             
         $newFactory->lines()->saveMany($lineArray);

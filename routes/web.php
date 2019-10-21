@@ -98,5 +98,8 @@ Route::group(['middleware' => ['disablePreventBackMiddleware', 'corsMiddleware']
     Route::post('user-a-p-i-tokens/login', array('uses' => 'LoginController@doLoginUserAPIToken'))->name('login.doLoginUserAPIToken');
 });
 
-Route::get('quality-recored-input-defect-data/store', array('uses' => 'QualityRecordInputDefectDataController@store'))->name('qualityRecoredInputDefectData.store');
-//Route::get('quality-recored-input-defect-data/all', array('uses' => 'QualityRecordInputDefectDataController@store'))->name('qualityRecoredInputDefectData.selectAllDefects');
+Route::match(['get', 'post'], 'quality-record-input-defect-data/store', array('uses' => 'QualityRecordInputDefectDataController@store'))->name('qualityRecordInputDefectData.store');
+
+Route::match(['get', 'post'], 'quality-record-input-defect-data/all', array('uses' => 'QualityRecordInputDefectDataController@selectAllQualityRecordInputDefectData'))->name('qualityRecordInputDefectData.selectAllQualityRecordInputDefectData');
+
+Route::match(['get', 'post'], 'quality-record-input-defect-data/select', array('uses' => 'QualityRecordInputDefectDataController@selectQualityRecordInputDefectData'))->name('qualityRecordInputDefectData.selectQualityRecordInputDefectData');

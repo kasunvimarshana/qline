@@ -22,7 +22,7 @@ class ExportSeeder extends Seeder
             'display_name' => 'export_1'
         ]);
         
-        $newExport = Export::firstOrCreate([
+        /*$newExport = Export::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
             'code' => 'export_2',
@@ -36,6 +36,6 @@ class ExportSeeder extends Seeder
             'code' => 'export_3',
             'name' => 'export_3',
             'display_name' => 'export_3'
-        ]);
+        ]);*/
     }
 }

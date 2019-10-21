@@ -38,7 +38,7 @@ class ColourSeeder extends Seeder
             'display_name' => 'yellow'
         ]);
         
-        $newColour = Colour::firstOrCreate([
+        /*$newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
             'code' => 'green',
@@ -220,6 +220,6 @@ class ColourSeeder extends Seeder
             'code' => 'gray',
             'name' => 'gray',
             'display_name' => 'gray'
-        ]);
+        ]);*/
     }
 }
