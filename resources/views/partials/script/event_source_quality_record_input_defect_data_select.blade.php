@@ -31,9 +31,14 @@ $(function(){
     
     form1.data("is_dirty", is_dirty);
     
-    if( (!!window.EventSource) ){
+    if( (!!window.EventSource) && (typeof(EventSource) !== "undefined") ){
         //console.log( window.EventSource );
         eventSourceObject = new EventSource( optionData.url );
+        /*
+        eventSourceObject = new EventSource( optionData.url, {
+            withCredentials: true
+        });
+        */
         
         eventSourceObject.addEventListener("open", function(event){
             //console.log(event.data);
@@ -47,6 +52,12 @@ $(function(){
         }, false);
         
         eventSourceObject.addEventListener("message", function(event){
+            /*
+            if (event.origin != 'http://example.com') {
+                alert('Origin was not http://example.com');
+                return;
+            }
+            */
             //console.log(event.data);
             try{
                 is_dirty = form1.data("is_dirty");
@@ -120,13 +131,33 @@ $(function(){
                         input_temp.attr("readonly", ("readonly"));
                         input_temp.addClass( temp_quality_record_input_defect_data_id );
                         form1_hidden_input_group.append(input_temp);
+                        
+                        setTimeout(function() {
+                            eventSourceObject.close();
+                        }, 0);
                     }
                 }
+                
+                
+                if (event.id == "CLOSE") {
+                    setTimeout(function() {
+                        event.target.close();
+                        if (typeof(eventSourceObject) !== "undefined") {
+                            eventSourceObject.close();
+                        }
+                    }, 0);
+                }
+                
             }catch(exception){
                 //console.log(exception);
             }
         }, false);
+        
+        //eventSourceObject.addEventListener('connections', function(event){}, false);
+        //eventSourceObject.addEventListener('requests', function(event){}, false);
+        //eventSourceObject.addEventListener('uptime', function(event){}, false);
     }else{
+        alert("You're browser does not support EventSource needed for this page");
         //route to xhr polling
     }
     

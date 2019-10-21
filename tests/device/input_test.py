@@ -50,7 +50,7 @@ outputAndonLEDArray = [OUTPUT_ANDON_LED_RED, OUTPUT_ANDON_LED_ORANGE, OUTPUT_AND
 
 API_HOST_1 = "192.168.8.102"
 API_SCHEME_1 = "http"
-API_PATH_1 = "qline_project/qline/public/quality-recored-input-defect-data/store"
+API_PATH_1 = "qline_project/qline/public/quality-record-input-defect-data/store"
 API_QUERY_1 = "?key=value"
 API_FRAGMENT_1 = "#"
 
@@ -123,7 +123,7 @@ def triggerOutputControlBusinessLogic_1():
 def triggerOutputControlBusinessLogic_2(reference_id):
     API_HOST_1 = "192.168.8.102"
     API_SCHEME_1 = "http"
-    API_PATH_1 = "qline_project/qline/public/quality-recored-input-defect-data/store"
+    API_PATH_1 = "qline_project/qline/public/quality-record-input-defect-data/store"
     API_QUERY_1 = "?key=value"
     API_FRAGMENT_1 = "#"
 

@@ -617,6 +617,8 @@ class QualityRecordInputDefectDataController extends Controller
                         $qualityRecoredInputDefectDataObject = $qualityRecoredInputDefectDataObject->where("export_id", "=", $exportObject->id);
                     }
                     
+                    $qualityRecoredInputDefectDataObject = $qualityRecoredInputDefectDataObject->where("is_active", "=", true);
+                    
                     $qualityRecoredInputDefectDataObject = $qualityRecoredInputDefectDataObject
                         ->whereDate('time_create', '=', $date_today->format('Y-m-d'));
                     
@@ -629,7 +631,7 @@ class QualityRecordInputDefectDataController extends Controller
                 unset($dataArray);
                 // Commit transaction!
                 DB::commit();
-            }catch(Exception $e){dd($e);
+            }catch(Exception $e){
                 // Rollback transaction!
                 DB::rollback(); 
                 //return redirect()->back()->withInput();
@@ -669,16 +671,22 @@ class QualityRecordInputDefectDataController extends Controller
         ));
         */
         $streamedResponseObject->setCallback(function() use($data){
-            $retry_value = 1000;
+            $retry_value = 3000;
             echo "data: " . json_encode( $data );
             echo PHP_EOL;
             //echo "event: ". "select";
             echo PHP_EOL;
             echo "retry: ". "{$retry_value}";
             
+            /*
             ob_flush();
             flush();
             usleep(100000);
+            */
+            
+            ob_end_flush();
+            flush();
+            //sleep(1);
             
             unset( $data );
         });
