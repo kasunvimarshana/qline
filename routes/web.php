@@ -27,6 +27,8 @@ Route::get('login', array('uses' => 'LoginController@showLogin'))->name('login.s
 Route::post('login', array('uses' => 'LoginController@doLogin'))->name('login.doLogin');
 // route to procss logout
 Route::get('logout', array('uses' => 'LoginController@doLogout'))->name('login.doLogout');
+// route to storage
+Route::get('storage/{filename}', array('uses' => 'UserAttachmentController@showFile'))->where(['filename' => '.*']);
 
 Route::group(['middleware' => ['authorizedUserMiddleware', 'disablePreventBackMiddleware', 'corsMiddleware']], function(){
     

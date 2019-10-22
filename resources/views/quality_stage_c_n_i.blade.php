@@ -2,6 +2,7 @@
 
 @section('section_stylesheet_optional')
     @parent
+    <link rel="stylesheet" type="text/css" href="{!! asset('css/custom_style_select2_1.css') !!}"/>
 @endsection
 
 @section('section_script_optional')
@@ -78,33 +79,29 @@
                                                                     <!-- -->
                                                                     <!-- form-group -->
                                                                     <div class="form-group row col-sm-4 m-0">
-                                                                        <label for="customer" class="col col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Buyer / Customer</label>
+                                                                        <label for="customer_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Customer</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <select class="form-control form-control-md select2" id="customer" name="customer" value="{{ old('customer') }}" data-placeholder="Buyer / Customer" style="width: 100%;" required>
-
-                                                                                <!-- @for($i =1; $i <= 5; $i++) -->
-                                                                                <option>Customer {{ $i }}</option>
-                                                                                <!-- @endfor -->
-
-                                                                            </select>
+                                                                            <div class="input-group h-100">
+                                                                                <select class="form-control form-control-md select2" id="customer_id" name="customer_id" value="{{ old('customer_id') }}" data-placeholder="Customer" style="width: 100%;">
+                                                                                    <!-- option> Option </option -->
+                                                                                </select>
+                                                                            </div>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
                                                                     <!-- /.form-group -->
-
+                                                                    
                                                                     <!-- form-group -->
                                                                     <div class="form-group row col-sm-4 m-0">
-                                                                        <label for="style" class="col col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Style</label>
+                                                                        <label for="style_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Style</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <select class="form-control form-control-md select2" id="style" name="style" value="{{ old('style') }}" data-placeholder="Style" style="width: 100%;" required>
-
-                                                                                <!-- @for($i =1; $i <= 5; $i++) -->
-                                                                                <option>Style {{ $i }}</option>
-                                                                                <!-- @endfor -->
-
-                                                                            </select>
+                                                                            <div class="input-group h-100">
+                                                                                <select class="form-control form-control-md select2" id="style_id" name="style_id" value="{{ old('style_id') }}" data-placeholder="Style" style="width: 100%;">
+                                                                                    <!-- option> Option </option -->
+                                                                                </select>
+                                                                            </div>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -129,16 +126,14 @@
                                                                     
                                                                     <!-- form-group -->
                                                                     <div class="form-group row col-sm-4 m-0">
-                                                                        <label for="colour" class="col col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Colour</label>
+                                                                        <label for="colour_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Colour</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <select class="form-control form-control-md select2" id="colour" name="colour" value="{{ old('colour') }}" data-placeholder="Colour" style="width: 100%;" required>
-
-                                                                                <!-- @for($i =1; $i <= 5; $i++) -->
-                                                                                <option>Colour {{ $i }}</option>
-                                                                                <!-- @endfor -->
-
-                                                                            </select>
+                                                                            <div class="input-group h-50">
+                                                                                <select class="form-control form-control-md select2" id="colour_id" name="colour_id" value="{{ old('colour_id') }}" data-placeholder="Colour" style="width: 100%;">
+                                                                                    <!-- option> Option </option -->
+                                                                                </select>
+                                                                            </div>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -284,6 +279,9 @@
 
 @section('section_script_document')
     @parent
+    @includeIf('partials.script.select_customer', array());
+    @includeIf('partials.script.select_style', array());
+    @includeIf('partials.script.select_colour', array());
 @endsection
 
 @push('stack_script')

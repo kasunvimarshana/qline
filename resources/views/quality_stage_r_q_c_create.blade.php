@@ -244,7 +244,16 @@
                                                                     <div class="form-group row text-center">
                                                                         <!-- img-container -->
                                                                         <div class="img box clearfix text-center">
-                                                                            <img src="{!! asset('img/avatar5.png') !!}" alt="" class="img-responsive img-fluid img-thumbnail rounded"/>
+                                                                            @php
+                                                                                $image_uri = asset('img/avatar5.png');
+                                                                                if( (isset($user_object)) && ($user_object->image_uri) ){
+                                                                                    if(Storage::exists($user_object->image_uri)){
+                                                                                        $image_uri = Storage::url($user_object->image_uri);
+                                                                                        $image_uri = asset($image_uri);
+                                                                                    }
+                                                                                }
+                                                                            @endphp
+                                                                            <img src="{!! $image_uri !!}" alt="" class="img-responsive img-fluid img-thumbnail rounded" style="max-width: 13em; min-width: 13em;"/>
                                                                         </div>
                                                                         <!-- /.img-container -->
                                                                     </div>
