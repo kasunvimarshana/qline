@@ -25,8 +25,8 @@ class UserSeeder extends Seeder
         $newUser = User::firstOrCreate([
             'is_visible' => false,
             'is_active' => true,
-            'code' => '0admin',
-            'code_epf' => '0admin',
+            'code' => 'admin',
+            'code_epf' => 'admin',
             'name_first' => 'admin',
             'name_last' => 'admin',
             'password' => Hash::make('password')
@@ -37,8 +37,8 @@ class UserSeeder extends Seeder
             [
                 'is_visible' => false,
                 'is_active' => true,
-                'code' => '0admin',
-                'code_epf' => '0admin',
+                'code' => 'admin',
+                'code_epf' => 'admin',
                 'name_first' => 'admin',
                 'name_last' => 'admin',
                 'email' => 'kasunvmail@gmail.com'
@@ -46,8 +46,8 @@ class UserSeeder extends Seeder
             [
                 'is_visible' => false,
                 'is_active' => true,
-                'code' => '0admin',
-                'code_epf' => '0admin',
+                'code' => 'admin',
+                'code_epf' => 'admin',
                 'name_first' => 'admin',
                 'name_last' => 'admin',
                 'password' => Hash::make('password'),

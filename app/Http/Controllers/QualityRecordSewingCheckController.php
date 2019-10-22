@@ -94,7 +94,9 @@ class QualityRecordSewingCheckController extends Controller
                 $companyObject = new Company();
                 $company_id = $request->session()->get('setup_configuration_company_id', null);
                 $companyObject = $companyObject->where('id', '=', $company_id)->first();
-                $companyObject->load(['strategicBusinessUnits']);
+                if( ($companyObject) ){
+                    $companyObject->load(['strategicBusinessUnits']);
+                }
                 
                 $strategicBusinessUnitObject = new StrategicBusinessUnit();
                 $strategic_business_unit_id = $request->session()->get('setup_configuration_strategic_business_unit_id', null);

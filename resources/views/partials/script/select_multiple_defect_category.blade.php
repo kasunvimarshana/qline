@@ -9,6 +9,12 @@ $(function(){
     optionData.url = "{!! route('defectCategory.selectAllDefectCategories', []) !!}";
     optionData.id = "#defect_category_id";
     
+    /*
+    if( ($( optionData.id ).length) ){
+        alert("The element you're testing is present.");
+    }
+    */
+    
     function getFormatResult(param){
         if (!param.id){
             return param.text; // optgroup

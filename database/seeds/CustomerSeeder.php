@@ -17,25 +17,25 @@ class CustomerSeeder extends Seeder
         $newCustomer = Customer::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'customer_1',
-            'name' => 'customer_1',
-            'display_name' => 'customer_1'
+            'code' => 'Customer01',
+            'name' => 'Customer01',
+            'display_name' => 'Customer01'
         ]);
         
         /*$newCustomer = Customer::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'customer_2',
-            'name' => 'customer_2',
-            'display_name' => 'customer_2'
+            'code' => 'Customer02',
+            'name' => 'Customer02',
+            'display_name' => 'Customer02'
         ]);
         
         $newCustomer = Customer::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'customer_3',
-            'name' => 'customer_3',
-            'display_name' => 'customer_3'
+            'code' => 'Customer03',
+            'name' => 'Customer03',
+            'display_name' => 'Customer03'
         ]);*/
     }
 }

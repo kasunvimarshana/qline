@@ -9,6 +9,12 @@ $(function(){
     optionData.url = "{!! route('line.selectAllLines', []) !!}";
     optionData.id = "#line_id";
     
+    /*
+    if( ($( optionData.id ).length) ){
+        alert("The element you're testing is present.");
+    }
+    */
+    
     var selectOptionObject = $( optionData.id ).select2({
         theme : 'bootstrap',
         //disabled : false,

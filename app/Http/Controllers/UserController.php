@@ -19,7 +19,7 @@ use Illuminate\Http\JsonResponse;
 use \StdClass;
 use \Exception;
 use Carbon\Carbon;
-//use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Session as Session;
 //use Illuminate\Support\Facades\Cookie as Cookie;
 //use Illuminate\Http\Request;
@@ -128,6 +128,32 @@ class UserController extends Controller
                     'grade' => $request->input('grade'),
                     'remember_token' => $request->input('remember_token')
                 );
+                
+                if ( ($request->hasFile('image_uri')) ) {
+                    //
+                    //$file->isValid();
+                    $app_file_storage_uri = $this->app_file_storage_uri;
+                    if( (!Storage::exists($app_file_storage_uri)) ) {
+                        Storage::makeDirectory($app_file_storage_uri, 0775, true); //creates directory
+                    }
+                    
+                    $image_uri = $request->file('image_uri');
+                    
+                    //chmod(Storage::path($app_file_storage_uri), 0755);
+                    
+                    if( ($image_uri->isValid()) ){
+                        $file_original_name = $image_uri->getClientOriginalName();
+                        $file_type = $image_uri->getClientOriginalExtension();
+                        //$filename = $image_uri->store( $app_file_storage_uri );
+                        $filename = $image_uri->storeAs( 
+                            $app_file_storage_uri,
+                            uniqid( time() ) . '_' . $file_original_name
+                        );
+                        //chmod(Storage::path($filename), 0755);
+                        
+                        $dataArray['image_uri'] = $filename;
+                    }
+                }
 
                 $userObject = User::create( $dataArray );
                 

@@ -848,8 +848,11 @@
 @push('stack_script')
 <script>
     $(function(){
-        $("#id_left_control_div").collapse("hide");
-        $("#id_right_control_div").collapse("hide");
+        //$("#id_left_control_div").collapse("hide");
+        //$("#id_right_control_div").collapse("hide");
+        
+        $("#id_left_control_div").collapse("show");
+        $("#id_right_control_div").collapse("show");
     });
 </script>
 @endpush
@@ -866,6 +869,22 @@
         $("#id_nav_container_1").removeClass("multi-collapse");
         $("#id_nav_container_1").removeClass("show");
         $("#id_nav_container_1").addClass("show");
+    });
+</script>
+@endpush
+
+@push('stack_script')
+<script>
+    $(function(){
+        "use strict";
+        var defect_category_id = $("#defect_category_id");
+        var defect_id = $("#defect_id");
+        
+        defect_category_id.on("change.select2", function (event) {
+            //console.log(event.target.value);
+            var defect_category_id_value = defect_category_id.val();
+            defect_id.data("defect_category_id", defect_category_id_value);
+        });
     });
 </script>
 @endpush

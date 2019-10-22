@@ -17,209 +17,193 @@ class ColourSeeder extends Seeder
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'red',
-            'name' => 'red',
-            'display_name' => 'red'
+            'code' => 'Red',
+            'name' => 'Red',
+            'display_name' => 'Red'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'orange',
-            'name' => 'orange',
-            'display_name' => 'orange'
+            'code' => 'Orange',
+            'name' => 'Orange',
+            'display_name' => 'Orange'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'yellow',
-            'name' => 'yellow',
-            'display_name' => 'yellow'
+            'code' => 'Yellow',
+            'name' => 'Yellow',
+            'display_name' => 'Yellow'
         ]);
         
         /*$newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'green',
-            'name' => 'green',
-            'display_name' => 'green'
+            'code' => 'Green',
+            'name' => 'Green',
+            'display_name' => 'Green'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'blue',
-            'name' => 'blue',
-            'display_name' => 'blue'
+            'code' => 'Blue',
+            'name' => 'Blue',
+            'display_name' => 'Blue'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'purple',
-            'name' => 'purple',
-            'display_name' => 'purple'
+            'code' => 'Purple',
+            'name' => 'Purple',
+            'display_name' => 'Purple'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'brown',
-            'name' => 'brown',
-            'display_name' => 'brown'
+            'code' => 'Brown',
+            'name' => 'Brown',
+            'display_name' => 'Brown'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'magenta',
-            'name' => 'magenta',
-            'display_name' => 'magenta'
+            'code' => 'Magenta',
+            'name' => 'Magenta',
+            'display_name' => 'Magenta'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'tan',
-            'name' => 'tan',
-            'display_name' => 'tan'
+            'code' => 'Tan',
+            'name' => 'Tan',
+            'display_name' => 'Tan'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'cyan',
-            'name' => 'cyan',
-            'display_name' => 'cyan'
+            'code' => 'Cyan',
+            'name' => 'Cyan',
+            'display_name' => 'Cyan'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => '',
-            'name' => '',
-            'display_name' => ''
+            'code' => 'Olive',
+            'name' => 'Olive',
+            'display_name' => 'Olive'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'olive',
-            'name' => 'olive',
-            'display_name' => 'olive'
+            'code' => 'Maroon',
+            'name' => 'Maroon',
+            'display_name' => 'Maroon'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'maroon',
-            'name' => 'maroon',
-            'display_name' => 'maroon'
+            'code' => 'Navy',
+            'name' => 'Navy',
+            'display_name' => 'Navy'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'navy',
-            'name' => 'navy',
-            'display_name' => 'navy'
+            'code' => 'Aquamarine',
+            'name' => 'Aquamarine',
+            'display_name' => 'Aquamarine'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'aquamarine',
-            'name' => 'aquamarine',
-            'display_name' => 'aquamarine'
+            'code' => 'Turquoise',
+            'name' => 'Turquoise',
+            'display_name' => 'Turquoise'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'turquoise',
-            'name' => 'turquoise',
-            'display_name' => 'turquoise'
+            'code' => 'Silver',
+            'name' => 'Silver',
+            'display_name' => 'Silver'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'silver',
-            'name' => 'silver',
-            'display_name' => 'silver'
+            'code' => 'Lime',
+            'name' => 'Lime',
+            'display_name' => 'Lime'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'lime',
-            'name' => 'lime',
-            'display_name' => 'lime'
+            'code' => 'Teal',
+            'name' => 'Teal',
+            'display_name' => 'Teal'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'teal',
-            'name' => 'teal',
-            'display_name' => 'teal'
+            'code' => 'Indigo',
+            'name' => 'Indigo',
+            'display_name' => 'Indigo'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'indigo',
-            'name' => 'indigo',
-            'display_name' => 'indigo'
+            'code' => 'Violet',
+            'name' => 'Violet',
+            'display_name' => 'Violet'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'violet',
-            'name' => 'violet',
-            'display_name' => 'violet'
+            'code' => 'Pink',
+            'name' => 'Pink',
+            'display_name' => 'Pink'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => '',
-            'name' => '',
-            'display_name' => ''
+            'code' => 'Black',
+            'name' => 'Black',
+            'display_name' => 'Black'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'pink',
-            'name' => 'pink',
-            'display_name' => 'pink'
+            'code' => 'White',
+            'name' => 'White',
+            'display_name' => 'White'
         ]);
         
         $newColour = Colour::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'black',
-            'name' => 'black',
-            'display_name' => 'black'
-        ]);
-        
-        $newColour = Colour::firstOrCreate([
-            'is_visible' => true,
-            'is_active' => true,
-            'code' => 'white',
-            'name' => 'white',
-            'display_name' => 'white'
-        ]);
-        
-        $newColour = Colour::firstOrCreate([
-            'is_visible' => true,
-            'is_active' => true,
-            'code' => 'gray',
-            'name' => 'gray',
-            'display_name' => 'gray'
+            'code' => 'Gray',
+            'name' => 'Gray',
+            'display_name' => 'Gray'
         ]);*/
     }
 }

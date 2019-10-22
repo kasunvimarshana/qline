@@ -17,18 +17,18 @@ class DepartmentSeeder extends Seeder
         $newDepartment = Department::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'quality',
-            'name' => 'quality',
-            'display_name' => 'quality'
+            'code' => 'Quality',
+            'name' => 'Quality',
+            'display_name' => 'Quality'
         ]);
         
         $sectionArray = array(
             $newDepartment->sections()->firstOrCreate([
                 'is_visible' => true,
                 'is_active' => true,
-                'code' => 'section_1',
-                'name' => 'section_1',
-                'display_name' => 'section_1'
+                'code' => 'Section01',
+                'name' => 'Section01',
+                'display_name' => 'Section01'
             ])
         );
             

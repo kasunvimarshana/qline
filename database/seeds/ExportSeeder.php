@@ -17,25 +17,25 @@ class ExportSeeder extends Seeder
         $newExport = Export::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'export_1',
-            'name' => 'export_1',
-            'display_name' => 'export_1'
+            'code' => 'E0001',
+            'name' => 'E0001',
+            'display_name' => 'E0001'
         ]);
         
         /*$newExport = Export::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'export_2',
-            'name' => 'export_2',
-            'display_name' => 'export_2'
+            'code' => 'E0002',
+            'name' => 'E0002',
+            'display_name' => 'E0002'
         ]);
         
         $newExport = Export::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'export_3',
-            'name' => 'export_3',
-            'display_name' => 'export_3'
+            'code' => 'E0003',
+            'name' => 'E0003',
+            'display_name' => 'E0003'
         ]);*/
     }
 }

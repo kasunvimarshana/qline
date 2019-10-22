@@ -9,6 +9,12 @@ $(function(){
     optionData.url = "{!! route('customer.selectAllCustomers', []) !!}";
     optionData.id = "#customer_id";
     
+    /*
+    if( ($( optionData.id ).length) ){
+        alert("The element you're testing is present.");
+    }
+    */
+    
     var selectOptionObject = $( optionData.id ).select2({
         theme : 'bootstrap',
         //disabled : false,

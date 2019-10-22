@@ -569,8 +569,9 @@ class DefectController extends Controller
                 
                 // defect_category_id
                 if( ($request->has('defect_category_id')) && ($request->filled('defect_category_id')) ){
-                    $defect_category_id = $request->input('defect_category_id');
-                    $query = $query->where('defect_category_id', '=', $defect_category_id);
+                    $defect_category_id = (array) $request->input('defect_category_id');
+                    //dd($defect_category_id);
+                    $query = $query->whereIn('defect_category_id', $defect_category_id);
                 }
 
                 // get filtered record count

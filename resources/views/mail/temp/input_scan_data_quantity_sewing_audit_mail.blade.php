@@ -17,4 +17,4 @@
     </table>
 @endisset
 
-<p>***************** Please do not reply, System generated email *****************</p>
+<p>****** System Genarated Message ******</p>

@@ -17,25 +17,25 @@ class StyleSeeder extends Seeder
         $newStyle = Style::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'style_1',
-            'name' => 'style_1',
-            'display_name' => 'style_1'
+            'code' => 'S0001',
+            'name' => 'S0001',
+            'display_name' => 'S0001'
         ]);
         
         /*$newStyle = Style::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'style_2',
-            'name' => 'style_2',
-            'display_name' => 'style_2'
+            'code' => 'S0002',
+            'name' => 'S0002',
+            'display_name' => 'S0002'
         ]);
         
         $newStyle = Style::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'style_3',
-            'name' => 'style_3',
-            'display_name' => 'style_3'
+            'code' => 'S0003',
+            'name' => 'S0003',
+            'display_name' => 'S0003'
         ]);*/
     }
 }

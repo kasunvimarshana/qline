@@ -2,23 +2,17 @@
 
 @isset($user_a_p_i_token_object)
 
-    @if ( ($user_a_p_i_token_object->user) )
-        <p>Dear {{ $user_a_p_i_token_object->user->name_first }},</p>
-    @endif
+    <p>Dear User,</p>
 
-    <p><strong>New Token</strong></p>
-    <!-- style="border: 1px solid black;" -->
-    <table style="width: 100%;">
-        @php
-            $userObject = $user_a_p_i_token_object->user;
-        @endphp
-        @isset($userObject)
-            <tr style="">
-                <td style="width: 15%;text-align: right !important;"> Code : </td>
-                <td style=""> {{ $userObject->code_active }} </td>
-            </tr>
-        @endisset
-    </table>
+    <p>Please use following token for Account Validation </p>
+    @php
+        $userObject = $user_a_p_i_token_object->user;
+    @endphp
+    @isset($userObject)
+        <p><strong>{{ $userObject->code_active }}</strong></p>
+    @endisset
 @endisset
 
-<p>****** System Genarated Message ******</p>
+<p>Restricted user account, Please don’t share your user account with any other person</p> 
+
+<p>***************** Please do not reply, System generated email *****************</p>

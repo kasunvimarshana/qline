@@ -47,13 +47,15 @@
                                             <div class="container mt-3 mb-3">
                                                 <!-- h2 class="text-danger"> - </h2 -->
                                                 <!-- p> - </p -->
+                                                
+                                                <h5 class="text-danger"> Location </h5>
                                             </div>
                                             <!-- /.container -->
                                             <!-- form-group-col -->
                                             <div class="col col-sm-12 row p-0 m-0">
                                                 <!-- -->
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-6">
+                                                <div class="form-group row col-sm-6 d-none">
                                                     <label for="time_create" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">System Date</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
@@ -71,7 +73,7 @@
                                                 <!-- /.form-group -->
                                                 
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-6">
+                                                <div class="form-group row col-sm-6 d-none">
                                                     <label for="company_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Group</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
@@ -86,7 +88,7 @@
                                                 <!-- /.form-group -->
                                                 
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-6">
+                                                <div class="form-group row col-sm-6 d-none">
                                                     <label for="strategic_business_unit_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">SBU</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->

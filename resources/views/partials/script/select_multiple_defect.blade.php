@@ -9,6 +9,12 @@ $(function(){
     optionData.url = "{!! route('defect.selectAllDefects', []) !!}";
     optionData.id = "#defect_id";
     
+    /*
+    if( ($( optionData.id ).length) ){
+        alert("The element you're testing is present.");
+    }
+    */
+    
     function getFormatResult(param){
         if (!param.id){
             return param.text; // optgroup
@@ -77,6 +83,17 @@ $(function(){
                     page : params.page || 1,
                     length : 10
                 }
+                
+                var elementObject = $( optionData.id );
+                var elementObjectData = new Object();
+                var elementObjectDataTemp = new Object();
+                elementObjectDataTemp = elementObject.data();
+                //elementObject.removeData();
+                
+                if( elementObjectDataTemp.hasOwnProperty('defect_category_id') ){
+                    query.defect_category_id = elementObjectDataTemp.defect_category_id;
+                }
+                
                 return query;
             },
             //results : function(data, params){},

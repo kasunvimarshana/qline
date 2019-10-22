@@ -46,9 +46,11 @@ $(function(){
         
         eventSourceObject.addEventListener("error", function(event){
             //console.log(event.data);
+            /*
             if( (event.readyState == EventSource.CLOSED) ){
-               //console.log( EventSource.CLOSED );
+               console.log( EventSource.CLOSED );
             }
+            */
         }, false);
         
         eventSourceObject.addEventListener("message", function(event){
@@ -83,7 +85,7 @@ $(function(){
                         
                         bootbox.confirm({
                             size: "small",
-                            title: "Confirmation",
+                            title: "Defect Card Tracer",
                             message: "Card No: <strong>" + quality_recored_input_defect_data_object.code + "</strong><br/><small> was picked</small>",
                             onEscape: true,
                             show: true,
@@ -138,7 +140,7 @@ $(function(){
                     }
                 }
                 
-                
+                /*
                 if (event.id == "CLOSE") {
                     setTimeout(function() {
                         event.target.close();
@@ -147,7 +149,7 @@ $(function(){
                         }
                     }, 0);
                 }
-                
+                */
             }catch(exception){
                 //console.log(exception);
             }

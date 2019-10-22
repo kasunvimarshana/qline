@@ -649,3 +649,19 @@
     });
 </script>
 @endpush
+
+@push('stack_script')
+<script>
+    $(function(){
+        "use strict";
+        var defect_category_id = $("#defect_category_id");
+        var defect_id = $("#defect_id");
+        
+        defect_category_id.on("change.select2", function (event) {
+            //console.log(event.target.value);
+            var defect_category_id_value = defect_category_id.val();
+            defect_id.data("defect_category_id", defect_category_id_value);
+        });
+    });
+</script>
+@endpush

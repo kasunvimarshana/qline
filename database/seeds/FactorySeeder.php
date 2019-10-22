@@ -17,39 +17,39 @@ class FactorySeeder extends Seeder
         $newFactory = Factory::firstOrCreate([
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'bli_1',
-            'name' => 'bli_1',
-            'display_name' => 'bli_1'
+            'code' => 'BLI01',
+            'name' => 'BLI01',
+            'display_name' => 'BLI01'
         ]);
         
         $lineArray = array(
             $newFactory->lines()->firstOrCreate([
                 'is_visible' => true,
                 'is_active' => true,
-                'code' => 'line_1',
-                'name' => 'line_1',
-                'display_name' => 'line_1'
+                'code' => 'Line01',
+                'name' => 'Line01',
+                'display_name' => 'Line01'
             ]),
             /*$newFactory->lines()->firstOrCreate([
                 'is_visible' => true,
                 'is_active' => true,
-                'code' => 'line_2',
-                'name' => 'line_2',
-                'display_name' => 'line_2'
+                'code' => 'Line02',
+                'name' => 'Line02',
+                'display_name' => 'Line02'
             ]),
             $newFactory->lines()->firstOrCreate([
                 'is_visible' => true,
                 'is_active' => true,
-                'code' => 'line_3',
-                'name' => 'line_3',
-                'display_name' => 'line_3'
+                'code' => 'Line03',
+                'name' => 'Line03',
+                'display_name' => 'Line03'
             ]),
             $newFactory->lines()->firstOrCreate([
                 'is_visible' => true,
                 'is_active' => true,
-                'code' => 'line_4',
-                'name' => 'line_4',
-                'display_name' => 'line_4'
+                'code' => 'Line04',
+                'name' => 'Line04',
+                'display_name' => 'Line04'
             ])*/
         );
             

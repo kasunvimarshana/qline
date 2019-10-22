@@ -19,18 +19,18 @@ class CompanySeeder extends Seeder
             //'id' => 'brandix',
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'brandix',
-            'name' => 'brandix',
-            'display_name' => 'brandix'
+            'code' => 'Brandix',
+            'name' => 'Brandix',
+            'display_name' => 'Brandix'
         ]);
         
         $newStrategicBusinessUnit = $newCompany->strategicBusinessUnits()->firstOrCreate([
             //'id' => 'bli',
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'bli',
-            'name' => 'bli',
-            'display_name' => 'bli'
+            'code' => 'BLI',
+            'name' => 'BLI',
+            'display_name' => 'BLI'
         ]);
         
         $newCompany->strategicBusinessUnits()->save($newStrategicBusinessUnit);
