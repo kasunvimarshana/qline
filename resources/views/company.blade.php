@@ -53,7 +53,7 @@
                                                 <label for="name" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Name</label>
                                                 <div class="col">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="text" class="form-control form-control-md" id="name" name="name" placeholder="Name" value="{{ old('name') }}" required/>
+                                                    <input type="text" class="form-control form-control-md" id="name" name="name" placeholder="Name" value="{{ old('name') }}" autocomplete="off" required="required"/>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
                                             </div>

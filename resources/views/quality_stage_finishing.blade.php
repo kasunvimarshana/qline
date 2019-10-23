@@ -99,7 +99,7 @@
                                                                             <!-- label for="name" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Label</label -->
                                                                             <div class="col">
                                                                                 <!-- p class="form-control-static"></p -->
-                                                                                <input type="checkbox" class="form-control form-check-input" id="input_check_id_{{ $key }}" name="name_{{ $key }}" data-toggle="toggle" data-size="md" data-onstyle="primary" data-offstyle="light" data-on="<i class='fas fa-toggle-on'></i>" data-off="<i class='fas fa-toggle-off'></i>"/>
+                                                                                <input type="checkbox" class="form-control form-check-input" id="input_check_id_{{ $key }}" name="name_{{ $key }}" autocomplete="off" data-toggle="toggle" data-size="md" data-onstyle="primary" data-offstyle="light" data-on="<i class='fas fa-toggle-on'></i>" data-off="<i class='fas fa-toggle-off'></i>"/>
                                                                             </div>
                                                                             <!-- span id="form-control" class="help-block"></span -->
                                                                         </div>

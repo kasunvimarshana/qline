@@ -82,7 +82,7 @@
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group">
-                                                                                <input type="text" class="form-control form-control-md" id="code" name="code" placeholder="EMP No" value="{{ old('code') }}" aria-label="EMP No" aria-describedby="id_input_addon" required="required"/>
+                                                                                <input type="text" class="form-control form-control-md" id="code" name="code" placeholder="EMP No" value="{{ old('code') }}" autocomplete="off" aria-label="EMP No" aria-describedby="id_input_addon" required="required"/>
                                                                                 <div class="input-group-addon input-group-append">
                                                                                     <!-- div class="input-group-text" -->
                                                                                         <button type="submit" class="btn btn btn-outline-danger" id="submit">Search</button>

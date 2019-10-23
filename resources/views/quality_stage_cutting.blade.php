@@ -83,7 +83,7 @@
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group h-100">
-                                                                                <select class="form-control form-control-md select2" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" data-placeholder="Defect" style="width: 100%;" required="required">
+                                                                                <select class="form-control form-control-md select2" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" autocomplete="off" data-placeholder="Defect" style="width: 100%;" required="required">
                                                                                     <!-- option> Option </option -->
                                                                                 </select>
                                                                             </div>
@@ -98,7 +98,7 @@
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group h-100">
-                                                                                <select class="form-control form-control-md select2" id="severity" name="severity" value="{{ old('severity') }}" data-placeholder="Severity" style="width: 100%;" required="required">
+                                                                                <select class="form-control form-control-md select2" id="severity" name="severity" value="{{ old('severity') }}" autocomplete="off" data-placeholder="Severity" style="width: 100%;" required="required">
                                                                                     <option value="high"> High </option>
                                                                                     <option value="low"> Low </option>
                                                                                     <option value="moderate"> Moderate </option>
@@ -114,7 +114,7 @@
                                                                         <label for="count_defect" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Count</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="number" class="form-control form-control-md" id="count_defect" name="count_defect" placeholder="Count" value="{{ old('count_defect') }}" required="required"/>
+                                                                            <input type="number" class="form-control form-control-md" id="count_defect" name="count_defect" placeholder="Count" value="{{ old('count_defect') }}" autocomplete="off" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -125,7 +125,7 @@
                                                                         <!-- label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Label</label -->
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <textarea type="text" class="form-control form-control-md" id="action_to_be_taken" name="action_to_be_taken" placeholder="Corrective / Preventive Action to be taken" value="{{ old('action_to_be_taken') }}" rows="5" required="required"></textarea>
+                                                                            <textarea type="text" class="form-control form-control-md" id="action_to_be_taken" name="action_to_be_taken" placeholder="Corrective / Preventive Action to be taken" value="{{ old('action_to_be_taken') }}" autocomplete="off" rows="5" required="required"></textarea>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>

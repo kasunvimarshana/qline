@@ -83,7 +83,7 @@
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group h-100">
-                                                                                <select class="form-control form-control-md select2" id="customer_id" name="customer_id" value="{{ old('customer_id') }}" data-placeholder="Customer" style="width: 100%;">
+                                                                                <select class="form-control form-control-md select2" id="customer_id" name="customer_id" value="{{ old('customer_id') }}" autocomplete="off" data-placeholder="Customer" style="width: 100%;">
                                                                                     <!-- option> Option </option -->
                                                                                 </select>
                                                                             </div>
@@ -98,7 +98,7 @@
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group h-100">
-                                                                                <select class="form-control form-control-md select2" id="style_id" name="style_id" value="{{ old('style_id') }}" data-placeholder="Style" style="width: 100%;">
+                                                                                <select class="form-control form-control-md select2" id="style_id" name="style_id" value="{{ old('style_id') }}" autocomplete="off" data-placeholder="Style" style="width: 100%;">
                                                                                     <!-- option> Option </option -->
                                                                                 </select>
                                                                             </div>
@@ -112,7 +112,7 @@
                                                                         <label for="po_no" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">PO No</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-md" id="po_no" name="po_no" placeholder="PO No" value="{{ old('po_no') }}" required/>
+                                                                            <input type="text" class="form-control form-control-md" id="po_no" name="po_no" placeholder="PO No" value="{{ old('po_no') }}" autocomplete="off" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -130,7 +130,7 @@
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group h-50">
-                                                                                <select class="form-control form-control-md select2" id="colour_id" name="colour_id" value="{{ old('colour_id') }}" data-placeholder="Colour" style="width: 100%;">
+                                                                                <select class="form-control form-control-md select2" id="colour_id" name="colour_id" value="{{ old('colour_id') }}" autocomplete="off" data-placeholder="Colour" style="width: 100%;">
                                                                                     <!-- option> Option </option -->
                                                                                 </select>
                                                                             </div>
@@ -144,7 +144,7 @@
                                                                         <label for="total_p_c_s" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Total PCs</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-md" id="total_p_c_s" name="total_p_c_s" placeholder="Total PCs" value="{{ old('total_p_c_s') }}" required/>
+                                                                            <input type="text" class="form-control form-control-md" id="total_p_c_s" name="total_p_c_s" placeholder="Total PCs" value="{{ old('total_p_c_s') }}" autocomplete="off" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -155,7 +155,7 @@
                                                                         <label for="total_carton" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Total Carton</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-md" id="total_carton" name="total_carton" placeholder="Total Carton" value="{{ old('total_carton') }}" required/>
+                                                                            <input type="text" class="form-control form-control-md" id="total_carton" name="total_carton" placeholder="Total Carton" value="{{ old('total_carton') }}" autocomplete="off" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -166,7 +166,7 @@
                                                                         <label for="check_carton" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Check Carton</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-md" id="check_carton" name="check_carton" placeholder="Check Carton" value="{{ old('check_carton') }}" required/>
+                                                                            <input type="text" class="form-control form-control-md" id="check_carton" name="check_carton" placeholder="Check Carton" value="{{ old('check_carton') }}" autocomplete="off" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -177,7 +177,7 @@
                                                                         <label for="check_p_c_s" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Check PCs</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-md" id="check_p_c_s" name="check_p_c_s" placeholder="Check PCs" value="{{ old('check_p_c_s') }}" required/>
+                                                                            <input type="text" class="form-control form-control-md" id="check_p_c_s" name="check_p_c_s" placeholder="Check PCs" value="{{ old('check_p_c_s') }}" autocomplete="off" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -188,7 +188,7 @@
                                                                         <label for="defect_carton_no" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect Carton No</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-md" id="defect_carton_no" name="defect_carton_no" placeholder="Defect Carton No" value="{{ old('defect_carton_no') }}" required/>
+                                                                            <input type="text" class="form-control form-control-md" id="defect_carton_no" name="defect_carton_no" placeholder="Defect Carton No" value="{{ old('defect_carton_no') }}" autocomplete="off" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -199,7 +199,7 @@
                                                                         <label for="defect_p_c_s" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect PCs</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-md" id="defect_p_c_s" name="defect_p_c_s" placeholder="Defect PCs" value="{{ old('defect_p_c_s') }}" required/>
+                                                                            <input type="text" class="form-control form-control-md" id="defect_p_c_s" name="defect_p_c_s" placeholder="Defect PCs" value="{{ old('defect_p_c_s') }}" autocomplete="off" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -210,7 +210,7 @@
                                                                         <!-- label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Label</label -->
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <textarea type="text" class="form-control form-control-md" id="description" name="description" placeholder="Reason" value="{{ old('description') }}" rows="5" required></textarea>
+                                                                            <textarea type="text" class="form-control form-control-md" id="description" name="description" placeholder="Reason" value="{{ old('description') }}" autocomplete="off" rows="5" required="required"></textarea>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>

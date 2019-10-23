@@ -122,7 +122,7 @@
                                                     <label for="code" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">EMP No</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <input type="text" class="form-control form-control-md" id="code" name="code" placeholder="EMP No" value="{{ old('code') }}" required/>
+                                                        <input type="text" class="form-control form-control-md" id="code" name="code" placeholder="EMP No" value="{{ old('code') }}" autocomplete="off" required="required"/>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
@@ -133,7 +133,7 @@
                                                     <label for="email" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">E-Mail</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <input type="text" class="form-control form-control-md" id="email" name="email" placeholder="E-Mail" value="{{ old('email') }}" required/>
+                                                        <input type="text" class="form-control form-control-md" id="email" name="email" placeholder="E-Mail" value="{{ old('email') }}" autocomplete="off" required="required"/>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
@@ -144,7 +144,7 @@
                                                     <label for="name_first" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">First Name</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <input type="text" class="form-control form-control-md" id="name_first" name="name_first" placeholder="First Name" value="{{ old('name_first') }}" required/>
+                                                        <input type="text" class="form-control form-control-md" id="name_first" name="name_first" placeholder="First Name" value="{{ old('name_first') }}" autocomplete="off" required="required"/>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
@@ -155,7 +155,7 @@
                                                     <label for="name_last" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Surname</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <input type="text" class="form-control form-control-md" id="name_last" name="name_last" placeholder="Surname" value="{{ old('name_last') }}" required/>
+                                                        <input type="text" class="form-control form-control-md" id="name_last" name="name_last" placeholder="Surname" value="{{ old('name_last') }}" autocomplete="off" required="required"/>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
@@ -166,7 +166,7 @@
                                                     <label for="password" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Password</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <input type="password" class="form-control form-control-md" id="password" name="password" placeholder="Password" value="{{ old('password') }}" required/>
+                                                        <input type="password" class="form-control form-control-md" id="password" name="password" placeholder="Password" value="{{ old('password') }}" autocomplete="off" required="required"/>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
@@ -178,7 +178,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="company_id" name="company_id" value="{{ old('company_id') }}" data-placeholder="Company" style="width: 100%;" required="required">
+                                                            <select class="form-control form-control-md select2" id="company_id" name="company_id" value="{{ old('company_id') }}" autocomplete="off" data-placeholder="Company" style="width: 100%;" required="required">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -193,7 +193,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="strategic_business_unit_id" name="strategic_business_unit_id" value="{{ old('strategic_business_unit_id') }}" data-placeholder="SBU" style="width: 100%;" required="required">
+                                                            <select class="form-control form-control-md select2" id="strategic_business_unit_id" name="strategic_business_unit_id" value="{{ old('strategic_business_unit_id') }}" autocomplete="off" data-placeholder="SBU" style="width: 100%;" required="required">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -208,7 +208,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="department_id" name="department_id" value="{{ old('department_id') }}" data-placeholder="Department" style="width: 100%;" required="required">
+                                                            <select class="form-control form-control-md select2" id="department_id" name="department_id" value="{{ old('department_id') }}" autocomplete="off" data-placeholder="Department" style="width: 100%;" required="required">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -223,7 +223,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="section_id" name="section_id" value="{{ old('section_id') }}" data-placeholder="Section" style="width: 100%;" required="required">
+                                                            <select class="form-control form-control-md select2" id="section_id" name="section_id" value="{{ old('section_id') }}" autocomplete="off" data-placeholder="Section" style="width: 100%;" required="required">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -238,7 +238,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="factory_id" name="factory_id" value="{{ old('factory_id') }}" data-placeholder="Factory" style="width: 100%;" required="required">
+                                                            <select class="form-control form-control-md select2" id="factory_id" name="factory_id" value="{{ old('factory_id') }}" autocomplete="off" data-placeholder="Factory" style="width: 100%;" required="required">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -252,7 +252,7 @@
                                                     <label for="phone_mobile" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Mobile</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <input type="text" class="form-control form-control-md" id="phone_mobile" name="phone_mobile" placeholder="Mobile" value="{{ old('phone_mobile') }}" required="required"/>
+                                                        <input type="text" class="form-control form-control-md" id="phone_mobile" name="phone_mobile" placeholder="Mobile" value="{{ old('phone_mobile') }}" autocomplete="off" required="required"/>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
@@ -273,7 +273,7 @@
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="col p-0 m-0 file-loading">
                                                             <!-- class="file" -->
-                                                            <input type="file" multiple="false" class="form-control form-control-md" id="image_uri" name="image_uri" value="{{ old('image_uri') }}" data-preview-file-type="text"/>
+                                                            <input type="file" multiple="false" class="form-control form-control-md" id="image_uri" name="image_uri" value="{{ old('image_uri') }}" autocomplete="off" data-preview-file-type="text"/>
                                                         </div>
                                                         <div class="col kv-avatar-hint d-none">
                                                             <small>hint</small>
@@ -320,7 +320,7 @@
                                                 <label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="permission_1" name="permission_1" value="{{ old('permission_1') }}"/>
+                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="permission_1" name="permission_1" value="permission_1" autocomplete="off"/>
                                                     <label class="custom-control-label form-check-label" for="permission_1">Service Admin</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
@@ -332,7 +332,7 @@
                                                 <label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_cutting" name="create-quality_record_cutting" value="create-quality_record_cutting"/>
+                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_cutting" name="create-quality_record_cutting" value="create-quality_record_cutting" autocomplete="off"/>
                                                     <label class="custom-control-label form-check-label" for="create-quality_record_cutting">Cutting</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
@@ -344,7 +344,7 @@
                                                 <label for="create-quality_record_sewing_check" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_sewing_check" name="create-quality_record_sewing_check" value="create-quality_record_sewing_check"/>
+                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_sewing_check" name="create-quality_record_sewing_check" value="create-quality_record_sewing_check" autocomplete="off"/>
                                                     <label class="custom-control-label form-check-label" for="create-quality_record_sewing_check">Sewing 100% Checking</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
@@ -356,7 +356,7 @@
                                                 <label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="permission_4" name="permission_4" value="{{ old('permission_4') }}"/>
+                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="permission_4" name="permission_4" value="permission_4" autocomplete="off"/>
                                                     <label class="custom-control-label form-check-label" for="permission_4">Finishing AQL Audit</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
@@ -368,7 +368,7 @@
                                                 <label for="create-quality_record_sewing_audit" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_sewing_audit" name="create-quality_record_sewing_audit" value="create-quality_record_sewing_audit"/>
+                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_sewing_audit" name="create-quality_record_sewing_audit" value="create-quality_record_sewing_audit" autocomplete="off"/>
                                                     <label class="custom-control-label form-check-label" for="create-quality_record_sewing_audit">Sewing AQL Audit</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
@@ -380,7 +380,7 @@
                                                 <label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="permission_6" name="permission_6" value="{{ old('permission_6') }}"/>
+                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="permission_6" name="permission_6" value="permission_6" autocomplete="off"/>
                                                     <label class="custom-control-label form-check-label" for="permission_6">Dry Room 100% Checking</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
@@ -392,7 +392,7 @@
                                                 <label for="create-quality_record_finishing" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_finishing" name="create-quality_record_finishing" value="create-quality_record_finishing"/>
+                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_finishing" name="create-quality_record_finishing" value="create-quality_record_finishing" autocomplete="off"/>
                                                     <label class="custom-control-label form-check-label" for="create-quality_record_finishing">Finishing 100% Checking</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
@@ -404,7 +404,7 @@
                                                 <label for="create-quality_record_c_n_i" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_c_n_i" name="create-quality_record_c_n_i" value="create-quality_record_c_n_i"/>
+                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_c_n_i" name="create-quality_record_c_n_i" value="create-quality_record_c_n_i" autocomplete="off"/>
                                                     <label class="custom-control-label form-check-label" for="create-quality_record_c_n_i">CTN Audit</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
@@ -416,7 +416,7 @@
                                                 <label for="create-quality_record_r_q_c" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_r_q_c" name="create-quality_record_r_q_c" value="create-quality_record_r_q_c"/>
+                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_r_q_c" name="create-quality_record_r_q_c" value="create-quality_record_r_q_c" autocomplete="off"/>
                                                     <label class="custom-control-label form-check-label" for="create-quality_record_r_q_c">RQC</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->

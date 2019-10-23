@@ -62,7 +62,7 @@
                                                                     <i class="fa fa-calendar" id="id_input_addon"></i>
                                                                 </div>
                                                             </div>
-                                                            <input type="text" class="form-control form-control-md" id="sys_date" name="sys_date" placeholder="System Date" value="{{ old('sys_date') }}" aria-label="Date" aria-describedby="id_input_addon" required/>
+                                                            <input type="text" class="form-control form-control-md" id="sys_date" name="sys_date" placeholder="System Date" value="{{ old('sys_date') }}" autocomplete="off" aria-label="Date" aria-describedby="id_input_addon" required="required"/>
                                                         </div>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
@@ -74,7 +74,7 @@
                                                     <label for="company" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Company</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <select class="form-control form-control-md select2" id="company" name="company" value="{{ old('company') }}" data-placeholder="Company" style="width: 100%;" required>
+                                                        <select class="form-control form-control-md select2" id="company" name="company" value="{{ old('company') }}" autocomplete="off" data-placeholder="Company" style="width: 100%;" required="required">
 
                                                             <!-- @for($i =1; $i <= 5; $i++) -->
                                                             <option>Company {{ $i }}</option>
@@ -91,7 +91,7 @@
                                                     <label for="factory" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Factory</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <select class="form-control form-control-md select2" id="factory" name="factory" value="{{ old('factory') }}" data-placeholder="Factory" style="width: 100%;" required>
+                                                        <select class="form-control form-control-md select2" id="factory" name="factory" value="{{ old('factory') }}" autocomplete="off" data-placeholder="Factory" style="width: 100%;" required="required">
 
                                                             <!-- @for($i =1; $i <= 5; $i++) -->
                                                             <option>Factory {{ $i }}</option>
@@ -108,7 +108,7 @@
                                                     <label for="line" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Line</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <select class="form-control form-control-md select2" id="line" name="line" value="{{ old('line') }}" data-placeholder="Line" style="width: 100%;" required>
+                                                        <select class="form-control form-control-md select2" id="line" name="line" value="{{ old('line') }}" autocomplete="off" data-placeholder="Line" style="width: 100%;" required="required">
 
                                                             <!-- @for($i =1; $i <= 5; $i++) -->
                                                             <option>Line {{ $i }}</option>
@@ -142,7 +142,7 @@
                                                     <label for="customer" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Customer</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <select class="form-control form-control-md select2" id="customer" name="customer" value="{{ old('customer') }}" data-placeholder="Customer" style="width: 100%;" required>
+                                                        <select class="form-control form-control-md select2" id="customer" name="customer" value="{{ old('customer') }}" autocomplete="off" data-placeholder="Customer" style="width: 100%;" required="required">
 
                                                             <!-- @for($i =1; $i <= 5; $i++) -->
                                                             <option>Customer {{ $i }}</option>
@@ -159,7 +159,7 @@
                                                     <label for="style" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Style</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <select class="form-control form-control-md select2" id="style" name="style" value="{{ old('style') }}" data-placeholder="Style" style="width: 100%;" required>
+                                                        <select class="form-control form-control-md select2" id="style" name="style" value="{{ old('style') }}" autocomplete="off" data-placeholder="Style" style="width: 100%;" required="required">
 
                                                             <!-- @for($i =1; $i <= 5; $i++) -->
                                                             <option>Style {{ $i }}</option>
@@ -176,7 +176,7 @@
                                                     <label for="export" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Export</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <select class="form-control form-control-md select2" id="export" name="export" value="{{ old('export') }}" data-placeholder="Export" style="width: 100%;" required>
+                                                        <select class="form-control form-control-md select2" id="export" name="export" value="{{ old('export') }}" autocomplete="off" data-placeholder="Export" style="width: 100%;" required="required">
 
                                                             <!-- @for($i =1; $i <= 5; $i++) -->
                                                             <option>Export {{ $i }}</option>
@@ -210,7 +210,7 @@
                                                     <label for="inspection_stage" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Inspection Stage</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <select class="form-control form-control-md select2" id="inspection_stage" name="inspection_stage" value="{{ old('inspection_stage') }}" data-placeholder="Inspection Stage" style="width: 100%;" required>
+                                                        <select class="form-control form-control-md select2" id="inspection_stage" name="inspection_stage" value="{{ old('inspection_stage') }}" autocomplete="off" data-placeholder="Inspection Stage" style="width: 100%;" required="required">
 
                                                             <!-- @for($i =1; $i <= 5; $i++) -->
                                                             <option>Inspection Stage {{ $i }}</option>
@@ -227,7 +227,7 @@
                                                     <label for="aql_level" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">AQL Level</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <select class="form-control form-control-md select2" id="aql_level" name="aql_level" value="{{ old('aql_level') }}" data-placeholder="AQL Level" style="width: 100%;" required>
+                                                        <select class="form-control form-control-md select2" id="aql_level" name="aql_level" value="{{ old('aql_level') }}" autocomplete="off" data-placeholder="AQL Level" style="width: 100%;" required="required">
 
                                                             <!-- @for($i =1; $i <= 5; $i++) -->
                                                             <option>AQL Level {{ $i }}</option>

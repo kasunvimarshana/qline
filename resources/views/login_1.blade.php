@@ -128,7 +128,7 @@
                                                     <!-- ------------------------------------------------------------------------------------- -->
                                                     <div id="form1_hidden_input_group" name="form1_hidden_input_group" class="d-none">
                                                         @isset($user_object)
-                                                        <input type="hidden" id="user_id" name="user_id" value="{!! $user_object->id !!}" required="required" readonly="readonly"/>
+                                                        <input type="hidden" id="user_id" name="user_id" value="{!! $user_object->id !!}" autocomplete="off" required="required" readonly="readonly"/>
                                                         @endisset
                                                     </div>
                                                     <!-- ------------------------------------------------------------------------------------- -->
@@ -140,7 +140,7 @@
                                                             <label for="code_active" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Code</label>
                                                             <div class="col">
                                                                 <!-- p class="form-control-static"></p -->
-                                                                <input type="text" class="form-control form-control-md" id="code_active" name="code_active" placeholder="Code" value="{{ old('code_active') }}" required="required"/>
+                                                                <input type="text" class="form-control form-control-md" id="code_active" name="code_active" placeholder="Code" value="{{ old('code_active') }}" autocomplete="off" required="required"/>
                                                             </div>
                                                             <!-- span id="form-control" class="help-block"></span -->
                                                         </div>

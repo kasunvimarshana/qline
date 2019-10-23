@@ -55,7 +55,7 @@
                                                 <label for="company" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Company</label>
                                                 <div class="col">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <select class="form-control form-control-md select2" id="company" name="company" value="{{ old('company') }}" data-placeholder="Company" style="width: 100%;" required>
+                                                    <select class="form-control form-control-md select2" id="company" name="company" value="{{ old('company') }}" autocomplete="off" data-placeholder="Company" style="width: 100%;" required="required">
 
                                                         <!-- @for($i =1; $i <= 5; $i++) -->
                                                         <option>Company {{ $i }}</option>
@@ -72,7 +72,7 @@
                                                 <label for="name" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Name</label>
                                                 <div class="col">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="text" class="form-control form-control-md" id="name" name="name" placeholder="Name" value="{{ old('name') }}" required/>
+                                                    <input type="text" class="form-control form-control-md" id="name" name="name" placeholder="Name" value="{{ old('name') }}" autocomplete="off" required="required"/>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
                                             </div>

@@ -63,7 +63,7 @@
                                                                     <i class="fa fa-calendar" id="id_input_addon"></i>
                                                                 </div>
                                                             </div>
-                                                            <input type="text" class="form-control form-control-md" id="time_create" name="time_create" placeholder="System Date" value="{{ old('time_create') }}" aria-label="Date" aria-describedby="id_input_addon" required/>
+                                                            <input type="text" class="form-control form-control-md" id="time_create" name="time_create" placeholder="System Date" value="{{ old('time_create') }}" autocomplete="off" aria-label="Date" aria-describedby="id_input_addon" required="required"/>
                                                         </div>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
@@ -76,7 +76,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="company_id" name="company_id" value="{{ old('company_id') }}" data-placeholder="Group" style="width: 100%;" required>
+                                                            <select class="form-control form-control-md select2" id="company_id" name="company_id" value="{{ old('company_id') }}" autocomplete="off" data-placeholder="Group" style="width: 100%;" required="required">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -91,7 +91,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="strategic_business_unit_id" name="strategic_business_unit_id" value="{{ old('strategic_business_unit_id') }}" data-placeholder="SBU" style="width: 100%;" required>
+                                                            <select class="form-control form-control-md select2" id="strategic_business_unit_id" name="strategic_business_unit_id" value="{{ old('strategic_business_unit_id') }}" autocomplete="off" data-placeholder="SBU" style="width: 100%;" required="required">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -106,7 +106,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="factory_id" name="factory_id" value="{{ old('factory_id') }}" data-placeholder="Factory" style="width: 100%;" required>
+                                                            <select class="form-control form-control-md select2" id="factory_id" name="factory_id" value="{{ old('factory_id') }}" autocomplete="off" data-placeholder="Factory" style="width: 100%;" required="required">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -121,7 +121,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="line_id" name="line_id" value="{{ old('line_id') }}" data-placeholder="Line" style="width: 100%;">
+                                                            <select class="form-control form-control-md select2" id="line_id" name="line_id" value="{{ old('line_id') }}" autocomplete="off" data-placeholder="Line" style="width: 100%;">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -153,7 +153,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="customer_id" name="customer_id" value="{{ old('customer_id') }}" data-placeholder="Customer" style="width: 100%;">
+                                                            <select class="form-control form-control-md select2" id="customer_id" name="customer_id" value="{{ old('customer_id') }}" autocomplete="off" data-placeholder="Customer" style="width: 100%;">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -168,7 +168,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="style_id" name="style_id" value="{{ old('style_id') }}" data-placeholder="Style" style="width: 100%;">
+                                                            <select class="form-control form-control-md select2" id="style_id" name="style_id" value="{{ old('style_id') }}" autocomplete="off" data-placeholder="Style" style="width: 100%;">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -183,7 +183,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="colour_id" name="colour_id" value="{{ old('colour_id') }}" data-placeholder="Colour" style="width: 100%;">
+                                                            <select class="form-control form-control-md select2" id="colour_id" name="colour_id" value="{{ old('colour_id') }}" autocomplete="off" data-placeholder="Colour" style="width: 100%;">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -198,7 +198,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="export_id" name="export_id" value="{{ old('export_id') }}" data-placeholder="Export" style="width: 100%;">
+                                                            <select class="form-control form-control-md select2" id="export_id" name="export_id" value="{{ old('export_id') }}" autocomplete="off" data-placeholder="Export" style="width: 100%;">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -230,7 +230,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="standard_r_q_c_id" name="standard_r_q_c_id" value="{{ old('standard_r_q_c_id') }}" data-placeholder="RQC" style="width: 100%;">
+                                                            <select class="form-control form-control-md select2" id="standard_r_q_c_id" name="standard_r_q_c_id" value="{{ old('standard_r_q_c_id') }}" autocomplete="off" data-placeholder="RQC" style="width: 100%;">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -245,7 +245,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="standard_sewing_check_id" name="standard_sewing_check_id" value="{{ old('standard_sewing_check_id') }}" data-placeholder="SC 100%" style="width: 100%;">
+                                                            <select class="form-control form-control-md select2" id="standard_sewing_check_id" name="standard_sewing_check_id" value="{{ old('standard_sewing_check_id') }}" autocomplete="off" data-placeholder="SC 100%" style="width: 100%;">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -260,7 +260,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="standard_sewing_audit_id" name="standard_sewing_audit_id" value="{{ old('standard_sewing_audit_id') }}" data-placeholder="Sewing AQL Audit" style="width: 100%;">
+                                                            <select class="form-control form-control-md select2" id="standard_sewing_audit_id" name="standard_sewing_audit_id" value="{{ old('standard_sewing_audit_id') }}" autocomplete="off" data-placeholder="Sewing AQL Audit" style="width: 100%;">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>

@@ -253,7 +253,7 @@
                                                 </button>
                                             <!-- /div -->
                                         </div>
-                                        <input type="text" class="form-control form-control-md" id="audit_frequency_time" name="audit_frequency_time" placeholder="Audit Seq" aria-label="Audit Seq" value="{{ old('audit_frequency_time') }}" aria-describedby="id_input_addon" readonly="readonly"/>
+                                        <input type="text" class="form-control form-control-md" id="audit_frequency_time" name="audit_frequency_time" placeholder="Audit Seq" aria-label="Audit Seq" value="{{ old('audit_frequency_time') }}" autocomplete="off" aria-describedby="id_input_addon" readonly="readonly"/>
                                     </div>
                                 </div>
                                 <!-- span id="form-control" class="help-block"></span -->
@@ -274,7 +274,7 @@
                                                 </button>
                                             <!-- /div -->
                                         </div>
-                                        <input type="text" class="form-control form-control-md" id="batch_count" name="batch_count" placeholder="Lot Size Pcs" aria-label="Lot Size Pcs" value="{{ number_format( $count_data_sum ) }}" aria-describedby="id_input_addon" readonly="readonly"/>
+                                        <input type="text" class="form-control form-control-md" id="batch_count" name="batch_count" placeholder="Lot Size Pcs" aria-label="Lot Size Pcs" value="{{ number_format( $count_data_sum ) }}" autocomplete="off" aria-describedby="id_input_addon" readonly="readonly"/>
                                     </div>
                                 </div>
                                 <!-- span id="form-control" class="help-block"></span -->
@@ -295,7 +295,7 @@
                                                 </button>
                                             <!-- /div -->
                                         </div>
-                                        <input type="text" class="form-control form-control-md" id="sample_count" name="sample_count" placeholder="Sample Pcs" aria-label="Sample Pcs" value="{{ number_format($standard_data_sewing_audit_object->count_sample) }}" aria-describedby="id_input_addon" readonly="readonly"/>
+                                        <input type="text" class="form-control form-control-md" id="sample_count" name="sample_count" placeholder="Sample Pcs" aria-label="Sample Pcs" value="{{ number_format($standard_data_sewing_audit_object->count_sample) }}" autocomplete="off" aria-describedby="id_input_addon" readonly="readonly"/>
                                     </div>
                                 </div>
                                 <!-- span id="form-control" class="help-block"></span -->

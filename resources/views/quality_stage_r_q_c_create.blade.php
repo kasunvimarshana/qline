@@ -68,7 +68,7 @@
                                                             <!-- ------------------------------------------------------------------------------------- -->
                                                             <div id="form1_hidden_input_group" name="form1_hidden_input_group" class="d-none">
                                                                 @isset($user_object)
-                                                                <input type="hidden" id="user_id_record" name="user_id_record" value="{!! $user_object->id !!}" required="required" readonly="readonly"/>
+                                                                <input type="hidden" id="user_id_record" name="user_id_record" value="{!! $user_object->id !!}" autocomplete="off" required="required" readonly="readonly"/>
                                                                 @endisset
                                                             </div>
                                                             <!-- ------------------------------------------------------------------------------------- -->
@@ -93,7 +93,7 @@
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group">
-                                                                                <input type="text" class="form-control form-control-md" id="code" name="code" placeholder="EMP No" value="{!! $user_object->code !!}" aria-label="EMP No" aria-describedby="id_input_addon" required="required" readonly="readonly"/>
+                                                                                <input type="text" class="form-control form-control-md" id="code" name="code" placeholder="EMP No" value="{!! $user_object->code !!}" autocomplete="off" aria-label="EMP No" aria-describedby="id_input_addon" required="required" readonly="readonly"/>
                                                                                 <div class="input-group-addon input-group-append">
                                                                                     <!-- div class="input-group-text" -->
                                                                                         <button type="submit" class="btn btn btn-outline-danger" id="submit" aria-disabled="true" disabled="disabled">
@@ -113,7 +113,7 @@
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group">
-                                                                                <input type="number" class="form-control form-control-md" id="attempt" name="attempt" placeholder="Attempt" value="{!! $attempt !!}" aria-label="Attempt" aria-describedby="id_input_addon" required="required" readonly="readonly"/>
+                                                                                <input type="number" class="form-control form-control-md" id="attempt" name="attempt" placeholder="Attempt" value="{!! $attempt !!}" autocomplete="off" aria-label="Attempt" aria-describedby="id_input_addon" required="required" readonly="readonly"/>
                                                                                 <div class="input-group-addon input-group-append">
                                                                                     <!-- div class="input-group-text" -->
                                                                                         <button type="submit" class="btn btn btn-outline-danger" id="submit" aria-disabled="true" disabled="disabled">
@@ -140,7 +140,7 @@
                                                                                         </button>
                                                                                     <!-- /div -->
                                                                                 </div>
-                                                                                <select class="form-control select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" data-placeholder="Operation">
+                                                                                <select class="form-control select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" autocomplete="off" data-placeholder="Operation">
                                                                                     <!-- option> Option </option -->
                                                                                 </select>
                                                                             </div>
@@ -162,7 +162,7 @@
                                                                                         </button>
                                                                                     <!-- /div -->
                                                                                 </div>
-                                                                                <select class="form-control select2 select2-multiple select2-allow-clear" id="defect_category_id" name="defect_category_id" value="{{ old('defect_category_id') }}" data-placeholder="Defect Category" aria-hidden="true" multiple="multiple">
+                                                                                <select class="form-control select2 select2-multiple select2-allow-clear" id="defect_category_id" name="defect_category_id" value="{{ old('defect_category_id') }}" autocomplete="off" data-placeholder="Defect Category" aria-hidden="true" multiple="multiple">
                                                                                     <!-- option> Option </option -->
                                                                                 </select>
                                                                                 <div class="input-group-addon input-group-append">
@@ -191,7 +191,7 @@
                                                                                         </button>
                                                                                     <!-- /div -->
                                                                                 </div>
-                                                                                <select class="form-control select2 select2-multiple select2-allow-clear" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" data-placeholder="Defect" aria-hidden="true" multiple="multiple">
+                                                                                <select class="form-control select2 select2-multiple select2-allow-clear" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" autocomplete="off" data-placeholder="Defect" aria-hidden="true" multiple="multiple">
                                                                                     <!-- option> Option </option -->
                                                                                 </select>
                                                                                 <div class="input-group-addon input-group-append">
@@ -216,7 +216,7 @@
                                                                         <label for="count_defect" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect Count</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="number" class="form-control form-control-md" id="count_defect" name="count_defect" placeholder="Defect Count" value="{{ old('count_defect') }}" required="required" readonly="readonly"/>
+                                                                            <input type="number" class="form-control form-control-md" id="count_defect" name="count_defect" placeholder="Defect Count" value="{{ old('count_defect') }}" autocomplete="off" required="required" readonly="readonly"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -234,7 +234,7 @@
                                                                         <label for="count_sample" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Check Qty</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="number" class="form-control form-control-md" id="count_sample" name="count_sample" placeholder="Check Qty" value="{!! $count_sample !!}" required="required" readonly="readonly"/>
+                                                                            <input type="number" class="form-control form-control-md" id="count_sample" name="count_sample" placeholder="Check Qty" value="{!! $count_sample !!}" autocomplete="off" required="required" readonly="readonly"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -297,7 +297,7 @@
                                                                             <label for="name" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Name</label>
                                                                             <div class="col">
                                                                                 <!-- p class="form-control-static"></p -->
-                                                                                <input type="text" class="form-control form-control-md" id="name" name="name" placeholder="Name" value="{!! $user_object->name_first !!}" disabled="disabled"/>
+                                                                                <input type="text" class="form-control form-control-md" id="name" name="name" placeholder="Name" value="{!! $user_object->name_first !!}" autocomplete="off" disabled="disabled"/>
                                                                             </div>
                                                                             <!-- span id="form-control" class="help-block"></span -->
                                                                         </div>
@@ -308,7 +308,7 @@
                                                                             <label for="grade" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Operator Grade</label>
                                                                             <div class="col">
                                                                                 <!-- p class="form-control-static"></p -->
-                                                                                <input type="text" class="form-control form-control-md" id="grade" name="grade" placeholder="Operator Grade" value="{!! $user_object->grade !!}" disabled="disabled"/>
+                                                                                <input type="text" class="form-control form-control-md" id="grade" name="grade" placeholder="Operator Grade" value="{!! $user_object->grade !!}" autocomplete="off" disabled="disabled"/>
                                                                             </div>
                                                                             <!-- span id="form-control" class="help-block"></span -->
                                                                         </div>

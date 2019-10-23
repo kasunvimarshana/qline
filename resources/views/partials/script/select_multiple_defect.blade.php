@@ -1,6 +1,11 @@
 <script>
 $(function(){
     "use strict";
+    //$.fn.select2.defaults.set("key", "value");
+    //$.fn.select2.defaults.set("theme", "classic");
+    //$.fn.select2.defaults.set("ajax--cache", false);
+    //$.fn.select2.defaults.reset();
+    
     //$.fn.select2.defaults.set( "theme", "bootstrap" );
     /*$('#id').select2({
         theme: "bootstrap"
