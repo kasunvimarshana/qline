@@ -3,3 +3,9 @@
     src: url(fonts/allura/Allura-Regular.ttf);
     font-weight: bold;
 }
+
+@font-face {
+    font-family: Segment7Standard;
+    src: url(fonts/segment7/Segment7Standard.otf);
+    font-weight: normal;
+}

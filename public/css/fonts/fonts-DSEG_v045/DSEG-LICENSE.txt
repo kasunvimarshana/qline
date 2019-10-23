@@ -1,5 +1,7 @@
-Copyright (c) 2011 TypeSETit, LLC (typesetit@att.net),
-with Reserved Font Name "Allura"
+Copyright (c) 2017, keshikan (http://www.keshikan.net),
+with Reserved Font Name "DSEG".
+
+
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
 http://scripts.sil.org/OFL

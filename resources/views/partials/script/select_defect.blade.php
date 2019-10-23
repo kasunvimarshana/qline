@@ -69,7 +69,13 @@ $(function(){
         },
         //tags : [],
         //tokenSeparators : [],
+        //maximumInputLength: 0,
+        //maximumSelectionLength: 0,
         //minimumInputLength : 2,
+        //minimumResultsForSearch: -1,
+        minimumResultsForSearch: Infinity,
+        //dropdownAutoWidth: false,
+        //dropdownCss: false,
         multiple : false,
         escapeMarkup : function (markup) { return markup; },
         data : [],
@@ -178,5 +184,9 @@ $(function(){
         }*/
     });//.select2('val', []);
     
+    selectOptionObject.on('select2:opening select2:closing', function( event ) {
+        var searchfield = $(this).parent().find('.select2-search__field');
+        searchfield.prop('disabled', true);
+    });
 });
 </script>

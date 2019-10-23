@@ -105,6 +105,9 @@ class LoginController extends Controller
                 unset($dataArray);
                 
                 if( (auth()->check()) ){
+                    $code_active = (mt_rand(0, 10000));
+                    $code_active = (str_pad($code_active, 4, "0", STR_PAD_LEFT));
+                    
                     $userAPITokenObject = auth()->user()->userApiTokens()->create([
                         'is_visible' => true,
                         'is_active' => true,
@@ -112,7 +115,7 @@ class LoginController extends Controller
                         //'is_notifiable' => null,
                         //'access_token' => null,
                         //'refresh_token' => null,
-                        'code_active' => (mt_rand(0, 10000)),
+                        'code_active' => $code_active,
                         //'ip_address' => $request->getClientIp(true),
                         'ip_address' => $request->ip(),
                         'active_role' => null,
@@ -225,6 +228,7 @@ class LoginController extends Controller
                 
                 if( ($userObject) ){
                     $code_active = (mt_rand(0, 10000));
+                    $code_active = (str_pad($code_active, 4, "0", STR_PAD_LEFT));
                     $userAPITokenObject = $userObject->userApiTokens()->create([
                         'is_visible' => true,
                         'is_active' => true,

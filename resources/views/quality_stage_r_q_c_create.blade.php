@@ -113,7 +113,7 @@
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group">
-                                                                                <input type="number" class="form-control form-control-md" id="attempt" name="attempt" placeholder="Attempt" value="{!! $attempt !!}" aria-label="Attempt" aria-describedby="id_input_addon" required="required"/>
+                                                                                <input type="number" class="form-control form-control-md" id="attempt" name="attempt" placeholder="Attempt" value="{!! $attempt !!}" aria-label="Attempt" aria-describedby="id_input_addon" required="required" readonly="readonly"/>
                                                                                 <div class="input-group-addon input-group-append">
                                                                                     <!-- div class="input-group-text" -->
                                                                                         <button type="submit" class="btn btn btn-outline-danger" id="submit" aria-disabled="true" disabled="disabled">
@@ -143,6 +143,35 @@
                                                                                 <select class="form-control select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" data-placeholder="Operation">
                                                                                     <!-- option> Option </option -->
                                                                                 </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- span id="form-control" class="help-block"></span -->
+                                                                    </div>
+                                                                    <!-- /.form-group -->
+                                                                        
+                                                                    <!-- form-group -->
+                                                                    <div class="form-group row col-12">
+                                                                        <label for="defect_category_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect Category</label>
+                                                                        <div class="col">
+                                                                            <!-- p class="form-control-static"></p -->
+                                                                            <div class="input-group">
+                                                                                <div class="input-group-addon input-group-prepend">
+                                                                                    <!-- div class="input-group-text" -->
+                                                                                        <button type="button" class="btn btn-outline-danger" id="submit" data-select2-open-control="defect_category_id" aria-disabled="false">
+                                                                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                                                                        </button>
+                                                                                    <!-- /div -->
+                                                                                </div>
+                                                                                <select class="form-control select2 select2-multiple select2-allow-clear" id="defect_category_id" name="defect_category_id" value="{{ old('defect_category_id') }}" data-placeholder="Defect Category" aria-hidden="true" multiple="multiple">
+                                                                                    <!-- option> Option </option -->
+                                                                                </select>
+                                                                                <div class="input-group-addon input-group-append">
+                                                                                    <!-- div class="input-group-text" -->
+                                                                                        <button type="button" class="btn btn-outline-danger" id="submit" data-select2-close-control="defect_category_id" aria-disabled="false">
+                                                                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                                                                        </button>
+                                                                                    <!-- /div -->
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
@@ -187,7 +216,7 @@
                                                                         <label for="count_defect" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect Count</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="number" class="form-control form-control-md" id="count_defect" name="count_defect" placeholder="Defect Count" value="{{ old('count_defect') }}" required="required"/>
+                                                                            <input type="number" class="form-control form-control-md" id="count_defect" name="count_defect" placeholder="Defect Count" value="{{ old('count_defect') }}" required="required" readonly="readonly"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -205,7 +234,7 @@
                                                                         <label for="count_sample" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Check Qty</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="number" class="form-control form-control-md" id="count_sample" name="count_sample" placeholder="Check Qty" value="{!! $count_sample !!}" required="required"/>
+                                                                            <input type="number" class="form-control form-control-md" id="count_sample" name="count_sample" placeholder="Check Qty" value="{!! $count_sample !!}" required="required" readonly="readonly"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -241,9 +270,9 @@
                                                                 <div class="col col-sm-5 row p-0 m-0">
                                                                     <!-- -->
                                                                     <!-- form-group -->
-                                                                    <div class="form-group row text-center">
+                                                                    <div class="form-group row w-100 text-center">
                                                                         <!-- img-container -->
-                                                                        <div class="img box clearfix text-center">
+                                                                        <div class="img box clearfix text-center ml-5">
                                                                             @php
                                                                                 $image_uri = asset('img/avatar5.png');
                                                                                 if( (isset($user_object)) && ($user_object->image_uri) ){
@@ -400,6 +429,7 @@
 @section('section_script_document')
     @parent
     @includeIf('partials.script.select_measure_point', array())
+    @includeIf('partials.script.select_multiple_defect_category', array())
     @includeIf('partials.script.select_multiple_defect', array())
 @endsection
 
@@ -455,8 +485,10 @@
             
                 var measure_point_id = $("#measure_point_id");
                 var defect_id = $("#defect_id");
+                var defect_category_id = $("#defect_category_id");
                 var count_defect = $("#count_defect");
                 var measure_point_id_value = null;
+                var defect_category_id_value = null;
                 var defect_id_value = null;
 
                 var id_temp = null;
@@ -624,6 +656,7 @@
                     });*/
                     
                     measure_point_id.val(null).trigger("change");
+                    defect_category_id.val(null).trigger("change");
                     defect_id.val(null).trigger("change");
                 }
                 var count_defect_value = form1_hidden_input_group.find( ("." + id_defect_id_prefix) ).length;

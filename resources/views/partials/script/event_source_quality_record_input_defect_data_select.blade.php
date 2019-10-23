@@ -86,7 +86,7 @@ $(function(){
                         bootbox.confirm({
                             size: "small",
                             title: "Defect Card Tracer",
-                            message: "Card No: <strong>" + quality_recored_input_defect_data_object.code + "</strong><br/><small> was picked</small>",
+                            message: "Picked Card No: <strong> ( " + quality_recored_input_defect_data_object.code + " ) </strong>",
                             onEscape: true,
                             show: true,
                             scrollable: true,

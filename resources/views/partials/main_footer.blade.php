@@ -5,8 +5,9 @@
 
         <!-- Copyright -->
         <div class="footer-copyright text-lg-left py-0">
-            <span class="text-secondary font-weight-normal text-lg-right">TQMS - Total Quality Management System - ©BLI</span>
+            <span class="text-secondary font-weight-bold text-lg-right">TQMS - Total Quality Management System - ©BLI</span>
             <!-- a class="navbar-brand text-reset text-muted font-weight-normal" href="#">Fixed bottom</a -->
+            <span class="d-inline-block text-right"><i class="fa fa-atom fa-fw"></i></span>
         </div>
         <!-- Copyright -->
 

@@ -246,9 +246,10 @@ class QualityRecordInputScanDataController extends Controller
                     'strategic_business_unit_id' => $request->session()->get('setup_configuration_strategic_business_unit_id'),
                     'factory_id' => $request->session()->get('setup_configuration_factory_id'),
                     'line_id' => $request->session()->get('setup_configuration_line_id'),
-                    'style_id' => $request->input('style_id'),
+                    'style_id' => $request->input('style_id', $request->session()->get('setup_configuration_style_id')),
                     'user_id_create' => auth()->user()->id,
-                    'ip_address' => $request->ip()
+                    'ip_address' => $request->ip(),
+                    'size_id' => $request->input('size_id')
                 );
                 
                 $qualityRecordInputScanDataObject = QualityRecordInputScanData::create( $dataArray );

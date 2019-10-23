@@ -114,6 +114,25 @@
                                                                                                 <!-- span id="form-control" class="help-block"></span -->
                                                                                             </div>
                                                                                             <!-- /.form-group -->
+                                                                                            
+                                                                                            <!-- form-group -->
+                                                                                            <div class="form-group row col-sm-12 m-1">
+                                                                                                <label for="size_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Size</label>
+                                                                                                <div class="col">
+                                                                                                    <!-- p class="form-control-static"></p -->
+                                                                                                    <div class="input-group h-100">
+                                                                                                        <select class="form-control form-control-md select2" id="size_id" name="size_id" value="{{ old('size_id') }}" data-placeholder="Size" style="width: 100%;" required="required">
+                                                                                                            <option value="XS"> XS </option>
+                                                                                                            <option value="S"> S </option>
+                                                                                                            <option value="M"> M </option>
+                                                                                                            <option value="L"> L </option>
+                                                                                                            <option value="Xl"> XL </option>
+                                                                                                        </select>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <!-- span id="form-control" class="help-block"></span -->
+                                                                                            </div>
+                                                                                            <!-- /.form-group -->
 
                                                                                             <!-- form-group -->
                                                                                             <div class="form-group row col-sm-12">
@@ -174,6 +193,7 @@
                                                                                                 <th scope="col">#</th>
                                                                                                 <th scope="col">Code</th>
                                                                                                 <th scope="col">Style</th>
+                                                                                                <th scope="col">Qty</th>
                                                                                                 <th scope="col">Size</th>
                                                                                                 <th scope="col"></th>
                                                                                             </tr>
@@ -189,7 +209,8 @@
                                                                                                     {{ $value->style->name }}
                                                                                                     @endif
                                                                                                 </td>
-                                                                                                <td>{{ $value->count_data }}</td>
+                                                                                                <td>{{ number_format($value->count_data) }}</td>
+                                                                                                <td>{{ $value->size_id }}</td>
                                                                                                 <td>
                                                                                                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown" tabindex="-1">
                                                                                                         <div class="btn-group" role="group">

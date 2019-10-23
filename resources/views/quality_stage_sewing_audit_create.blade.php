@@ -71,6 +71,7 @@
                                                                     <th scope="col">Offered Qty For AQL</th>
                                                                     <th scope="col">Line</th>
                                                                     <th scope="col">Style</th>
+                                                                    <th scope="col">Size</th>
                                                                     <th scope="col">Select to Audit</th>
                                                                 </tr>
                                                             </thead>
@@ -80,7 +81,7 @@
                                                                <tr>
                                                                     <th scope="row"># {{ ($key + 1) }}</th>
                                                                     <td>{{ $value->code }}</td>
-                                                                    <td>{{ $value->count_data }}</td>
+                                                                    <td>{{ number_format($value->count_data) }}</td>
                                                                     <td>
                                                                         @if($value->line)
                                                                         {{ $value->line->name }}
@@ -91,6 +92,7 @@
                                                                         {{ $value->style->name }}
                                                                         @endif
                                                                     </td>
+                                                                    <td>{{ $value->size_id }}</td>
                                                                     <td>
                                                                         <!-- -->
                                                                         <!-- form-group -->
