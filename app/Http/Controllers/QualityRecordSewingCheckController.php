@@ -43,6 +43,7 @@ use App\StandardSewingCheck;
 use App\Defect;
 use App\QualityRecordSewingCheck;
 use App\QualityRecoredInputDefectData as QualityRecoredInputDefectData;
+use App\QualityRecordInputScanData as QualityRecordInputScanData;
 
 class QualityRecordSewingCheckController extends Controller
 {
@@ -130,6 +131,28 @@ class QualityRecordSewingCheckController extends Controller
                 $standard_sewing_check_id = $request->session()->get('setup_configuration_standard_sewing_check_id', null);
                 $standardSewingCheckObject = $standardSewingCheckObject->where('id', '=', $standard_sewing_check_id)->first();
                 
+                $quality_record_input_scan_data_count_data_sum = 0;
+                $qualityRecordInputScanDataObject = new QualityRecordInputScanData();
+                
+                $quality_record_input_scan_data_count_data_sum = $qualityRecordInputScanDataObject
+                    ->where('company_id', '=', $companyObject->id)
+                    ->where('strategic_business_unit_id', '=', $strategicBusinessUnitObject->id)
+                    ->where('factory_id', '=', $factoryObject->id)
+                    ->where('line_id', '=', $lineObject->id)
+                    ->whereDate('time_create', '=', $date_today->format('Y-m-d'))
+                    ->sum('count_data');
+                
+                $quality_record_sewing_check_id_count = 0;
+                $qualityRecordSewingCheckObject = new QualityRecordSewingCheck();
+                
+                $quality_record_sewing_check_id_count = $qualityRecordSewingCheckObject
+                    ->where('company_id', '=', $companyObject->id)
+                    ->where('strategic_business_unit_id', '=', $strategicBusinessUnitObject->id)
+                    ->where('factory_id', '=', $factoryObject->id)
+                    ->where('line_id', '=', $lineObject->id)
+                    ->whereDate('time_create', '=', $date_today->format('Y-m-d'))
+                    ->count('id');
+                
                 $data['company_object'] = $companyObject;
                 $data['strategic_business_unit_object'] = $strategicBusinessUnitObject;
                 $data['factory_object'] = $factoryObject;
@@ -139,6 +162,8 @@ class QualityRecordSewingCheckController extends Controller
                 $data['colour_object'] = $colourObject;
                 $data['export_object'] = $exportObject;
                 $data['standard_sewing_check_object'] = $standardSewingCheckObject;
+                $data['quality_record_input_scan_data_count_data_sum'] = $quality_record_input_scan_data_count_data_sum;
+                $data['quality_record_sewing_check_id_count'] = $quality_record_sewing_check_id_count;
                 unset($dataArray);
                 
                 // Commit transaction!

@@ -72,14 +72,14 @@
                                                                     <!-- col -->
                                                                     <div class="col col-md-3 p-0 m-0 collapse show" id="id_left_control_div">
                                                                         <!-- card-group -->
-                                                                        <div class="card-group">
+                                                                        <div class="card-group h-100">
                                                                             <div class="card bg-light">
                                                                                 <div class="card-body text-center p-0 m-0">
                                                                                     
                                                                                     <!-- list-group -->
-                                                                                    <ul class="list-group">
+                                                                                    <ul class="list-group h-100">
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="text-wrap text-break">Team </span>
@@ -96,7 +96,7 @@
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="text-wrap text-break">Buyer </span>
@@ -113,7 +113,7 @@
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="text-wrap text-break">Style </span>
@@ -130,7 +130,7 @@
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="text-wrap text-break">Colour </span>
@@ -147,7 +147,7 @@
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="text-wrap text-break">Export </span>
@@ -173,7 +173,7 @@
                                                                     <!-- /.col -->
                                                                     <!-- col -->
                                                                     <div class="col p-0 m-0">
-                                                                        <div class="card-group">
+                                                                        <div class="card-group h-100">
                                                                             <div class="card bg-light">
                                                                                 <div class="card-header p-0 m-0">
                                                                                 <!-- -->
@@ -204,9 +204,9 @@
                                                                                 <div class="card-body text-center p-0 m-0">
                                                                                     
                                                                                     <!-- list-group -->
-                                                                                    <ul class="list-group">
+                                                                                    <ul class="list-group h-100">
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start p-0 m-0 bg-transparent">
+                                                                                        <li class="list-group-item flex-column align-items-start p-0 m-0 bg-transparent h-100">
                                                                                             <div class="d-flex w-100 justify-content-center">
                                                                                                 <!-- + -->
         <!-- +++++++++++++++++++++++++++++++++++++++++++ -->
@@ -362,14 +362,14 @@
                                                                     <!-- col -->
                                                                     <div class="col col-md-3 p-0 m-0 collapse show" id="id_right_control_div">
                                                                         <!-- card-group -->
-                                                                        <div class="card-group">
+                                                                        <div class="card-group h-100">
                                                                             <div class="card bg-light">
                                                                                 <div class="card-body text-center p-0 m-0">
                                                                                     
                                                                                     <!-- list-group -->
-                                                                                    <ul class="list-group">
+                                                                                    <ul class="list-group h-100">
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="text-wrap text-break">Now </span>
@@ -382,46 +382,58 @@
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="text-wrap text-break">Prod Qty </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="badge badge-secondary text-wrap text-break">000</span>
+                                                                                                    <span class="badge badge-secondary text-wrap text-break">
+                                                                                                        @isset($quality_record_input_scan_data_count_data_sum)
+                                                                                                        {{ number_format($quality_record_input_scan_data_count_data_sum) }}
+                                                                                                        @endisset
+                                                                                                    </span>
                                                                                                 </span>
                                                                                             </div>
                                                                                         </li>
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="text-wrap text-break">Check Qty </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="badge badge-secondary text-wrap text-break">000</span>
+                                                                                                    <span class="badge badge-secondary text-wrap text-break">
+                                                                                                        @isset($quality_record_input_scan_data_count_data_sum)
+                                                                                                        {{ number_format($quality_record_input_scan_data_count_data_sum) }}
+                                                                                                        @endisset
+                                                                                                    </span>
                                                                                                 </span>
                                                                                             </div>
                                                                                         </li>
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="text-wrap text-break">Defect Qty </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="badge badge-secondary text-wrap text-break">000</span>
+                                                                                                    <span class="badge badge-secondary text-wrap text-break">
+                                                                                                        @isset($quality_record_sewing_check_id_count)
+                                                                                                        {{ number_format($quality_record_sewing_check_id_count) }}
+                                                                                                        @endisset
+                                                                                                    </span>
                                                                                                 </span>
                                                                                             </div>
                                                                                         </li>
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="text-wrap text-break">Defect 
@@ -429,7 +441,13 @@
                                                                                                     </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="badge badge-secondary text-wrap text-break">0
+                                                                                                    @php
+                                                                                                        $defect_percentage = 0;
+                                                                                                        if( (isset($quality_record_input_scan_data_count_data_sum)) && ($quality_record_sewing_check_id_count) && ($quality_record_input_scan_data_count_data_sum > 0) ){
+                                                                                                            $defect_percentage = ( ($quality_record_sewing_check_id_count / $quality_record_input_scan_data_count_data_sum) * 100 );
+                                                                                                        }
+                                                                                                    @endphp
+                                                                                                    <span class="badge badge-secondary text-wrap text-break">{{  number_format($defect_percentage) }}
                                                                                                         <span>%</span>
                                                                                                     </span>
                                                                                                 </span>
@@ -438,7 +456,7 @@
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <!-- -->
                                                                                                 <div class="btn-toolbar w-100" role="toolbar" aria-label="btn toolbar">

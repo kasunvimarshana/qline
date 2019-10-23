@@ -333,9 +333,9 @@
                                                             <!-- ------------------------------------------------------ -->
                                                             <div class="btn-toolbar" role="toolbar" aria-label="tool bar">
                                                                 <div class="btn-group btn-group-lg btn-group-justified w-100 m-1" role="group" aria-label="button group">
-                                                                    <button type="submit" class="btn btn-success m-1" id="submit" name="submit" value="submit_pass">Pass</button>
-                                                                    <button type="submit" class="btn btn-danger m-1" id="submit" name="submit" value="submit_fail">Fail</button>
-                                                                    <button type="submit" class="btn btn-warning m-1" id="submit" name="submit" value="submit_suspend">Suspend</button>
+                                                                    <button type="submit" class="btn btn-success m-1" id="submit_pass" name="submit" value="submit_pass">Pass</button>
+                                                                    <button type="submit" class="btn btn-danger m-1" id="submit_fail" name="submit" value="submit_fail">Fail</button>
+                                                                    <button type="submit" class="btn btn-warning m-1" id="submit_suspend" name="submit" value="submit_suspend">Suspend</button>
                                                                 </div>
                                                             </div>
                                                             <!-- ------------------------------------------------------ -->
@@ -480,6 +480,16 @@
             
             count_sample.text( standardDataSewingAuditObject.count_sample );
             count_accept.text( standardDataSewingAuditObject.count_accept );
+            
+            /*submit pass disable*/
+            var submit_pass = $("#submit_pass");
+            var id_defect_id_prefix = "defect_id_array";
+            var count_defect_value = form1_hidden_input_group.find( ("." + id_defect_id_prefix) ).length;
+            if( (count_defect_value > standardDataSewingAuditObject.count_accept) ){
+                submit_pass.addClass("d-none");
+            }else{
+                submit_pass.removeClass("d-none");
+            }
         }
         function createInputScanDataElement( data ){
             //console.log( data );
@@ -712,6 +722,9 @@
                             count_defect.val(function(index, currentvalue){
                                 return count_defect_value;
                             });
+                            
+                            var data = Object();
+                            setQualityRecordInputScanDataValues( data );
                         });
                         
                         var i_2 = $("<i></i>");
@@ -756,6 +769,8 @@
             }finally{
                 //console.log("finally");
                 form_submit_id_1.attr("disabled", false);
+                var data = Object();
+                setQualityRecordInputScanDataValues( data );
                 //delete variable;
             }
         });

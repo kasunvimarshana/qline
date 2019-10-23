@@ -48,7 +48,7 @@
                                                 <!-- h2 class="text-danger"> - </h2 -->
                                                 <!-- p> - </p -->
                                                 
-                                                <h5 class="text-danger"> Location </h5>
+                                                <h5 class="text-danger"> My Location </h5>
                                             </div>
                                             <!-- /.container -->
                                             <!-- form-group-col -->

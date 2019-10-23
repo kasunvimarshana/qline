@@ -136,7 +136,9 @@ class QualityRecordSewingAuditController extends Controller
                         //$query->where('key', '=', 'value');
                     })
                     ->first();
-                $standardSewingAuditObject->load(['standardDataSewingAudit']);
+                if( ($standardSewingAuditObject) ){
+                    $standardSewingAuditObject->load(['standardDataSewingAudit']);
+                }
                 
                 $qualityRecordInputScanDataObject = new QualityRecordInputScanData();
                 $count_data_sum = $qualityRecordInputScanDataObject
@@ -165,6 +167,65 @@ class QualityRecordSewingAuditController extends Controller
                     }
                 });
                 
+                $quality_record_input_scan_data_count_data_sum = 0;
+                $qualityRecordInputScanDataObject = new QualityRecordInputScanData();
+                
+                $quality_record_input_scan_data_count_data_sum = $qualityRecordInputScanDataObject
+                    ->where('company_id', '=', $companyObject->id)
+                    ->where('strategic_business_unit_id', '=', $strategicBusinessUnitObject->id)
+                    ->where('factory_id', '=', $factoryObject->id)
+                    ->where('line_id', '=', $lineObject->id)
+                    ->whereDate('time_create', '=', $date_today->format('Y-m-d'))
+                    ->whereHas('qualityRecordInputScanDataStatusSewingAudit', function($query){
+                        //$query->where('key', '=', 'value');
+                    })
+                    ->sum('count_data');
+                
+                $quality_record_sewing_audit_id_count = 0;
+                $qualityRecordSewingAuditObject = new QualityRecordSewingAudit();
+                
+                $quality_record_sewing_audit_id_count = $qualityRecordSewingAuditObject
+                    ->where('company_id', '=', $companyObject->id)
+                    ->where('strategic_business_unit_id', '=', $strategicBusinessUnitObject->id)
+                    ->where('factory_id', '=', $factoryObject->id)
+                    ->where('line_id', '=', $lineObject->id)
+                    ->whereDate('time_create', '=', $date_today->format('Y-m-d'))
+                    ->count('id');
+                
+                $quality_record_input_scan_data_count_data_sum_pass = 0;
+                $qualityRecordInputScanDataObject = new QualityRecordInputScanData();
+                
+                $quality_record_input_scan_data_count_data_sum_pass = $qualityRecordInputScanDataObject
+                    ->where('company_id', '=', $companyObject->id)
+                    ->where('strategic_business_unit_id', '=', $strategicBusinessUnitObject->id)
+                    ->where('factory_id', '=', $factoryObject->id)
+                    ->where('line_id', '=', $lineObject->id)
+                    ->whereDate('time_create', '=', $date_today->format('Y-m-d'))
+                    ->whereHas('qualityRecordInputScanDataStatusSewingAudit', function($query){
+                        $statusObject = new Status();
+                        $statusObject = $statusObject->where("code", "=", "pass")->first();
+                        //$query->where('key', '=', 'value');
+                        $query = $query->where("status_id", "=", $statusObject->id);
+                    })
+                    ->sum('count_data');
+                
+                $quality_record_input_scan_data_count_data_sum_fail = 0;
+                $qualityRecordInputScanDataObject = new QualityRecordInputScanData();
+                
+                $quality_record_input_scan_data_count_data_sum_fail = $qualityRecordInputScanDataObject
+                    ->where('company_id', '=', $companyObject->id)
+                    ->where('strategic_business_unit_id', '=', $strategicBusinessUnitObject->id)
+                    ->where('factory_id', '=', $factoryObject->id)
+                    ->where('line_id', '=', $lineObject->id)
+                    ->whereDate('time_create', '=', $date_today->format('Y-m-d'))
+                    ->whereHas('qualityRecordInputScanDataStatusSewingAudit', function($query){
+                        $statusObject = new Status();
+                        $statusObject = $statusObject->where("code", "=", "fail")->first();
+                        //$query->where('key', '=', 'value');
+                        $query = $query->where("status_id", "=", $statusObject->id);
+                    })
+                    ->sum('count_data');
+                
                 $data['company_object'] = $companyObject;
                 $data['strategic_business_unit_object'] = $strategicBusinessUnitObject;
                 $data['factory_object'] = $factoryObject;
@@ -177,6 +238,11 @@ class QualityRecordSewingAuditController extends Controller
                 $data['count_data_sum'] = $count_data_sum;
                 $data['standard_data_sewing_audit_array'] = $standardDataSewingAuditArray;
                 $data['standard_data_sewing_audit_object'] = $standardDataSewingAuditObject;
+                
+                $data['quality_record_input_scan_data_count_data_sum'] = $quality_record_input_scan_data_count_data_sum;
+                $data['quality_record_sewing_audit_id_count'] = $quality_record_sewing_audit_id_count;
+                $data['quality_record_input_scan_data_count_data_sum_pass'] = $quality_record_input_scan_data_count_data_sum_pass;
+                $data['quality_record_input_scan_data_count_data_sum_fail'] = $quality_record_input_scan_data_count_data_sum_fail;
                 unset($dataArray);
                 
                 // Commit transaction!
@@ -505,10 +571,12 @@ class QualityRecordSewingAuditController extends Controller
                     }
                     
                     if( (strcasecmp($submit_value, $submit_value_pass) == 0) ){
+                        
                         //event(new QualityRecordSewingAuditCreateEvent($qualityRecordInputScanDataObjectArray));
                         $emailJob = (new SendMessageFinishingJob($qualityRecordInputScanDataObjectArray));
                         //->delay(Carbon::now()->addSeconds(10));
                         dispatch($emailJob);
+                        
                     }
                 }
 
