@@ -121,7 +121,7 @@ $(function(){
         }*/
     });//.select2('val', []);
     
-    selectOptionObject.on('select2:opening select2:closing', function( event ) {
+    selectOptionObject.on('select2:opening select2:closing select2:open select2:close', function( event ) {
         var searchfield = $(this).parent().find('.select2-search__field');
         searchfield.prop('disabled', true);
     });
