@@ -83,7 +83,7 @@
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group h-100">
-                                                                                <select class="form-control form-control-md select2" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" autocomplete="off" data-placeholder="Defect" style="width: 100%;" required="required">
+                                                                                <select class="form-control form-control-md select2" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" autocomplete="off" data-placeholder="Defect" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
                                                                                     <!-- option> Option </option -->
                                                                                 </select>
                                                                             </div>
@@ -98,7 +98,7 @@
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group h-100">
-                                                                                <select class="form-control form-control-md select2" id="severity" name="severity" value="{{ old('severity') }}" autocomplete="off" data-placeholder="Severity" style="width: 100%;" required="required">
+                                                                                <select class="form-control form-control-md select2" id="severity" name="severity" value="{{ old('severity') }}" autocomplete="off" data-placeholder="Severity" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
                                                                                     <option value="high"> High </option>
                                                                                     <option value="low"> Low </option>
                                                                                     <option value="moderate"> Moderate </option>

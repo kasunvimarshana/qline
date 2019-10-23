@@ -83,7 +83,7 @@
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group h-100">
-                                                                                <select class="form-control form-control-md select2" id="customer_id" name="customer_id" value="{{ old('customer_id') }}" autocomplete="off" data-placeholder="Customer" style="width: 100%;">
+                                                                                <select class="form-control form-control-md select2" id="customer_id" name="customer_id" value="{{ old('customer_id') }}" autocomplete="off" data-placeholder="Customer" style="width: 100%;" data-minimum-results-for-search="Infinity">
                                                                                     <!-- option> Option </option -->
                                                                                 </select>
                                                                             </div>
@@ -98,7 +98,7 @@
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group h-100">
-                                                                                <select class="form-control form-control-md select2" id="style_id" name="style_id" value="{{ old('style_id') }}" autocomplete="off" data-placeholder="Style" style="width: 100%;">
+                                                                                <select class="form-control form-control-md select2" id="style_id" name="style_id" value="{{ old('style_id') }}" autocomplete="off" data-placeholder="Style" style="width: 100%;" data-minimum-results-for-search="Infinity">
                                                                                     <!-- option> Option </option -->
                                                                                 </select>
                                                                             </div>
@@ -130,7 +130,7 @@
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group h-50">
-                                                                                <select class="form-control form-control-md select2" id="colour_id" name="colour_id" value="{{ old('colour_id') }}" autocomplete="off" data-placeholder="Colour" style="width: 100%;">
+                                                                                <select class="form-control form-control-md select2" id="colour_id" name="colour_id" value="{{ old('colour_id') }}" autocomplete="off" data-placeholder="Colour" style="width: 100%;" data-minimum-results-for-search="Infinity">
                                                                                     <!-- option> Option </option -->
                                                                                 </select>
                                                                             </div>

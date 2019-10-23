@@ -56,7 +56,7 @@
                                                 <label for="company" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Company</label>
                                                 <div class="col">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <select class="form-control form-control-md select2" id="company" name="company" value="{{ old('company') }}" autocomplete="off" data-placeholder="Company" style="width: 100%;" required="required">
+                                                    <select class="form-control form-control-md select2" id="company" name="company" value="{{ old('company') }}" autocomplete="off" data-placeholder="Company" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
 
                                                         <!-- @for($i =1; $i <= 5; $i++) -->
                                                         <option>Company {{ $i }}</option>
@@ -73,7 +73,7 @@
                                                 <label for="factory" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Factory</label>
                                                 <div class="col">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <select class="form-control form-control-md select2" id="factory" name="factory" value="{{ old('factory') }}" autocomplete="off" data-placeholder="Factory" style="width: 100%;" required="required">
+                                                    <select class="form-control form-control-md select2" id="factory" name="factory" value="{{ old('factory') }}" autocomplete="off" data-placeholder="Factory" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
 
                                                         <!-- @for($i =1; $i <= 5; $i++) -->
                                                         <option>Factory {{ $i }}</option>

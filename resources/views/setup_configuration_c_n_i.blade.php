@@ -78,7 +78,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="company_id" name="company_id" value="{{ old('company_id') }}" autocomplete="off" data-placeholder="Group" style="width: 100%;" required="required" readonly="readonly">
+                                                            <select class="form-control form-control-md select2" id="company_id" name="company_id" value="{{ old('company_id') }}" autocomplete="off" data-placeholder="Group" style="width: 100%;" required="required" readonly="readonly" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -93,7 +93,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="strategic_business_unit_id" name="strategic_business_unit_id" value="{{ old('strategic_business_unit_id') }}" autocomplete="off" data-placeholder="SBU" style="width: 100%;" required="required" readonly="readonly">
+                                                            <select class="form-control form-control-md select2" id="strategic_business_unit_id" name="strategic_business_unit_id" value="{{ old('strategic_business_unit_id') }}" autocomplete="off" data-placeholder="SBU" style="width: 100%;" required="required" readonly="readonly" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -108,7 +108,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="factory_id" name="factory_id" value="{{ old('factory_id') }}" autocomplete="off" data-placeholder="Factory" style="width: 100%;" required="required">
+                                                            <select class="form-control form-control-md select2" id="factory_id" name="factory_id" value="{{ old('factory_id') }}" autocomplete="off" data-placeholder="Factory" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>

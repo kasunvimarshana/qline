@@ -27,6 +27,7 @@
         "nesbot/carbon": "^2.18",
         "spatie/flysystem-dropbox": "^1.0",
         "spatie/laravel-permission": "^2.37",
+        "techlab/smartwizard": "^4.3",
         "zanysoft/laravel-zip": "^1.0"
     },
     "require-dev": {

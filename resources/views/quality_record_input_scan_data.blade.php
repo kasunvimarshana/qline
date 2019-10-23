@@ -121,7 +121,7 @@
                                                                                                 <div class="col">
                                                                                                     <!-- p class="form-control-static"></p -->
                                                                                                     <div class="input-group h-100">
-                                                                                                        <select class="form-control form-control-md select2" id="size_id" name="size_id" value="{{ old('size_id') }}" autocomplete="off" data-placeholder="Size" style="width: 100%;" required="required">
+                                                                                                        <select class="form-control form-control-md select2" id="size_id" name="size_id" value="{{ old('size_id') }}" autocomplete="off" data-placeholder="Size" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
                                                                                                             <option value="XS"> XS </option>
                                                                                                             <option value="S"> S </option>
                                                                                                             <option value="M"> M </option>

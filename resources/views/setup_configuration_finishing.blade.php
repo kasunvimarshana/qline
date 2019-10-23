@@ -78,7 +78,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="company_id" name="company_id" value="{{ old('company_id') }}" autocomplete="off" data-placeholder="Group" style="width: 100%;" required="required" readonly="readonly">
+                                                            <select class="form-control form-control-md select2" id="company_id" name="company_id" value="{{ old('company_id') }}" autocomplete="off" data-placeholder="Group" style="width: 100%;" required="required" readonly="readonly" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -93,7 +93,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="strategic_business_unit_id" name="strategic_business_unit_id" value="{{ old('strategic_business_unit_id') }}" autocomplete="off" data-placeholder="SBU" style="width: 100%;" required="required" readonly="readonly">
+                                                            <select class="form-control form-control-md select2" id="strategic_business_unit_id" name="strategic_business_unit_id" value="{{ old('strategic_business_unit_id') }}" autocomplete="off" data-placeholder="SBU" style="width: 100%;" required="required" readonly="readonly" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -108,7 +108,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="factory_id" name="factory_id" value="{{ old('factory_id') }}" autocomplete="off" data-placeholder="Factory" style="width: 100%;" required="required" readonly="readonly">
+                                                            <select class="form-control form-control-md select2" id="factory_id" name="factory_id" value="{{ old('factory_id') }}" autocomplete="off" data-placeholder="Factory" style="width: 100%;" required="required" readonly="readonly" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -123,7 +123,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="line_id" name="line_id" value="{{ old('line_id') }}" autocomplete="off" data-placeholder="Line" style="width: 100%;" required="required">
+                                                            <select class="form-control form-control-md select2" id="line_id" name="line_id" value="{{ old('line_id') }}" autocomplete="off" data-placeholder="Line" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -157,7 +157,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="customer_id" name="customer_id" value="{{ old('customer_id') }}" autocomplete="off" data-placeholder="Customer" style="width: 100%;">
+                                                            <select class="form-control form-control-md select2" id="customer_id" name="customer_id" value="{{ old('customer_id') }}" autocomplete="off" data-placeholder="Customer" style="width: 100%;" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -172,7 +172,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="style_id" name="style_id" value="{{ old('style_id') }}" autocomplete="off" data-placeholder="Style" style="width: 100%;">
+                                                            <select class="form-control form-control-md select2" id="style_id" name="style_id" value="{{ old('style_id') }}" autocomplete="off" data-placeholder="Style" style="width: 100%;" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -187,7 +187,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="colour_id" name="colour_id" value="{{ old('colour_id') }}" autocomplete="off" data-placeholder="Colour" style="width: 100%;">
+                                                            <select class="form-control form-control-md select2" id="colour_id" name="colour_id" value="{{ old('colour_id') }}" autocomplete="off" data-placeholder="Colour" style="width: 100%;" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -202,7 +202,7 @@
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="export_id" name="export_id" value="{{ old('export_id') }}" autocomplete="off" data-placeholder="Export" style="width: 100%;">
+                                                            <select class="form-control form-control-md select2" id="export_id" name="export_id" value="{{ old('export_id') }}" autocomplete="off" data-placeholder="Export" style="width: 100%;" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
