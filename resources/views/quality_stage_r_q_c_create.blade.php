@@ -272,7 +272,7 @@
                                                                     <!-- form-group -->
                                                                     <div class="form-group row w-100 text-center">
                                                                         <!-- img-container -->
-                                                                        <div class="img box clearfix text-center ml-5">
+                                                                        <div class="img box clearfix text-center ml-auto mr-5">
                                                                             @php
                                                                                 $image_uri = asset('img/avatar5.png');
                                                                                 if( (isset($user_object)) && ($user_object->image_uri) ){
@@ -394,6 +394,140 @@
 
                                                 </div>
                                                 <!-- /.row -->
+                                                
+                                                <!-- ========================================================================================================= -->
+                                                <!-- row -->
+                                                <div class="row">
+
+                                                    <!-- col -->
+                                                    <div class="col col-sm-12">
+                                                        <!-- form -->
+                                                        <div class="container-fluid">
+                                                        <!-- container -->
+                                                        <div class="container-fluid">
+                                                            <!-- tab-nav -->
+                                                            <div class="row collapse multi-collapse" id="id_nav_container_3">
+                                                            <!-- --- -->
+                                                            <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                                                            <!-- tab-nav -->
+                                                            <!-- div class="row collapse multi-collapse" id="id_nav_container_3" -->
+
+                                                            <div class="col">
+                                                            <!-- --- -->
+                                                            <ul class="nav nav-tabs nav-tabs-danger nav-fill nav-justified flex-column flex-sm-row w-100" id="id_nav" role="tablist">
+
+                                                                <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
+                                                                    <a id="id_nav_link_3_1" class="nav-link m-1 btn btn-outline-danger" data-toggle="tab" href="#id_tab_content_3_1" role="tab" aria-controls="id_tab_content_3_1" aria-selected="false">
+                                                                        <span><i class="fas fa-anchor"></i> Cutting</span>
+                                                                    </a>
+                                                                </li>
+                                                                
+                                                                <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
+                                                                    <a id="id_nav_link_3_2" class="nav-link m-1 btn btn-outline-danger" data-toggle="tab" href="#id_tab_content_3_2" role="tab" aria-controls="id_tab_content_3_2" aria-selected="false">
+                                                                        <span><i class="fas fa-anchor"></i> RQC</span>
+                                                                    </a>
+                                                                </li>
+                                                                
+                                                                <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
+                                                                    <a id="id_nav_link_3_3" class="nav-link m-1 btn btn-outline-danger" data-toggle="tab" href="#id_tab_content_3_3" role="tab" aria-controls="id_tab_content_3_3" aria-selected="false">
+                                                                        <span><i class="fas fa-anchor"></i> SC 100%</span>
+                                                                    </a>
+                                                                </li>
+                                                                
+                                                                <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
+                                                                    <a id="id_nav_link_3_4" class="nav-link m-1 btn btn-outline-danger" data-toggle="tab" href="#id_tab_content_3_4" role="tab" aria-controls="id_tab_content_3_4" aria-selected="false">
+                                                                        <span><i class="fas fa-anchor"></i> Sewing AQL Audit</span>
+                                                                    </a>
+                                                                </li>
+                                                                
+                                                                <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
+                                                                    <a id="id_nav_link_3_5" class="nav-link m-1 btn btn-outline-danger" data-toggle="tab" href="#id_tab_content_3_5" role="tab" aria-controls="id_tab_content_3_5" aria-selected="false">
+                                                                        <span><i class="fas fa-anchor"></i> Finishing</span>
+                                                                    </a>
+                                                                </li>
+                                                                
+                                                                <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
+                                                                    <a id="id_nav_link_3_6" class="nav-link m-1 btn btn-outline-danger" data-toggle="tab" href="#id_tab_content_3_6" role="tab" aria-controls="id_tab_content_3_6" aria-selected="false">
+                                                                        <span><i class="fas fa-anchor"></i> CNI</span>
+                                                                    </a>
+                                                                </li>
+
+                                                            </ul>
+                                                            <!-- --- -->   
+                                                            </div>
+
+                                                            <!-- /div -->
+                                                            <!-- /.tab-nav -->
+                                                            <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                                                            <!-- --- -->    
+                                                            </div>
+                                                            <!-- /.tab-nav -->
+
+                                                            <!-- tab-content -->
+                                                            <div class="row">
+                                                            <!-- --- -->
+                                                            <div class="tab-content w-100" id="id_nav_tab_content_3">
+                                                                <div id="id_tab_content_3_1" class="container tab-pane fade" role="tabpanel" aria-labelledby="id_nav_link_3_1">
+                                                                    <br/>
+                                                                    <br/>
+                                                                    <br/>
+                                                                    <h3>Tab</h3>
+                                                                    <p>Tab 1</p>
+                                                                </div>
+                                                                
+                                                                <div id="id_tab_content_3_2" class="container tab-pane fade" role="tabpanel" aria-labelledby="id_nav_link_3_2">
+                                                                    <br/>
+                                                                    <br/>
+                                                                    <br/>
+                                                                    <h3>Tab</h3>
+                                                                    <p>Tab 1</p>
+                                                                </div>
+                                                                
+                                                                <div id="id_tab_content_3_3" class="container tab-pane fade" role="tabpanel" aria-labelledby="id_nav_link_3_3">
+                                                                    <br/>
+                                                                    <br/>
+                                                                    <br/>
+                                                                    <h3>Tab</h3>
+                                                                    <p>Tab 1</p>
+                                                                </div>
+                                                                
+                                                                <div id="id_tab_content_3_4" class="container tab-pane fade" role="tabpanel" aria-labelledby="id_nav_link_3_4">
+                                                                    <br/>
+                                                                    <br/>
+                                                                    <br/>
+                                                                    <h3>Tab</h3>
+                                                                    <p>Tab 1</p>
+                                                                </div>
+                                                                
+                                                                <div id="id_tab_content_3_5" class="container tab-pane fade" role="tabpanel" aria-labelledby="id_nav_link_3_5">
+                                                                    <br/>
+                                                                    <br/>
+                                                                    <br/>
+                                                                    <h3>Tab</h3>
+                                                                    <p>Tab 1</p>
+                                                                </div>
+                                                                
+                                                                <div id="id_tab_content_3_6" class="container tab-pane fade" role="tabpanel" aria-labelledby="id_nav_link_3_6">
+                                                                    <br/>
+                                                                    <br/>
+                                                                    <br/>
+                                                                    <h3>Tab</h3>
+                                                                    <p>Tab 1</p>
+                                                                </div>
+                                                            </div>
+                                                            <!-- --- -->
+                                                            </div>
+                                                            <!-- /.tab-content -->
+                                                        </div>
+                                                        <!-- /.container -->
+                                                        </div>
+                                                        <!-- /.form -->
+                                                    </div>
+                                                    <!-- /.col -->
+
+                                                </div>
+                                                <!-- /.row -->
+                                                <!-- ========================================================================================================= -->
                                                 
                                                 <!-- /.tab-content-body -->
                                             </div>
@@ -688,6 +822,11 @@
         $("#id_nav_container_1").removeClass("multi-collapse");
         $("#id_nav_container_1").removeClass("show");
         $("#id_nav_container_1").addClass("show");
+        
+        $("#id_nav_container_3").removeClass("collapse");
+        $("#id_nav_container_3").removeClass("multi-collapse");
+        $("#id_nav_container_3").removeClass("show");
+        $("#id_nav_container_3").addClass("show");
     });
 </script>
 @endpush

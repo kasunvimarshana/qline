@@ -145,8 +145,14 @@ $(function(){
     
     //<select class="select2" data-minimum-results-for-search="Infinity"></select>
     selectOptionObject.on('select2:opening select2:closing select2:open select2:close', function( event ) {
+        //console.log(event);
         var searchfield = $(this).parent().find('.select2-search__field');
         searchfield.prop('disabled', true);
+        
+        $(this).parent().find('.select2-search--inline').remove();
+        //readonly on all select2 input
+        $(".select2-search input").prop("readonly", true);
+        $(".select2-search, .select2-focusser").remove();
     });
 });
 </script>
