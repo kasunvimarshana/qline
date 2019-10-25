@@ -240,41 +240,71 @@
                         <div class="col col-sm-12 row p-0 m-0">
                             <!-- -->
                             <!-- ------------------------------------------------------------------------- -->
-                            <div class="col col-12 w-100">
-                                <div class="card-deck">
-                                    <div class="card m-1 bg-warning">
-                                        <!-- img src="..." class="card-img-top" alt="..."/ -->
-                                        <div class="card-body">
-                                            <h5 class="card-title">OFFERED</h5>
-                                            <h5 class="card-title">LOT SIZE</h5>
-                                            <p class="card-text display-3">
-                                                {{ number_format( $count_data_sum ) }}
-                                            </p>
+                            <!-- form-group -->
+                            <div class="form-group form-group-lg col col-12 d-none">
+                                <label for="audit_frequency_time" class="col col-lg-12 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Audit Seq</label>
+                                <div class="col col-lg-12">
+                                    <!-- p class="form-control-static"></p -->
+                                    <div class="input-group">
+                                        <div class="input-group-addon input-group-prepend">
+                                            <!-- div class="input-group-text" -->
+                                                <button type="submit" class="btn btn btn-outline-danger btn-lg" id="submit" aria-disabled="true" disabled>
+                                                    <i class="fa fa-asterisk" aria-hidden="true"></i>
+                                                </button>
+                                            <!-- /div -->
                                         </div>
-                                        <!-- div class="card-footer">
-                                            <small class="text-muted">Last updated 3 mins ago</small>
-                                        </div -->
-                                    </div>
-
-                                    <div class="card m-1 bg-success">
-                                        <!-- img src="..." class="card-img-top" alt="..."/ -->
-                                        <div class="card-body">
-                                            <h5 class="card-title">STANDARD</h5>
-                                            <h5 class="card-title">AUDIT LOT SIZE</h5>
-                                            <p class="card-text display-3">
-                                                {{ number_format($standard_data_sewing_audit_object->count_sample) }}
-                                            </p>
-                                        </div>
-                                        <!-- div class="card-footer">
-                                            <small class="text-muted">Last updated 3 mins ago</small>
-                                        </div -->
+                                        <input type="text" class="form-control form-control-lg" id="audit_frequency_time" name="audit_frequency_time" placeholder="Audit Seq" aria-label="Audit Seq" value="{{ old('audit_frequency_time') }}" autocomplete="off" aria-describedby="id_input_addon" readonly="readonly"/>
                                     </div>
                                 </div>
+                                <!-- span id="form-control" class="help-block"></span -->
                             </div>
+                            <!-- /.form-group -->
+                            <!-- ------------------------------------------------------------------------- -->
+                            <!-- ------------------------------------------------------------------------- -->
+                            <!-- form-group -->
+                            <div class="form-group form-group-lg col col-12 d-block">
+                                <label for="batch_count" class="col col-lg-12 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Offered Lot Size (Pcs)</label>
+                                <div class="col col-lg-12">
+                                    <!-- p class="form-control-static"></p -->
+                                    <div class="input-group">
+                                        <div class="input-group-addon input-group-prepend">
+                                            <!-- div class="input-group-text" -->
+                                                <button type="submit" class="btn btn btn-outline-danger btn-lg" id="submit" aria-disabled="true" disabled>
+                                                    <i class="fa fa-asterisk" aria-hidden="true"></i>
+                                                </button>
+                                            <!-- /div -->
+                                        </div>
+                                        <input type="text" class="form-control form-control-lg" id="batch_count" name="batch_count" placeholder="Lot Size Pcs" aria-label="Lot Size Pcs" value="{{ number_format( $count_data_sum ) }}" autocomplete="off" aria-describedby="id_input_addon" readonly="readonly"/>
+                                    </div>
+                                </div>
+                                <!-- span id="form-control" class="help-block"></span -->
+                            </div>
+                            <!-- /.form-group -->
+                            <!-- ------------------------------------------------------------------------- -->
+                            <!-- ------------------------------------------------------------------------- -->
+                            <!-- form-group -->
+                            <div class="form-group form-group-lg col col-12 d-block">
+                                <label for="sample_count" class="col col-lg-12 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Standard Audit Lot Size (Pcs)</label>
+                                <div class="col col-lg-12">
+                                    <!-- p class="form-control-static"></p -->
+                                    <div class="input-group">
+                                        <div class="input-group-addon input-group-prepend">
+                                            <!-- div class="input-group-text" -->
+                                                <button type="submit" class="btn btn btn-outline-danger btn-lg" id="submit" aria-disabled="true" disabled>
+                                                    <i class="fa fa-asterisk" aria-hidden="true"></i>
+                                                </button>
+                                            <!-- /div -->
+                                        </div>
+                                        <input type="text" class="form-control form-control-lg" id="sample_count" name="sample_count" placeholder="Sample Pcs" aria-label="Sample Pcs" value="{{ number_format($standard_data_sewing_audit_object->count_sample) }}" autocomplete="off" aria-describedby="id_input_addon" readonly="readonly"/>
+                                    </div>
+                                </div>
+                                <!-- span id="form-control" class="help-block"></span -->
+                            </div>
+                            <!-- /.form-group -->
                             <!-- ------------------------------------------------------------------------- -->
 
                             <!-- form-group-row -->
-                            <div class="col col-12 w-100 mt-5">
+                            <div class="col col-12 w-100">
                                 <!-- -->
                                 <!-- form-group -->
                                 <div class="form-group form-group-lg row col-sm-12">
