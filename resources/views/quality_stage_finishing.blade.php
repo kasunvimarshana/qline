@@ -186,6 +186,13 @@
                             <i class="fab fa-buromobelexperte fa-fw"></i>
                             <!-- span class="text-decoration-none text-justify small"> - </span -->
                             </button>
+                            <span class="text-white"> | </span>
+                            <span class="text-decoration-none text-justify small text-white"> Booked Qty : </span>
+                            <span class="text-monospace text-justify">
+                                <span class="text-white"> ( </span>
+                                <span class="badge badge-secondary text-wrap text-break" id="count_data">0</span>
+                                <span class="text-white"> ) pcs </span>
+                            </span>
                         </h5>
                     </div>
 

@@ -14,10 +14,16 @@
             <tr style="">
                 <td style="width: 15%;text-align: right !important;"> Date </td>
                 <td style=""> {{ $time_create->format('Y-m-d') }} </td>
+            </tr>
+            <tr style="">
                 <td style="width: 15%;text-align: right !important;"> Time Slot </td>
                 <td style=""> {{ $time_create->format('H:i') }} </td>
+            </tr>
+            <tr style="">
                 <td style="width: 15%;text-align: right !important;"> Size </td>
                 <td style=""> {{ $qualityRecordInputScanDataObject->size_id }} </td>
+            </tr>
+            <tr style="">
                 <td style="width: 15%;text-align: right !important;"> Quantity : </td>
                 <td style=""> {{ $qualityRecordInputScanDataObject->count_data }} </td>
             </tr>

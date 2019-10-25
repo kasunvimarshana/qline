@@ -122,11 +122,12 @@
                                                                                                     <!-- p class="form-control-static"></p -->
                                                                                                     <div class="input-group h-100">
                                                                                                         <select class="form-control form-control-lg select2" id="size_id" name="size_id" value="{{ old('size_id') }}" autocomplete="off" data-placeholder="Size" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
-                                                                                                            <option value="XS"> XS </option>
                                                                                                             <option value="S"> S </option>
                                                                                                             <option value="M"> M </option>
                                                                                                             <option value="L"> L </option>
                                                                                                             <option value="Xl"> XL </option>
+                                                                                                            <option value="Xl"> XXL </option>
+                                                                                                            <option value="Xl"> XXXL </option>
                                                                                                         </select>
                                                                                                     </div>
                                                                                                 </div>

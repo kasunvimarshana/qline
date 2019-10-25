@@ -119,7 +119,7 @@
                                                 <!-- -->
                                                 <!-- form-group -->
                                                 <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                    <label for="code" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">EMP No</label>
+                                                    <label for="code" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">EMP No</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <input type="text" class="form-control form-control-lg" id="code" name="code" placeholder="EMP No" value="{{ old('code') }}" autocomplete="off" required="required"/>
@@ -130,7 +130,7 @@
                                                 
                                                 <!-- form-group -->
                                                 <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                    <label for="email" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">E-Mail</label>
+                                                    <label for="email" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">E-Mail</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <input type="text" class="form-control form-control-lg" id="email" name="email" placeholder="E-Mail" value="{{ old('email') }}" autocomplete="off" required="required"/>
@@ -141,7 +141,7 @@
 
                                                 <!-- form-group -->
                                                 <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                    <label for="name_first" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">First Name</label>
+                                                    <label for="name_first" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">First Name</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <input type="text" class="form-control form-control-lg" id="name_first" name="name_first" placeholder="First Name" value="{{ old('name_first') }}" autocomplete="off" required="required"/>
@@ -152,7 +152,7 @@
 
                                                 <!-- form-group -->
                                                 <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                    <label for="name_last" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Surname</label>
+                                                    <label for="name_last" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Surname</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <input type="text" class="form-control form-control-lg" id="name_last" name="name_last" placeholder="Surname" value="{{ old('name_last') }}" autocomplete="off" required="required"/>
@@ -163,7 +163,7 @@
                                                 
                                                 <!-- form-group -->
                                                 <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                    <label for="password" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Password</label>
+                                                    <label for="password" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Password</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Password" value="{{ old('password') }}" autocomplete="off" required="required"/>
@@ -174,7 +174,7 @@
                                                 
                                                 <!-- form-group -->
                                                 <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                    <label for="is_token_authentication" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Two Way Authentication</label>
+                                                    <label for="is_token_authentication" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Two Way Authentication</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <input type="checkbox" class="form-control form-control-lg form-check-input" id="is_token_authentication" name="is_token_authentication" value="is_token_authentication" autocomplete="off" data-toggle="toggle" data-size="md" data-onstyle="primary" data-offstyle="light" data-on="<i class='fas fa-toggle-on'></i>" data-off="<i class='fas fa-toggle-off'></i>"/>
@@ -185,7 +185,7 @@
                                                 
                                                 <!-- form-group -->
                                                 <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                    <label for="company_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Company</label>
+                                                    <label for="company_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Company</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
@@ -200,7 +200,7 @@
                                                 
                                                 <!-- form-group -->
                                                 <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                    <label for="strategic_business_unit_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">SBU</label>
+                                                    <label for="strategic_business_unit_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">SBU</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
@@ -215,7 +215,7 @@
                                                 
                                                 <!-- form-group -->
                                                 <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                    <label for="factory_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Factory</label>
+                                                    <label for="factory_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Factory</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
@@ -230,7 +230,7 @@
 
                                                 <!-- form-group -->
                                                 <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                    <label for="department_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Department</label>
+                                                    <label for="department_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Department</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
@@ -245,7 +245,7 @@
 
                                                 <!-- form-group -->
                                                 <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                    <label for="section_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Section</label>
+                                                    <label for="section_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Section</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
@@ -260,7 +260,7 @@
 
                                                 <!-- form-group -->
                                                 <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                    <label for="phone_mobile" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Mobile</label>
+                                                    <label for="phone_mobile" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Mobile</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <input type="text" class="form-control form-control-lg" id="phone_mobile" name="phone_mobile" placeholder="Mobile" value="{{ old('phone_mobile') }}" autocomplete="off" required="required"/>
@@ -279,7 +279,7 @@
                                                 <!-- -->
                                                 <!-- form-group -->
                                                 <div class="form-group form-group-lg row col-sm-12 m-1 p-0">
-                                                    <label for="image_uri" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">File</label>
+                                                    <label for="image_uri" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">File</label>
                                                     <div class="col kv-avatar">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="col p-0 m-0 file-loading">
