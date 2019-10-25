@@ -24,7 +24,7 @@
                         <h5 class="mb-0">
                             <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse_accordion_1_content_1" aria-expanded="true" aria-controls="idCollapse_accordion_1_content_1" role="button" type="button">
                             <i class="fab fa-buromobelexperte fa-fw"></i>
-                            <span class="text-decoration-none text-justify small"> Quality ( RQC )</span>
+                            <span class="text-decoration-none text-justify small"> Quality Stage ( RQC )</span>
                             </button>
                         </h5>
                     </div>
@@ -77,15 +77,15 @@
                                                                 <div class="col col-sm-12 row p-0 m-0">
                                                                     <!-- -->
                                                                     <!-- form-group -->
-                                                                    <div class="form-group row col">
+                                                                    <div class="form-group form-group-lg row col">
                                                                         <label for="code" class="col-lg-2 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">EMP No</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group">
-                                                                                <input type="text" class="form-control form-control-md" id="code" name="code" placeholder="EMP No" value="{{ old('code') }}" autocomplete="off" aria-label="EMP No" aria-describedby="id_input_addon" required="required"/>
+                                                                                <input type="text" class="form-control form-control-lg" id="code" name="code" placeholder="EMP No" value="{{ old('code') }}" autocomplete="off" aria-label="EMP No" aria-describedby="id_input_addon" required="required"/>
                                                                                 <div class="input-group-addon input-group-append">
                                                                                     <!-- div class="input-group-text" -->
-                                                                                        <button type="submit" class="btn btn btn-outline-danger" id="submit">Search</button>
+                                                                                        <button type="submit" class="btn btn btn-outline-danger btn-lg" id="submit">Search</button>
                                                                                     <!-- /div -->
                                                                                 </div>
                                                                             </div>

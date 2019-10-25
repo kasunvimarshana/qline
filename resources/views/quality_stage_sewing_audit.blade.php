@@ -24,7 +24,7 @@
                         <h5 class="mb-0">
                             <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse_accordion_1_content_1" aria-expanded="true" aria-controls="idCollapse_accordion_1_content_1" role="button" type="button">
                             <i class="fab fa-buromobelexperte fa-fw"></i>
-                            <span class="text-decoration-none text-justify small"> Quality ( Stage )</span>
+                            <span class="text-decoration-none text-justify small"> Quality Stage ( Sewing Audit )</span>
                             </button>
                         </h5>
                     </div>
@@ -241,19 +241,19 @@
                             <!-- -->
                             <!-- ------------------------------------------------------------------------- -->
                             <!-- form-group -->
-                            <div class="form-group col col-12 d-none">
+                            <div class="form-group form-group-lg col col-12 d-none">
                                 <label for="audit_frequency_time" class="col col-lg-12 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Audit Seq</label>
                                 <div class="col col-lg-12">
                                     <!-- p class="form-control-static"></p -->
                                     <div class="input-group">
                                         <div class="input-group-addon input-group-prepend">
                                             <!-- div class="input-group-text" -->
-                                                <button type="submit" class="btn btn btn-outline-danger" id="submit" aria-disabled="true" disabled>
+                                                <button type="submit" class="btn btn btn-outline-danger btn-lg" id="submit" aria-disabled="true" disabled>
                                                     <i class="fa fa-asterisk" aria-hidden="true"></i>
                                                 </button>
                                             <!-- /div -->
                                         </div>
-                                        <input type="text" class="form-control form-control-md" id="audit_frequency_time" name="audit_frequency_time" placeholder="Audit Seq" aria-label="Audit Seq" value="{{ old('audit_frequency_time') }}" autocomplete="off" aria-describedby="id_input_addon" readonly="readonly"/>
+                                        <input type="text" class="form-control form-control-lg" id="audit_frequency_time" name="audit_frequency_time" placeholder="Audit Seq" aria-label="Audit Seq" value="{{ old('audit_frequency_time') }}" autocomplete="off" aria-describedby="id_input_addon" readonly="readonly"/>
                                     </div>
                                 </div>
                                 <!-- span id="form-control" class="help-block"></span -->
@@ -262,19 +262,19 @@
                             <!-- ------------------------------------------------------------------------- -->
                             <!-- ------------------------------------------------------------------------- -->
                             <!-- form-group -->
-                            <div class="form-group col col-12 d-block">
+                            <div class="form-group form-group-lg col col-12 d-block">
                                 <label for="batch_count" class="col col-lg-12 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Offered Lot Size (Pcs)</label>
                                 <div class="col col-lg-12">
                                     <!-- p class="form-control-static"></p -->
                                     <div class="input-group">
                                         <div class="input-group-addon input-group-prepend">
                                             <!-- div class="input-group-text" -->
-                                                <button type="submit" class="btn btn btn-outline-danger" id="submit" aria-disabled="true" disabled>
+                                                <button type="submit" class="btn btn btn-outline-danger btn-lg" id="submit" aria-disabled="true" disabled>
                                                     <i class="fa fa-asterisk" aria-hidden="true"></i>
                                                 </button>
                                             <!-- /div -->
                                         </div>
-                                        <input type="text" class="form-control form-control-md" id="batch_count" name="batch_count" placeholder="Lot Size Pcs" aria-label="Lot Size Pcs" value="{{ number_format( $count_data_sum ) }}" autocomplete="off" aria-describedby="id_input_addon" readonly="readonly"/>
+                                        <input type="text" class="form-control form-control-lg" id="batch_count" name="batch_count" placeholder="Lot Size Pcs" aria-label="Lot Size Pcs" value="{{ number_format( $count_data_sum ) }}" autocomplete="off" aria-describedby="id_input_addon" readonly="readonly"/>
                                     </div>
                                 </div>
                                 <!-- span id="form-control" class="help-block"></span -->
@@ -283,19 +283,19 @@
                             <!-- ------------------------------------------------------------------------- -->
                             <!-- ------------------------------------------------------------------------- -->
                             <!-- form-group -->
-                            <div class="form-group col col-12 d-block">
+                            <div class="form-group form-group-lg col col-12 d-block">
                                 <label for="sample_count" class="col col-lg-12 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Standard Audit Lot Size (Pcs)</label>
                                 <div class="col col-lg-12">
                                     <!-- p class="form-control-static"></p -->
                                     <div class="input-group">
                                         <div class="input-group-addon input-group-prepend">
                                             <!-- div class="input-group-text" -->
-                                                <button type="submit" class="btn btn btn-outline-danger" id="submit" aria-disabled="true" disabled>
+                                                <button type="submit" class="btn btn btn-outline-danger btn-lg" id="submit" aria-disabled="true" disabled>
                                                     <i class="fa fa-asterisk" aria-hidden="true"></i>
                                                 </button>
                                             <!-- /div -->
                                         </div>
-                                        <input type="text" class="form-control form-control-md" id="sample_count" name="sample_count" placeholder="Sample Pcs" aria-label="Sample Pcs" value="{{ number_format($standard_data_sewing_audit_object->count_sample) }}" autocomplete="off" aria-describedby="id_input_addon" readonly="readonly"/>
+                                        <input type="text" class="form-control form-control-lg" id="sample_count" name="sample_count" placeholder="Sample Pcs" aria-label="Sample Pcs" value="{{ number_format($standard_data_sewing_audit_object->count_sample) }}" autocomplete="off" aria-describedby="id_input_addon" readonly="readonly"/>
                                     </div>
                                 </div>
                                 <!-- span id="form-control" class="help-block"></span -->
@@ -307,11 +307,11 @@
                             <div class="col col-12 w-100">
                                 <!-- -->
                                 <!-- form-group -->
-                                <div class="form-group row col-sm-12">
+                                <div class="form-group form-group-lg row col-sm-12">
                                     <!-- btn-toolbar -->
                                     <div class="col text-center">
                                         <!-- div class="btn-group btn-group-lg pull-right" -->
-                                            <button type="submit" class="btn btn-primary ml-auto mr-auto" id="submit">Submit</button>
+                                            <button type="submit" class="btn btn-primary btn-lg ml-auto mr-auto" id="submit">Continue Audit</button>
                                         <!-- /div -->
                                     </div>
                                 </div>

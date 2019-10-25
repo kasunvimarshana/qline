@@ -69,4 +69,30 @@
 
 span.selection{
     height: 100% !important;
+    height: 100% !important;
+    height: 100% !important;
+}
+
+
+/* select2-selection__choice__remove, select2-selection__clear, select2-selection__choice */
+.select2-selection__choice__remove, .select2-selection__clear{
+    text-align: center !important;
+    color: red !important;
+    font-size: 1.5rem !important;
+    display: block !important;
+    clear: both !important;
+    font-weight: bold;
+}
+
+.select2-selection__choice{
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    padding-left: 0 !important;
+    font-weight: bold;
+}
+
+.select2-selection, .select2-selection--single{
+    text-align: center !important;
+    font-weight: bold;
 }

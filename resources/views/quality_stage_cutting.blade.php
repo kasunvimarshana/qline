@@ -25,7 +25,7 @@
                         <h5 class="mb-0">
                             <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse_accordion_1_content_1" aria-expanded="true" aria-controls="idCollapse_accordion_1_content_1" role="button" type="button">
                             <i class="fab fa-buromobelexperte fa-fw"></i>
-                            <span class="text-decoration-none text-justify small"> Quality ( Cutting )</span>
+                            <span class="text-decoration-none text-justify small"> Quality Stage ( Cutting )</span>
                             </button>
                         </h5>
                     </div>
@@ -78,12 +78,12 @@
                                                                 <div class="col col-sm-12 row p-0 m-0">
                                                                     <!-- -->
                                                                     <!-- form-group -->
-                                                                    <div class="form-group row col-sm-4">
+                                                                    <div class="form-group form-group-lg row col-sm-4">
                                                                         <label for="defect_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group h-100">
-                                                                                <select class="form-control form-control-md select2" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" autocomplete="off" data-placeholder="Defect" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
+                                                                                <select class="form-control form-control-lg select2" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" autocomplete="off" data-placeholder="Defect" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
                                                                                     <!-- option> Option </option -->
                                                                                 </select>
                                                                             </div>
@@ -93,12 +93,12 @@
                                                                     <!-- /.form-group -->
                                                                     
                                                                     <!-- form-group -->
-                                                                    <div class="form-group row col-sm-4">
+                                                                    <div class="form-group form-group-lg row col-sm-4">
                                                                         <label for="severity" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Severity</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
                                                                             <div class="input-group h-100">
-                                                                                <select class="form-control form-control-md select2" id="severity" name="severity" value="{{ old('severity') }}" autocomplete="off" data-placeholder="Severity" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
+                                                                                <select class="form-control form-control-lg select2" id="severity" name="severity" value="{{ old('severity') }}" autocomplete="off" data-placeholder="Severity" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
                                                                                     <option value="high"> High </option>
                                                                                     <option value="low"> Low </option>
                                                                                     <option value="moderate"> Moderate </option>
@@ -110,22 +110,22 @@
                                                                     <!-- /.form-group -->
                                                                     
                                                                     <!-- form-group -->
-                                                                    <div class="form-group row col-sm-4">
+                                                                    <div class="form-group form-group-lg row col-sm-4">
                                                                         <label for="count_defect" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Count</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="number" class="form-control form-control-md" id="count_defect" name="count_defect" placeholder="Count" value="{{ old('count_defect') }}" autocomplete="off" required="required"/>
+                                                                            <input type="number" class="form-control form-control-lg" id="count_defect" name="count_defect" placeholder="Count" value="{{ old('count_defect') }}" autocomplete="off" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
                                                                     <!-- /.form-group -->
                                                                     
                                                                     <!-- form-group -->
-                                                                    <div class="form-group row col-sm-12">
+                                                                    <div class="form-group form-group-lg row col-sm-12">
                                                                         <!-- label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Label</label -->
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <textarea type="text" class="form-control form-control-md" id="action_to_be_taken" name="action_to_be_taken" placeholder="Corrective / Preventive Action to be taken" value="{{ old('action_to_be_taken') }}" autocomplete="off" rows="5" required="required"></textarea>
+                                                                            <textarea type="text" class="form-control form-control-lg" id="action_to_be_taken" name="action_to_be_taken" placeholder="Corrective / Preventive Action to be taken" value="{{ old('action_to_be_taken') }}" autocomplete="off" rows="5" required="required"></textarea>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -135,11 +135,11 @@
                                                                     <div class="row col-12 w-100">
                                                                         <!-- -->
                                                                         <!-- form-group -->
-                                                                        <div class="form-group row col-sm-12">
+                                                                        <div class="form-group form-group-lg row col-sm-12">
                                                                             <!-- btn-toolbar -->
                                                                             <div class="col text-center">
                                                                                 <!-- div class="btn-group btn-group-lg pull-right" -->
-                                                                                    <button type="submit" class="btn btn-primary ml-auto mr-auto" id="submit">Submit</button>
+                                                                                    <button type="submit" class="btn btn-primary btn-lg ml-auto mr-auto" id="submit">Submit</button>
                                                                                 <!-- /div -->
                                                                             </div>
                                                                         </div>

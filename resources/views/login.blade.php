@@ -144,29 +144,29 @@
                                                     <div class="row">
                                                         <!-- -->
                                                         <!-- form-group -->
-                                                        <div class="form-group row col-sm-12">
+                                                        <div class="form-group form-group-lg row col-sm-12">
                                                             <label for="code" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">User ID</label>
                                                             <div class="col">
                                                                 <!-- p class="form-control-static"></p -->
-                                                                <input type="text" class="form-control form-control-md" id="code" name="code" placeholder="User ID" value="{{ old('code') }}" autocomplete="off" required="required"/>
+                                                                <input type="text" class="form-control form-control-lg" id="code" name="code" placeholder="User ID" value="{{ old('code') }}" autocomplete="off" required="required"/>
                                                             </div>
                                                             <!-- span id="form-control" class="help-block"></span -->
                                                         </div>
                                                         <!-- /.form-group -->
 
                                                         <!-- form-group -->
-                                                        <div class="form-group row col-sm-12">
+                                                        <div class="form-group form-group-lg row col-sm-12">
                                                             <label for="password" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Password</label>
                                                             <div class="col">
                                                                 <!-- p class="form-control-static"></p -->
-                                                                <input type="password" class="form-control form-control-md" id="password" name="password" placeholder="Password" value="{{ old('password') }}" autocomplete="off" required="required"/>
+                                                                <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Password" value="{{ old('password') }}" autocomplete="off" required="required"/>
                                                             </div>
                                                             <!-- span id="form-control" class="help-block"></span -->
                                                         </div>
                                                         <!-- /.form-group -->
 
                                                         <!-- form-group -->
-                                                        <div class="form-group row col-sm-12">
+                                                        <div class="form-group form-group-lg row col-sm-12">
                                                             <!-- btn-toolbar -->
                                                             <div class="row ml-auto">
                                                                 <!-- div class="btn-group btn-group-lg pull-right" -->

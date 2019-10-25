@@ -7,6 +7,13 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
+use Illuminate\Support\Facades\Hash;
+use DB;
+use Illuminate\Support\Str;
+use \StdClass;
+use \Exception;
+use Carbon\Carbon;
+
 class InputScanDataQuantityFinishingMail extends Mailable
 {
     use Queueable, SerializesModels;
@@ -31,9 +38,13 @@ class InputScanDataQuantityFinishingMail extends Mailable
     public function build()
     {
         //return $this->view('view.name');
+        $carbonObject = new Carbon();
+        $date_today = Carbon::now();//->format('Y-m-d');
+        
         $qualityRecordInputScanDataArray = $this->qualityRecordInputScanDataArray;
         $message = $this;
-        $messageSubject = "New Quantity";
+        
+        $messageSubject = "Pending Booking to Finishing | Date – {$date_today->format('Y-m-d')} | Time - {$date_today->format('H:i')}";
         
         $message = $message->subject( $messageSubject );
         $message = $message->view('mail.input_scan_data_quantity_finishing_mail')->with([

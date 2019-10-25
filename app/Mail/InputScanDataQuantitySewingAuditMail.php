@@ -7,6 +7,13 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
+use Illuminate\Support\Facades\Hash;
+use DB;
+use Illuminate\Support\Str;
+use \StdClass;
+use \Exception;
+use Carbon\Carbon;
+
 class InputScanDataQuantitySewingAuditMail extends Mailable
 {
     use Queueable, SerializesModels;
@@ -31,13 +38,20 @@ class InputScanDataQuantitySewingAuditMail extends Mailable
     public function build()
     {
         //return $this->view('view.name');
+        $carbonObject = new Carbon();
+        $date_today = Carbon::now();//->format('Y-m-d');
+        
         $qualityRecordInputScanData = $this->qualityRecordInputScanData;
         $message = $this;
-        $messageSubject = "New Quantity";
+            
+        $time_create = $carbonObject->createFromFormat("Y-m-d H:i:s", $qualityRecordInputScanData->time_create);
+        
+        $messageSubject = "Pending Sewing AQL | QTY – {$qualityRecordInputScanData->count_data} | Date – {$time_create->format('Y-m-d')} | Time - {$time_create->format('H:i')}";
         
         $message = $message->subject( $messageSubject );
         $message = $message->view('mail.input_scan_data_quantity_sewing_audit_mail')->with([
-            'quality_record_input_scan_data_object' => $qualityRecordInputScanData
+            'quality_record_input_scan_data_object' => $qualityRecordInputScanData,
+            'time_create' => $time_create
         ]);
         
         return $message;

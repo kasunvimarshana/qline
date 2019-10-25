@@ -93,6 +93,7 @@ Route::group(['middleware' => ['authorizedUserMiddleware', 'disablePreventBackMi
     Route::get('departments/select/all', array('uses' => 'DepartmentController@selectAllDepartments'))->name('department.selectAllDepartments');
     Route::get('sections/select/all', array('uses' => 'SectionController@selectAllSections'))->name('section.selectAllSections');
     
+    Route::get('/dashboard', array('uses' => 'DashboardController@index'))->name('dashboard');
 });
 
 Route::group(['middleware' => ['disablePreventBackMiddleware', 'corsMiddleware']], function(){

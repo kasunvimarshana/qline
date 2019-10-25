@@ -55,7 +55,7 @@
                                             <div class="col col-sm-12 row p-0 m-0">
                                                 <!-- -->
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-6 d-none">
+                                                <div class="form-group form-group-lg row col-sm-6 d-none">
                                                     <label for="time_create" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">System Date</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
@@ -65,7 +65,7 @@
                                                                     <i class="fa fa-calendar" id="id_input_addon"></i>
                                                                 </div>
                                                             </div>
-                                                            <input type="text" class="form-control form-control-md" id="time_create" name="time_create" placeholder="System Date" value="{{ old('time_create') }}" autocomplete="off" aria-label="Date" aria-describedby="id_input_addon" required="required" readonly="readonly"/>
+                                                            <input type="text" class="form-control form-control-lg" id="time_create" name="time_create" placeholder="System Date" value="{{ old('time_create') }}" autocomplete="off" aria-label="Date" aria-describedby="id_input_addon" required="required" readonly="readonly"/>
                                                         </div>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
@@ -73,12 +73,12 @@
                                                 <!-- /.form-group -->
                                                 
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-6 d-none">
+                                                <div class="form-group form-group-lg row col-sm-6 d-none">
                                                     <label for="company_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Group</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="company_id" name="company_id" value="{{ old('company_id') }}" autocomplete="off" data-placeholder="Group" style="width: 100%;" required="required" readonly="readonly" data-minimum-results-for-search="Infinity">
+                                                            <select class="form-control form-control-lg select2" id="company_id" name="company_id" value="{{ old('company_id') }}" autocomplete="off" data-placeholder="Group" style="width: 100%;" required="required" readonly="readonly" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -88,12 +88,12 @@
                                                 <!-- /.form-group -->
                                                 
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-6 d-none">
+                                                <div class="form-group form-group-lg row col-sm-6 d-none">
                                                     <label for="strategic_business_unit_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">SBU</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="strategic_business_unit_id" name="strategic_business_unit_id" value="{{ old('strategic_business_unit_id') }}" autocomplete="off" data-placeholder="SBU" style="width: 100%;" required="required" readonly="readonly" data-minimum-results-for-search="Infinity">
+                                                            <select class="form-control form-control-lg select2" id="strategic_business_unit_id" name="strategic_business_unit_id" value="{{ old('strategic_business_unit_id') }}" autocomplete="off" data-placeholder="SBU" style="width: 100%;" required="required" readonly="readonly" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -103,12 +103,12 @@
                                                 <!-- /.form-group -->
                                                 
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-6">
+                                                <div class="form-group form-group-lg row col-sm-6">
                                                     <label for="factory_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Factory</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="factory_id" name="factory_id" value="{{ old('factory_id') }}" autocomplete="off" data-placeholder="Factory" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
+                                                            <select class="form-control form-control-lg select2" id="factory_id" name="factory_id" value="{{ old('factory_id') }}" autocomplete="off" data-placeholder="Factory" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -126,12 +126,12 @@
                                         <div class="row col">
                                             <!-- -->
                                             <!-- form-group -->
-                                            <div class="form-group row col-sm-12">
+                                            <div class="form-group form-group-lg row col-sm-12">
                                                 <div class="input-group h-100">
                                                     <!-- btn-toolbar -->
                                                     <div class="col text-center">
                                                         <!-- div class="btn-group btn-group-lg pull-right" -->
-                                                        <button type="submit" class="btn btn-primary btn-lg" id="submit">Submit</button>
+                                                        <button type="submit" class="btn btn-primary btn-lg" id="submit">Continue</button>
                                                         <!-- /div -->
                                                     </div>
                                                 </div>      

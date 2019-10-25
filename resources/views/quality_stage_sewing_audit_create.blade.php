@@ -25,7 +25,7 @@
                         <h5 class="mb-0">
                             <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse_accordion_1_content_1" aria-expanded="true" aria-controls="idCollapse_accordion_1_content_1" role="button" type="button">
                             <i class="fab fa-buromobelexperte fa-fw"></i>
-                            <span class="text-decoration-none text-justify small"> Quality ( Stage )</span>
+                            <span class="text-decoration-none text-justify small"> Quality Stage ( Sewing Audit )</span>
                             </button>
                         </h5>
                     </div>
@@ -96,11 +96,11 @@
                                                                     <td>
                                                                         <!-- -->
                                                                         <!-- form-group -->
-                                                                        <div class="form-group row col-sm-12 m-1">
+                                                                        <div class="form-group form-group-lg row col-sm-12 m-1">
                                                                             <!-- label for="name" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Label</label -->
                                                                             <div class="col">
                                                                                 <!-- p class="form-control-static"></p -->
-                                                                                <input type="checkbox" class="form-control form-check-input" id="input_check_id_{{ $key }}" name="name_{{ $key }}" autocomplete="off" data-toggle="toggle" data-size="md" data-onstyle="primary" data-offstyle="light" data-on="<i class='fas fa-toggle-on'></i>" data-off="<i class='fas fa-toggle-off'></i>"/>
+                                                                                <input type="checkbox" class="form-control form-control-lg form-check-input" id="input_check_id_{{ $key }}" name="name_{{ $key }}" autocomplete="off" data-toggle="toggle" data-size="md" data-onstyle="primary" data-offstyle="light" data-on="<i class='fas fa-toggle-on'></i>" data-off="<i class='fas fa-toggle-off'></i>"/>
                                                                             </div>
                                                                             <!-- span id="form-control" class="help-block"></span -->
                                                                         </div>
@@ -243,19 +243,19 @@
                                                 <!-- -->
                                                 <!-- ------------------------------------------------------------------------- -->
                                                 <!-- form-group -->
-                                                <div class="form-group col col-12">
+                                                <div class="form-group form-group-lg col col-12">
                                                     <label for="measure_point_id" class="col col-lg-12 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Operation /Area /POM</label>
                                                     <div class="col col-lg-12">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group">
                                                             <div class="input-group-addon input-group-prepend">
                                                                 <!-- div class="input-group-text" -->
-                                                                    <button type="button" class="btn btn-outline-danger" id="submit" data-select2-open-control="measure_point_id" aria-disabled="false">
+                                                                    <button type="button" class="btn btn-outline-danger btn-lg" id="submit" data-select2-open-control="measure_point_id" aria-disabled="false">
                                                                         <i class="fa fa-search" aria-hidden="true"></i>
                                                                     </button>
                                                                 <!-- /div -->
                                                             </div>
-                                                            <select class="form-control select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" autocomplete="off" data-placeholder="Operation" data-minimum-results-for-search="Infinity">
+                                                            <select class="form-control form-control-lg select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" autocomplete="off" data-placeholder="Operation" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -266,24 +266,24 @@
                                                 <!-- ------------------------------------------------------------------------- -->
                                                 <!-- ------------------------------------------------------------------------- -->
                                                 <!-- form-group -->
-                                                <div class="form-group col col-12">
+                                                <div class="form-group form-group-lg col col-12">
                                                     <label for="defect_category_id" class="col col-lg-12 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Defect Category</label>
                                                     <div class="col col-lg-12">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group">
                                                             <div class="input-group-addon input-group-prepend">
                                                                 <!-- div class="input-group-text" -->
-                                                                    <button type="button" class="btn btn-outline-danger" id="submit" data-select2-open-control="defect_category_id" aria-disabled="false">
+                                                                    <button type="button" class="btn btn-outline-danger btn-lg" id="submit" data-select2-open-control="defect_category_id" aria-disabled="false">
                                                                         <i class="fa fa-search" aria-hidden="true"></i>
                                                                     </button>
                                                                 <!-- /div -->
                                                             </div>
-                                                            <select class="form-control select2 select2-multiple select2-allow-clear" id="defect_category_id" name="defect_category_id" value="{{ old('defect_category_id') }}" autocomplete="off" data-placeholder="Defect Category" aria-hidden="true" multiple="multiple" data-minimum-results-for-search="Infinity">
+                                                            <select class="form-control form-control-lg select2 select2-multiple select2-allow-clear" id="defect_category_id" name="defect_category_id" value="{{ old('defect_category_id') }}" autocomplete="off" data-placeholder="Defect Category" aria-hidden="true" multiple="multiple" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                             <div class="input-group-addon input-group-append">
                                                                 <!-- div class="input-group-text" -->
-                                                                    <button type="button" class="btn btn-outline-danger" id="submit" data-select2-close-control="defect_category_id" aria-disabled="false">
+                                                                    <button type="button" class="btn btn-outline-danger btn-lg" id="submit" data-select2-close-control="defect_category_id" aria-disabled="false">
                                                                         <i class="fa fa-plus" aria-hidden="true"></i>
                                                                     </button>
                                                                 <!-- /div -->
@@ -296,24 +296,24 @@
                                                 <!-- ------------------------------------------------------------------------- -->
                                                 <!-- ------------------------------------------------------------------------- -->
                                                 <!-- form-group -->
-                                                <div class="form-group col col-12">
+                                                <div class="form-group form-group-lg col col-12">
                                                     <label for="defect_id" class="col col-lg-12 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Defect</label>
                                                     <div class="col col-lg-12">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group">
                                                             <div class="input-group-addon input-group-prepend">
                                                                 <!-- div class="input-group-text" -->
-                                                                    <button type="button" class="btn btn-outline-danger" id="submit" data-select2-open-control="defect_id" aria-disabled="false">
+                                                                    <button type="button" class="btn btn-outline-danger btn-lg" id="submit" data-select2-open-control="defect_id" aria-disabled="false">
                                                                         <i class="fa fa-search" aria-hidden="true"></i>
                                                                     </button>
                                                                 <!-- /div -->
                                                             </div>
-                                                            <select class="form-control select2 select2-multiple select2-allow-clear" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" autocomplete="off" data-placeholder="Defect" aria-hidden="true" multiple="multiple" data-minimum-results-for-search="Infinity">
+                                                            <select class="form-control form-control-lg select2 select2-multiple select2-allow-clear" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" autocomplete="off" data-placeholder="Defect" aria-hidden="true" multiple="multiple" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                             <div class="input-group-addon input-group-append">
                                                                 <!-- div class="input-group-text" -->
-                                                                    <button type="button" class="btn btn-outline-danger" id="form_submit_id_1" data-select2-close-control="defect_id" aria-disabled="false">
+                                                                    <button type="button" class="btn btn-outline-danger btn-lg" id="form_submit_id_1" data-select2-close-control="defect_id" aria-disabled="false">
                                                                         <i class="fa fa-plus" aria-hidden="true"></i>
                                                                     </button>
                                                                 <!-- /div -->
@@ -329,15 +329,15 @@
                                                 <div class="col col-12 w-100">
                                                     <!-- -->
                                                     <!-- form-group -->
-                                                    <div class="form-group row">
+                                                    <div class="form-group form-group-lg row">
                                                         <!-- btn-toolbar -->
                                                         <div class="col text-center">
                                                             <!-- ------------------------------------------------------ -->
                                                             <div class="btn-toolbar" role="toolbar" aria-label="tool bar">
                                                                 <div class="btn-group btn-group-lg btn-group-justified w-100 m-1" role="group" aria-label="button group">
-                                                                    <button type="submit" class="btn btn-success m-1" id="submit_pass" name="submit" value="submit_pass">Pass</button>
-                                                                    <button type="submit" class="btn btn-danger m-1" id="submit_fail" name="submit" value="submit_fail">Fail</button>
-                                                                    <button type="submit" class="btn btn-warning m-1" id="submit_suspend" name="submit" value="submit_suspend">Suspend</button>
+                                                                    <button type="submit" class="btn btn-success btn-lg m-1" id="submit_pass" name="submit" value="submit_pass">Pass</button>
+                                                                    <button type="submit" class="btn btn-danger btn-lg m-1" id="submit_fail" name="submit" value="submit_fail">Fail</button>
+                                                                    <button type="submit" class="btn btn-warning btn-lg m-1" id="submit_suspend" name="submit" value="submit_suspend">Suspend</button>
                                                                 </div>
                                                             </div>
                                                             <!-- ------------------------------------------------------ -->

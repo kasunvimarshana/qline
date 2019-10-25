@@ -24,7 +24,7 @@
                         <h5 class="mb-0">
                             <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse_accordion_1_content_1" aria-expanded="true" aria-controls="idCollapse_accordion_1_content_1" role="button" type="button">
                             <i class="fab fa-buromobelexperte fa-fw"></i>
-                            <span class="text-decoration-none text-justify small"> Quality ( Stage )</span>
+                            <span class="text-decoration-none text-justify small"> Quality Stage ( Finishing )</span>
                             </button>
                         </h5>
                     </div>
@@ -95,11 +95,11 @@
                                                                     <td>
                                                                         <!-- -->
                                                                         <!-- form-group -->
-                                                                        <div class="form-group row col-sm-12 m-1">
+                                                                        <div class="form-group form-group-lg row col-sm-12 m-1">
                                                                             <!-- label for="name" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Label</label -->
                                                                             <div class="col">
                                                                                 <!-- p class="form-control-static"></p -->
-                                                                                <input type="checkbox" class="form-control form-check-input" id="input_check_id_{{ $key }}" name="name_{{ $key }}" autocomplete="off" data-toggle="toggle" data-size="md" data-onstyle="primary" data-offstyle="light" data-on="<i class='fas fa-toggle-on'></i>" data-off="<i class='fas fa-toggle-off'></i>"/>
+                                                                                <input type="checkbox" class="form-control form-control-lg form-check-input" id="input_check_id_{{ $key }}" name="name_{{ $key }}" autocomplete="off" data-toggle="toggle" data-size="md" data-onstyle="primary" data-offstyle="light" data-on="<i class='fas fa-toggle-on'></i>" data-off="<i class='fas fa-toggle-off'></i>"/>
                                                                             </div>
                                                                             <!-- span id="form-control" class="help-block"></span -->
                                                                         </div>
@@ -223,14 +223,14 @@
                                                 <div class="col col-12 w-100">
                                                     <!-- -->
                                                     <!-- form-group -->
-                                                    <div class="form-group row">
+                                                    <div class="form-group form-group-lg row">
                                                         <!-- btn-toolbar -->
                                                         <div class="col text-center">
                                                             <!-- ------------------------------------------------------ -->
                                                             <div class="btn-toolbar" role="toolbar" aria-label="tool bar">
                                                                 <div class="btn-group btn-group-lg btn-group-justified w-100 m-1" role="group" aria-label="button group">
-                                                                    <button type="submit" class="btn btn-success m-1" id="submit" name="submit" value="submit_pass">Quantity Confirmed</button>
-                                                                    <button type="submit" class="btn btn-warning m-1" id="submit" name="submit" value="submit_suspend">Suspend</button>
+                                                                    <button type="submit" class="btn btn-success btn-lg m-1" id="submit" name="submit" value="submit_pass">Quantity Confirmed</button>
+                                                                    <button type="submit" class="btn btn-warning btn-lg m-1" id="submit" name="submit" value="submit_suspend">Suspend</button>
                                                                 </div>
                                                             </div>
                                                             <!-- ------------------------------------------------------ -->

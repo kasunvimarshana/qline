@@ -2,8 +2,10 @@
 
 @isset($quality_record_input_scan_data_array)
 
-    <p><strong>New Quantity</strong></p>
-    <!-- style="border: 1px solid black;" -->
+    <p>Dear Team,</p>
+
+    <p>This is to keep you notify that following goods are ready to collect for finishing</p>
+
     <table style="width: 100%;">
         @php
             $qualityRecordInputScanDataArray = $quality_record_input_scan_data_array;
@@ -11,6 +13,8 @@
         @isset($qualityRecordInputScanDataArray)
             @foreach( $qualityRecordInputScanDataArray as $key => $value )
             <tr style="">
+                <td style="width: 15%;text-align: right !important;"> Size </td>
+                <td style=""> {{ $value->size_id }} </td>
                 <td style="width: 15%;text-align: right !important;"> Quantity : </td>
                 <td style=""> {{ $value->count_data }} </td>
             </tr>
@@ -20,3 +24,5 @@
 @endisset
 
 <p>***************** Please do not reply, System generated email *****************</p>
+
+ 

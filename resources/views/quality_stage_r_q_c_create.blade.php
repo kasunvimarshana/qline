@@ -25,7 +25,7 @@
                         <h5 class="mb-0">
                             <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse_accordion_1_content_1" aria-expanded="true" aria-controls="idCollapse_accordion_1_content_1" role="button" type="button">
                             <i class="fab fa-buromobelexperte fa-fw"></i>
-                            <span class="text-decoration-none text-justify small"> Quality ( Stage )</span>
+                            <span class="text-decoration-none text-justify small"> Quality Stage ( RQC )</span>
                             </button>
                         </h5>
                     </div>
@@ -82,244 +82,368 @@
                                                                     <!-- p> - </p -->
                                                                 </div>
                                                                 <!-- /.container -->
-                                                                <!-- form-group-col -->
-                                                                <div class="col col-sm-7 p-0 m-0">
-                                                                    <!-- -->
-                                                                    <div class="row">
-                                                                        
-                                                                    <!-- form-group -->
-                                                                    <div class="form-group row col-12">
-                                                                        <label for="code" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">EMP No</label>
-                                                                        <div class="col">
-                                                                            <!-- p class="form-control-static"></p -->
-                                                                            <div class="input-group">
-                                                                                <input type="text" class="form-control form-control-md" id="code" name="code" placeholder="EMP No" value="{!! $user_object->code !!}" autocomplete="off" aria-label="EMP No" aria-describedby="id_input_addon" required="required" readonly="readonly"/>
-                                                                                <div class="input-group-addon input-group-append">
-                                                                                    <!-- div class="input-group-text" -->
-                                                                                        <button type="submit" class="btn btn btn-outline-danger" id="submit" aria-disabled="true" disabled="disabled">
-                                                                                            <i class="fa fa-asterisk" aria-hidden="true"></i>
-                                                                                        </button>
-                                                                                    <!-- /div -->
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- span id="form-control" class="help-block"></span -->
-                                                                    </div>
-                                                                    <!-- /.form-group -->
-                                                                        
-                                                                    <!-- form-group -->
-                                                                    <div class="form-group row col-12">
-                                                                        <label for="attempt" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Attempt</label>
-                                                                        <div class="col">
-                                                                            <!-- p class="form-control-static"></p -->
-                                                                            <div class="input-group">
-                                                                                <input type="number" class="form-control form-control-md" id="attempt" name="attempt" placeholder="Attempt" value="{!! $attempt !!}" autocomplete="off" aria-label="Attempt" aria-describedby="id_input_addon" required="required" readonly="readonly"/>
-                                                                                <div class="input-group-addon input-group-append">
-                                                                                    <!-- div class="input-group-text" -->
-                                                                                        <button type="submit" class="btn btn btn-outline-danger" id="submit" aria-disabled="true" disabled="disabled">
-                                                                                            <i class="fa fa-asterisk" aria-hidden="true"></i>
-                                                                                        </button>
-                                                                                    <!-- /div -->
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- span id="form-control" class="help-block"></span -->
-                                                                    </div>
-                                                                    <!-- /.form-group -->
-                                                                        
-                                                                    <!-- form-group -->
-                                                                    <div class="form-group row col-12">
-                                                                        <label for="measure_point_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Operation</label>
-                                                                        <div class="col">
-                                                                            <!-- p class="form-control-static"></p -->
-                                                                            <div class="input-group">
-                                                                                <div class="input-group-addon input-group-prepend">
-                                                                                    <!-- div class="input-group-text" -->
-                                                                                        <button type="button" class="btn btn-outline-danger" id="submit" data-select2-open-control="measure_point_id" aria-disabled="false">
-                                                                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                                                                        </button>
-                                                                                    <!-- /div -->
-                                                                                </div>
-                                                                                <select class="form-control select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" autocomplete="off" data-placeholder="Operation" data-minimum-results-for-search="Infinity">
-                                                                                    <!-- option> Option </option -->
-                                                                                </select>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- span id="form-control" class="help-block"></span -->
-                                                                    </div>
-                                                                    <!-- /.form-group -->
-                                                                        
-                                                                    <!-- form-group -->
-                                                                    <div class="form-group row col-12">
-                                                                        <label for="defect_category_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect Category</label>
-                                                                        <div class="col">
-                                                                            <!-- p class="form-control-static"></p -->
-                                                                            <div class="input-group">
-                                                                                <div class="input-group-addon input-group-prepend">
-                                                                                    <!-- div class="input-group-text" -->
-                                                                                        <button type="button" class="btn btn-outline-danger" id="submit" data-select2-open-control="defect_category_id" aria-disabled="false">
-                                                                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                                                                        </button>
-                                                                                    <!-- /div -->
-                                                                                </div>
-                                                                                <select class="form-control select2 select2-multiple select2-allow-clear" id="defect_category_id" name="defect_category_id" value="{{ old('defect_category_id') }}" autocomplete="off" data-placeholder="Defect Category" aria-hidden="true" multiple="multiple" data-minimum-results-for-search="Infinity">
-                                                                                    <!-- option> Option </option -->
-                                                                                </select>
-                                                                                <div class="input-group-addon input-group-append">
-                                                                                    <!-- div class="input-group-text" -->
-                                                                                        <button type="button" class="btn btn-outline-danger" id="submit" data-select2-close-control="defect_category_id" aria-disabled="false">
-                                                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                                                        </button>
-                                                                                    <!-- /div -->
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- span id="form-control" class="help-block"></span -->
-                                                                    </div>
-                                                                    <!-- /.form-group -->
-                                                                        
-                                                                    <!-- form-group -->
-                                                                    <div class="form-group row col-12">
-                                                                        <label for="defect_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect</label>
-                                                                        <div class="col">
-                                                                            <!-- p class="form-control-static"></p -->
-                                                                            <div class="input-group">
-                                                                                <div class="input-group-addon input-group-prepend">
-                                                                                    <!-- div class="input-group-text" -->
-                                                                                        <button type="button" class="btn btn-outline-danger" id="submit" data-select2-open-control="defect_id" aria-disabled="false">
-                                                                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                                                                        </button>
-                                                                                    <!-- /div -->
-                                                                                </div>
-                                                                                <select class="form-control select2 select2-multiple select2-allow-clear" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" autocomplete="off" data-placeholder="Defect" aria-hidden="true" multiple="multiple" data-minimum-results-for-search="Infinity">
-                                                                                    <!-- option> Option </option -->
-                                                                                </select>
-                                                                                <div class="input-group-addon input-group-append">
-                                                                                    <!-- div class="input-group-text" -->
-                                                                                        <button type="button" class="btn btn-outline-danger" id="form_submit_id_1" data-select2-close-control="defect_id" aria-disabled="false">
-                                                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                                                        </button>
-                                                                                    <!-- /div -->
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- span id="form-control" class="help-block"></span -->
-                                                                    </div>
-                                                                    <!-- /.form-group -->
-                                                                    
-                                                                    <!-- row-part -->
-                                                                    <!-- form-group -->
-                                                                    <div class="form-group row col-12 w-100">
-                                                                        
-                                                                    <!-- form-group -->
-                                                                    <div class="form-group row col-md-6">
-                                                                        <label for="count_defect" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect Count</label>
-                                                                        <div class="col">
-                                                                            <!-- p class="form-control-static"></p -->
-                                                                            <input type="number" class="form-control form-control-md" id="count_defect" name="count_defect" placeholder="Defect Count" value="{{ old('count_defect') }}" autocomplete="off" required="required" readonly="readonly"/>
-                                                                        </div>
-                                                                        <!-- span id="form-control" class="help-block"></span -->
-                                                                    </div>
-                                                                    <!-- /.form-group -->
-                                                                        
-                                                                    <!-- form-group -->
-                                                                    @php
-                                                                        $count_sample = 0;
-                                                                        if( ($standardRQCObject->standardDataRQC) ){
-                                                                            $standardDataRQC = $standardRQCObject->standardDataRQC->first();
-                                                                            $count_sample = $standardDataRQC->count_sample;
-                                                                        }
-                                                                    @endphp
-                                                                    <div class="form-group row col-md-6">
-                                                                        <label for="count_sample" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Check Qty</label>
-                                                                        <div class="col">
-                                                                            <!-- p class="form-control-static"></p -->
-                                                                            <input type="number" class="form-control form-control-md" id="count_sample" name="count_sample" placeholder="Check Qty" value="{!! $count_sample !!}" autocomplete="off" required="required" readonly="readonly"/>
-                                                                        </div>
-                                                                        <!-- span id="form-control" class="help-block"></span -->
-                                                                    </div>
-                                                                    <!-- /.form-group -->
-                                                                        
-                                                                    </div>
-                                                                    <!-- /.form-group -->
-                                                                    <!-- /.row-part -->
-                                                                        
-                                                                    <!-- form-group-row -->
-                                                                    <div class="row col-12 w-100">
-                                                                        <!-- -->
-                                                                        <!-- form-group -->
-                                                                        <div class="form-group row col-sm-12">
-                                                                            <!-- btn-toolbar -->
-                                                                            <div class="col text-center">
-                                                                                <!-- div class="btn-group btn-group-lg pull-right" -->
-                                                                                    <button type="submit" class="btn btn-primary ml-auto mr-auto" id="submit">Submit</button>
-                                                                                <!-- /div -->
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- /.form-group -->
-                                                                        <!-- -->
-                                                                    </div>
-                                                                    <!-- /.form-group-row -->
-                                                                        
-                                                                    </div>
-                                                                    <!-- -->
-                                                                </div>
-                                                                <!-- /.form-group-col -->
                                                                 
-                                                                <!-- form-group-col -->
-                                                                <div class="col col-sm-5 row p-0 m-0">
-                                                                    <!-- -->
-                                                                    <!-- form-group -->
-                                                                    <div class="form-group row w-100 text-center">
-                                                                        <!-- img-container -->
-                                                                        <div class="img box clearfix text-center ml-auto mr-5">
-                                                                            @php
-                                                                                $image_uri = asset('img/avatar5.png');
-                                                                                if( (isset($user_object)) && ($user_object->image_uri) ){
-                                                                                    if(Storage::exists($user_object->image_uri)){
-                                                                                        $image_uri = Storage::url($user_object->image_uri);
-                                                                                        $image_uri = asset($image_uri);
-                                                                                    }
-                                                                                }
-                                                                            @endphp
-                                                                            <img src="{!! $image_uri !!}" alt="" class="img-responsive img-fluid img-thumbnail rounded" style="max-width: 13em; min-width: 13em;"/>
-                                                                        </div>
-                                                                        <!-- /.img-container -->
-                                                                    </div>
-                                                                    <!-- /.form-group -->
-                                                                    
-                                                                    <!-- fieldset -->
-                                                                    <div class="form-group row w-100">
-                                                                    <fieldset class="w-100" disabled="disabled">
-                                                                        
-                                                                        <!-- form-group -->
-                                                                        <div class="form-group row col-sm-12 m-1">
-                                                                            <label for="name" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Name</label>
-                                                                            <div class="col">
-                                                                                <!-- p class="form-control-static"></p -->
-                                                                                <input type="text" class="form-control form-control-md" id="name" name="name" placeholder="Name" value="{!! $user_object->name_first !!}" autocomplete="off" disabled="disabled"/>
-                                                                            </div>
-                                                                            <!-- span id="form-control" class="help-block"></span -->
-                                                                        </div>
-                                                                        <!-- /.form-group -->
+                                                                <!-- row -->
+                                                                <div class="container-fluid p-0">
 
-                                                                        <!-- form-group -->
-                                                                        <div class="form-group row col-sm-12 m-1">
-                                                                            <label for="grade" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Operator Grade</label>
+                                                                    <!-- col -->
+                                                                    <div class="container-fluid p-0">
+                                                                        <!-- form -->
+                                                                        <div class="container-fluid p-0">
+                                                                        <!-- container -->
+                                                                        <div class="container-fluid p-0">
+                                                                            <!-- tab-nav -->
+                                                                            <div class="row collapse multi-collapse" id="id_nav_container_3">
+                                                                            <!-- --- -->
+
                                                                             <div class="col">
-                                                                                <!-- p class="form-control-static"></p -->
-                                                                                <input type="text" class="form-control form-control-md" id="grade" name="grade" placeholder="Operator Grade" value="{!! $user_object->grade !!}" autocomplete="off" disabled="disabled"/>
+                                                                            <!-- --- -->
+                                                                            <ul class="nav nav-tabs nav-tabs-danger nav-fill nav-justified flex-column flex-sm-row w-100" id="id_nav" role="tablist">
+
+                                                                                <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
+                                                                                    <a id="id_nav_link_3_1" class="nav-link m-1 btn btn-outline-danger border-danger active" data-toggle="tab" href="#id_tab_content_3_1" role="tab" aria-controls="id_tab_content_3_1" aria-selected="true">
+                                                                                        <span><i class="fab fa-wpforms"></i> Audit</span>
+                                                                                    </a>
+                                                                                </li>
+
+                                                                                <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
+                                                                                    <a id="id_nav_link_3_2" class="nav-link m-1 btn btn-outline-danger border-danger" data-toggle="tab" href="#id_tab_content_3_2" role="tab" aria-controls="id_tab_content_3_2" aria-selected="false">
+                                                                                        <span><i class="fas fa-user"></i> Operator</span>
+                                                                                    </a>
+                                                                                </li>
+
+                                                                            </ul>
+                                                                            <!-- --- -->   
                                                                             </div>
-                                                                            <!-- span id="form-control" class="help-block"></span -->
+
+                                                                            <!-- --- -->    
+                                                                            </div>
+                                                                            <!-- /.tab-nav -->
+
+                                                                            <!-- tab-content -->
+                                                                            <div class="row">
+                                                                            <!-- --- -->
+                                                                            <div class="tab-content w-100" id="id_nav_tab_content_3">
+                                                                                <div id="id_tab_content_3_1" class="container tab-pane fade show active" role="tabpanel" aria-labelledby="id_nav_link_3_1">
+                                                                                    <br/>
+                                                                                    <!-- -->
+                                                                                    <!-- form-group-col -->
+                                                                                    <div class="col col-sm-12 p-0 m-0">
+                                                                                        <!-- -->
+                                                                                        <div class="row">
+
+                                                                                        <!-- form-group -->
+                                                                                        <div class="form-group form-group-lg row col-12 d-none">
+                                                                                            <label for="code" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">EMP No</label>
+                                                                                            <div class="col">
+                                                                                                <!-- p class="form-control-static"></p -->
+                                                                                                <div class="input-group">
+                                                                                                    <input type="text" class="form-control form-control-lg" id="code" name="code" placeholder="EMP No" value="{!! $user_object->code !!}" autocomplete="off" aria-label="EMP No" aria-describedby="id_input_addon" required="required" readonly="readonly"/>
+                                                                                                    <div class="input-group-addon input-group-append">
+                                                                                                        <!-- div class="input-group-text" -->
+                                                                                                            <button type="submit" class="btn btn btn-outline-danger btn-lg" id="submit" aria-disabled="true" disabled="disabled">
+                                                                                                                <i class="fa fa-asterisk" aria-hidden="true"></i>
+                                                                                                            </button>
+                                                                                                        <!-- /div -->
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!-- span id="form-control" class="help-block"></span -->
+                                                                                        </div>
+                                                                                        <!-- /.form-group -->
+
+                                                                                        <!-- form-group -->
+                                                                                        <div class="form-group form-group-lg row col-12 d-none">
+                                                                                            <label for="attempt" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Attempt</label>
+                                                                                            <div class="col">
+                                                                                                <!-- p class="form-control-static"></p -->
+                                                                                                <div class="input-group">
+                                                                                                    <input type="number" class="form-control form-control-lg" id="attempt" name="attempt" placeholder="Attempt" value="{!! $attempt !!}" autocomplete="off" aria-label="Attempt" aria-describedby="id_input_addon" required="required" readonly="readonly"/>
+                                                                                                    <div class="input-group-addon input-group-append">
+                                                                                                        <!-- div class="input-group-text" -->
+                                                                                                            <button type="submit" class="btn btn btn-outline-danger btn-lg" id="submit" aria-disabled="true" disabled="disabled">
+                                                                                                                <i class="fa fa-asterisk" aria-hidden="true"></i>
+                                                                                                            </button>
+                                                                                                        <!-- /div -->
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!-- span id="form-control" class="help-block"></span -->
+                                                                                        </div>
+                                                                                        <!-- /.form-group -->
+
+                                                                                        <!-- form-group -->
+                                                                                        <div class="form-group form-group-lg row col-12">
+                                                                                            <label for="measure_point_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Operation</label>
+                                                                                            <div class="col">
+                                                                                                <!-- p class="form-control-static"></p -->
+                                                                                                <div class="input-group">
+                                                                                                    <div class="input-group-addon input-group-prepend">
+                                                                                                        <!-- div class="input-group-text" -->
+                                                                                                            <button type="button" class="btn btn-outline-danger btn-lg font-size-1-5" id="submit" data-select2-open-control="measure_point_id" aria-disabled="false">
+                                                                                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                                                                                            </button>
+                                                                                                        <!-- /div -->
+                                                                                                    </div>
+                                                                                                    <select class="form-control form-control-lg select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" autocomplete="off" data-placeholder="Operation" data-minimum-results-for-search="Infinity">
+                                                                                                        <!-- option> Option </option -->
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!-- span id="form-control" class="help-block"></span -->
+                                                                                        </div>
+                                                                                        <!-- /.form-group -->
+
+                                                                                        <!-- form-group -->
+                                                                                        <div class="form-group form-group-lg row col-12">
+                                                                                            <label for="defect_category_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Defect Category</label>
+                                                                                            <div class="col">
+                                                                                                <!-- p class="form-control-static"></p -->
+                                                                                                <div class="input-group">
+                                                                                                    <div class="input-group-addon input-group-prepend">
+                                                                                                        <!-- div class="input-group-text" -->
+                                                                                                            <button type="button" class="btn btn-outline-danger btn-lg" id="submit" data-select2-open-control="defect_category_id" aria-disabled="false">
+                                                                                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                                                                                            </button>
+                                                                                                        <!-- /div -->
+                                                                                                    </div>
+                                                                                                    <select class="form-control form-control-lg select2 select2-multiple select2-allow-clear" id="defect_category_id" name="defect_category_id" value="{{ old('defect_category_id') }}" autocomplete="off" data-placeholder="Defect Category" aria-hidden="true" multiple="multiple" data-minimum-results-for-search="Infinity">
+                                                                                                        <!-- option> Option </option -->
+                                                                                                    </select>
+                                                                                                    <div class="input-group-addon input-group-append">
+                                                                                                        <!-- div class="input-group-text" -->
+                                                                                                            <button type="button" class="btn btn-outline-danger btn-lg" id="submit" data-select2-close-control="defect_category_id" aria-disabled="false">
+                                                                                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                                                                                            </button>
+                                                                                                        <!-- /div -->
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!-- span id="form-control" class="help-block"></span -->
+                                                                                        </div>
+                                                                                        <!-- /.form-group -->
+
+                                                                                        <!-- form-group -->
+                                                                                        <div class="form-group form-group-lg row col-12">
+                                                                                            <label for="defect_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Defect</label>
+                                                                                            <div class="col">
+                                                                                                <!-- p class="form-control-static"></p -->
+                                                                                                <div class="input-group">
+                                                                                                    <div class="input-group-addon input-group-prepend">
+                                                                                                        <!-- div class="input-group-text" -->
+                                                                                                            <button type="button" class="btn btn-outline-danger btn-lg" id="submit" data-select2-open-control="defect_id" aria-disabled="false">
+                                                                                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                                                                                            </button>
+                                                                                                        <!-- /div -->
+                                                                                                    </div>
+                                                                                                    <select class="form-control form-control-lg select2 select2-multiple select2-allow-clear" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" autocomplete="off" data-placeholder="Defect" aria-hidden="true" multiple="multiple" data-minimum-results-for-search="Infinity">
+                                                                                                        <!-- option> Option </option -->
+                                                                                                    </select>
+                                                                                                    <div class="input-group-addon input-group-append">
+                                                                                                        <!-- div class="input-group-text" -->
+                                                                                                            <button type="button" class="btn btn-outline-danger btn-lg" id="form_submit_id_1" data-select2-close-control="defect_id" aria-disabled="false">
+                                                                                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                                                                                            </button>
+                                                                                                        <!-- /div -->
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!-- span id="form-control" class="help-block"></span -->
+                                                                                        </div>
+                                                                                        <!-- /.form-group -->
+
+                                                                                        <!-- row-part -->
+                                                                                        <!-- form-group -->
+                                                                                        <div class="form-group row col-12 w-100">
+
+                                                                                        <!-- form-group -->
+                                                                                        <div class="form-group form-group-lg row col-md-6 d-none">
+                                                                                            <label for="count_defect" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Defect Count</label>
+                                                                                            <div class="col">
+                                                                                                <!-- p class="form-control-static"></p -->
+                                                                                                <input type="number" class="form-control form-control-lg" id="count_defect" name="count_defect" placeholder="Defect Count" value="{{ old('count_defect') }}" autocomplete="off" required="required" readonly="readonly"/>
+                                                                                            </div>
+                                                                                            <!-- span id="form-control" class="help-block"></span -->
+                                                                                        </div>
+                                                                                        <!-- /.form-group -->
+
+                                                                                        <!-- form-group -->
+                                                                                        @php
+                                                                                            $count_sample = 0;
+                                                                                            if( ($standardRQCObject->standardDataRQC) ){
+                                                                                                $standardDataRQC = $standardRQCObject->standardDataRQC->first();
+                                                                                                $count_sample = $standardDataRQC->count_sample;
+                                                                                            }
+                                                                                        @endphp
+                                                                                        <div class="form-group form-group-lg row col-md-6 d-none">
+                                                                                            <label for="count_sample" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Check Qty</label>
+                                                                                            <div class="col">
+                                                                                                <!-- p class="form-control-static"></p -->
+                                                                                                <input type="number" class="form-control form-control-lg" id="count_sample" name="count_sample" placeholder="Check Qty" value="{!! $count_sample !!}" autocomplete="off" required="required" readonly="readonly"/>
+                                                                                            </div>
+                                                                                            <!-- span id="form-control" class="help-block"></span -->
+                                                                                        </div>
+                                                                                        <!-- /.form-group -->
+
+                                                                                        </div>
+                                                                                        <!-- /.form-group -->
+                                                                                        <!-- /.row-part -->
+                                                                                            
+                                                                                        <!-- form-group-row -->
+                                                                                        <div class="row col-12 w-100">
+                                                                                            <!-- -->
+                                                                                            <div class="row col col-12">
+                                                                                                <!-- form-group -->
+                                                                                                <div class="form-group form-group-lg row col col-md-4 col-sm-4">
+                                                                                                    <label for="name" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Attempt</label>
+                                                                                                    <label for="name" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
+                                                                                                        <span> [ </span>
+                                                                                                        <span> {!! $attempt !!} </span>
+                                                                                                        <span> ] </span>
+                                                                                                    </label>
+                                                                                                </div>
+                                                                                                <!-- /.form-group -->
+                                                                                                
+                                                                                                <!-- form-group -->
+                                                                                                <div class="form-group form-group-lg row col col-md-4 col-sm-4">
+                                                                                                    @php
+                                                                                                        $count_sample = 0;
+                                                                                                        if( ($standardRQCObject->standardDataRQC) ){
+                                                                                                            $standardDataRQC = $standardRQCObject->standardDataRQC->first();
+                                                                                                            $count_sample = $standardDataRQC->count_sample;
+                                                                                                        }
+                                                                                                    @endphp
+                                                                                                    <label for="name" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Std Sample Qty</label>
+                                                                                                    <label for="name" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
+                                                                                                        <span> [ </span>
+                                                                                                        <span> {!! number_format($count_sample) !!} </span>
+                                                                                                        <span> ] </span>
+                                                                                                    </label>
+                                                                                                </div>
+                                                                                                <!-- /.form-group -->
+                                                                                                
+                                                                                                <!-- form-group -->
+                                                                                                <div class="form-group form-group-lg row col col-md-4 col-sm-4">
+                                                                                                    <label for="count_defect_temp" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Defect Count</label>
+                                                                                                    <label for="count_defect_temp" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
+                                                                                                        <span> [ </span>
+                                                                                                        <span id="count_defect_temp"> {!! 0 !!} </span>
+                                                                                                        <span> ] </span>
+                                                                                                    </label>
+                                                                                                </div>
+                                                                                                <!-- /.form-group -->
+                                                                                            </div>
+                                                                                            <!-- -->
+                                                                                        </div>
+                                                                                        <!-- /.form-group-row -->
+
+                                                                                        <!-- form-group-row -->
+                                                                                        <div class="row col-12 w-100">
+                                                                                            <!-- -->
+                                                                                            <!-- form-group -->
+                                                                                            <div class="form-group form-group-lg row col-sm-12">
+                                                                                                <!-- btn-toolbar -->
+                                                                                                <div class="col text-center px-5">
+                                                                                                    <!-- div class="btn-group btn-group-lg pull-right" -->
+                                                                                                        <button type="submit" class="btn btn-primary btn-block btn-lg ml-auto mr-auto" id="submit">Submit</button>
+                                                                                                    <!-- /div -->
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!-- /.form-group -->
+                                                                                            <!-- -->
+                                                                                        </div>
+                                                                                        <!-- /.form-group-row -->
+
+                                                                                        </div>
+                                                                                        <!-- -->
+                                                                                    </div>
+                                                                                    <!-- /.form-group-col -->
+                                                                                    <!-- -->
+                                                                                </div>
+
+                                                                                <div id="id_tab_content_3_2" class="container tab-pane fade" role="tabpanel" aria-labelledby="id_nav_link_3_2">
+                                                                                    <br/>
+                                                                                    <!-- --- -->
+                                                                                    <!-- form-group-col -->
+                                                                                    <div class="col col-sm-12 row p-0 m-0">
+                                                                                        <!-- -->
+                                                                                        <!-- form-group -->
+                                                                                        <div class="form-group form-group-lg col col-md-6 text-center">
+                                                                                            <!-- img-container -->
+                                                                                            <div class="img box clearfix text-center ml-auto mr-5">
+                                                                                                @php
+                                                                                                    $image_uri = asset('img/avatar5.png');
+                                                                                                    if( (isset($user_object)) && ($user_object->image_uri) ){
+                                                                                                        if(Storage::exists($user_object->image_uri)){
+                                                                                                            $image_uri = Storage::url($user_object->image_uri);
+                                                                                                            $image_uri = asset($image_uri);
+                                                                                                        }
+                                                                                                    }
+                                                                                                @endphp
+                                                                                                <img src="{!! $image_uri !!}" alt="" class="img-responsive img-fluid img-thumbnail rounded" style="max-width: 13em; min-width: 13em;"/>
+                                                                                            </div>
+                                                                                            <!-- /.img-container -->
+                                                                                        </div>
+                                                                                        <!-- /.form-group -->
+
+                                                                                        <!-- fieldset -->
+                                                                                        <div class="form-group form-group-lg col col-md-6 text-center">
+                                                                                        <fieldset class="w-100" disabled="disabled">
+
+                                                                                            <!-- form-group -->
+                                                                                            <div class="form-group form-group-lg row col-sm-12 m-1">
+                                                                                                <label for="name" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">EMP No</label>
+                                                                                                <label for="name" class="col-lg-9 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
+                                                                                                    <span> [ </span>
+                                                                                                    <span> {!! $user_object->code !!} </span>
+                                                                                                    <span> ] </span>
+                                                                                                </label>
+                                                                                            </div>
+                                                                                            <!-- /.form-group -->
+                                                                                            
+                                                                                            <!-- form-group -->
+                                                                                            <div class="form-group form-group-lg row col-sm-12 m-1">
+                                                                                                <label for="name" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Name</label>
+                                                                                                <label for="name" class="col-lg-9 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
+                                                                                                    <span> [ </span>
+                                                                                                    <span> {!! $user_object->name_first !!} </span>
+                                                                                                    <span> ] </span>
+                                                                                                </label>
+                                                                                            </div>
+                                                                                            <!-- /.form-group -->
+                                                                                            
+                                                                                            <!-- form-group -->
+                                                                                            <div class="form-group form-group-lg row col-sm-12 m-1">
+                                                                                                <label for="name" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Operator Grade</label>
+                                                                                                <label for="name" class="col-lg-9 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
+                                                                                                    <span> [ </span>
+                                                                                                    <span> {!! $user_object->grade !!} </span>
+                                                                                                    <span> ] </span>
+                                                                                                </label>
+                                                                                            </div>
+                                                                                            <!-- /.form-group -->
+
+                                                                                        </fieldset>
+                                                                                        </div>
+                                                                                        <!-- /.fieldset -->
+                                                                                        <!-- -->
+                                                                                    </div>
+                                                                                    <!-- /.form-group-col -->
+                                                                                    <!-- --- -->
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- --- -->
+                                                                            </div>
+                                                                            <!-- /.tab-content -->
                                                                         </div>
-                                                                        <!-- /.form-group -->
-                                                                        
-                                                                    </fieldset>
+                                                                        <!-- /.container -->
+                                                                        </div>
+                                                                        <!-- /.form -->
                                                                     </div>
-                                                                    <!-- /.fieldset -->
-                                                                    <!-- -->
+                                                                    <!-- /.col -->
+
                                                                 </div>
-                                                                <!-- /.form-group-col -->
+                                                                <!-- /.row -->
                                                             </div>
                                                             <!-- /.form-group-row -->
                                                         </form>
@@ -394,140 +518,6 @@
 
                                                 </div>
                                                 <!-- /.row -->
-                                                
-                                                <!-- ========================================================================================================= -->
-                                                <!-- row -->
-                                                <div class="row">
-
-                                                    <!-- col -->
-                                                    <div class="col col-sm-12">
-                                                        <!-- form -->
-                                                        <div class="container-fluid">
-                                                        <!-- container -->
-                                                        <div class="container-fluid">
-                                                            <!-- tab-nav -->
-                                                            <div class="row collapse multi-collapse" id="id_nav_container_3">
-                                                            <!-- --- -->
-                                                            <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-                                                            <!-- tab-nav -->
-                                                            <!-- div class="row collapse multi-collapse" id="id_nav_container_3" -->
-
-                                                            <div class="col">
-                                                            <!-- --- -->
-                                                            <ul class="nav nav-tabs nav-tabs-danger nav-fill nav-justified flex-column flex-sm-row w-100" id="id_nav" role="tablist">
-
-                                                                <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                                    <a id="id_nav_link_3_1" class="nav-link m-1 btn btn-outline-danger" data-toggle="tab" href="#id_tab_content_3_1" role="tab" aria-controls="id_tab_content_3_1" aria-selected="false">
-                                                                        <span><i class="fas fa-anchor"></i> Cutting</span>
-                                                                    </a>
-                                                                </li>
-                                                                
-                                                                <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                                    <a id="id_nav_link_3_2" class="nav-link m-1 btn btn-outline-danger" data-toggle="tab" href="#id_tab_content_3_2" role="tab" aria-controls="id_tab_content_3_2" aria-selected="false">
-                                                                        <span><i class="fas fa-anchor"></i> RQC</span>
-                                                                    </a>
-                                                                </li>
-                                                                
-                                                                <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                                    <a id="id_nav_link_3_3" class="nav-link m-1 btn btn-outline-danger" data-toggle="tab" href="#id_tab_content_3_3" role="tab" aria-controls="id_tab_content_3_3" aria-selected="false">
-                                                                        <span><i class="fas fa-anchor"></i> SC 100%</span>
-                                                                    </a>
-                                                                </li>
-                                                                
-                                                                <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                                    <a id="id_nav_link_3_4" class="nav-link m-1 btn btn-outline-danger" data-toggle="tab" href="#id_tab_content_3_4" role="tab" aria-controls="id_tab_content_3_4" aria-selected="false">
-                                                                        <span><i class="fas fa-anchor"></i> Sewing AQL Audit</span>
-                                                                    </a>
-                                                                </li>
-                                                                
-                                                                <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                                    <a id="id_nav_link_3_5" class="nav-link m-1 btn btn-outline-danger" data-toggle="tab" href="#id_tab_content_3_5" role="tab" aria-controls="id_tab_content_3_5" aria-selected="false">
-                                                                        <span><i class="fas fa-anchor"></i> Finishing</span>
-                                                                    </a>
-                                                                </li>
-                                                                
-                                                                <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                                    <a id="id_nav_link_3_6" class="nav-link m-1 btn btn-outline-danger" data-toggle="tab" href="#id_tab_content_3_6" role="tab" aria-controls="id_tab_content_3_6" aria-selected="false">
-                                                                        <span><i class="fas fa-anchor"></i> CNI</span>
-                                                                    </a>
-                                                                </li>
-
-                                                            </ul>
-                                                            <!-- --- -->   
-                                                            </div>
-
-                                                            <!-- /div -->
-                                                            <!-- /.tab-nav -->
-                                                            <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-                                                            <!-- --- -->    
-                                                            </div>
-                                                            <!-- /.tab-nav -->
-
-                                                            <!-- tab-content -->
-                                                            <div class="row">
-                                                            <!-- --- -->
-                                                            <div class="tab-content w-100" id="id_nav_tab_content_3">
-                                                                <div id="id_tab_content_3_1" class="container tab-pane fade" role="tabpanel" aria-labelledby="id_nav_link_3_1">
-                                                                    <br/>
-                                                                    <br/>
-                                                                    <br/>
-                                                                    <h3>Tab</h3>
-                                                                    <p>Tab 1</p>
-                                                                </div>
-                                                                
-                                                                <div id="id_tab_content_3_2" class="container tab-pane fade" role="tabpanel" aria-labelledby="id_nav_link_3_2">
-                                                                    <br/>
-                                                                    <br/>
-                                                                    <br/>
-                                                                    <h3>Tab</h3>
-                                                                    <p>Tab 1</p>
-                                                                </div>
-                                                                
-                                                                <div id="id_tab_content_3_3" class="container tab-pane fade" role="tabpanel" aria-labelledby="id_nav_link_3_3">
-                                                                    <br/>
-                                                                    <br/>
-                                                                    <br/>
-                                                                    <h3>Tab</h3>
-                                                                    <p>Tab 1</p>
-                                                                </div>
-                                                                
-                                                                <div id="id_tab_content_3_4" class="container tab-pane fade" role="tabpanel" aria-labelledby="id_nav_link_3_4">
-                                                                    <br/>
-                                                                    <br/>
-                                                                    <br/>
-                                                                    <h3>Tab</h3>
-                                                                    <p>Tab 1</p>
-                                                                </div>
-                                                                
-                                                                <div id="id_tab_content_3_5" class="container tab-pane fade" role="tabpanel" aria-labelledby="id_nav_link_3_5">
-                                                                    <br/>
-                                                                    <br/>
-                                                                    <br/>
-                                                                    <h3>Tab</h3>
-                                                                    <p>Tab 1</p>
-                                                                </div>
-                                                                
-                                                                <div id="id_tab_content_3_6" class="container tab-pane fade" role="tabpanel" aria-labelledby="id_nav_link_3_6">
-                                                                    <br/>
-                                                                    <br/>
-                                                                    <br/>
-                                                                    <h3>Tab</h3>
-                                                                    <p>Tab 1</p>
-                                                                </div>
-                                                            </div>
-                                                            <!-- --- -->
-                                                            </div>
-                                                            <!-- /.tab-content -->
-                                                        </div>
-                                                        <!-- /.container -->
-                                                        </div>
-                                                        <!-- /.form -->
-                                                    </div>
-                                                    <!-- /.col -->
-
-                                                </div>
-                                                <!-- /.row -->
-                                                <!-- ========================================================================================================= -->
                                                 
                                                 <!-- /.tab-content-body -->
                                             </div>
@@ -621,6 +611,7 @@
                 var defect_id = $("#defect_id");
                 var defect_category_id = $("#defect_category_id");
                 var count_defect = $("#count_defect");
+                var count_defect_temp = $("#count_defect_temp");
                 var measure_point_id_value = null;
                 var defect_category_id_value = null;
                 var defect_id_value = null;
@@ -759,6 +750,8 @@
                             count_defect.val(function(index, currentvalue){
                                 return count_defect_value;
                             });
+                            
+                            count_defect_temp.text( count_defect_value );
                         });
                         
                         var i_2 = $("<i></i>");
@@ -797,6 +790,8 @@
                 count_defect.val(function(index, currentvalue){
                     return count_defect_value;
                 });
+                
+                count_defect_temp.text( count_defect_value );
             }catch(error){
                 //console.log("error");
                 //console.log(error);

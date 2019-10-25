@@ -70,6 +70,40 @@
             <!-- /.card -->
         </div>
         <!-- /.card-group -->
+        
+        <!-- card-group -->
+        <div class="card-group">
+            <!-- card -->
+            <div class="card bg-danger">
+                <div class="card-header" id="idCard6">
+                    <h5 class="mb-0">
+                        <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse6" aria-expanded="false" aria-controls="idCollapse6" role="button" type="button">
+                        <!-- i class="fa fa-atom fa-fw"></i -->
+                        <span class="text-decoration-none text-justify small"> Dashboard</span>
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="idCollapse6" class="collapse hide" aria-labelledby="idCard6" data-parent="#id_accordion_nav">
+                    <div class="card-body" id="idCollapse5_body">
+                        <table class="table">
+                            <!-- table-tr -->
+                            <tr>
+                                <td class="p-0 m-0">
+                                    <i class="fa fa-arrow-alt-circle-right fa-fw text-white"></i>
+                                    <span>
+                                        <a class="text-decoration-none text-justify text-white small" href="{!! url('dashboard') !!}">Link</a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <!-- /.table-tr -->
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.card-group -->
 
         <!-- card-group -->
         <div class="card-group">
@@ -114,50 +148,6 @@
                                                                     <i class="fa fa-arrow-alt-circle-right fa-fw text-white"></i>
                                                                     <span>
                                                                         <a class="text-decoration-none text-justify text-white small" href="{!! url('company') !!}"> Add</a>
-                                                                    </span>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- /.card -->
-                                        </div>
-                                        <!-- /.card-group -->
-                                    </div>
-                                    <!-- /.nested accordion -->
-
-                                </td>
-                            </tr>
-                            <!-- /.table-tr -->
-
-                            <!-- table-tr -->
-                            <tr>
-                                <td class="p-0 m-0">
-
-                                    <!-- nested accordion -->
-                                    <div id="accordionn_nav_2_2">
-                                        <!-- card-group -->
-                                        <div class="card-group">
-                                            <!-- card -->
-                                            <div class="card bg-danger">
-                                                <div class="card-header" id="idCard2_2">
-                                                    <h5 class="mb-0">
-                                                        <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse2_2" aria-expanded="false" aria-controls="idCollapse2_2" role="button" type="button">
-                                                        <i class="fa fa-briefcase fa-fw"></i>
-                                                        <span class="text-decoration-none text-justify small"> Department</span>
-                                                        </button>
-                                                    </h5>
-                                                </div>
-
-                                                <div id="idCollapse2_2" class="collapse hide" aria-labelledby="idCard2_2" data-parent="#idCollapse2_body">
-                                                    <div class="card-body">
-                                                        <table class="table">
-                                                            <tr>
-                                                                <td class="p-0 m-0">
-                                                                    <i class="fa fa-arrow-alt-circle-right fa-fw text-white"></i>
-                                                                    <span>
-                                                                        <a class="text-decoration-none text-justify text-white small" href="{!! url('department') !!}"> Add</a>
                                                                     </span>
                                                                 </td>
                                                             </tr>
@@ -246,6 +236,50 @@
                                                                     <i class="fa fa-arrow-alt-circle-right fa-fw text-white"></i>
                                                                     <span>
                                                                         <a class="text-decoration-none text-justify text-white small" href="{!! url('line') !!}"> Add</a>
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.card -->
+                                        </div>
+                                        <!-- /.card-group -->
+                                    </div>
+                                    <!-- /.nested accordion -->
+
+                                </td>
+                            </tr>
+                            <!-- /.table-tr -->
+                            
+                            <!-- table-tr -->
+                            <tr>
+                                <td class="p-0 m-0">
+
+                                    <!-- nested accordion -->
+                                    <div id="accordionn_nav_2_2">
+                                        <!-- card-group -->
+                                        <div class="card-group">
+                                            <!-- card -->
+                                            <div class="card bg-danger">
+                                                <div class="card-header" id="idCard2_2">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse2_2" aria-expanded="false" aria-controls="idCollapse2_2" role="button" type="button">
+                                                        <i class="fa fa-briefcase fa-fw"></i>
+                                                        <span class="text-decoration-none text-justify small"> Department</span>
+                                                        </button>
+                                                    </h5>
+                                                </div>
+
+                                                <div id="idCollapse2_2" class="collapse hide" aria-labelledby="idCard2_2" data-parent="#idCollapse2_body">
+                                                    <div class="card-body">
+                                                        <table class="table">
+                                                            <tr>
+                                                                <td class="p-0 m-0">
+                                                                    <i class="fa fa-arrow-alt-circle-right fa-fw text-white"></i>
+                                                                    <span>
+                                                                        <a class="text-decoration-none text-justify text-white small" href="{!! url('department') !!}"> Add</a>
                                                                     </span>
                                                                 </td>
                                                             </tr>

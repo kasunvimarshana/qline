@@ -76,3 +76,24 @@ table.dataTable tbody td{
     opacity: 0.5;
     text-decoration: none;
 }
+
+/* font-size */
+.font-size-1-0{
+    font-size: 1rem !important;
+}
+
+.font-size-1-5{
+    font-size: 1.5rem !important;
+}
+
+.font-size-2-0{
+    font-size: 2rem !important;
+}
+
+/* back-to-home-1 */
+.back-to-home-1{
+    position: absolute !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    font-size: 2rem !important;
+}

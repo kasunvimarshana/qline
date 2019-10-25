@@ -53,11 +53,11 @@
                                             <div class="col col-sm-8 p-0 m-0">
                                                 <!-- -->
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-12">
+                                                <div class="form-group form-group-lg row col-sm-12">
                                                     <label for="company" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Company</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <select class="form-control form-control-md select2" id="company" name="company" value="{{ old('company') }}" autocomplete="off" data-placeholder="Company" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
+                                                        <select class="form-control form-control-lg select2" id="company" name="company" value="{{ old('company') }}" autocomplete="off" data-placeholder="Company" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
 
                                                             <!-- @for($i =1; $i <= 5; $i++) -->
                                                             <option>Company {{ $i }}</option>
@@ -70,11 +70,11 @@
                                                 <!-- /.form-group -->
 
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-12">
+                                                <div class="form-group form-group-lg row col-sm-12">
                                                     <label for="factory" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Factory</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <select class="form-control form-control-md select2" id="factory" name="factory" value="{{ old('factory') }}" autocomplete="off" data-placeholder="Factory" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
+                                                        <select class="form-control form-control-lg select2" id="factory" name="factory" value="{{ old('factory') }}" autocomplete="off" data-placeholder="Factory" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
 
                                                             <!-- @for($i =1; $i <= 5; $i++) -->
                                                             <option>Factory {{ $i }}</option>
@@ -104,11 +104,11 @@
                                             <div class="col col-sm-8 p-0 m-0">
                                                 <!-- -->
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-12">
+                                                <div class="form-group form-group-lg row col-sm-12">
                                                     <label for="aql_level" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">AQL Level</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <select class="form-control form-control-md select2" id="aql_level" name="aql_level" value="{{ old('aql_level') }}" autocomplete="off" data-placeholder="AQL Level" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
+                                                        <select class="form-control form-control-lg select2" id="aql_level" name="aql_level" value="{{ old('aql_level') }}" autocomplete="off" data-placeholder="AQL Level" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
 
                                                             <!-- @for($i =1; $i <= 5; $i++) -->
                                                             <option>AQL Level {{ $i }}</option>
@@ -121,11 +121,11 @@
                                                 <!-- /.form-group -->
                                                 
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-12">
+                                                <div class="form-group form-group-lg row col-sm-12">
                                                     <label for="rqc_level" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">RQC Level</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <select class="form-control form-control-md select2" id="rqc_level" name="rqc_level" value="{{ old('rqc_level') }}" autocomplete="off" data-placeholder="RQC Level" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
+                                                        <select class="form-control form-control-lg select2" id="rqc_level" name="rqc_level" value="{{ old('rqc_level') }}" autocomplete="off" data-placeholder="RQC Level" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
 
                                                             <!-- @for($i =1; $i <= 5; $i++) -->
                                                             <option>RQC Level {{ $i }}</option>
@@ -146,7 +146,7 @@
                                         <div class="row">
                                             <!-- -->
                                             <!-- form-group -->
-                                            <div class="form-group row col-sm-12">
+                                            <div class="form-group form-group-lg row col-sm-12">
                                                 <!-- btn-toolbar -->
                                                 <div class="col text-right">
                                                     <!-- div class="btn-group btn-group-lg pull-right" -->

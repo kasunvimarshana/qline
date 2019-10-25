@@ -118,67 +118,78 @@
 
                                                 <!-- -->
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-12 m-1">
+                                                <div class="form-group form-group-lg row col-sm-12 m-1">
                                                     <label for="code" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">EMP No</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <input type="text" class="form-control form-control-md" id="code" name="code" placeholder="EMP No" value="{{ old('code') }}" autocomplete="off" required="required"/>
+                                                        <input type="text" class="form-control form-control-lg" id="code" name="code" placeholder="EMP No" value="{{ old('code') }}" autocomplete="off" required="required"/>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
                                                 <!-- /.form-group -->
                                                 
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-12 m-1">
+                                                <div class="form-group form-group-lg row col-sm-12 m-1">
                                                     <label for="email" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">E-Mail</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <input type="text" class="form-control form-control-md" id="email" name="email" placeholder="E-Mail" value="{{ old('email') }}" autocomplete="off" required="required"/>
+                                                        <input type="text" class="form-control form-control-lg" id="email" name="email" placeholder="E-Mail" value="{{ old('email') }}" autocomplete="off" required="required"/>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
                                                 <!-- /.form-group -->
 
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-12 m-1">
+                                                <div class="form-group form-group-lg row col-sm-12 m-1">
                                                     <label for="name_first" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">First Name</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <input type="text" class="form-control form-control-md" id="name_first" name="name_first" placeholder="First Name" value="{{ old('name_first') }}" autocomplete="off" required="required"/>
+                                                        <input type="text" class="form-control form-control-lg" id="name_first" name="name_first" placeholder="First Name" value="{{ old('name_first') }}" autocomplete="off" required="required"/>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
                                                 <!-- /.form-group -->
 
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-12 m-1">
+                                                <div class="form-group form-group-lg row col-sm-12 m-1">
                                                     <label for="name_last" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Surname</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <input type="text" class="form-control form-control-md" id="name_last" name="name_last" placeholder="Surname" value="{{ old('name_last') }}" autocomplete="off" required="required"/>
+                                                        <input type="text" class="form-control form-control-lg" id="name_last" name="name_last" placeholder="Surname" value="{{ old('name_last') }}" autocomplete="off" required="required"/>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
                                                 <!-- /.form-group -->
                                                 
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-12 m-1">
+                                                <div class="form-group form-group-lg row col-sm-12 m-1">
                                                     <label for="password" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Password</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <input type="password" class="form-control form-control-md" id="password" name="password" placeholder="Password" value="{{ old('password') }}" autocomplete="off" required="required"/>
+                                                        <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Password" value="{{ old('password') }}" autocomplete="off" required="required"/>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
                                                 <!-- /.form-group -->
                                                 
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-12 m-1">
+                                                <div class="form-group form-group-lg row col-sm-12 m-1">
+                                                    <label for="is_token_authentication" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Two Way Authentication</label>
+                                                    <div class="col">
+                                                        <!-- p class="form-control-static"></p -->
+                                                        <input type="checkbox" class="form-control form-control-lg form-check-input" id="is_token_authentication" name="is_token_authentication" value="is_token_authentication" autocomplete="off" data-toggle="toggle" data-size="md" data-onstyle="primary" data-offstyle="light" data-on="<i class='fas fa-toggle-on'></i>" data-off="<i class='fas fa-toggle-off'></i>"/>
+                                                    </div>
+                                                    <!-- span id="form-control" class="help-block"></span -->
+                                                </div>
+                                                <!-- /.form-group -->
+                                                
+                                                <!-- form-group -->
+                                                <div class="form-group form-group-lg row col-sm-12 m-1">
                                                     <label for="company_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Company</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="company_id" name="company_id" value="{{ old('company_id') }}" autocomplete="off" data-placeholder="Company" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
+                                                            <select class="form-control form-control-lg select2" id="company_id" name="company_id" value="{{ old('company_id') }}" autocomplete="off" data-placeholder="Company" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -188,12 +199,12 @@
                                                 <!-- /.form-group -->
                                                 
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-12 m-1">
+                                                <div class="form-group form-group-lg row col-sm-12 m-1">
                                                     <label for="strategic_business_unit_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">SBU</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="strategic_business_unit_id" name="strategic_business_unit_id" value="{{ old('strategic_business_unit_id') }}" autocomplete="off" data-placeholder="SBU" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
+                                                            <select class="form-control form-control-lg select2" id="strategic_business_unit_id" name="strategic_business_unit_id" value="{{ old('strategic_business_unit_id') }}" autocomplete="off" data-placeholder="SBU" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -201,44 +212,14 @@
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
                                                 <!-- /.form-group -->
-
+                                                
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-12 m-1">
-                                                    <label for="department_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Department</label>
-                                                    <div class="col">
-                                                        <!-- p class="form-control-static"></p -->
-                                                        <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="department_id" name="department_id" value="{{ old('department_id') }}" autocomplete="off" data-placeholder="Department" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
-                                                                <!-- option> Option </option -->
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <!-- span id="form-control" class="help-block"></span -->
-                                                </div>
-                                                <!-- /.form-group -->
-
-                                                <!-- form-group -->
-                                                <div class="form-group row col-sm-12 m-1">
-                                                    <label for="section_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Section</label>
-                                                    <div class="col">
-                                                        <!-- p class="form-control-static"></p -->
-                                                        <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="section_id" name="section_id" value="{{ old('section_id') }}" autocomplete="off" data-placeholder="Section" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
-                                                                <!-- option> Option </option -->
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <!-- span id="form-control" class="help-block"></span -->
-                                                </div>
-                                                <!-- /.form-group -->
-
-                                                <!-- form-group -->
-                                                <div class="form-group row col-sm-12 m-1">
+                                                <div class="form-group form-group-lg row col-sm-12 m-1">
                                                     <label for="factory_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Factory</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="input-group h-100">
-                                                            <select class="form-control form-control-md select2" id="factory_id" name="factory_id" value="{{ old('factory_id') }}" autocomplete="off" data-placeholder="Factory" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
+                                                            <select class="form-control form-control-lg select2" id="factory_id" name="factory_id" value="{{ old('factory_id') }}" autocomplete="off" data-placeholder="Factory" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>
@@ -248,11 +229,41 @@
                                                 <!-- /.form-group -->
 
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-12 m-1">
+                                                <div class="form-group form-group-lg row col-sm-12 m-1">
+                                                    <label for="department_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Department</label>
+                                                    <div class="col">
+                                                        <!-- p class="form-control-static"></p -->
+                                                        <div class="input-group h-100">
+                                                            <select class="form-control form-control-lg select2" id="department_id" name="department_id" value="{{ old('department_id') }}" autocomplete="off" data-placeholder="Department" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
+                                                                <!-- option> Option </option -->
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <!-- span id="form-control" class="help-block"></span -->
+                                                </div>
+                                                <!-- /.form-group -->
+
+                                                <!-- form-group -->
+                                                <div class="form-group form-group-lg row col-sm-12 m-1">
+                                                    <label for="section_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Section</label>
+                                                    <div class="col">
+                                                        <!-- p class="form-control-static"></p -->
+                                                        <div class="input-group h-100">
+                                                            <select class="form-control form-control-lg select2" id="section_id" name="section_id" value="{{ old('section_id') }}" autocomplete="off" data-placeholder="Section" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
+                                                                <!-- option> Option </option -->
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <!-- span id="form-control" class="help-block"></span -->
+                                                </div>
+                                                <!-- /.form-group -->
+
+                                                <!-- form-group -->
+                                                <div class="form-group form-group-lg row col-sm-12 m-1">
                                                     <label for="phone_mobile" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Mobile</label>
                                                     <div class="col">
                                                         <!-- p class="form-control-static"></p -->
-                                                        <input type="text" class="form-control form-control-md" id="phone_mobile" name="phone_mobile" placeholder="Mobile" value="{{ old('phone_mobile') }}" autocomplete="off" required="required"/>
+                                                        <input type="text" class="form-control form-control-lg" id="phone_mobile" name="phone_mobile" placeholder="Mobile" value="{{ old('phone_mobile') }}" autocomplete="off" required="required"/>
                                                     </div>
                                                     <!-- span id="form-control" class="help-block"></span -->
                                                 </div>
@@ -267,13 +278,13 @@
 
                                                 <!-- -->
                                                 <!-- form-group -->
-                                                <div class="form-group row col-sm-12 m-1 p-0">
+                                                <div class="form-group form-group-lg row col-sm-12 m-1 p-0">
                                                     <label for="image_uri" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">File</label>
                                                     <div class="col kv-avatar">
                                                         <!-- p class="form-control-static"></p -->
                                                         <div class="col p-0 m-0 file-loading">
                                                             <!-- class="file" -->
-                                                            <input type="file" multiple="false" class="form-control form-control-md" id="image_uri" name="image_uri" value="{{ old('image_uri') }}" autocomplete="off" data-preview-file-type="text"/>
+                                                            <input type="file" multiple="false" class="form-control form-control-lg" id="image_uri" name="image_uri" value="{{ old('image_uri') }}" autocomplete="off" data-preview-file-type="text"/>
                                                         </div>
                                                         <div class="col kv-avatar-hint d-none">
                                                             <small>hint</small>
@@ -293,7 +304,7 @@
                                         <div class="row">
                                             <!-- -->
                                             <!-- form-group -->
-                                            <div class="form-group row col-sm-12">
+                                            <div class="form-group form-group-lg row col-sm-12">
                                                 <!-- btn-toolbar -->
                                                 <div class="col text-right">
                                                     <!-- div class="btn-group btn-group-lg pull-right" -->
@@ -316,11 +327,11 @@
                                             </div>
                                             <!-- /.container -->
                                             <!-- form-group -->
-                                            <div class="form-group col col-md-6">
+                                            <div class="form-group form-group-lg col col-md-6">
                                                 <label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="permission_1" name="permission_1" value="permission_1" autocomplete="off"/>
+                                                    <input type="checkbox" class="form-control form-control-lg custom-control-input form-check-input" id="permission_1" name="permission_1" value="permission_1" autocomplete="off"/>
                                                     <label class="custom-control-label form-check-label" for="permission_1">Service Admin</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
@@ -328,11 +339,11 @@
                                             <!-- /.form-group -->
 
                                             <!-- form-group -->
-                                            <div class="form-group col col-md-6">
+                                            <div class="form-group form-group-lg col col-md-6">
                                                 <label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_cutting" name="create-quality_record_cutting" value="create-quality_record_cutting" autocomplete="off"/>
+                                                    <input type="checkbox" class="form-control form-control-lg custom-control-input form-check-input" id="create-quality_record_cutting" name="create-quality_record_cutting" value="create-quality_record_cutting" autocomplete="off"/>
                                                     <label class="custom-control-label form-check-label" for="create-quality_record_cutting">Cutting</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
@@ -340,11 +351,11 @@
                                             <!-- /.form-group -->
 
                                             <!-- form-group -->
-                                            <div class="form-group col col-md-6">
+                                            <div class="form-group form-group-lg col col-md-6">
                                                 <label for="create-quality_record_sewing_check" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_sewing_check" name="create-quality_record_sewing_check" value="create-quality_record_sewing_check" autocomplete="off"/>
+                                                    <input type="checkbox" class="form-control form-control-lg custom-control-input form-check-input" id="create-quality_record_sewing_check" name="create-quality_record_sewing_check" value="create-quality_record_sewing_check" autocomplete="off"/>
                                                     <label class="custom-control-label form-check-label" for="create-quality_record_sewing_check">Sewing 100% Checking</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
@@ -352,11 +363,11 @@
                                             <!-- /.form-group -->
 
                                             <!-- form-group -->
-                                            <div class="form-group col col-md-6">
+                                            <div class="form-group form-group-lg col col-md-6">
                                                 <label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="permission_4" name="permission_4" value="permission_4" autocomplete="off"/>
+                                                    <input type="checkbox" class="form-control form-control-lg custom-control-input form-check-input" id="permission_4" name="permission_4" value="permission_4" autocomplete="off"/>
                                                     <label class="custom-control-label form-check-label" for="permission_4">Finishing AQL Audit</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
@@ -364,11 +375,11 @@
                                             <!-- /.form-group -->
 
                                             <!-- form-group -->
-                                            <div class="form-group col col-md-6">
+                                            <div class="form-group form-group-lg col col-md-6">
                                                 <label for="create-quality_record_sewing_audit" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_sewing_audit" name="create-quality_record_sewing_audit" value="create-quality_record_sewing_audit" autocomplete="off"/>
+                                                    <input type="checkbox" class="form-control form-control-lg custom-control-input form-check-input" id="create-quality_record_sewing_audit" name="create-quality_record_sewing_audit" value="create-quality_record_sewing_audit" autocomplete="off"/>
                                                     <label class="custom-control-label form-check-label" for="create-quality_record_sewing_audit">Sewing AQL Audit</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
@@ -376,11 +387,11 @@
                                             <!-- /.form-group -->
 
                                             <!-- form-group -->
-                                            <div class="form-group col col-md-6">
+                                            <div class="form-group form-group-lg col col-md-6">
                                                 <label for="input_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="permission_6" name="permission_6" value="permission_6" autocomplete="off"/>
+                                                    <input type="checkbox" class="form-control form-control-lg custom-control-input form-check-input" id="permission_6" name="permission_6" value="permission_6" autocomplete="off"/>
                                                     <label class="custom-control-label form-check-label" for="permission_6">Dry Room 100% Checking</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
@@ -388,11 +399,11 @@
                                             <!-- /.form-group -->
 
                                             <!-- form-group -->
-                                            <div class="form-group col col-md-6">
+                                            <div class="form-group form-group-lg col col-md-6">
                                                 <label for="create-quality_record_finishing" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_finishing" name="create-quality_record_finishing" value="create-quality_record_finishing" autocomplete="off"/>
+                                                    <input type="checkbox" class="form-control form-control-lg custom-control-input form-check-input" id="create-quality_record_finishing" name="create-quality_record_finishing" value="create-quality_record_finishing" autocomplete="off"/>
                                                     <label class="custom-control-label form-check-label" for="create-quality_record_finishing">Finishing 100% Checking</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
@@ -400,11 +411,11 @@
                                             <!-- /.form-group -->
 
                                             <!-- form-group -->
-                                            <div class="form-group col col-md-6">
+                                            <div class="form-group form-group-lg col col-md-6">
                                                 <label for="create-quality_record_c_n_i" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_c_n_i" name="create-quality_record_c_n_i" value="create-quality_record_c_n_i" autocomplete="off"/>
+                                                    <input type="checkbox" class="form-control form-control-lg custom-control-input form-check-input" id="create-quality_record_c_n_i" name="create-quality_record_c_n_i" value="create-quality_record_c_n_i" autocomplete="off"/>
                                                     <label class="custom-control-label form-check-label" for="create-quality_record_c_n_i">CTN Audit</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
@@ -412,12 +423,24 @@
                                             <!-- /.form-group -->
 
                                             <!-- form-group -->
-                                            <div class="form-group col col-md-6">
+                                            <div class="form-group form-group-lg col col-md-6">
                                                 <label for="create-quality_record_r_q_c" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
                                                 <div class="col custom-control custom-switch form-check">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="checkbox" class="form-control form-control-md custom-control-input form-check-input" id="create-quality_record_r_q_c" name="create-quality_record_r_q_c" value="create-quality_record_r_q_c" autocomplete="off"/>
+                                                    <input type="checkbox" class="form-control form-control-lg custom-control-input form-check-input" id="create-quality_record_r_q_c" name="create-quality_record_r_q_c" value="create-quality_record_r_q_c" autocomplete="off"/>
                                                     <label class="custom-control-label form-check-label" for="create-quality_record_r_q_c">RQC</label>
+                                                </div>
+                                                <!-- span id="form-control" class="help-block"></span -->
+                                            </div>
+                                            <!-- /.form-group -->
+                                            
+                                            <!-- form-group -->
+                                            <div class="form-group form-group-lg col col-md-6">
+                                                <label for="create-user-monitor" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right d-none">Label</label>
+                                                <div class="col custom-control custom-switch form-check">
+                                                    <!-- p class="form-control-static"></p -->
+                                                    <input type="checkbox" class="form-control form-control-lg custom-control-input form-check-input" id="create-user-monitor" name="create-user-monitor" value="create-user-monitor" autocomplete="off"/>
+                                                    <label class="custom-control-label form-check-label" for="create-user-monitor">Monitor User</label>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
                                             </div>

@@ -186,7 +186,7 @@ class QualityRecordRQCController extends Controller
         $validator = Validator::make(Input::all(), $rules);
         // if the validator fails, redirect back to the form
         if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
+            return redirect()->back()->withErrors($validator)->withInput();dd($rules);
             /*$data = array(
                 'title' => 'error',
                 'text' => $validator->errors()->first(),

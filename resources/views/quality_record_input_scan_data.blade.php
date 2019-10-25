@@ -25,7 +25,7 @@
                         <h5 class="mb-0">
                             <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse_accordion_1_content_1" aria-expanded="true" aria-controls="idCollapse_accordion_1_content_1" role="button" type="button">
                             <i class="fab fa-buromobelexperte fa-fw"></i>
-                            <span class="text-decoration-none text-justify small"> Quality ( Stage )</span>
+                            <span class="text-decoration-none text-justify small"> Quality Stage ( Scan )</span>
                             </button>
                         </h5>
                     </div>
@@ -94,34 +94,34 @@
                                                                                         <div class="row">
                                                                                             <!-- -->
                                                                                             <!-- form-group -->
-                                                                                            <div class="form-group row col-sm-12 m-1">
+                                                                                            <div class="form-group form-group-lg row col-sm-12 m-1">
                                                                                                 <label for="code" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Tag Reading</label>
                                                                                                 <div class="col">
                                                                                                     <!-- p class="form-control-static"></p -->
-                                                                                                    <input type="text" class="form-control form-control-md" id="code" name="code" placeholder="Tag Reading" value="{{ old('code') }}" autocomplete="off" required="required"/>
+                                                                                                    <input type="text" class="form-control form-control-lg" id="code" name="code" placeholder="Tag Reading" value="{{ old('code') }}" autocomplete="off" required="required"/>
                                                                                                 </div>
                                                                                                 <!-- span id="form-control" class="help-block"></span -->
                                                                                             </div>
                                                                                             <!-- /.form-group -->
                                                                                             
                                                                                             <!-- form-group -->
-                                                                                            <div class="form-group row col-sm-12 m-1">
+                                                                                            <div class="form-group form-group-lg row col-sm-12 m-1">
                                                                                                 <label for="count_data" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Bundle Qty</label>
                                                                                                 <div class="col">
                                                                                                     <!-- p class="form-control-static"></p -->
-                                                                                                    <input type="number" class="form-control form-control-md" id="count_data" name="count_data" placeholder="Bundle Qty" value="{{ old('count_data') }}" autocomplete="off" required="required"/>
+                                                                                                    <input type="number" class="form-control form-control-lg" id="count_data" name="count_data" placeholder="Bundle Qty" value="{{ old('count_data') }}" autocomplete="off" required="required"/>
                                                                                                 </div>
                                                                                                 <!-- span id="form-control" class="help-block"></span -->
                                                                                             </div>
                                                                                             <!-- /.form-group -->
                                                                                             
                                                                                             <!-- form-group -->
-                                                                                            <div class="form-group row col-sm-12 m-1">
+                                                                                            <div class="form-group form-group-lg row col-sm-12 m-1">
                                                                                                 <label for="size_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Size</label>
                                                                                                 <div class="col">
                                                                                                     <!-- p class="form-control-static"></p -->
                                                                                                     <div class="input-group h-100">
-                                                                                                        <select class="form-control form-control-md select2" id="size_id" name="size_id" value="{{ old('size_id') }}" autocomplete="off" data-placeholder="Size" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
+                                                                                                        <select class="form-control form-control-lg select2" id="size_id" name="size_id" value="{{ old('size_id') }}" autocomplete="off" data-placeholder="Size" style="width: 100%;" required="required" data-minimum-results-for-search="Infinity">
                                                                                                             <option value="XS"> XS </option>
                                                                                                             <option value="S"> S </option>
                                                                                                             <option value="M"> M </option>
@@ -135,11 +135,11 @@
                                                                                             <!-- /.form-group -->
 
                                                                                             <!-- form-group -->
-                                                                                            <div class="form-group row col-sm-12">
+                                                                                            <div class="form-group form-group-lg row col-sm-12">
                                                                                                 <!-- btn-toolbar -->
                                                                                                 <div class="col text-right">
                                                                                                     <!-- div class="btn-group btn-group-lg pull-right" -->
-                                                                                                        <button type="submit" class="btn btn-primary ml-auto" id="submit">Submit</button>
+                                                                                                        <button type="submit" class="btn btn-primary btn-lg ml-auto" id="submit">Submit</button>
                                                                                                     <!-- /div -->
                                                                                                 </div>
                                                                                             </div>

@@ -49,18 +49,18 @@
                                         <div class="row">
                                             <!-- -->
                                             <!-- form-group -->
-                                            <div class="form-group row col-sm-12 m-1">
+                                            <div class="form-group form-group-lg row col-sm-12 m-1">
                                                 <label for="name" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Name</label>
                                                 <div class="col">
                                                     <!-- p class="form-control-static"></p -->
-                                                    <input type="text" class="form-control form-control-md" id="name" name="name" placeholder="Name" value="{{ old('name') }}" autocomplete="off" required="required"/>
+                                                    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Name" value="{{ old('name') }}" autocomplete="off" required="required"/>
                                                 </div>
                                                 <!-- span id="form-control" class="help-block"></span -->
                                             </div>
                                             <!-- /.form-group -->
 
                                             <!-- form-group -->
-                                            <div class="form-group row col-sm-12">
+                                            <div class="form-group form-group-lg row col-sm-12">
                                                 <!-- btn-toolbar -->
                                                 <div class="col text-right">
                                                     <!-- div class="btn-group btn-group-lg pull-right" -->

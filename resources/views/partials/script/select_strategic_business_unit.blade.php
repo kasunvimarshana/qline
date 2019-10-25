@@ -131,6 +131,7 @@ $(function(){
                 });
             }
         },
+        //formatLoadMore: function(pageNumber){ return "Loading"; },
         //sortResults: function(results, container, query) {},
         /*query: function (query) {
             var data = {results: []}, i, j, s;
