@@ -30,5 +30,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ExportSeeder::class);
         $this->call(StyleSeeder::class);
         $this->call(DepartmentSeeder::class);
+        $this->call(InspectionStageSeeder::class);
     }
 }

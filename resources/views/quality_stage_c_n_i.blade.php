@@ -63,7 +63,7 @@
                                                     <!-- col -->
                                                     <div class="col-sm-12 p-0 m-0">
                                                         <!-- form -->
-                                                        <form action="{!! route('home') !!}" method="POST" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
+                                                        <form action="{!! route('qualityRecordCNI.store', []) !!}" method="POST" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
                                                             @csrf
                                                             <!-- form-group-row -->
                                                             <div class="row col border border-danger rounded shadow-sm m-1">
@@ -109,10 +109,10 @@
                                                                     
                                                                     <!-- form-group -->
                                                                     <div class="form-group form-group-lg row col-sm-4 m-0">
-                                                                        <label for="po_no" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">PO No</label>
+                                                                        <label for="p_o_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">PO No</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-lg" id="po_no" name="po_no" placeholder="PO No" value="{{ old('po_no') }}" autocomplete="off" required="required"/>
+                                                                            <input type="text" class="form-control form-control-lg" id="p_o_id" name="p_o_id" placeholder="PO No" value="{{ old('p_o_id') }}" autocomplete="off" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -129,7 +129,7 @@
                                                                         <label for="colour_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Colour</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <div class="input-group h-50">
+                                                                            <div class="input-group h-100" style="max-height: 3em;">
                                                                                 <select class="form-control form-control-lg select2" id="colour_id" name="colour_id" value="{{ old('colour_id') }}" autocomplete="off" data-placeholder="Colour" style="width: 100%;" data-minimum-results-for-search="Infinity">
                                                                                     <!-- option> Option </option -->
                                                                                 </select>
@@ -141,10 +141,10 @@
                                                                     
                                                                     <!-- form-group -->
                                                                     <div class="form-group form-group-lg row col-sm-4 m-0">
-                                                                        <label for="total_p_c_s" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Total PCs</label>
+                                                                        <label for="count_total_pieces" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Total PCs</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-lg" id="total_p_c_s" name="total_p_c_s" placeholder="Total PCs" value="{{ old('total_p_c_s') }}" autocomplete="off" required="required"/>
+                                                                            <input type="text" class="form-control form-control-lg" id="count_total_pieces" name="count_total_pieces" placeholder="Total PCs" value="{{ old('count_total_pieces') }}" autocomplete="off" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -152,10 +152,10 @@
                                                                     
                                                                     <!-- form-group -->
                                                                     <div class="form-group form-group-lg row col-sm-4 m-0">
-                                                                        <label for="total_carton" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Total Carton</label>
+                                                                        <label for="count_total_carton" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Total Carton</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-lg" id="total_carton" name="total_carton" placeholder="Total Carton" value="{{ old('total_carton') }}" autocomplete="off" required="required"/>
+                                                                            <input type="text" class="form-control form-control-lg" id="count_total_carton" name="count_total_carton" placeholder="Total Carton" value="{{ old('count_total_carton') }}" autocomplete="off" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -163,10 +163,10 @@
                                                                     
                                                                     <!-- form-group -->
                                                                     <div class="form-group form-group-lg row col-sm-4 m-0">
-                                                                        <label for="check_carton" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Check Carton</label>
+                                                                        <label for="count_check_carton" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Check Carton</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-lg" id="check_carton" name="check_carton" placeholder="Check Carton" value="{{ old('check_carton') }}" autocomplete="off" required="required"/>
+                                                                            <input type="text" class="form-control form-control-lg" id="count_check_carton" name="count_check_carton" placeholder="Check Carton" value="{{ old('count_check_carton') }}" autocomplete="off" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -174,10 +174,10 @@
                                                                     
                                                                     <!-- form-group -->
                                                                     <div class="form-group form-group-lg row col-sm-4 m-0">
-                                                                        <label for="check_p_c_s" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Check PCs</label>
+                                                                        <label for="count_check_pieces" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Check PCs</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-lg" id="check_p_c_s" name="check_p_c_s" placeholder="Check PCs" value="{{ old('check_p_c_s') }}" autocomplete="off" required="required"/>
+                                                                            <input type="text" class="form-control form-control-lg" id="count_check_pieces" name="count_check_pieces" placeholder="Check PCs" value="{{ old('count_check_pieces') }}" autocomplete="off" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -185,10 +185,10 @@
                                                                     
                                                                     <!-- form-group -->
                                                                     <div class="form-group form-group-lg row col-sm-4 m-0">
-                                                                        <label for="defect_carton_no" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect Carton No</label>
+                                                                        <label for="count_defect_carton" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect Carton No</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-lg" id="defect_carton_no" name="defect_carton_no" placeholder="Defect Carton No" value="{{ old('defect_carton_no') }}" autocomplete="off" required="required"/>
+                                                                            <input type="text" class="form-control form-control-lg" id="count_defect_carton" name="count_defect_carton" placeholder="Defect Carton No" value="{{ old('count_defect_carton') }}" autocomplete="off" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -196,10 +196,10 @@
                                                                     
                                                                     <!-- form-group -->
                                                                     <div class="form-group form-group-lg row col-sm-4 m-0">
-                                                                        <label for="defect_p_c_s" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect PCs</label>
+                                                                        <label for="count_defect_pieces" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Defect PCs</label>
                                                                         <div class="col">
                                                                             <!-- p class="form-control-static"></p -->
-                                                                            <input type="text" class="form-control form-control-lg" id="defect_p_c_s" name="defect_p_c_s" placeholder="Defect PCs" value="{{ old('defect_p_c_s') }}" autocomplete="off" required="required"/>
+                                                                            <input type="text" class="form-control form-control-lg" id="count_defect_pieces" name="count_defect_pieces" placeholder="Defect PCs" value="{{ old('count_defect_pieces') }}" autocomplete="off" required="required"/>
                                                                         </div>
                                                                         <!-- span id="form-control" class="help-block"></span -->
                                                                     </div>
@@ -224,7 +224,7 @@
                                                                             <!-- btn-toolbar -->
                                                                             <div class="col text-center">
                                                                                 <!-- div class="btn-group btn-group-lg pull-right" -->
-                                                                                    <button type="submit" class="btn btn-primary btn-lg ml-auto mr-auto" id="submit">Submit</button>
+                                                                                    <button type="submit" class="btn btn-primary btn-lg ml-auto mr-auto px-5" id="submit">SUBMIT</button>
                                                                                 <!-- /div -->
                                                                             </div>
                                                                         </div>

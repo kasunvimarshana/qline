@@ -188,7 +188,9 @@ return [
         // provider for bensampo/laravel-enum (Laravel < 5.5)
         // BenSampo\Enum\EnumServiceProvider
         // provider for chumper\zipper
-        Chumper\Zipper\ZipperServiceProvider::class
+        Chumper\Zipper\ZipperServiceProvider::class,
+        // provider for maatwebsite\excel
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
     ],
 
@@ -244,7 +246,9 @@ return [
         //alias for flash message
         'Notify' => Codecourse\Notify\Facades\Notify::class,
         //alias for chumper\zipper
-        'Zipper' => Chumper\Zipper\Zipper::class
+        'Zipper' => Chumper\Zipper\Zipper::class,
+        //allias for maatwebsite\excel
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
     
     /*

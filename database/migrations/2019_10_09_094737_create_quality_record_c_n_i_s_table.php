@@ -49,6 +49,9 @@ class CreateQualityRecordCNISTable extends Migration
             $table->unsignedBigInteger('status_id')->unsigned()->nullable()->comment('comment');//->index()
             $table->text('description')->default(null)->nullable()->comment('comment'); 
             //$table->nullableMorphs('recordable');
+            $table->double('quantity_audit')->nullable()->default(0)->comment('comment');//->index()
+            $table->double('quantity_pass')->nullable()->default(0)->comment('comment');//->index()
+            $table->double('quantity_inspect')->nullable()->default(0)->comment('comment');//->index()
             $table->string('p_o_id')->nullable()->comment('comment');//->index()
             $table->double('count_total_pieces')->nullable()->default(0)->comment('comment');//->index()
             $table->double('count_total_carton')->nullable()->default(0)->comment('comment');//->index()

@@ -85,4 +85,19 @@ class QualityRecordDataCutting extends Model
     public function qualityRecordCutting(){
         return $this->belongsTo('App\QualityRecordCutting', 'quality_record_cutting_id', 'id');
     }
+    
+    //one to many (inverse)
+    public function measurePoint(){
+        return $this->belongsTo('App\MeasurePoint', 'measure_point_id', 'id');
+    }
+    
+    //one to many (inverse)
+    public function defectCategory(){
+        return $this->belongsTo('App\DefectCategory', 'defect_category_id', 'id');
+    }
+    
+    //one to many (inverse)
+    public function defect(){
+        return $this->belongsTo('App\Defect', 'defect_id', 'id');
+    }
 }

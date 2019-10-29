@@ -77,10 +77,12 @@
                                                                                     <!-- list-group -->
                                                                                     <ul class="list-group h-100">
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-light h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="text-wrap text-break">Team </span>
+                                                                                                    <span class="text-wrap text-break font-weight-bold text-danger">
+                                                                                                        <b>Team</b>
+                                                                                                    </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="badge badge-secondary text-wrap text-break">
@@ -94,10 +96,12 @@
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-light h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="text-wrap text-break">Buyer </span>
+                                                                                                    <span class="text-wrap text-break font-weight-bold text-danger">
+                                                                                                        <b>Buyer</b>
+                                                                                                    </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="badge badge-secondary text-wrap text-break">
@@ -111,10 +115,12 @@
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-light h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="text-wrap text-break">Style </span>
+                                                                                                    <span class="text-wrap text-break font-weight-bold text-danger">
+                                                                                                        <b>Style</b>
+                                                                                                    </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="badge badge-secondary text-wrap text-break">
@@ -128,10 +134,12 @@
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-light h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="text-wrap text-break">Colour </span>
+                                                                                                    <span class="text-wrap text-break font-weight-bold text-danger">
+                                                                                                        <b>Colour</b>
+                                                                                                    </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="badge badge-secondary text-wrap text-break">
@@ -145,10 +153,12 @@
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-light h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="text-wrap text-break">Export </span>
+                                                                                                    <span class="text-wrap text-break font-weight-bold text-danger">
+                                                                                                        <b>Export</b>
+                                                                                                    </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="badge badge-secondary text-wrap text-break">
@@ -162,10 +172,12 @@
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-light h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="text-wrap text-break">AQL Standard </span>
+                                                                                                    <span class="text-wrap text-break font-weight-bold text-danger">
+                                                                                                        <b>AQL Standard</b>
+                                                                                                    </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="badge badge-secondary text-wrap text-break">
@@ -215,7 +227,7 @@
                                                                                     <!-- list-group -->
                                                                                     <ul class="list-group h-100">
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start p-0 m-0 bg-transparent h-100">
+                                                                                        <li class="list-group-item flex-column align-items-start p-0 m-0 bg-light h-100">
                                                                                             <div class="d-flex w-100 justify-content-center">
                                                                                                 <!-- + -->
         <!-- +++++++++++++++++++++++++++++++++++++++++++ -->
@@ -245,9 +257,9 @@
                                     <div class="card m-1 bg-warning">
                                         <!-- img src="..." class="card-img-top" alt="..."/ -->
                                         <div class="card-body">
-                                            <h5 class="card-title">OFFERED</h5>
-                                            <h5 class="card-title">LOT SIZE</h5>
-                                            <p class="card-text display-3">
+                                            <h5 class="card-title dashboard-font-1">OFFERED</h5>
+                                            <h5 class="card-title dashboard-font-1">LOT SIZE</h5>
+                                            <p class="card-text display-3 dashboard-font-1">
                                                 {{ number_format( $count_data_sum ) }}
                                             </p>
                                         </div>
@@ -259,10 +271,14 @@
                                     <div class="card m-1 bg-success">
                                         <!-- img src="..." class="card-img-top" alt="..."/ -->
                                         <div class="card-body">
-                                            <h5 class="card-title">STANDARD</h5>
-                                            <h5 class="card-title">AUDIT LOT SIZE</h5>
-                                            <p class="card-text display-3">
-                                                {{ number_format($standard_data_sewing_audit_object->count_sample) }}
+                                            <h5 class="card-title dashboard-font-1">STANDARD</h5>
+                                            <h5 class="card-title dashboard-font-1">AUDIT LOT SIZE</h5>
+                                            <p class="card-text display-3 dashboard-font-1">
+                                                @if( ($count_data_sum > 0) )
+                                                    {{ number_format($standard_data_sewing_audit_object->count_sample) }}
+                                                @else
+                                                    {{ number_format(0) }}
+                                                @endif
                                             </p>
                                         </div>
                                         <!-- div class="card-footer">
@@ -281,7 +297,7 @@
                                     <!-- btn-toolbar -->
                                     <div class="col text-center">
                                         <!-- div class="btn-group btn-group-lg pull-right" -->
-                                            <button type="submit" class="btn btn-primary btn-lg ml-auto mr-auto" id="submit">Continue Audit</button>
+                                            <button type="submit" class="btn btn-secondary btn-lg ml-auto mr-auto px-5" id="submit">CONTINUE AUDIT</button>
                                         <!-- /div -->
                                     </div>
                                 </div>
@@ -326,23 +342,29 @@
                                                                                     <!-- list-group -->
                                                                                     <ul class="list-group h-100">
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-light h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="text-wrap text-break">Now </span>
+                                                                                                    <span class="text-wrap text-break font-weight-bold text-danger">
+                                                                                                        <b>Now</b>
+                                                                                                    </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="text-wrap text-break">TTL</span>
+                                                                                                    <span class="text-wrap text-break font-weight-bold text-danger">
+                                                                                                        <b>TTL</b>
+                                                                                                    </span>
                                                                                                 </span>
                                                                                             </div>
                                                                                         </li>
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-light h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="text-wrap text-break">Ins Qty </span>
+                                                                                                    <span class="text-wrap text-break font-weight-bold text-danger">
+                                                                                                        <b>Ins Qty</b>
+                                                                                                    </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="badge badge-secondary text-wrap text-break">
@@ -356,10 +378,12 @@
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-light h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="text-wrap text-break">Defects </span>
+                                                                                                    <span class="text-wrap text-break font-weight-bold text-danger">
+                                                                                                        <b>Defects</b>
+                                                                                                    </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="badge badge-secondary text-wrap text-break">
@@ -373,10 +397,12 @@
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-light h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="text-wrap text-break">Pass Qty </span>
+                                                                                                    <span class="text-wrap text-break font-weight-bold text-danger">
+                                                                                                        <b>Pass Qty</b>
+                                                                                                    </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="badge badge-secondary text-wrap text-break">
@@ -390,10 +416,12 @@
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-light h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="text-wrap text-break">Fail Qty </span>
+                                                                                                    <span class="text-wrap text-break font-weight-bold text-danger">
+                                                                                                        <b>Fail Qty</b>
+                                                                                                    </span>
                                                                                                 </span>
                                                                                                 <span class="text-monospace text-justify">
                                                                                                     <span class="badge badge-secondary text-wrap text-break">
@@ -407,10 +435,11 @@
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-light h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="text-wrap text-break">Defect 
+                                                                                                    <span class="text-wrap text-break font-weight-bold text-danger">
+                                                                                                        <b>Defect</b>
                                                                                                         <span>%</span>
                                                                                                     </span>
                                                                                                 </span>
@@ -430,10 +459,11 @@
                                                                                         <!-- /.list-group-item -->
                                                                                         
                                                                                         <!-- list-group-item -->
-                                                                                        <li class="list-group-item flex-column align-items-start bg-transparent h-100">
+                                                                                        <li class="list-group-item flex-column align-items-start bg-light h-100">
                                                                                             <div class="d-flex w-100 justify-content-between">
                                                                                                 <span class="text-monospace text-justify">
-                                                                                                    <span class="text-wrap text-break">FPY 
+                                                                                                    <span class="text-wrap text-break font-weight-bold text-danger">
+                                                                                                        <b>FPY</b>
                                                                                                         <span>%</span>
                                                                                                     </span>
                                                                                                 </span>

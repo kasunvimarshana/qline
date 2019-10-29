@@ -97,3 +97,8 @@ table.dataTable tbody td{
     right: 0 !important;
     font-size: 2rem !important;
 }
+
+.dashboard-font-1{
+    font-family: liquid_crystal !important;
+}
+

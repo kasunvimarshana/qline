@@ -134,7 +134,7 @@
 
                                                                                         <!-- form-group -->
                                                                                         <div class="form-group form-group-lg row col-12 d-none">
-                                                                                            <label for="code" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">EMP No</label>
+                                                                                            <label for="code" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-5">EMP No</label>
                                                                                             <div class="col">
                                                                                                 <!-- p class="form-control-static"></p -->
                                                                                                 <div class="input-group">
@@ -154,7 +154,7 @@
 
                                                                                         <!-- form-group -->
                                                                                         <div class="form-group form-group-lg row col-12 d-none">
-                                                                                            <label for="attempt" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Attempt</label>
+                                                                                            <label for="attempt" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-5">Attempt</label>
                                                                                             <div class="col">
                                                                                                 <!-- p class="form-control-static"></p -->
                                                                                                 <div class="input-group">
@@ -173,92 +173,98 @@
                                                                                         <!-- /.form-group -->
 
                                                                                         <!-- form-group -->
-                                                                                        <div class="form-group form-group-lg row col-12">
-                                                                                            <label for="measure_point_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Operation</label>
-                                                                                            <div class="col">
-                                                                                                <!-- p class="form-control-static"></p -->
-                                                                                                <div class="input-group">
-                                                                                                    <div class="input-group-addon input-group-prepend">
-                                                                                                        <!-- div class="input-group-text" -->
-                                                                                                            <button type="button" class="btn btn-outline-danger btn-lg font-size-1-5" id="submit" data-select2-open-control="measure_point_id" aria-disabled="false">
-                                                                                                                <i class="fa fa-search" aria-hidden="true"></i>
-                                                                                                            </button>
-                                                                                                        <!-- /div -->
+                                                                                        <div class="form-group form-group-lg col col-12 w-100">
+                                                                                            <div class="form-group form-group-lg row w-100">
+                                                                                                <label for="measure_point_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-5">Operation</label>
+                                                                                                <div class="col">
+                                                                                                    <!-- p class="form-control-static"></p -->
+                                                                                                    <div class="input-group">
+                                                                                                        <div class="input-group-addon input-group-prepend">
+                                                                                                            <!-- div class="input-group-text" -->
+                                                                                                                <button type="button" class="btn btn-outline-danger btn-lg font-size-1-5" id="submit" data-select2-open-control="measure_point_id" aria-disabled="false">
+                                                                                                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                                                                                                </button>
+                                                                                                            <!-- /div -->
+                                                                                                        </div>
+                                                                                                        <select class="form-control form-control-lg select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" autocomplete="off" data-placeholder="Operation" data-minimum-results-for-search="Infinity">
+                                                                                                            <!-- option> Option </option -->
+                                                                                                        </select>
                                                                                                     </div>
-                                                                                                    <select class="form-control form-control-lg select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" autocomplete="off" data-placeholder="Operation" data-minimum-results-for-search="Infinity">
-                                                                                                        <!-- option> Option </option -->
-                                                                                                    </select>
                                                                                                 </div>
+                                                                                                <!-- span id="form-control" class="help-block"></span -->
                                                                                             </div>
-                                                                                            <!-- span id="form-control" class="help-block"></span -->
                                                                                         </div>
                                                                                         <!-- /.form-group -->
 
                                                                                         <!-- form-group -->
-                                                                                        <div class="form-group form-group-lg row col-12">
-                                                                                            <label for="defect_category_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Defect Category</label>
-                                                                                            <div class="col">
-                                                                                                <!-- p class="form-control-static"></p -->
-                                                                                                <div class="input-group">
-                                                                                                    <div class="input-group-addon input-group-prepend">
-                                                                                                        <!-- div class="input-group-text" -->
-                                                                                                            <button type="button" class="btn btn-outline-danger btn-lg" id="submit" data-select2-open-control="defect_category_id" aria-disabled="false">
-                                                                                                                <i class="fa fa-search" aria-hidden="true"></i>
-                                                                                                            </button>
-                                                                                                        <!-- /div -->
-                                                                                                    </div>
-                                                                                                    <select class="form-control form-control-lg select2 select2-multiple select2-allow-clear" id="defect_category_id" name="defect_category_id" value="{{ old('defect_category_id') }}" autocomplete="off" data-placeholder="Defect Category" aria-hidden="true" multiple="multiple" data-minimum-results-for-search="Infinity">
-                                                                                                        <!-- option> Option </option -->
-                                                                                                    </select>
-                                                                                                    <div class="input-group-addon input-group-append">
-                                                                                                        <!-- div class="input-group-text" -->
-                                                                                                            <button type="button" class="btn btn-outline-danger btn-lg" id="submit" data-select2-close-control="defect_category_id" aria-disabled="false">
-                                                                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                                                                            </button>
-                                                                                                        <!-- /div -->
+                                                                                        <div class="form-group form-group-lg col col-12 w-100">
+                                                                                            <div class="form-group form-group-lg row w-100">
+                                                                                                <label for="defect_category_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-5">Defect Category</label>
+                                                                                                <div class="col">
+                                                                                                    <!-- p class="form-control-static"></p -->
+                                                                                                    <div class="input-group">
+                                                                                                        <div class="input-group-addon input-group-prepend">
+                                                                                                            <!-- div class="input-group-text" -->
+                                                                                                                <button type="button" class="btn btn-outline-danger btn-lg" id="submit" data-select2-open-control="defect_category_id" aria-disabled="false">
+                                                                                                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                                                                                                </button>
+                                                                                                            <!-- /div -->
+                                                                                                        </div>
+                                                                                                        <select class="form-control form-control-lg select2 select2-multiple select2-allow-clear" id="defect_category_id" name="defect_category_id" value="{{ old('defect_category_id') }}" autocomplete="off" data-placeholder="Defect Category" aria-hidden="true" multiple="multiple" data-minimum-results-for-search="Infinity">
+                                                                                                            <!-- option> Option </option -->
+                                                                                                        </select>
+                                                                                                        <div class="input-group-addon input-group-append">
+                                                                                                            <!-- div class="input-group-text" -->
+                                                                                                                <button type="button" class="btn btn-outline-danger btn-lg" id="submit" data-select2-close-control="defect_category_id" aria-disabled="false">
+                                                                                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                                                                                </button>
+                                                                                                            <!-- /div -->
+                                                                                                        </div>
                                                                                                     </div>
                                                                                                 </div>
+                                                                                                <!-- span id="form-control" class="help-block"></span -->
                                                                                             </div>
-                                                                                            <!-- span id="form-control" class="help-block"></span -->
                                                                                         </div>
                                                                                         <!-- /.form-group -->
 
                                                                                         <!-- form-group -->
-                                                                                        <div class="form-group form-group-lg row col-12">
-                                                                                            <label for="defect_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Defect</label>
-                                                                                            <div class="col">
-                                                                                                <!-- p class="form-control-static"></p -->
-                                                                                                <div class="input-group">
-                                                                                                    <div class="input-group-addon input-group-prepend">
-                                                                                                        <!-- div class="input-group-text" -->
-                                                                                                            <button type="button" class="btn btn-outline-danger btn-lg" id="submit" data-select2-open-control="defect_id" aria-disabled="false">
-                                                                                                                <i class="fa fa-search" aria-hidden="true"></i>
-                                                                                                            </button>
-                                                                                                        <!-- /div -->
-                                                                                                    </div>
-                                                                                                    <select class="form-control form-control-lg select2 select2-multiple select2-allow-clear" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" autocomplete="off" data-placeholder="Defect" aria-hidden="true" multiple="multiple" data-minimum-results-for-search="Infinity">
-                                                                                                        <!-- option> Option </option -->
-                                                                                                    </select>
-                                                                                                    <div class="input-group-addon input-group-append">
-                                                                                                        <!-- div class="input-group-text" -->
-                                                                                                            <button type="button" class="btn btn-outline-danger btn-lg" id="form_submit_id_1" data-select2-close-control="defect_id" aria-disabled="false">
-                                                                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                                                                            </button>
-                                                                                                        <!-- /div -->
+                                                                                        <div class="form-group form-group-lg col col-12 w-100">
+                                                                                            <div class="form-group form-group-lg row w-100">
+                                                                                                <label for="defect_id" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-5">Defect</label>
+                                                                                                <div class="col">
+                                                                                                    <!-- p class="form-control-static"></p -->
+                                                                                                    <div class="input-group">
+                                                                                                        <div class="input-group-addon input-group-prepend">
+                                                                                                            <!-- div class="input-group-text" -->
+                                                                                                                <button type="button" class="btn btn-outline-danger btn-lg" id="submit" data-select2-open-control="defect_id" aria-disabled="false">
+                                                                                                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                                                                                                </button>
+                                                                                                            <!-- /div -->
+                                                                                                        </div>
+                                                                                                        <select class="form-control form-control-lg select2 select2-multiple select2-allow-clear" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" autocomplete="off" data-placeholder="Defect" aria-hidden="true" multiple="multiple" data-minimum-results-for-search="Infinity">
+                                                                                                            <!-- option> Option </option -->
+                                                                                                        </select>
+                                                                                                        <div class="input-group-addon input-group-append">
+                                                                                                            <!-- div class="input-group-text" -->
+                                                                                                                <button type="button" class="btn btn-outline-danger btn-lg" id="form_submit_id_1" data-select2-close-control="defect_id" aria-disabled="false">
+                                                                                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                                                                                </button>
+                                                                                                            <!-- /div -->
+                                                                                                        </div>
                                                                                                     </div>
                                                                                                 </div>
+                                                                                                <!-- span id="form-control" class="help-block"></span -->
                                                                                             </div>
-                                                                                            <!-- span id="form-control" class="help-block"></span -->
                                                                                         </div>
                                                                                         <!-- /.form-group -->
 
                                                                                         <!-- row-part -->
                                                                                         <!-- form-group -->
-                                                                                        <div class="form-group row col-12 w-100">
+                                                                                        <div class="form-group col col-12 w-100">
 
                                                                                         <!-- form-group -->
                                                                                         <div class="form-group form-group-lg row col-md-6 d-none">
-                                                                                            <label for="count_defect" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Defect Count</label>
+                                                                                            <label for="count_defect" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-5">Defect Count</label>
                                                                                             <div class="col">
                                                                                                 <!-- p class="form-control-static"></p -->
                                                                                                 <input type="number" class="form-control form-control-lg" id="count_defect" name="count_defect" placeholder="Defect Count" value="{{ old('count_defect') }}" autocomplete="off" required="required" readonly="readonly"/>
@@ -276,7 +282,7 @@
                                                                                             }
                                                                                         @endphp
                                                                                         <div class="form-group form-group-lg row col-md-6 d-none">
-                                                                                            <label for="count_sample" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Check Qty</label>
+                                                                                            <label for="count_sample" class="col-md-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-5">Check Qty</label>
                                                                                             <div class="col">
                                                                                                 <!-- p class="form-control-static"></p -->
                                                                                                 <input type="number" class="form-control form-control-lg" id="count_sample" name="count_sample" placeholder="Check Qty" value="{!! $count_sample !!}" autocomplete="off" required="required" readonly="readonly"/>
@@ -290,12 +296,12 @@
                                                                                         <!-- /.row-part -->
                                                                                             
                                                                                         <!-- form-group-row -->
-                                                                                        <div class="row col-12 w-100">
+                                                                                        <div class="col col-12 w-100">
                                                                                             <!-- -->
                                                                                             <div class="row col col-12">
                                                                                                 <!-- form-group -->
                                                                                                 <div class="form-group form-group-lg row col col-md-4 col-sm-4">
-                                                                                                    <label for="name" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Attempt</label>
+                                                                                                    <label for="name" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-5">Attempt</label>
                                                                                                     <label for="name" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
                                                                                                         <span> [ </span>
                                                                                                         <span> {!! $attempt !!} </span>
@@ -313,7 +319,7 @@
                                                                                                             $count_sample = $standardDataRQC->count_sample;
                                                                                                         }
                                                                                                     @endphp
-                                                                                                    <label for="name" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Std Sample Qty</label>
+                                                                                                    <label for="name" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-5">Std Sample Qty</label>
                                                                                                     <label for="name" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
                                                                                                         <span> [ </span>
                                                                                                         <span> {!! number_format($count_sample) !!} </span>
@@ -324,7 +330,7 @@
                                                                                                 
                                                                                                 <!-- form-group -->
                                                                                                 <div class="form-group form-group-lg row col col-md-4 col-sm-4">
-                                                                                                    <label for="count_defect_temp" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Defect Count</label>
+                                                                                                    <label for="count_defect_temp" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-5">Defect Count</label>
                                                                                                     <label for="count_defect_temp" class="col control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
                                                                                                         <span> [ </span>
                                                                                                         <span id="count_defect_temp"> {!! 0 !!} </span>
@@ -338,14 +344,14 @@
                                                                                         <!-- /.form-group-row -->
 
                                                                                         <!-- form-group-row -->
-                                                                                        <div class="row col-12 w-100">
+                                                                                        <div class="col col-12 w-100">
                                                                                             <!-- -->
                                                                                             <!-- form-group -->
-                                                                                            <div class="form-group form-group-lg row col-sm-12">
+                                                                                            <div class="form-group form-group-lg col col-sm-12 w-100">
                                                                                                 <!-- btn-toolbar -->
                                                                                                 <div class="col text-center px-5">
                                                                                                     <!-- div class="btn-group btn-group-lg pull-right" -->
-                                                                                                        <button type="submit" class="btn btn-primary btn-block btn-lg ml-auto mr-auto" id="submit">Submit</button>
+                                                                                                        <button type="submit" class="btn btn-primary btn-block btn-lg ml-auto mr-auto px-5" id="submit">SUBMIT</button>
                                                                                                     <!-- /div -->
                                                                                                 </div>
                                                                                             </div>
@@ -392,8 +398,8 @@
 
                                                                                             <!-- form-group -->
                                                                                             <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                                                                <label for="name" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">EMP No</label>
-                                                                                                <label for="name" class="col-lg-9 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
+                                                                                                <label for="name" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-1">EMP No</label>
+                                                                                                <label for="name" class="col-lg-8 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
                                                                                                     <span> [ </span>
                                                                                                     <span> {!! $user_object->code !!} </span>
                                                                                                     <span> ] </span>
@@ -403,8 +409,8 @@
                                                                                             
                                                                                             <!-- form-group -->
                                                                                             <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                                                                <label for="name" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Name</label>
-                                                                                                <label for="name" class="col-lg-9 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
+                                                                                                <label for="name" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-1">Name</label>
+                                                                                                <label for="name" class="col-lg-8 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
                                                                                                     <span> [ </span>
                                                                                                     <span> {!! $user_object->name_first !!} </span>
                                                                                                     <span> ] </span>
@@ -414,8 +420,8 @@
                                                                                             
                                                                                             <!-- form-group -->
                                                                                             <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                                                                <label for="name" class="col-lg-3 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-right text-md-left">Operator Grade</label>
-                                                                                                <label for="name" class="col-lg-9 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
+                                                                                                <label for="name" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-1">Operator Grade</label>
+                                                                                                <label for="name" class="col-lg-8 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
                                                                                                     <span> [ </span>
                                                                                                     <span> {!! $user_object->grade !!} </span>
                                                                                                     <span> ] </span>

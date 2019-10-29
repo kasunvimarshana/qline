@@ -121,7 +121,7 @@
                                                             <i class="fa fa-arrow-right"></i>
                                                         </span>
                                                         <span class="text-nowrap">
-                                                            <a class="text-decoration-none badge badge-danger text-wrap font-weight-bolder" href="#">Go</a>
+                                                            <a class="text-decoration-none badge badge-danger text-wrap font-weight-bolder" href="{!! route('workbook.createWorkbook', []) !!}" target"_blank">Go</a>
                                                         </span>
                                                     </p>
                                                 </div>

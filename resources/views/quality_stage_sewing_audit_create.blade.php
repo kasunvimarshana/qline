@@ -335,9 +335,9 @@
                                                             <!-- ------------------------------------------------------ -->
                                                             <div class="btn-toolbar" role="toolbar" aria-label="tool bar">
                                                                 <div class="btn-group btn-group-lg btn-group-justified w-100 m-1" role="group" aria-label="button group">
-                                                                    <button type="submit" class="btn btn-success btn-lg m-1" id="submit_pass" name="submit" value="submit_pass">Pass</button>
-                                                                    <button type="submit" class="btn btn-danger btn-lg m-1" id="submit_fail" name="submit" value="submit_fail">Fail</button>
-                                                                    <button type="submit" class="btn btn-warning btn-lg m-1" id="submit_suspend" name="submit" value="submit_suspend">Suspend</button>
+                                                                    <button type="submit" class="btn btn-success text-white btn-lg m-1 px-5 col" id="submit_pass" name="submit" value="submit_pass">PASS</button>
+                                                                    <button type="submit" class="btn btn-danger text-white btn-lg m-1 px-5 col" id="submit_fail" name="submit" value="submit_fail">FAIL</button>
+                                                                    <button type="submit" class="btn btn-warning text-white btn-lg m-1 px-5 col" id="submit_suspend" name="submit" value="submit_suspend">SUSPEND</button>
                                                                 </div>
                                                             </div>
                                                             <!-- ------------------------------------------------------ -->

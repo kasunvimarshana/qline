@@ -93,6 +93,8 @@ Route::group(['middleware' => ['authorizedUserMiddleware', 'disablePreventBackMi
     Route::get('departments/select/all', array('uses' => 'DepartmentController@selectAllDepartments'))->name('department.selectAllDepartments');
     Route::get('sections/select/all', array('uses' => 'SectionController@selectAllSections'))->name('section.selectAllSections');
     
+    Route::post('quality-record/c-n-i/store', array('uses' => 'QualityRecordCNIController@store'))->name('qualityRecordCNI.store');
+    
     Route::get('/dashboard', array('uses' => 'DashboardController@index'))->name('dashboard');
 });
 
@@ -106,3 +108,5 @@ Route::match(['get', 'post'], 'quality-record-input-defect-data/store', array('u
 Route::match(['get', 'post'], 'quality-record-input-defect-data/all', array('uses' => 'QualityRecordInputDefectDataController@selectAllQualityRecordInputDefectData'))->name('qualityRecordInputDefectData.selectAllQualityRecordInputDefectData');
 
 Route::match(['get', 'post'], 'quality-record-input-defect-data/select', array('uses' => 'QualityRecordInputDefectDataController@selectQualityRecordInputDefectData'))->name('qualityRecordInputDefectData.selectQualityRecordInputDefectData');
+
+Route::match(['get', 'post'], 'workbook/create', array('uses' => 'DashBoardController@createWorkbook'))->name('workbook.createWorkbook');

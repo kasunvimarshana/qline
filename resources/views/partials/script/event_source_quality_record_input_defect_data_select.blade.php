@@ -29,6 +29,9 @@ $(function(){
     var submit_form1 = form1.find("#submit_form1");
     submit_form1.attr("disabled", true);
     
+    submit_form1.removeClass("btn-primary");
+    submit_form1.addClass("btn-secondary");
+    
     form1.data("is_dirty", is_dirty);
     
     if( (!!window.EventSource) && (typeof(EventSource) !== "undefined") ){
@@ -82,6 +85,9 @@ $(function(){
                         is_dirty = true;
                         form1.data("is_dirty", is_dirty);
                         submit_form1.attr("disabled", false);
+                        
+                        submit_form1.removeClass("btn-secondary");
+                        submit_form1.addClass("btn-primary");
                         
                         bootbox.confirm({
                             size: "small",

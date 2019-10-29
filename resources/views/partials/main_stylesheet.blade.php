@@ -16,6 +16,8 @@
 <!-- Google Font -->
 <!-- link rel="stylesheet"
 href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"/ -->
+<!-- custom fonts -->
+<link rel="stylesheet" href="{{ asset('css/custom_fonts.css') }}"/>
 <!-- custom stylesheet -->
 <link rel="stylesheet" type="text/css" href="{!! asset('css/custom_style.css') !!}"/>
 <link rel="stylesheet" type="text/css" href="{!! asset('css/custom_scrollbar.css') !!}"/>

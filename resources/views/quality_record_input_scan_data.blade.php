@@ -95,7 +95,7 @@
                                                                                             <!-- -->
                                                                                             <!-- form-group -->
                                                                                             <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                                                                <label for="code" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Tag Reading</label>
+                                                                                                <label for="code" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">Tag Reading</label>
                                                                                                 <div class="col">
                                                                                                     <!-- p class="form-control-static"></p -->
                                                                                                     <input type="text" class="form-control form-control-lg" id="code" name="code" placeholder="Tag Reading" value="{{ old('code') }}" autocomplete="off" required="required"/>
@@ -106,7 +106,7 @@
                                                                                             
                                                                                             <!-- form-group -->
                                                                                             <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                                                                <label for="count_data" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Bundle Qty</label>
+                                                                                                <label for="count_data" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">Bundle Qty</label>
                                                                                                 <div class="col">
                                                                                                     <!-- p class="form-control-static"></p -->
                                                                                                     <input type="number" class="form-control form-control-lg" id="count_data" name="count_data" placeholder="Bundle Qty" value="{{ old('count_data') }}" autocomplete="off" required="required"/>
@@ -117,7 +117,7 @@
                                                                                             
                                                                                             <!-- form-group -->
                                                                                             <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                                                                <label for="size_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-right">Size</label>
+                                                                                                <label for="size_id" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">Size</label>
                                                                                                 <div class="col">
                                                                                                     <!-- p class="form-control-static"></p -->
                                                                                                     <div class="input-group h-100">
@@ -138,9 +138,9 @@
                                                                                             <!-- form-group -->
                                                                                             <div class="form-group form-group-lg row col-sm-12">
                                                                                                 <!-- btn-toolbar -->
-                                                                                                <div class="col text-right">
+                                                                                                <div class="col text-right mt-3">
                                                                                                     <!-- div class="btn-group btn-group-lg pull-right" -->
-                                                                                                        <button type="submit" class="btn btn-primary btn-lg ml-auto" id="submit">Submit</button>
+                                                                                                        <button type="submit" class="btn btn-primary btn-lg ml-auto px-5" id="submit">SUBMIT</button>
                                                                                                     <!-- /div -->
                                                                                                 </div>
                                                                                             </div>

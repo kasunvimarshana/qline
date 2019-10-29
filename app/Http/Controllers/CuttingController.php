@@ -31,6 +31,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Resources\CommonResponseResource as CommonResponseResource;
 use App\Enums\HTTPStatusCodeEnum as HTTPStatusCodeEnum;
+use App\InspectionStage;
 
 class CuttingController extends Controller
 {
@@ -100,6 +101,10 @@ class CuttingController extends Controller
         if( ($request->has('inspection_stage_id')) && ($request->filled('inspection_stage_id')) ){
             $inspection_stage_id = $request->input('inspection_stage_id', null);
             $request->session()->put('setup_configuration_inspection_stage_id', $inspection_stage_id);
+        }else{
+            $inspectionStageObject = new InspectionStage();
+            $inspectionStageObject = $inspectionStageObject->where('code', '=', 'Cutting')->first();
+            $request->session()->put('setup_configuration_inspection_stage_id', $inspectionStageObject->id);
         }
         
         if( (Route::has('qualityRecordCutting.index')) ){

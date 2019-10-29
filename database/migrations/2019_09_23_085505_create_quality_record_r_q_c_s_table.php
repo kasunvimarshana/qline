@@ -50,6 +50,9 @@ class CreateQualityRecordRQCSTable extends Migration
             $table->text('description')->default(null)->nullable()->comment('comment'); 
             //$table->nullableMorphs('recordable');
             $table->string('user_id_record')->nullable()->comment('comment');//->index()
+            $table->double('quantity_audit')->nullable()->default(0)->comment('comment');//->index()
+            $table->double('quantity_pass')->nullable()->default(0)->comment('comment');//->index()
+            $table->double('quantity_inspect')->nullable()->default(0)->comment('comment');//->index()
         });
         
         Schema::table($this->table_name_1, function($table) {

@@ -96,6 +96,12 @@
                                                                     <!-- -->
                                                                 </div>
                                                                 <!-- /.form-group-col -->
+                                                                <!-- container -->
+                                                                <div class="container mt-3 mb-3">
+                                                                    <!-- h2 class="text-danger"> - </h2 -->
+                                                                    <!-- p> - </p -->
+                                                                </div>
+                                                                <!-- /.container -->
                                                                 
                                                             </div>
                                                             <!-- /.form-group-row -->

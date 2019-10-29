@@ -51,6 +51,9 @@ class CreateQualityRecordCuttingsTable extends Migration
             //$table->nullableMorphs('recordable');
             $table->string('severity')->nullable()->default(0)->comment('comment');//->index()
             $table->text('action_to_be_taken')->default(null)->nullable()->comment('comment'); 
+            $table->double('quantity_audit')->nullable()->default(0)->comment('comment');//->index()
+            $table->double('quantity_pass')->nullable()->default(0)->comment('comment');//->index()
+            $table->double('quantity_inspect')->nullable()->default(0)->comment('comment');//->index()
         });
         
         Schema::table($this->table_name_1, function($table) {

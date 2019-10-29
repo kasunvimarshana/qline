@@ -26,7 +26,7 @@ class QualityRecordCNI extends Model
     //protected $appends = array('field1', 'field2');
     //protected $attributes = array();
     //protected $guarded = array();
-    protected $fillable = array('id', 'is_visible', 'is_active', 'time_create', 'count_sample', 'inspection_stage_id', 'standard_a_q_l_id', 'company_id', 'strategic_business_unit_id', 'factory_id', 'line_id', 'customer_id', 'style_id', 'colour_id', 'export_id', 'user_id_create', 'ip_address', 'status_id', 'description');
+    protected $fillable = array('id', 'is_visible', 'is_active', 'time_create', 'count_sample', 'inspection_stage_id', 'standard_a_q_l_id', 'company_id', 'strategic_business_unit_id', 'factory_id', 'line_id', 'customer_id', 'style_id', 'colour_id', 'export_id', 'user_id_create', 'ip_address', 'status_id', 'description', 'p_o_id', 'count_total_pieces', 'count_total_carton', 'count_check_carton', 'count_check_pieces', 'count_defect_carton', 'count_defect_pieces', 'quantity_audit', 'quantity_pass', 'quantity_inspect');
     //protected $hidden = array();
     //protected $casts = array();
     /**
@@ -82,7 +82,52 @@ class QualityRecordCNI extends Model
     }
     
     //one to many
-    public function qualityRecordDataSewingAudit(){
+    public function qualityRecordDataCNI(){
         return $this->hasMany('App\QualityRecordDataCNI', 'quality_record_c_n_i_id', 'id');
+    }
+    
+    //one to many (inverse)
+    public function company(){
+        return $this->belongsTo('App\Company', 'company_id', 'id');
+    }
+    
+    //one to many (inverse)
+    public function strategicBusinessUnit(){
+        return $this->belongsTo('App\StrategicBusinessUnit', 'strategic_business_unit_id', 'id');
+    }
+    
+    //one to many (inverse)
+    public function factory(){
+        return $this->belongsTo('App\Factory', 'factory_id', 'id');
+    }
+    
+    //one to many (inverse)
+    public function line(){
+        return $this->belongsTo('App\Line', 'line_id', 'id');
+    }
+    
+    //one to many (inverse)
+    public function customer(){
+        return $this->belongsTo('App\Customer', 'customer_id', 'id');
+    }
+    
+    //one to many (inverse)
+    public function style(){
+        return $this->belongsTo('App\Style', 'style_id', 'id');
+    }
+    
+    //one to many (inverse)
+    public function colour(){
+        return $this->belongsTo('App\Colour', 'colour_id', 'id');
+    }
+    
+    //one to many (inverse)
+    public function export(){
+        return $this->belongsTo('App\Export', 'export_id', 'id');
+    }
+    
+    //one to many (inverse)
+    public function inspectionStage(){
+        return $this->belongsTo('App\InspectionStage', 'inspection_stage_id', 'id');
     }
 }

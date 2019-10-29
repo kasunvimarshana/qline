@@ -108,7 +108,6 @@ class QualityRecordCuttingController extends Controller
                     'time_create' => $request->input('time_create', $date_today->format('Y-m-d H:i:s')),
                     'count_sample' => $request->input('count_sample'),
                     'inspection_stage_id' => $request->session()->get('setup_configuration_inspection_stage_id'),
-                    'standard_a_q_l_id' => $request->session()->get('setup_configuration_inspection_stage_id'),
                     'company_id' => $request->session()->get('setup_configuration_company_id'),
                     'strategic_business_unit_id' => $request->session()->get('setup_configuration_strategic_business_unit_id'),
                     'factory_id' => $request->session()->get('setup_configuration_factory_id'),

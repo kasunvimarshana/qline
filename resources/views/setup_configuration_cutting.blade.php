@@ -119,11 +119,17 @@
                                                 <!-- -->
                                             </div>
                                             <!-- /.form-group-col -->
+                                            <!-- container -->
+                                            <div class="container mt-3 mb-3">
+                                                <!-- h2 class="text-danger"> - </h2 -->
+                                                <!-- p> - </p -->
+                                            </div>
+                                            <!-- /.container -->
                                         </div>
                                         <!-- /.form-group-row -->
                                         
                                         <!-- form-group-row -->
-                                        <div class="row col">
+                                        <div class="row col mt-5">
                                             <!-- -->
                                             <!-- form-group -->
                                             <div class="form-group form-group-lg row col-sm-12">
@@ -131,7 +137,7 @@
                                                     <!-- btn-toolbar -->
                                                     <div class="col text-center">
                                                         <!-- div class="btn-group btn-group-lg pull-right" -->
-                                                        <button type="submit" class="btn btn-primary btn-lg" id="submit">Continue</button>
+                                                        <button type="submit" class="btn btn-secondary btn-lg px-5" id="submit">CONTINUE</button>
                                                         <!-- /div -->
                                                     </div>
                                                 </div>      
