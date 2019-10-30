@@ -102,11 +102,17 @@ class QualityRecordCNIController extends Controller
                 // Start transaction!
                 DB::beginTransaction();
                 
+                $count_sample_temp = 0;
+                
+                if( (($request->has('count_sample')) && ($request->filled('count_sample'))) ){
+                    $count_sample_temp = $request->input('count_sample');
+                }
+                
                 $dataArray = array(
                     'is_visible' => $request->input('is_visible', true),
                     'is_active' => $request->input('is_active', true),
                     'time_create' => $request->input('time_create', $date_today->format('Y-m-d H:i:s')),
-                    'count_sample' => $request->input('count_sample'),
+                    //'count_sample' => $request->input('count_sample', $count_sample_temp),
                     'inspection_stage_id' => $request->session()->get('setup_configuration_inspection_stage_id'),
                     'company_id' => $request->session()->get('setup_configuration_company_id'),
                     'strategic_business_unit_id' => $request->session()->get('setup_configuration_strategic_business_unit_id'),
@@ -148,7 +154,8 @@ class QualityRecordCNIController extends Controller
                         'user_id_create' => auth()->user()->id,
                         'defect_category_id' => $defectObject->defect_category_id,
                         'defect_id' => $defectObject->id,
-                        'count_defect' => $request->input('count_defect'),
+                        //'count_defect' => $request->input('count_defect', 1),
+                        'count_defect' => 1,
                         'severity' => $request->input('severity'),
                         'action_to_be_taken' => $request->input('action_to_be_taken')
                     ]);

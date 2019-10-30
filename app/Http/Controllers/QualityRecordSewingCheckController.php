@@ -248,10 +248,17 @@ class QualityRecordSewingCheckController extends Controller
                 $qualityRecoredInputDefectDataObject = new QualityRecoredInputDefectData();
                 $qualityRecoredInputDefectDataObject->where("id", "=", $request->input('quality_record_input_defect_data_id'))->delete();
                 
+                $count_sample_temp = 0;
+                
+                if( (($request->has('count_sample')) && ($request->filled('count_sample'))) ){
+                    $count_sample_temp = $request->input('count_sample');
+                }
+                
                 $dataArray = array(
                     'is_visible' => $request->input('is_visible', true),
                     'is_active' => $request->input('is_active', true),
                     'time_create' => $request->input('time_create', $date_today->format('Y-m-d H:i:s')),
+                    //'count_sample' => $request->input('count_sample', $count_sample_temp),
                     'inspection_stage_id' => $request->session()->get('setup_configuration_inspection_stage_id'),
                     'standard_a_q_l_id' => $request->session()->get('setup_configuration_standard_sewing_check_id'),
                     'company_id' => $request->session()->get('setup_configuration_company_id'),
@@ -263,7 +270,10 @@ class QualityRecordSewingCheckController extends Controller
                     'colour_id' => $request->session()->get('setup_configuration_colour_id'),
                     'export_id' => $request->session()->get('setup_configuration_export_id'),
                     'user_id_create' => auth()->user()->id,
-                    'ip_address' => $request->ip()
+                    'ip_address' => $request->ip(),
+                    'quantity_audit' => $request->input('quantity_audit', $count_sample_temp),
+                    //'quantity_pass' => $request->input('quantity_pass', $count_sample_temp),
+                    'quantity_inspect' => $request->input('quantity_inspect', $count_sample_temp)
                 );
 
                 $qualityRecordSewingCheckObject = QualityRecordSewingCheck::create( $dataArray );
@@ -292,7 +302,9 @@ class QualityRecordSewingCheckController extends Controller
                         'user_id_create' => auth()->user()->id,
                         'measure_point_id' => $measure_point_id_array[$key],
                         'defect_category_id' => $defectObject->defect_category_id,
-                        'defect_id' => $defectObject->id
+                        'defect_id' => $defectObject->id,
+                        //'count_defect' => $request->input('count_defect', 1),
+                        'count_defect' => 1,
                     ]);
                     
                     $qualityRecordSewingCheckObject->qualityRecordDataSewingCheck()->save($qualityRecordDataSewingCheckObject);

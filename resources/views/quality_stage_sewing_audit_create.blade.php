@@ -226,7 +226,12 @@
                                         @csrf
                                         <!-- ------------------------------------------------------------------------------------- -->
                                         <div id="form1_hidden_input_group" name="form1_hidden_input_group" class="d-none">
-
+                                            <!-- -->
+                                            <input type="hidden" id="quantity_audit" name="quantity_audit" value="0" autocomplete="off" required="required" readonly="readonly"/>
+                                            <!-- -->
+                                            <!-- -->
+                                            <input type="hidden" id="quantity_inspect" name="quantity_inspect" value="0" autocomplete="off" required="required" readonly="readonly"/>
+                                            <!-- -->
                                         </div>
                                         <!-- ------------------------------------------------------------------------------------- -->
                                         <!-- form-group-row -->
@@ -456,16 +461,21 @@
             var count_data = $("#count_data");
             var count_sample = $("#count_sample");
             var count_accept = $("#count_accept");
+            var quantity_audit = $("#quantity_audit");
+            var quantity_inspect = $("#quantity_inspect");
+            
             var count_data_sum = 0;
             var input_quality_record_input_scan_data = form1_hidden_input_group.find( ("." + id_quality_record_input_scan_data_prefix) );
             if( (input_quality_record_input_scan_data.length <= 0) ){
                 count_data.text( count_data_sum );
+                quantity_inspect.val( count_data_sum );
             }else{
                 input_quality_record_input_scan_data.each(function( index, value ){
                     var count_data_temp = $(value).data("count_data");
                     count_data_temp = parseFloat(count_data_temp);
                     count_data_sum = (count_data_sum + count_data_temp);
                     count_data.text( count_data_sum );
+                    quantity_inspect.val( count_data_sum );
                 });
             }
             
@@ -482,6 +492,7 @@
             
             count_sample.text( standardDataSewingAuditObject.count_sample );
             count_accept.text( standardDataSewingAuditObject.count_accept );
+            quantity_audit.val( standardDataSewingAuditObject.count_sample );
             
             /*submit pass disable*/
             var submit_pass = $("#submit_pass");

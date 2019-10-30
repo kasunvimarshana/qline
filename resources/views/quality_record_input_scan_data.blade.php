@@ -126,8 +126,8 @@
                                                                                                             <option value="M"> M </option>
                                                                                                             <option value="L"> L </option>
                                                                                                             <option value="Xl"> XL </option>
-                                                                                                            <option value="Xl"> XXL </option>
-                                                                                                            <option value="Xl"> XXXL </option>
+                                                                                                            <option value="XXl"> XXL </option>
+                                                                                                            <option value="XXXl"> XXXL </option>
                                                                                                         </select>
                                                                                                     </div>
                                                                                                 </div>

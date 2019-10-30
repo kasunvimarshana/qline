@@ -186,7 +186,7 @@ class QualityRecordRQCController extends Controller
         $validator = Validator::make(Input::all(), $rules);
         // if the validator fails, redirect back to the form
         if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();dd($rules);
+            return redirect()->back()->withErrors($validator)->withInput();
             /*$data = array(
                 'title' => 'error',
                 'text' => $validator->errors()->first(),
@@ -202,12 +202,19 @@ class QualityRecordRQCController extends Controller
                 // Start transaction!
                 DB::beginTransaction();
                 
+                $count_sample_temp = 0;
+                
+                if( (($request->has('count_sample')) && ($request->filled('count_sample'))) ){
+                    $count_sample_temp = $request->input('count_sample');
+                }
+                
                 $dataArray = array(
                     'is_visible' => $request->input('is_visible', true),
                     'is_active' => $request->input('is_active', true),
                     'time_create' => $request->input('time_create', $date_today->format('Y-m-d H:i:s')),
+                    'count_sample' => $request->input('count_sample', $count_sample_temp),
                     'attempt' => $request->input('attempt'),
-                    'count_sample' => $request->input('count_sample'),
+                    'count_sample' => $request->input('count_sample', $count_sample_temp),
                     'inspection_stage_id' => $request->session()->get('setup_configuration_inspection_stage_id'),
                     'company_id' => $request->session()->get('setup_configuration_company_id'),
                     'strategic_business_unit_id' => $request->session()->get('setup_configuration_strategic_business_unit_id'),
@@ -219,7 +226,10 @@ class QualityRecordRQCController extends Controller
                     'export_id' => $request->session()->get('setup_configuration_export_id'),
                     'user_id_create' => auth()->user()->id,
                     'ip_address' => $request->ip(),
-                    'user_id_record' => $request->input('user_id_record')
+                    'user_id_record' => $request->input('user_id_record'),
+                    'quantity_audit' => $request->input('quantity_audit', $count_sample_temp),
+                    //'quantity_pass' => $request->input('quantity_pass', $count_sample_temp),
+                    'quantity_inspect' => $request->input('quantity_inspect', $count_sample_temp)
                 );
 
                 $qualityRecordRQCObject = QualityRecordRQC::create( $dataArray );
@@ -248,7 +258,9 @@ class QualityRecordRQCController extends Controller
                         'user_id_create' => auth()->user()->id,
                         'measure_point_id' => $measure_point_id_array[$key],
                         'defect_category_id' => $defectObject->defect_category_id,
-                        'defect_id' => $defectObject->id
+                        'defect_id' => $defectObject->id,
+                        //'count_defect' => $request->input('count_defect', 1),
+                        'count_defect' => 1,
                     ]);
                     
                     $qualityRecordRQCObject->qualityRecordDataRQC()->save($qualityRecordDataRQCObject);
