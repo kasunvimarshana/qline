@@ -20,6 +20,8 @@ $(function(){
     }
     */
     
+    var element_value_temp = [];
+    
     function getFormatResult(param){
         if (!param.id){
             return param.text; // optgroup
@@ -160,7 +162,10 @@ $(function(){
                 // using the done promise callback
                 .done(function(data) {
                     //console.log(data);
+                    element_value_temp = [];
                     var data = $.map(data.data, function (obj) {
+                        element_value_temp.push( obj.id );
+                        
                         return {
                             id : obj.id, 
                             text : ( obj.name || obj.code ), 

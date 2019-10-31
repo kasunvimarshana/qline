@@ -137,12 +137,12 @@
                                                         <div class="col text-center">
                                                             <h5 class="card-title text-uppercase text-muted mb-0">Line Monitor</h5>
                                                             <span class="h2 font-weight-bold mb-0">
-                                                                <i class="fa fa-file-excel"></i>
+                                                                <i class="fas fa-grip-horizontal"></i>
                                                             </span>
                                                         </div>
                                                         <div class="col-auto">
                                                             <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                                                                <i class="fa fa-file-excel"></i>
+                                                                <i class="fas fa-grip-horizontal"></i>
                                                             </div>
                                                         </div>
                                                     </div>

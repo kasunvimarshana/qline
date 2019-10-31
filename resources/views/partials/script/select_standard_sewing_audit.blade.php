@@ -20,6 +20,8 @@ $(function(){
     }
     */
     
+    var element_value_temp = [];
+    
     var selectOptionObject = $( optionData.id ).select2({
         theme : 'bootstrap',
         //disabled : false,
@@ -94,9 +96,9 @@ $(function(){
             });
             */
             var element_value = $(element).val();
-            if( (typeof element_value === "undefined") || (element_value === void(0)) || (element_value == "") || (element_value == null) ){
+            //if( (typeof element_value === "undefined") || (element_value === void(0)) || (element_value == "") || (element_value == null) ){
                 //console.log(element_value);
-            }else{
+            //}else{
                 $.ajax({
                     type : 'GET', // define the type of HTTP verb we want to use (POST for our form)
                     url : optionData.url, // the url where we want to POST
@@ -114,7 +116,10 @@ $(function(){
                 // using the done promise callback
                 .done(function(data) {
                     //console.log(data);
+                    element_value_temp = [];
                     var data = $.map(data.data, function (obj) {
+                        element_value_temp.push( obj.id );
+                        
                         return {
                             id : obj.id, 
                             text : ( obj.name || obj.code ), 
@@ -129,7 +134,7 @@ $(function(){
                 .always(function() {
                     //console.log("complete" );
                 });
-            }
+            //}
         },
         //formatLoadMore: function(pageNumber){ return "Loading"; },
         //sortResults: function(results, container, query) {},

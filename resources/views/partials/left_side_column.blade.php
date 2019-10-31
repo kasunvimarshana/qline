@@ -44,7 +44,7 @@
                 <div class="card-header" id="idCard5">
                     <h5 class="mb-0">
                         <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse5" aria-expanded="false" aria-controls="idCollapse5" role="button" type="button">
-                        <!-- i class="fa fa-atom fa-fw"></i -->
+                        <i class="fas fa-code-branch fa-fw"></i>
                         <span class="text-decoration-none text-justify small"> Quality Stage</span>
                         </button>
                     </h5>
@@ -78,7 +78,7 @@
                 <div class="card-header" id="idCard6">
                     <h5 class="mb-0">
                         <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse6" aria-expanded="false" aria-controls="idCollapse6" role="button" type="button">
-                        <!-- i class="fa fa-atom fa-fw"></i -->
+                        <i class="fas fa-chalkboard-teacher fa-fw"></i>
                         <span class="text-decoration-none text-justify small"> Dashboard</span>
                         </button>
                     </h5>
@@ -113,6 +113,7 @@
                     <h5 class="mb-0">
                         <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse2" aria-expanded="false" aria-controls="idCollapse2" role="button" type="button">
                         <!-- i class="fa fa-atom fa-fw"></i -->
+                        <i class="fab fa-grav"></i>
                         <span class="text-decoration-none text-justify small"> Backstage</span>
                         </button>
                     </h5>

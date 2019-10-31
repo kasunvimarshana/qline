@@ -101,14 +101,14 @@
                                                                             <ul class="nav nav-tabs nav-tabs-danger nav-fill nav-justified flex-column flex-sm-row w-100" id="id_nav" role="tablist">
 
                                                                                 <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                                                    <a id="id_nav_link_3_1" class="nav-link m-1 btn btn-outline-danger border-danger active" data-toggle="tab" href="#id_tab_content_3_1" role="tab" aria-controls="id_tab_content_3_1" aria-selected="true">
-                                                                                        <span><i class="fab fa-wpforms"></i> Audit</span>
+                                                                                    <a id="id_nav_link_3_2" class="nav-link m-1 btn btn-outline-danger border-danger active" data-toggle="tab" href="#id_tab_content_3_2" role="tab" aria-controls="id_tab_content_3_2" aria-selected="true">
+                                                                                        <span><i class="fas fa-user"></i> Operator</span>
                                                                                     </a>
                                                                                 </li>
-
+                                                                                
                                                                                 <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
-                                                                                    <a id="id_nav_link_3_2" class="nav-link m-1 btn btn-outline-danger border-danger" data-toggle="tab" href="#id_tab_content_3_2" role="tab" aria-controls="id_tab_content_3_2" aria-selected="false">
-                                                                                        <span><i class="fas fa-user"></i> Operator</span>
+                                                                                    <a id="id_nav_link_3_1" class="nav-link m-1 btn btn-outline-danger border-danger" data-toggle="tab" href="#id_tab_content_3_1" role="tab" aria-controls="id_tab_content_3_1" aria-selected="false">
+                                                                                        <span><i class="fab fa-wpforms"></i> Audit</span>
                                                                                     </a>
                                                                                 </li>
 
@@ -124,7 +124,79 @@
                                                                             <div class="row">
                                                                             <!-- --- -->
                                                                             <div class="tab-content w-100" id="id_nav_tab_content_3">
-                                                                                <div id="id_tab_content_3_1" class="container tab-pane fade show active" role="tabpanel" aria-labelledby="id_nav_link_3_1">
+                                                                                
+                                                                                <div id="id_tab_content_3_2" class="container tab-pane fade show active" role="tabpanel" aria-labelledby="id_nav_link_3_2">
+                                                                                    <br/>
+                                                                                    <!-- --- -->
+                                                                                    <!-- form-group-col -->
+                                                                                    <div class="col col-sm-12 row p-0 m-0">
+                                                                                        <!-- -->
+                                                                                        <!-- form-group -->
+                                                                                        <div class="form-group form-group-lg col col-md-6 text-center">
+                                                                                            <!-- img-container -->
+                                                                                            <div class="img box clearfix text-center ml-auto mr-5">
+                                                                                                @php
+                                                                                                    $image_uri = asset('img/avatar5.png');
+                                                                                                    if( (isset($user_object)) && ($user_object->image_uri) ){
+                                                                                                        if(Storage::exists($user_object->image_uri)){
+                                                                                                            $image_uri = Storage::url($user_object->image_uri);
+                                                                                                            $image_uri = asset($image_uri);
+                                                                                                        }
+                                                                                                    }
+                                                                                                @endphp
+                                                                                                <img src="{!! $image_uri !!}" alt="" class="img-responsive img-fluid img-thumbnail rounded" style="max-width: 13em; min-width: 13em;"/>
+                                                                                            </div>
+                                                                                            <!-- /.img-container -->
+                                                                                        </div>
+                                                                                        <!-- /.form-group -->
+
+                                                                                        <!-- fieldset -->
+                                                                                        <div class="form-group form-group-lg col col-md-6 text-center">
+                                                                                        <fieldset class="w-100" disabled="disabled">
+
+                                                                                            <!-- form-group -->
+                                                                                            <div class="form-group form-group-lg row col-sm-12 m-1">
+                                                                                                <label for="name" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-1">EMP No</label>
+                                                                                                <label for="name" class="col-lg-8 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
+                                                                                                    <span> [ </span>
+                                                                                                    <span> {!! $user_object->code !!} </span>
+                                                                                                    <span> ] </span>
+                                                                                                </label>
+                                                                                            </div>
+                                                                                            <!-- /.form-group -->
+                                                                                            
+                                                                                            <!-- form-group -->
+                                                                                            <div class="form-group form-group-lg row col-sm-12 m-1">
+                                                                                                <label for="name" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-1">Name</label>
+                                                                                                <label for="name" class="col-lg-8 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
+                                                                                                    <span> [ </span>
+                                                                                                    <span> {!! $user_object->name_first !!} </span>
+                                                                                                    <span> ] </span>
+                                                                                                </label>
+                                                                                            </div>
+                                                                                            <!-- /.form-group -->
+                                                                                            
+                                                                                            <!-- form-group -->
+                                                                                            <div class="form-group form-group-lg row col-sm-12 m-1">
+                                                                                                <label for="name" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-1">Operator Grade</label>
+                                                                                                <label for="name" class="col-lg-8 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
+                                                                                                    <span> [ </span>
+                                                                                                    <span> {!! $user_object->grade !!} </span>
+                                                                                                    <span> ] </span>
+                                                                                                </label>
+                                                                                            </div>
+                                                                                            <!-- /.form-group -->
+
+                                                                                        </fieldset>
+                                                                                        </div>
+                                                                                        <!-- /.fieldset -->
+                                                                                        <!-- -->
+                                                                                    </div>
+                                                                                    <!-- /.form-group-col -->
+                                                                                    <!-- --- -->
+                                                                                </div>
+                                                                                
+                                                                                <div id="id_tab_content_3_1" class="container tab-pane fade" role="tabpanel" aria-labelledby="id_nav_link_3_1">
                                                                                     <br/>
                                                                                     <!-- -->
                                                                                     <!-- form-group-col -->
@@ -366,77 +438,7 @@
                                                                                     <!-- /.form-group-col -->
                                                                                     <!-- -->
                                                                                 </div>
-
-                                                                                <div id="id_tab_content_3_2" class="container tab-pane fade" role="tabpanel" aria-labelledby="id_nav_link_3_2">
-                                                                                    <br/>
-                                                                                    <!-- --- -->
-                                                                                    <!-- form-group-col -->
-                                                                                    <div class="col col-sm-12 row p-0 m-0">
-                                                                                        <!-- -->
-                                                                                        <!-- form-group -->
-                                                                                        <div class="form-group form-group-lg col col-md-6 text-center">
-                                                                                            <!-- img-container -->
-                                                                                            <div class="img box clearfix text-center ml-auto mr-5">
-                                                                                                @php
-                                                                                                    $image_uri = asset('img/avatar5.png');
-                                                                                                    if( (isset($user_object)) && ($user_object->image_uri) ){
-                                                                                                        if(Storage::exists($user_object->image_uri)){
-                                                                                                            $image_uri = Storage::url($user_object->image_uri);
-                                                                                                            $image_uri = asset($image_uri);
-                                                                                                        }
-                                                                                                    }
-                                                                                                @endphp
-                                                                                                <img src="{!! $image_uri !!}" alt="" class="img-responsive img-fluid img-thumbnail rounded" style="max-width: 13em; min-width: 13em;"/>
-                                                                                            </div>
-                                                                                            <!-- /.img-container -->
-                                                                                        </div>
-                                                                                        <!-- /.form-group -->
-
-                                                                                        <!-- fieldset -->
-                                                                                        <div class="form-group form-group-lg col col-md-6 text-center">
-                                                                                        <fieldset class="w-100" disabled="disabled">
-
-                                                                                            <!-- form-group -->
-                                                                                            <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                                                                <label for="name" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-1">EMP No</label>
-                                                                                                <label for="name" class="col-lg-8 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
-                                                                                                    <span> [ </span>
-                                                                                                    <span> {!! $user_object->code !!} </span>
-                                                                                                    <span> ] </span>
-                                                                                                </label>
-                                                                                            </div>
-                                                                                            <!-- /.form-group -->
-                                                                                            
-                                                                                            <!-- form-group -->
-                                                                                            <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                                                                <label for="name" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-1">Name</label>
-                                                                                                <label for="name" class="col-lg-8 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
-                                                                                                    <span> [ </span>
-                                                                                                    <span> {!! $user_object->name_first !!} </span>
-                                                                                                    <span> ] </span>
-                                                                                                </label>
-                                                                                            </div>
-                                                                                            <!-- /.form-group -->
-                                                                                            
-                                                                                            <!-- form-group -->
-                                                                                            <div class="form-group form-group-lg row col-sm-12 m-1">
-                                                                                                <label for="name" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left pl-1">Operator Grade</label>
-                                                                                                <label for="name" class="col-lg-8 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">
-                                                                                                    <span> [ </span>
-                                                                                                    <span> {!! $user_object->grade !!} </span>
-                                                                                                    <span> ] </span>
-                                                                                                </label>
-                                                                                            </div>
-                                                                                            <!-- /.form-group -->
-
-                                                                                        </fieldset>
-                                                                                        </div>
-                                                                                        <!-- /.fieldset -->
-                                                                                        <!-- -->
-                                                                                    </div>
-                                                                                    <!-- /.form-group-col -->
-                                                                                    <!-- --- -->
-                                                                                </div>
+                                                                                
                                                                             </div>
                                                                             <!-- --- -->
                                                                             </div>

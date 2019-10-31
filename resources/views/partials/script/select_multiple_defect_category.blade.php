@@ -20,6 +20,8 @@ $(function(){
     }
     */
     
+    var element_value_temp = [];
+    
     function getFormatResult(param){
         if (!param.id){
             return param.text; // optgroup

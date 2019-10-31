@@ -20,6 +20,8 @@ $(function(){
     }
     */
     
+    var element_value_temp = [];
+    
     var selectOptionObject = $( optionData.id ).select2({
         theme : 'bootstrap',
         //disabled : false,
@@ -114,7 +116,10 @@ $(function(){
                 // using the done promise callback
                 .done(function(data) {
                     //console.log(data);
+                    element_value_temp = [];
                     var data = $.map(data.data, function (obj) {
+                        element_value_temp.push( obj.id );
+                        
                         return {
                             id : obj.id, 
                             text : ( obj.name || obj.code ), 

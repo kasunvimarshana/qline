@@ -72,8 +72,29 @@
             <!-- nav lists -->
             <ul class="list-unstyled nav navbar-nav ml-auto navbar-right">
                 <li class="nav-item">
+                    <!-- ------------------ -->
+                    @php
+                        $image_uri = asset('img/avatar5.png');
+                        if( (auth()->check()) && (auth()->user()) && (auth()->user()->image_uri) ){
+                            if(Storage::exists(auth()->user()->image_uri)){
+                                $image_uri = Storage::url(auth()->user()->image_uri);
+                                $image_uri = asset($image_uri);
+                            }
+                        }
+                    @endphp
+                    <div class="container">
+                        <div class="text-center">
+                            <a href="javascript:void(0);" class="thumbnail">
+                                <img src="{!! $image_uri !!}" class="rounded-circle" alt ="" style="max-height: 2em;"/>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ------------------ -->
+                </li>  
+                
+                <li class="nav-item">
                     <span class="navbar-text text-center font-weight-bold text-white p-1 mr-1">
-                        <i class="fa fa-user-alt fa-fw"></i>
+                        <!-- i class="fa fa-user-alt fa-fw"></i -->
                         @if( (auth()->check()) )
                             @if( (auth()->user()->strategicBusinessUnit) )
                                 <span> {{ auth()->user()->strategicBusinessUnit->name }} </span>
