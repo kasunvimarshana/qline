@@ -45,7 +45,7 @@ class PermissionsServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        /*Permission::get()->map(function($permission){
+        Permission::get()->map(function($permission){
             Gate::define($permission->slug, function($user) use ($permission){
                 return $user->hasPermissionTo($permission);
             });
@@ -57,6 +57,6 @@ class PermissionsServiceProvider extends ServiceProvider
         
         Blade::directive('endrole', function (){
             return "<?php endif; ?>";
-        });*/
+        });
     }
 }

@@ -61,4 +61,18 @@ class HomeController extends Controller
         }
     }  
     
+    public function showStartup(Request $request){ /*return response()->json( $request );*/ 
+        //
+        $dataArray = array();
+        $rules = array();
+        $date_today = Carbon::now();//->format('Y-m-d');
+        $current_user = null;
+        $data = array();
+        if(view()->exists('startup')){
+            return View::make('startup', array());
+        }else{
+            return redirect()->back()->withInput();
+        }
+    }
+    
 }

@@ -24,13 +24,37 @@
 
 @font-face {
     font-family: liquid_crystal;
-    src: url("fonts/temp/liquid_crystal/LiquidCrystal-BoldItalic.otf"); 
-    src: url("fonts/temp/liquid_crystal/LiquidCrystal-ExBold.otf"); 
-    src: url("fonts/temp/liquid_crystal/LiquidCrystal-ExBoldItalic.otf"); 
-    src: url("fonts/temp/liquid_crystal/LiquidCrystal-Light.otf"); 
-    src: url("fonts/temp/liquid_crystal/LiquidCrystal-LightItalic.otf"); 
-    src: url("fonts/temp/liquid_crystal/LiquidCrystal-Normal.otf"); 
-    src: url("fonts/temp/liquid_crystal/LiquidCrystal-NormalItalic.otf"); 
-    src: url("fonts/temp/liquid_crystal/LiquidCrystal-Bold.otf");
+    src: url("fonts/liquid_crystal/LiquidCrystal-BoldItalic.otf"); 
+    src: url("fonts/liquid_crystal/LiquidCrystal-ExBold.otf"); 
+    src: url("fonts/liquid_crystal/LiquidCrystal-ExBoldItalic.otf"); 
+    src: url("fonts/liquid_crystal/LiquidCrystal-Light.otf"); 
+    src: url("fonts/liquid_crystal/LiquidCrystal-LightItalic.otf"); 
+    src: url("fonts/liquid_crystal/LiquidCrystal-Normal.otf"); 
+    src: url("fonts/liquid_crystal/LiquidCrystal-NormalItalic.otf"); 
+    src: url("fonts/liquid_crystal/LiquidCrystal-Bold.otf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: HussarBoldWeb;
+    src: url("fonts/temp/kineticplasma-fonts_hussar-bold-web-edition/HussarBoldWeb.otf"); 
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: HussarEkologiczne1;
+    src: url("fonts/temp/kineticplasma-fonts_hussar-ekologiczny/HussarEkologiczne1.otf"); 
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Mechanical;
+    src: url("fonts/temp/kineticplasma-fonts_mechanical/Mechanical.otf"); 
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: SztyletBd;
+    src: url("fonts/temp/plusone-fonts_sztylet/SztyletBd.otf"); 
     font-weight: normal;
 }

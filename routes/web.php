@@ -20,7 +20,9 @@ Route::get('/', function () {
 Route::fallback('FallbackController@index')->name('fallback');
 Route::any('fallback', array('uses' => 'FallbackController@index'))->name('fallback');
 
-Route::get('/', array('uses' => 'LoginController@showLogin'));//->name('home');
+Route::get('/', array('uses' => 'HomeController@showStartup'));//->name('home');
+
+//Route::get('/', array('uses' => 'LoginController@showLogin'));//->name('home');
 //route to login
 Route::get('login', array('uses' => 'LoginController@showLogin'))->name('login.showLogin');
 // route to process the form
