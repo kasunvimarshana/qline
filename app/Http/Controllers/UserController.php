@@ -109,6 +109,17 @@ class UserController extends Controller
                 // Start transaction!
                 DB::beginTransaction();
                 
+                $suffix = '@brandix.com';
+                $email = $request->input('email');
+                if( (!@stripos($email, $suffix)) ){
+                    $email = $email . $suffix;
+                }
+                
+                $is_token_authentication = false;
+                if( (($request->has('is_token_authentication')) && ($request->filled('is_token_authentication'))) ){
+                    $is_token_authentication = true;
+                }
+                
                 $dataArray = array(
                     'is_visible' => $request->input('is_visible', true),
                     'is_active' => $request->input('is_active', true),
@@ -120,13 +131,14 @@ class UserController extends Controller
                     'password' => Hash::make( $request->input('password') ),
                     'display_name' => $request->input('display_name'),
                     'image_uri' => $request->input('image_uri'),
-                    'email' => $request->input('email'),
+                    'email' => $email,
                     'company_id' => $request->input('company_id'),
                     'strategic_business_unit_id' => $request->input('strategic_business_unit_id'),
                     'department_id' => $request->input('department_id'),
                     'section_id' => $request->input('section_id'),
                     'grade' => $request->input('grade'),
-                    'remember_token' => $request->input('remember_token')
+                    'remember_token' => $request->input('remember_token'),
+                    'is_token_authentication' => $is_token_authentication
                 );
                 
                 if ( ($request->hasFile('image_uri')) ) {
@@ -185,6 +197,11 @@ class UserController extends Controller
                 if( (($request->has('create-quality_record_r_q_c')) && ($request->filled('create-quality_record_r_q_c'))) ){
                     $create_quality_record_r_q_c = $request->input('create-quality_record_r_q_c');
                     $userObject->givePermissionsTo( $create_quality_record_r_q_c );
+                }
+                
+                if( (($request->has('create-user-monitor')) && ($request->filled('create-user-monitor'))) ){
+                    $create_user_monitor = $request->input('create-user-monitor');
+                    //$userObject->givePermissionsTo( $create_user_monitor );
                 }
                 
                 unset($dataArray);

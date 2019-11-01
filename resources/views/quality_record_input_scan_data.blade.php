@@ -98,7 +98,7 @@
                                                                                                 <label for="code" class="col-lg-4 control-label col-form-label col-form-label-md text-justify font-weight-bold text-lg-left text-md-left">Tag Reading</label>
                                                                                                 <div class="col">
                                                                                                     <!-- p class="form-control-static"></p -->
-                                                                                                    <input type="text" class="form-control form-control-lg" id="code" name="code" placeholder="Tag Reading" value="{{ old('code') }}" autocomplete="off" required="required"/>
+                                                                                                    <input type="text" class="form-control form-control-lg" id="code" name="code" placeholder="Tag Reading" value="{{ old('code') }}" autocomplete="off" required="required" autofocus="autofocus"/>
                                                                                                 </div>
                                                                                                 <!-- span id="form-control" class="help-block"></span -->
                                                                                             </div>
@@ -332,6 +332,23 @@
         $("#id_nav_container_1").removeClass("multi-collapse");
         $("#id_nav_container_1").removeClass("show");
         $("#id_nav_container_1").addClass("show");
+    });
+</script>
+@endpush
+
+@push('stack_script')
+<script>
+    $(function(){
+        "use strict";
+        var code = $("#code");
+        var count_data = $("#count_data");
+        var code_val = "";
+        var count_data_val = "";
+        code.on("blur", function(){
+            code_val = code.val();
+            count_data_val = code_val.substring(code_val.length - 2, code_val.length);
+            count_data.val( count_data_val );
+        });
     });
 </script>
 @endpush

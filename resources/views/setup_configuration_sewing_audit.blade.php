@@ -583,3 +583,16 @@
     });
 </script>
 @endpush
+
+<!-- ---temp--- -->
+@push('stack_script')
+<script>
+    $(function(){
+        "use strict";
+        $("#standard_sewing_audit_id").select2("trigger", "select", {
+            data: { id: "3135373235313232343036636238616536332d626230352d343538372d616563372d386238313564363831653166" }
+        });
+    });
+</script>
+@endpush
+<!-- ---temp--- -->
