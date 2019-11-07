@@ -82,6 +82,7 @@
         "jszip": "^3.2.2",
         "konva": "^3.3.3",
         "luxon": "^1.15.0",
+        "masonry-layout": "^4.2.2",
         "materialize-stepper": "^3.1.0",
         "moment": "^2.24.0",
         "particles.js": "^2.0.0",

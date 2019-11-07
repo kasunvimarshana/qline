@@ -8,7 +8,7 @@
                                     <span class="ql_caption">
                                         <span class="outer">
                                             <span class="inner">
-                                                <h2>Member fdf dfdsfsfds fdsgdsgdg gdsgdsgdgds dsgdsg cdsvds dsvdsvdvd vdsvdsvv dsvds</h2>
+                                                <h2>Member</h2>
                                             </span>
                                         </span>
                                     </span>
