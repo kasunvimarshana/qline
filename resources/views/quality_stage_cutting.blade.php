@@ -203,7 +203,7 @@
                             <h5 class="mb-0 text-left">
                                 <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse_accordion_1_content_2_tab_content_3_1" aria-expanded="false" aria-controls="idCollapse_accordion_1_content_2_tab_content_3_1" role="button" type="button">
                                 <i class="fab fa-buromobelexperte fa-fw"></i>
-                                <span class="text-decoration-none text-justify small"> List</span>
+                                <span class="text-decoration-none text-justify small"> Selected (List)</span>
                                 </button>
                             </h5>
                         </div>
@@ -344,7 +344,7 @@
                             <h5 class="mb-0 text-left">
                                 <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse_accordion_1_content_2_tab_content_3_2" aria-expanded="false" aria-controls="idCollapse_accordion_1_content_2_tab_content_3_2" role="button" type="button">
                                 <i class="fab fa-buromobelexperte fa-fw"></i>
-                                <span class="text-decoration-none text-justify small"> List</span>
+                                <span class="text-decoration-none text-justify small"> Selected (List)</span>
                                 </button>
                             </h5>
                         </div>
@@ -485,7 +485,7 @@
                             <h5 class="mb-0 text-left">
                                 <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse_accordion_1_content_2_tab_content_3_3" aria-expanded="false" aria-controls="idCollapse_accordion_1_content_2_tab_content_3_3" role="button" type="button">
                                 <i class="fab fa-buromobelexperte fa-fw"></i>
-                                <span class="text-decoration-none text-justify small"> List</span>
+                                <span class="text-decoration-none text-justify small"> Selected (List)</span>
                                 </button>
                             </h5>
                         </div>
@@ -590,6 +590,62 @@
                 <!-- /.card -->
             </div>
             <!-- /.card-group -->
+            
+            <!-- ======================================================================================= -->
+            <!-- card-group -->
+            <div class="card-group">
+                <!-- card -->
+                <div class="card bg-secondary border-light">
+                    <div class="card-header" id="idCard_accordion_1_content_3">
+                        <h5 class="mb-0">
+                            <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse_accordion_1_content_3" aria-expanded="false" aria-controls="idCollapse_accordion_1_content_2" role="button" type="button">
+                            <i class="fab fa-buromobelexperte fa-fw"></i>
+                            <span class="text-decoration-none text-justify small"> List</span>
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="idCollapse_accordion_1_content_3" class="collapse hide" aria-labelledby="idCard_accordion_1_content_3" data-parent="#idCollapse_accordion_1_content_3">
+                        <div class="card-body bg-light" id="idCollapse_content_2_body">
+
+
+                            <!-- --- -->
+                            <!-- row -->
+                            <div class="row">
+                                <!-- col -->
+                                <div class="col-sm-12 table-responsive-sm">
+                                    <!-- table -->
+                                    <!-- class="table table-striped table-bordered dt-responsive nowrap" -->
+                                    <table id="tableId_1" class="table table-bordered" style="width:100%" width="100%" cellspacing="0" border="1" align="left">
+
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th scope="col">Operation</th>
+                                                <th scope="col">Defect Category</th>
+                                                <th scope="col">Defect</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableId_1_tbody">     
+                                            <!-- tr -->
+                                            <!-- /.tr -->                 
+                                        </tbody>
+
+                                    </table>
+                                    <!-- /.table -->
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- /.row -->
+                            <!-- --- -->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.card-group -->
+            <!-- ======================================================================================= -->
         </div>
         <!-- /.accordion -->
 
@@ -642,3 +698,31 @@
     });
 </script>
 @endpush
+
+<!-- ======================================================================================== -->
+@push('stack_script')
+<script>
+    $(function(){
+        "use strict";
+        console.log("______________________________________");
+        $(document).setMyStorageData("key1", "value1");
+        console.log($(document).getMyStorageData("key1"));
+        $(document).removeMyStorageData("key1");
+        console.log($(document).getMyStorageData("key1"));
+        
+        $(document).setMyStorageData("key2", ["asd", "fgh"]);
+        var test = $(document).getMyStorageData("key2");
+        console.log(test);
+        console.log(test[0]);
+        
+        $(document).removeMyStorageData(1, "key2");
+        var test_2 = $(document).getMyStorageData("key2");
+        console.log(test_2);
+        console.log(test_2[1]);
+        console.log(test_2[0]);
+        console.log(test_2);
+        console.log("______________________________________");
+    });
+</script>
+@endpush
+<!-- ======================================================================================== -->
