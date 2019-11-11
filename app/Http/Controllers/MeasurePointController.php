@@ -600,9 +600,13 @@ class MeasurePointController extends Controller
                     $query = $query->limit($length);
                 }
 
+                // group
+                //$query->groupBy('id');
+                
                 // order
                 //$query->orderBy('id', 'desc');
-                $query->orderBy('updated_at', 'desc');
+                //$query->orderBy('updated_at', 'desc');
+                $query->orderBy('code', 'asc');
 
                 // get data
                 $queryResult = $query->get();

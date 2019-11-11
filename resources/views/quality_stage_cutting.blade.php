@@ -165,27 +165,17 @@
                                             <!-- --- -->
                                             <div id="form1_hidden_input_group_child_3_1_1_1" class="d-flex flex-row align-items-start align-content-start align-content-lg-start flex-wrap">
                                                 <!-- -->
+                                                <!--
                                                 <div class="d-inline-flex align-self-start col col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-0">
                                                     <div class="col p-0">
                                                         <div class="btn-group btn-group-lg w-100 p-1">
                                                             <button type="submit" class="btn btn-primary btn-lg" id="submit">
-                                                                <span class="text-wrap text-break">ASD</span>
+                                                                <span class="text-wrap text-break">Button</span>
                                                             </button>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- -->
-
-                                                <!-- -->
-                                                <div class="d-inline-flex align-self-start col col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-0">
-                                                    <div class="col p-0">
-                                                        <div class="btn-group btn-group-lg w-100 p-1">
-                                                            <button type="submit" class="btn btn-primary btn-lg" id="submit">
-                                                                <span class="text-wrap text-break">ASD</span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                -->
                                                 <!-- -->
                                             </div>
                                             <!-- --- -->
@@ -234,27 +224,17 @@
                                             <!-- --- -->
                                             <div id="form1_hidden_input_group_child_3_1_2_1" class="d-flex flex-row align-items-start align-content-start align-content-lg-start flex-wrap">
                                                 <!-- -->
+                                                <!--
                                                 <div class="d-inline-flex align-self-start col col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-0">
                                                     <div class="col p-0">
                                                         <div class="btn-group btn-group-lg w-100 p-1">
                                                             <button type="submit" class="btn btn-primary btn-lg" id="submit">
-                                                                <span class="text-wrap text-break">ASD</span>
+                                                                <span class="text-wrap text-break">Button</span>
                                                             </button>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- -->
-
-                                                <!-- -->
-                                                <div class="d-inline-flex align-self-start col col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-0">
-                                                    <div class="col p-0">
-                                                        <div class="btn-group btn-group-lg w-100 p-1">
-                                                            <button type="submit" class="btn btn-primary btn-lg" id="submit">
-                                                                <span class="text-wrap text-break">ASD</span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                -->
                                                 <!-- -->
                                             </div>
                                             <!-- --- -->
@@ -326,27 +306,17 @@
                                             <!-- --- -->
                                             <div id="form1_hidden_input_group_child_3_2_1_1" class="d-flex flex-row align-items-start align-content-start align-content-lg-start flex-wrap">
                                                 <!-- -->
+                                                <!--
                                                 <div class="d-inline-flex align-self-start col col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-0">
                                                     <div class="col p-0">
                                                         <div class="btn-group btn-group-lg w-100 p-1">
                                                             <button type="submit" class="btn btn-primary btn-lg" id="submit">
-                                                                <span class="text-wrap text-break">ASD</span>
+                                                                <span class="text-wrap text-break">Button</span>
                                                             </button>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- -->
-
-                                                <!-- -->
-                                                <div class="d-inline-flex align-self-start col col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-0">
-                                                    <div class="col p-0">
-                                                        <div class="btn-group btn-group-lg w-100 p-1">
-                                                            <button type="submit" class="btn btn-primary btn-lg" id="submit">
-                                                                <span class="text-wrap text-break">ASD</span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                -->
                                                 <!-- -->
                                             </div>
                                             <!-- --- -->
@@ -395,27 +365,17 @@
                                             <!-- --- -->
                                             <div id="form1_hidden_input_group_child_3_2_2_1" class="d-flex flex-row align-items-start align-content-start align-content-lg-start flex-wrap">
                                                 <!-- -->
+                                                <!--
                                                 <div class="d-inline-flex align-self-start col col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-0">
                                                     <div class="col p-0">
                                                         <div class="btn-group btn-group-lg w-100 p-1">
                                                             <button type="submit" class="btn btn-primary btn-lg" id="submit">
-                                                                <span class="text-wrap text-break">ASD</span>
+                                                                <span class="text-wrap text-break">Button</span>
                                                             </button>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- -->
-
-                                                <!-- -->
-                                                <div class="d-inline-flex align-self-start col col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-0">
-                                                    <div class="col p-0">
-                                                        <div class="btn-group btn-group-lg w-100 p-1">
-                                                            <button type="submit" class="btn btn-primary btn-lg" id="submit">
-                                                                <span class="text-wrap text-break">ASD</span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                -->
                                                 <!-- -->
                                             </div>
                                             <!-- --- -->
@@ -487,27 +447,17 @@
                                             <!-- --- -->
                                             <div id="form1_hidden_input_group_child_3_3_1_1" class="d-flex flex-row align-items-start align-content-start align-content-lg-start flex-wrap">
                                                 <!-- -->
+                                                <!--
                                                 <div class="d-inline-flex align-self-start col col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-0">
                                                     <div class="col p-0">
                                                         <div class="btn-group btn-group-lg w-100 p-1">
                                                             <button type="submit" class="btn btn-primary btn-lg" id="submit">
-                                                                <span class="text-wrap text-break">ASD</span>
+                                                                <span class="text-wrap text-break">Button</span>
                                                             </button>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- -->
-
-                                                <!-- -->
-                                                <div class="d-inline-flex align-self-start col col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-0">
-                                                    <div class="col p-0">
-                                                        <div class="btn-group btn-group-lg w-100 p-1">
-                                                            <button type="submit" class="btn btn-primary btn-lg" id="submit">
-                                                                <span class="text-wrap text-break">ASD</span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                -->
                                                 <!-- -->
                                             </div>
                                             <!-- --- -->
@@ -556,27 +506,17 @@
                                             <!-- --- -->
                                             <div id="form1_hidden_input_group_child_3_3_2_1" class="d-flex flex-row align-items-start align-content-start align-content-lg-start flex-wrap">
                                                 <!-- -->
+                                                <!--
                                                 <div class="d-inline-flex align-self-start col col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-0">
                                                     <div class="col p-0">
                                                         <div class="btn-group btn-group-lg w-100 p-1">
                                                             <button type="submit" class="btn btn-primary btn-lg" id="submit">
-                                                                <span class="text-wrap text-break">ASD</span>
+                                                                <span class="text-wrap text-break">Button</span>
                                                             </button>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- -->
-
-                                                <!-- -->
-                                                <div class="d-inline-flex align-self-start col col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-0">
-                                                    <div class="col p-0">
-                                                        <div class="btn-group btn-group-lg w-100 p-1">
-                                                            <button type="submit" class="btn btn-primary btn-lg" id="submit">
-                                                                <span class="text-wrap text-break">ASD</span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                -->
                                                 <!-- -->
                                             </div>
                                             <!-- --- -->
@@ -661,7 +601,9 @@
 
 @section('section_script_document')
     @parent
-    @includeIf('partials.script.select_defect', array());
+    @includeIf('partials.script.dynamic_measure_point', array());
+    @includeIf('partials.script.dynamic_defect_category', array());
+    @includeIf('partials.script.dynamic_defect', array());
 @endsection
 
 @push('stack_script')

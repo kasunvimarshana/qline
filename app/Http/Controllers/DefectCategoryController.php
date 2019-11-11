@@ -599,10 +599,14 @@ class DefectCategoryController extends Controller
                 }else if( $length > 0 ){
                     $query = $query->limit($length);
                 }
-
+                
+                // group
+                //$query->groupBy('id');
+                
                 // order
                 //$query->orderBy('id', 'desc');
-                $query->orderBy('updated_at', 'desc');
+                //$query->orderBy('updated_at', 'desc');
+                $query->orderBy('code', 'asc');
 
                 // get data
                 $queryResult = $query->get();
@@ -629,7 +633,7 @@ class DefectCategoryController extends Controller
                 // Commit transaction!
                 //DB::commit();
                 //return Response::json( $data );
-            }catch(Exception $e){
+            }catch(Exception $e){dd($e);
                 // Rollback transaction!
                 //DB::rollback(); 
                 //return redirect()->back()->withInput();
