@@ -109,40 +109,33 @@ $(function(){
     })
     */
     
-    function createInputElement(data){
+    function createInputElement_1(data){
         //console.log( data );
         var id_prefix = optionData.id_prefix;
-        var id_prefix_input = id_prefix + "_input_";
+        var id_prefix_input = id_prefix + "_temp_input_";
         var temp_form_hidden_input_group_1 = form_hidden_input_group_1;
         var temp_form_hidden_input_group_2 = form_hidden_input_group_2;
         var temp_form_hidden_input_group_3 = form_hidden_input_group_3;
         var temp_activity_index_array = activity_index_array;
         
         deleteInputScanDataElement( data );
-        
-        var input_temp = $("<input/>");
-        input_temp.attr("id", (id_prefix_input + data.id));
-        input_temp.attr("name", (id_prefix + "[]"));
-        input_temp.attr("value", (data.id));
-        input_temp.attr("required", ("required"));
-        input_temp.attr("readonly", ("readonly"));
-        input_temp.data("id", data.id);
-        input_temp.addClass( id_prefix );
         //temp_form_hidden_input_group_1.append(input_temp);
 
         if( ((temp_activity_index_array[0].localeCompare(data.activity_index)) == 0) ){
             //
         }else if( ((temp_activity_index_array[1].localeCompare(data.activity_index)) == 0) ){
-                 
+            //     
         }else if( ((temp_activity_index_array[2].localeCompare(data.activity_index)) == 0) ){
-            
+            //
         }
+        
+        //$(selector).append( content, function(index, html) )
     }
     
-    function deleteInputElement(data){
+    function deleteInputElement_1(data){
         //console.log( data );
         var id_prefix = optionData.id_prefix;
-        var id_prefix_input = id_prefix + "_input_";
+        var id_prefix_input = id_prefix + "_temp_input_";
         var temp_form_hidden_input_group_1 = form_hidden_input_group_1;
         var temp_form_hidden_input_group_2 = form_hidden_input_group_2;
         var temp_form_hidden_input_group_3 = form_hidden_input_group_3;
@@ -219,9 +212,27 @@ $(function(){
                     }
                     button_1.css({"background-color": colour_code});
                     
+                    //$(selector).attr({attribute:value, attribute:value});
+                    button_1.attr("is_selected", function(index, currentvalue){
+                        //console.log( index );
+                        //console.log( currentvalue );
+                        return false;
+                    });
+                    
                     button_1.off("click").on("click", function(event){
                         event.preventDefault();
                         //event.stopPropagation();
+                        var is_selected = null;
+                        is_selected = button_1.attr("is_selected");
+                        
+                        var tempData = new Object();
+                        tempData.id = value.id;
+                        
+                        if( (is_selected != void(0)) && (is_selected == true) ){
+                           createInputElement_1();
+                        }else{
+                           deleteInputElement_1(); 
+                        }
                     });
                     
                     button_1.append(span_1);
