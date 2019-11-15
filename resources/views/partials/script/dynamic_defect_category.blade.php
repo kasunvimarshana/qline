@@ -7,9 +7,9 @@ $(function(){
     optionData.id = "#id";
     optionData.id_prefix = "defect_category_element_id";
     
-    var form_hidden_input_group_1 = $("#form1_hidden_input_group");
-    var form_hidden_input_group_2 = $("#form1_hidden_input_group_child_3_2_1_1");
-    var form_hidden_input_group_3 = $("#form1_hidden_input_group_child_3_2_2_1");
+    var form_hidden_input_group_0 = $("#form1_hidden_input_group");
+    var form_hidden_input_group_1 = $("#form1_hidden_input_group_child_3_2_1_1");
+    var form_hidden_input_group_2 = $("#form1_hidden_input_group_child_3_2_2_1");
     
     var activity_index_array = new Array("1", "2", "3");
     
@@ -19,9 +19,9 @@ $(function(){
     }
     */
     
+    var form_hidden_input_group_0_element = new Array();
     var form_hidden_input_group_1_element = new Array();
     var form_hidden_input_group_2_element = new Array();
-    var form_hidden_input_group_3_element = new Array();
     var element_value_temp = [];
     
     /*
@@ -109,53 +109,56 @@ $(function(){
     })
     */
     
-    function createInputElement(data){
-        //console.log( data );
-        var id_prefix = optionData.id_prefix;
-        var id_prefix_input = id_prefix + "_input_";
-        var temp_form_hidden_input_group_1 = form_hidden_input_group_1;
-        var temp_form_hidden_input_group_2 = form_hidden_input_group_2;
-        var temp_form_hidden_input_group_3 = form_hidden_input_group_3;
-        var temp_activity_index_array = activity_index_array;
-        
-        deleteInputScanDataElement( data );
-        
-        var input_temp = $("<input/>");
-        input_temp.attr("id", (id_prefix_input + data.id));
-        input_temp.attr("name", (id_prefix + "[]"));
-        input_temp.attr("value", (data.id));
-        input_temp.attr("required", ("required"));
-        input_temp.attr("readonly", ("readonly"));
-        input_temp.data("id", data.id);
-        input_temp.addClass( id_prefix );
-        //temp_form_hidden_input_group_1.append(input_temp);
-
-        if( ((temp_activity_index_array[0].localeCompare(data.activity_index)) == 0) ){
-            //
-        }else if( ((temp_activity_index_array[1].localeCompare(data.activity_index)) == 0) ){
-                 
-        }else if( ((temp_activity_index_array[2].localeCompare(data.activity_index)) == 0) ){
-            
+    function remove_array_element(array, n){
+        var index = array.indexOf(n);
+            if (index > -1) {
+            array.splice(index, 1);
         }
+        return array;
     }
     
-    function deleteInputElement(data){
+    function createInputElement_1(data){
         //console.log( data );
         var id_prefix = optionData.id_prefix;
-        var id_prefix_input = id_prefix + "_input_";
+        var id_prefix_temp = (id_prefix + "_temp_");
+        var temp_form_hidden_input_group_0 = form_hidden_input_group_0;
         var temp_form_hidden_input_group_1 = form_hidden_input_group_1;
         var temp_form_hidden_input_group_2 = form_hidden_input_group_2;
-        var temp_form_hidden_input_group_3 = form_hidden_input_group_3;
         var temp_activity_index_array = activity_index_array;
         
-        if( ((temp_activity_index_array[0].localeCompare(data.activity_index)) == 0) ){
-            temp_form_hidden_input_group_1.find( ("#" + id_prefix_input + data.id) ).remove();
-        }else if( ((temp_activity_index_array[1].localeCompare(data.activity_index)) == 0) ){
-            temp_form_hidden_input_group_2.find( ("#" + id_prefix + data.id) ).remove();
-        }else if( ((temp_activity_index_array[2].localeCompare(data.activity_index)) == 0) ){
-            temp_form_hidden_input_group_3.find( ("#" + id_prefix + data.id) ).remove();
+        var temp_id = (id_prefix_temp + data.id);
+        var temp_parent_elemrnt_id = ("#" + temp_id);
+        var temp_parent_elemrnt = $( temp_parent_elemrnt_id );
+        
+        var temporaryDataArray = new Array();
+        temporaryDataArray = $(document).getMyStorageData( id_prefix );
+        temporaryDataArray = (temporaryDataArray) ? temporaryDataArray : new Array();
+        if( (!Array.isArray(temporaryDataArray)) ){
+            temporaryDataArray = new Array();
         }
-        //temp_form_hidden_input_group_1.find( ("#" + id_prefix_input + data.id) ).remove();
+        
+        /* --- */
+        var temporaryDataArrayFiltered = temporaryDataArray.filter(function(element, index, filterArray, optionalData){
+            return element != data.id;
+        });
+
+        temporaryDataArray = temporaryDataArrayFiltered;
+        /* --- */
+        
+        if( ((temp_activity_index_array[0].localeCompare(data.activity_index)) == 0) ){
+            //
+            temp_parent_elemrnt.detach().appendTo( temp_form_hidden_input_group_1 );
+            //$(document).setMyStorageData(id_prefix, temporaryDataArray);
+        }else if( ((temp_activity_index_array[1].localeCompare(data.activity_index)) == 0) ){
+            // 
+            temp_parent_elemrnt.detach().appendTo( temp_form_hidden_input_group_2 );
+            temporaryDataArray.push( data.id );
+            //$(document).setMyStorageData(id_prefix, temporaryDataArray);
+        }else if( ((temp_activity_index_array[2].localeCompare(data.activity_index)) == 0) ){
+            //
+        }
+        $(document).setMyStorageData(id_prefix, temporaryDataArray);
+        //element.find( ("#" + id_prefix_input + data.id) ).remove();
     }
     
     var request = $.ajax({
@@ -187,6 +190,12 @@ $(function(){
             //console.log("done");
             //console.log(data);
             var id_prefix = optionData.id_prefix;
+            var id_prefix_temp = (id_prefix + "_temp_");
+            var temp_form_hidden_input_group_0 = form_hidden_input_group_0;
+            var temp_form_hidden_input_group_1 = form_hidden_input_group_1;
+            var temp_form_hidden_input_group_2 = form_hidden_input_group_2;
+            var temp_activity_index_array = activity_index_array;
+            
             var data_data = data.data;
             
             if( (data_data == void(0)) || (data_data.length <= 0) ){
@@ -202,6 +211,9 @@ $(function(){
                     var span_1 = $("<span></span>");
                     var colour_code = null;
                     
+                    var temp_id = (id_prefix_temp + value.id);
+                    
+                    div_1.attr("id", temp_id);
                     div_1.addClass("d-inline-flex align-self-start col col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-0");
                     div_2.addClass("col p-0");
                     div_3.addClass("btn-group btn-group-lg w-100 p-1");
@@ -219,66 +231,42 @@ $(function(){
                     }
                     button_1.css({"background-color": colour_code});
                     
+                    //$(selector).attr({attribute:value, attribute:value});
+                    button_1.data("is_selected", false);
+                    
+                    button_1.attr("value", function(index, currentvalue){
+                        return value.id;
+                    });
+                    
                     button_1.off("click").on("click", function(event){
                         event.preventDefault();
                         //event.stopPropagation();
+                        button_1.attr("disabled", true);
+                        //var temp_activity_index_array = activity_index_array;
+                        var is_selected = null;
+                        is_selected = button_1.data("is_selected");
+                        var tempData = new Object();
+                        tempData.id = value.id;
+                        //tempData.temp_id = temp_id;
+                        //tempData.temp_parent_elemrnt = div_1;
+                        
+                        if( (is_selected != void(0)) && (is_selected == true) ){
+                           button_1.data("is_selected", false);
+                           tempData.activity_index = temp_activity_index_array[0];
+                           createInputElement_1( tempData );
+                        }else{
+                           button_1.data("is_selected", true);
+                           tempData.activity_index = temp_activity_index_array[1];
+                           createInputElement_1( tempData );
+                        }
+                        button_1.attr("disabled", false);
                     });
                     
                     button_1.append(span_1);
                     div_3.append(button_1);
                     div_2.append(div_3);
                     div_1.append(div_2);
-                    form_hidden_input_group_2.append(div_1);
-                    
-                    ////////////////////////////////////////////////////////////////////////////////////////////
-                    /*var input_quality_record_input_scan_data = form1_hidden_input_group.find( ("." + id_quality_record_input_scan_data_prefix) );
-            if( (input_quality_record_input_scan_data.length <= 0) ){
-                count_data.text( count_data_sum );
-                quantity_inspect.val( count_data_sum );
-            }else{
-                input_quality_record_input_scan_data.each(function( index, value ){
-                    var count_data_temp = $(value).data("count_data");
-                    count_data_temp = parseFloat(count_data_temp);
-                    count_data_sum = (count_data_sum + count_data_temp);
-                    count_data.text( count_data_sum );
-                    quantity_inspect.val( count_data_sum );
-                });
-            }
-                    
-                    if( (count_defect_value > standardDataSewingAuditObject.count_accept) ){
-                submit_pass.addClass("d-none");
-            }else{
-                submit_pass.removeClass("d-none");
-            }*/
-                    ////////////////////////////////////////////////////////////////////////////////////////////
-                    ////////////////////////////////////////////////////////////////////////////////////////////
-                    /*
-                    function createInputScanDataElement( data ){
-            //console.log( data );
-            var id_quality_record_input_scan_data_prefix = "quality_record_input_scan_data_id_array";
-            var form1_hidden_input_group = $("#form1_hidden_input_group");
-            deleteInputScanDataElement( data );
-            
-            var input_temp = $("<input/>");
-            input_temp.attr("id", (id_quality_record_input_scan_data_prefix + data.quality_record_input_scan_data_id));
-            input_temp.attr("name", (id_quality_record_input_scan_data_prefix + "[]"));
-            input_temp.attr("value", (data.quality_record_input_scan_data_id));
-            input_temp.attr("required", ("required"));
-            input_temp.attr("readonly", ("readonly"));
-            input_temp.data("count_data", data.count_data);
-            input_temp.addClass( id_quality_record_input_scan_data_prefix );
-            form1_hidden_input_group.append(input_temp);
-            setQualityRecordInputScanDataValues( data );
-        }
-function deleteInputScanDataElement( data ){
-            //console.log( data );
-            var id_quality_record_input_scan_data_prefix = "quality_record_input_scan_data_id_array";
-            var form1_hidden_input_group = $("#form1_hidden_input_group");
-            form1_hidden_input_group.find( ("#" + id_quality_record_input_scan_data_prefix + data.quality_record_input_scan_data_id) ).remove();
-            setQualityRecordInputScanDataValues( data );
-        }
-        */
-                    ////////////////////////////////////////////////////////////////////////////////////////////
+                    temp_form_hidden_input_group_1.append(div_1);
                 });
             }
         });

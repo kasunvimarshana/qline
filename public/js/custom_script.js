@@ -138,7 +138,7 @@
             if( (key_1 != null) && (key_1 != void(0)) ){
                 //console.log( Object.keys(existing) );
                 delete existing[key_1];
-                var existingFiltered = existing.filter(function(element, index, filterObj, optionalData){
+                var existingFiltered = existing.filter(function(element, index, filterArray, optionalData){
                     return index != key_1;
                 });
                 key_1 = null;

@@ -128,3 +128,9 @@ table.dataTable tbody td{
     }
 }
 */
+
+/* element max-height */
+.element-max-height-1{
+    max-height: 60vh !important; /*1em*/
+    overflow-y: scroll !important;
+}
