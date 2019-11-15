@@ -211,7 +211,7 @@
                                 </div>
 
                                 <div class="col mb-0 text-right m-0 p-0">
-                                    <button class="btn btn-default btn-success text-white" role="button" type="button">
+                                    <button class="btn btn-default btn-success text-white" role="button" type="button" id="button_id_1_2_3_1_1">
                                     <i class="fa fa-plus fa-fw"></i>
                                     <span class="text-decoration-none text-justify small"> Add</span>
                                     </button>
@@ -363,7 +363,7 @@
                                 </div>
 
                                 <div class="col mb-0 text-right m-0 p-0">
-                                    <button class="btn btn-default btn-success text-white" role="button" type="button">
+                                    <button class="btn btn-default btn-success text-white" role="button" type="button" id="button_id_1_2_3_2_1">
                                     <i class="fa fa-plus fa-fw"></i>
                                     <span class="text-decoration-none text-justify small"> Add</span>
                                     </button>
@@ -515,7 +515,7 @@
                                 </div>
 
                                 <div class="col mb-0 text-right m-0 p-0">
-                                    <button class="btn btn-default btn-success text-white" role="button" type="button">
+                                    <button class="btn btn-default btn-success text-white" role="button" type="button" id="button_id_1_2_3_3_1">
                                     <i class="fa fa-plus fa-fw"></i>
                                     <span class="text-decoration-none text-justify small"> Add</span>
                                     </button>
@@ -631,10 +631,17 @@
                 <div class="card bg-secondary border-light">
                     <div class="card-header" id="idCard_accordion_1_content_3">
                         <div class="row">
-                            <div class="col mb-0 text-left m-0 p-0">
+                            <div class="col col-1 mb-0 text-left m-0 p-0">
                                 <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse_accordion_1_content_3" aria-expanded="false" aria-controls="idCollapse_accordion_1_content_2" role="button" type="button">
                                 <i class="fab fa-buromobelexperte fa-fw"></i>
                                 <span class="text-decoration-none text-justify small"> List</span>
+                                </button>
+                            </div>
+                            
+                            <div class="col col-11 mb-0 text-right m-0 p-0">
+                                <button class="btn btn-default btn-primary text-white btn-block" role="button" type="button" id="button_id_1_3_0_0_1">
+                                <!-- i class="fa fa-fw"></i -->
+                                <span class="text-decoration-none text-justify small"> SUBMIT </span>
                                 </button>
                             </div>
                         </div>
@@ -757,6 +764,82 @@
         console.log(test_2[0]);
         console.log(test_2);
         console.log("______________________________________");*/
+    });
+</script>
+@endpush
+<!-- ======================================================================================== -->
+
+<!-- ======================================================================================== -->
+@push('stack_script')
+<script>
+    $(function(){
+        "use strict";
+        var id_nav_link_3_1 = $("#id_nav_link_3_1");
+        var id_nav_link_3_2 = $("#id_nav_link_3_2");
+        var id_nav_link_3_3 = $("#id_nav_link_3_3");
+        var button_id_1_2_3_1_1 = $("#button_id_1_2_3_1_1");
+        var button_id_1_2_3_2_1 = $("#button_id_1_2_3_2_1");
+        var button_id_1_2_3_3_1 = $("#button_id_1_2_3_3_1");
+        var button_id_1_3_0_0_1 = $("#button_id_1_3_0_0_1");
+        //$('#myTab a[href="#profile"]').tab('show');
+        /*
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            console.log(e.target); // newly activated tab
+            console.log(e.relatedTarget); // previous active tab
+        });
+        */
+        var id_prefix_measure_point = "measure_point_element_id";
+        var id_prefix_defect_category = "defect_category_element_id";
+        var id_prefix_defect = "defect_element_id";
+        var id_prefix_temp_measure_point = (id_prefix_measure_point + "_temp_");
+        var id_prefix_temp_defect_category = (id_prefix_defect_category + "_temp_");
+        var id_prefix_temp_defect = (id_prefix_defect + "_temp_");
+
+        var form_hidden_input_group_0 = $("#form1_hidden_input_group");
+        
+        var temporaryDataArrayMeasurePoint = new Array();
+        var temporaryDataArrayDefectCategory = new Array();
+        var temporaryDataArrayDefect = new Array();
+        
+        temporaryDataArrayMeasurePoint = $(document).getMyStorageData( id_prefix_measure_point );
+        temporaryDataArrayDefectCategory = $(document).getMyStorageData( id_prefix_defect_category );
+        temporaryDataArrayDefect = $(document).getMyStorageData( id_prefix_defect );
+        temporaryDataArrayMeasurePoint = (temporaryDataArrayMeasurePoint) ? temporaryDataArrayMeasurePoint : new Array();
+        temporaryDataArrayDefectCategory = (temporaryDataArrayDefectCategory) ? temporaryDataArrayDefectCategory : new Array();
+        temporaryDataArrayDefect = (temporaryDataArrayDefect) ? temporaryDataArrayDefect : new Array();
+        if( (!Array.isArray(temporaryDataArrayMeasurePoint)) ){
+            temporaryDataArrayMeasurePoint = new Array();
+        }
+        if( (!Array.isArray(temporaryDataArrayDefectCategory)) ){
+            temporaryDataArrayDefectCategory = new Array();
+        }
+        if( (!Array.isArray(temporaryDataArrayDefect)) ){
+            temporaryDataArrayDefect = new Array();
+        }
+        
+        button_id_1_2_3_1_1.off("click").on("click", function(event){
+            event.preventDefault();
+            //event.stopPropagation();
+            id_nav_link_3_2.tab("show");
+        });
+        
+        button_id_1_2_3_2_1.off("click").on("click", function(event){
+            event.preventDefault();
+            //event.stopPropagation();
+            id_nav_link_3_3.tab("show");
+        });
+        
+        button_id_1_2_3_3_1.off("click").on("click", function(event){
+            event.preventDefault();
+            //event.stopPropagation();
+            id_nav_link_3_1.tab("show");
+        });
+        
+        button_id_1_3_0_0_1.off("click").on("click", function(event){
+            event.preventDefault();
+            //event.stopPropagation();
+            //button_id_1_2_3_3_1.trigger("click");
+        });
     });
 </script>
 @endpush
