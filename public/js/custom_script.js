@@ -151,3 +151,9 @@
         }
     };
 })(jQuery);
+
+$(function(){
+    "use strict";
+    var myStorageObject = window.sessionStorage;
+    myStorageObject.clear();
+});

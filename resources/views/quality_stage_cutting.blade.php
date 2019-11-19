@@ -746,34 +746,7 @@
 <script>
     $(function(){
         "use strict";
-        /*console.log("______________________________________");
-        $(document).setMyStorageData("key1", "value1");
-        console.log($(document).getMyStorageData("key1"));
-        $(document).removeMyStorageData("key1");
-        console.log($(document).getMyStorageData("key1"));
-        
-        $(document).setMyStorageData("key2", ["asd", "fgh"]);
-        var test = $(document).getMyStorageData("key2");
-        console.log(test);
-        console.log(test[0]);
-        
-        $(document).removeMyStorageData(1, "key2");
-        var test_2 = $(document).getMyStorageData("key2");
-        console.log(test_2);
-        console.log(test_2[1]);
-        console.log(test_2[0]);
-        console.log(test_2);
-        console.log("______________________________________");*/
-    });
-</script>
-@endpush
-<!-- ======================================================================================== -->
-
-<!-- ======================================================================================== -->
-@push('stack_script')
-<script>
-    $(function(){
-        "use strict";
+        var myStorageObject = window.sessionStorage;
         var id_nav_link_3_1 = $("#id_nav_link_3_1");
         var id_nav_link_3_2 = $("#id_nav_link_3_2");
         var id_nav_link_3_3 = $("#id_nav_link_3_3");
@@ -801,6 +774,10 @@
         var temporaryDataArrayDefectCategory = new Array();
         var temporaryDataArrayDefect = new Array();
         
+        var form_hidden_input_group_2_measure_point = $("#form1_hidden_input_group_child_3_1_2_1");
+        var form_hidden_input_group_2_defect_category = $("#form1_hidden_input_group_child_3_2_2_1");
+        var form_hidden_input_group_2_defect = $("#form1_hidden_input_group_child_3_3_2_1");
+        /*
         temporaryDataArrayMeasurePoint = $(document).getMyStorageData( id_prefix_measure_point );
         temporaryDataArrayDefectCategory = $(document).getMyStorageData( id_prefix_defect_category );
         temporaryDataArrayDefect = $(document).getMyStorageData( id_prefix_defect );
@@ -816,6 +793,15 @@
         if( (!Array.isArray(temporaryDataArrayDefect)) ){
             temporaryDataArrayDefect = new Array();
         }
+        */
+        id_nav_link_3_3.on('shown.bs.tab', function (e) {
+            //console.log(e.target); // newly activated tab
+            //console.log(e.relatedTarget); // previous active tab
+            var ajaxRequest_ = window.ajaxRequest_Defect;
+            if( (ajaxRequest_) ){
+                ajaxRequest_();
+            }
+        });
         
         button_id_1_2_3_1_1.off("click").on("click", function(event){
             event.preventDefault();
@@ -832,13 +818,265 @@
         button_id_1_2_3_3_1.off("click").on("click", function(event){
             event.preventDefault();
             //event.stopPropagation();
-            id_nav_link_3_1.tab("show");
+            //id_nav_link_3_1.tab("show");
+            var id_temp = null;
+            var id_defect_id_prefix = "defect_id_array";
+            var id_measure_point_id_prefix = "measure_point_id_array";
+            var id_tr_prefix = "tr";
+            var tableId_1_tbody = $("#tableId_1_tbody");
+            var measure_point_id_value = null;
+            var defect_category_id_value = null;
+            var defect_id_value = null;
+            
+            var form_hidden_input_group_0 = $("#form1_hidden_input_group");
+            
+            try{
+                button_id_1_2_3_3_1.attr("disabled", true);
+                temporaryDataArrayMeasurePoint = $(document).getMyStorageData( id_prefix_measure_point );
+                temporaryDataArrayDefectCategory = $(document).getMyStorageData( id_prefix_defect_category );
+                temporaryDataArrayDefect = $(document).getMyStorageData( id_prefix_defect );
+                temporaryDataArrayMeasurePoint = (temporaryDataArrayMeasurePoint) ? temporaryDataArrayMeasurePoint : new Array();
+                temporaryDataArrayDefectCategory = (temporaryDataArrayDefectCategory) ? temporaryDataArrayDefectCategory : new Array();
+                temporaryDataArrayDefect = (temporaryDataArrayDefect) ? temporaryDataArrayDefect : new Array();
+                if( (!Array.isArray(temporaryDataArrayMeasurePoint)) ){
+                    temporaryDataArrayMeasurePoint = new Array();
+                }
+                if( (!Array.isArray(temporaryDataArrayDefectCategory)) ){
+                    temporaryDataArrayDefectCategory = new Array();
+                }
+                if( (!Array.isArray(temporaryDataArrayDefect)) ){
+                    temporaryDataArrayDefect = new Array();
+                }
+                /*
+                measure_point_id_value = $.makeArray( measure_point_id_value );
+                defect_category_id_value = $.makeArray( defect_category_id_value );
+                defect_id_value = $.makeArray( defect_id_value );
+                */
+                measure_point_id_value = temporaryDataArrayMeasurePoint.shift();
+                defect_category_id_value = temporaryDataArrayDefectCategory;
+                defect_id_value = temporaryDataArrayDefect;
+                
+                if( (typeof measure_point_id_value === "undefined") || 
+                    (measure_point_id_value === void(0)) || 
+                    (measure_point_id_value == "") || 
+                    (measure_point_id_value == null) ){
+                    //console.log(measure_point_id_value);
+                    throw "error";
+                    //return false;
+                }else if( (typeof defect_id_value === "undefined") || 
+                    (defect_id_value === void(0)) || 
+                    (defect_id_value == "") || 
+                    (defect_id_value == null) ){
+                    //console.log(defect_id_value);
+                    throw "error";
+                    //return false;
+                }else{
+                    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    id_temp = (Date.now() + "_" + (Math.floor(Math.random() * 26) + Date.now()));
+                    $.each(defect_id_value, function( index, value ) {
+                        //console.log(index);
+                        //console.log(value);
+                        var input_temp = $("<input/>");
+                        input_temp.attr("id", (id_defect_id_prefix + id_temp));
+                        input_temp.attr("name", (id_defect_id_prefix + "[]"));
+                        input_temp.attr("value", (value));
+                        input_temp.attr("required", ("required"));
+                        input_temp.attr("readonly", ("readonly"));
+                        input_temp.addClass( id_defect_id_prefix );
+                        form_hidden_input_group_0.append(input_temp);
+                        
+                        var input_temp = $("<input/>");
+                        input_temp.attr("id", (id_measure_point_id_prefix + id_temp));
+                        input_temp.attr("name", (id_measure_point_id_prefix + "[]"));
+                        input_temp.attr("value", (measure_point_id_value));
+                        input_temp.attr("required", ("required"));
+                        input_temp.attr("readonly", ("readonly"));
+                        input_temp.addClass( id_measure_point_id_prefix );
+                        form_hidden_input_group_0.append(input_temp);
+                        //input_temp = null;
+                        var tr_temp = $("<tr></tr>");
+                        var td_temp = $("<td></td>");
+                        
+                        var measure_point_id_data_temp = form_hidden_input_group_2_measure_point.data("element_data");
+                        var defect_category_id_data_temp = form_hidden_input_group_2_defect_category.data("element_data");
+                        var defect_id_data_temp = form_hidden_input_group_2_defect.data("element_data");
+                        
+                        measure_point_id_data_temp = $.makeArray(measure_point_id_data_temp);
+                        defect_category_id_data_temp = $.makeArray(defect_category_id_data_temp);
+                        defect_id_data_temp = $.makeArray(defect_id_data_temp);
+                        
+                        $.each(measure_point_id_data_temp, function( k, v ){
+                            //console.log(k);
+                            //console.log(v);
+                            if( ((measure_point_id_value.localeCompare(v.id)) == 0) ){
+                                td_temp = $("<td></td>");
+                                td_temp.html(v.name);
+                                tr_temp.append(td_temp);
+                            }
+                        });
+                        $.each(defect_id_data_temp, function( k, v ){
+                            //console.log(k);
+                            //console.log(v);
+                            if( ((value.localeCompare(v.id)) == 0) ){
+                                td_temp = $("<td></td>");
+                                if( (v) ){
+                                    var data = v;
+                                    if( (data.defect_category) ){
+                                        var defect_category = data.defect_category;
+                                        td_temp.html(defect_category.name);
+                                    }
+                                }
+                                tr_temp.append(td_temp);
+                                
+                                td_temp = $("<td></td>");
+                                td_temp.html(v.name);
+                                tr_temp.append(td_temp);
+                            }
+                        });
+                        
+                        td_temp = $("<td></td>");
+                        td_temp.addClass("text-center");
+                        var btn_group_1 = $("<div></div>");
+                        btn_group_1.addClass("btn-group");
+                        btn_group_1.attr("role", "group");
+                        btn_group_1.attr("aria-label", "button group");
+                        btn_group_1.attr("tabindex", "-1");
+                        
+                        var btn_group_2 = $("<div></div>");
+                        btn_group_2.addClass("btn-group");
+                        btn_group_2.attr("role", "group");
+                        
+                        var button_1 = $("<button></button>");
+                        button_1.addClass("btn btn-outline-primary");
+                        button_1.attr("type", "button");
+                        button_1.attr("role", "button");
+                        button_1.attr("data-toggle", "dropdown");
+                        button_1.attr("aria-haspopup", "true");
+                        button_1.attr("aria-expanded", "false");
+                        button_1.attr("id", ("btn" + id_temp));
+                        
+                        var i_1 = $("<i></i>");
+                        i_1.addClass("fas fa-cogs fa-fw");
+                        i_1.attr("aria-hidden", "true");
+                        
+                        var span_1 = $("<span></span>");
+                        span_1.addClass("sr-only");
+                        span_1.text("Toggle Dropdown");
+                        
+                        button_1.append(i_1);
+                        button_1.append(span_1);
+                        
+                        var drop_down_menu_1 = $("<div></div>");
+                        drop_down_menu_1.addClass("dropdown-menu text-wrap text-break bg-light border-light");
+                        drop_down_menu_1.attr("aria-labelledby", ("btn" + id_temp));
+                        
+                        var drop_down_item_1 = $("<div></div>");
+                        drop_down_item_1.addClass("dropdown-item btn-group  pl-1 pr-1 m-0");
+                        drop_down_item_1.attr("role", "group");
+                        drop_down_item_1.attr("aria-label", "Button Group");
+                        
+                        var button_2 = $("<button></button>");
+                        button_2.addClass("btn btn-outline-primary btn-block waves-effect");
+                        button_2.attr("type", "button");
+                        button_2.attr("role", "button");
+                        
+                        button_2.off("click").on("click", function(e){
+                            e.preventDefault();
+                            //e.stopPropagation();
+                            var parent_tr = button_2.closest("tr");
+                            var control_input_id = parent_tr.data("control_input_id");
+                            form_hidden_input_group_0.find( ("#" + id_defect_id_prefix + control_input_id) ).remove();
+                            form_hidden_input_group_0.find( ("#" + id_measure_point_id_prefix + control_input_id) ).remove();
+                            parent_tr.remove();
+                            /*
+                            var count_defect_value = form1_hidden_input_group.find( ("." + id_defect_id_prefix) ).length;
+                            $("#id").val(function(index, currentvalue){
+                                return count_defect_value;
+                            });
+                            */
+                        });
+                        
+                        var i_2 = $("<i></i>");
+                        i_2.addClass("far fa-trash-alt fa-fw");
+                        i_2.attr("aria-hidden", "true");
+                        
+                        var span_2 = $("<span></span>");
+                        span_2.addClass("sr-only");
+                        span_2.text("Action");
+                        
+                        button_2.append(i_2);
+                        button_2.append(span_2);
+                        
+                        drop_down_item_1.append(button_2);
+                        drop_down_menu_1.append(drop_down_item_1);
+                        btn_group_2.append(drop_down_menu_1);
+                        btn_group_2.append(button_1);
+                        btn_group_1.append(btn_group_2);
+                        td_temp.append(btn_group_1);
+                        tr_temp.append(td_temp);
+                        
+                        tr_temp.data("control_input_id", id_temp);
+                        tableId_1_tbody.append(tr_temp);
+                    });
+                   
+                    form_hidden_input_group_2_measure_point.empty();
+                    form_hidden_input_group_2_defect_category.empty();
+                    form_hidden_input_group_2_defect.empty();
+                   
+                    var ajaxRequest_ = window.ajaxRequest_MeasurePoint;
+                    if( (ajaxRequest_) ){
+                        ajaxRequest_();
+                    }
+                    var ajaxRequest_ = window.ajaxRequest_DefectCategory;
+                    if( (ajaxRequest_) ){
+                        ajaxRequest_();
+                    }
+                    var ajaxRequest_ = window.ajaxRequest_Defect;
+                    if( (ajaxRequest_) ){
+                        ajaxRequest_();
+                    }
+                    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                }
+
+                $(document).removeMyStorageData( id_prefix_measure_point );
+                $(document).removeMyStorageData( id_prefix_defect_category );
+                $(document).removeMyStorageData( id_prefix_defect );
+                myStorageObject.clear();
+                id_nav_link_3_1.tab("show");
+            }catch(error){
+                //console.log("error");
+                //console.log(error);
+            }finally{
+                //console.log("finally");
+                button_id_1_2_3_3_1.attr("disabled", false);
+            }
         });
         
         button_id_1_3_0_0_1.off("click").on("click", function(event){
             event.preventDefault();
             //event.stopPropagation();
             //button_id_1_2_3_3_1.trigger("click");
+            /*
+            temporaryDataArrayMeasurePoint = $(document).getMyStorageData( id_prefix_measure_point );
+            temporaryDataArrayDefectCategory = $(document).getMyStorageData( id_prefix_defect_category );
+            temporaryDataArrayDefect = $(document).getMyStorageData( id_prefix_defect );
+            temporaryDataArrayMeasurePoint = (temporaryDataArrayMeasurePoint) ? temporaryDataArrayMeasurePoint : new Array();
+            temporaryDataArrayDefectCategory = (temporaryDataArrayDefectCategory) ? temporaryDataArrayDefectCategory : new Array();
+            temporaryDataArrayDefect = (temporaryDataArrayDefect) ? temporaryDataArrayDefect : new Array();
+            if( (!Array.isArray(temporaryDataArrayMeasurePoint)) ){
+                temporaryDataArrayMeasurePoint = new Array();
+            }
+            if( (!Array.isArray(temporaryDataArrayDefectCategory)) ){
+                temporaryDataArrayDefectCategory = new Array();
+            }
+            if( (!Array.isArray(temporaryDataArrayDefect)) ){
+                temporaryDataArrayDefect = new Array();
+            }
+            */
+            $(document).removeMyStorageData( id_prefix_measure_point );
+            $(document).removeMyStorageData( id_prefix_defect_category );
+            $(document).removeMyStorageData( id_prefix_defect );
+            myStorageObject.clear();
         });
     });
 </script>
