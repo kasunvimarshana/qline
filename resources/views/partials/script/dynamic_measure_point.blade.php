@@ -186,15 +186,17 @@ $(function(){
             tempObject.appendTo( temp_form_hidden_input_group_2 );
             temporaryDataArray.push( data.id );
             
-            var id_nav_link_3_2 = $("#id_nav_link_3_2");
+            var id_nav_link_3_2 = $("#id_nav_link_3_2_modal_1");
             id_nav_link_3_2.tab("show");
             //$(document).setMyStorageData(id_prefix, temporaryDataArray);
         }else if( ((temp_activity_index_array[2].localeCompare(data.activity_index)) == 0) ){
             //
+            /*
             var temp_parent_elemrnt_length = form_hidden_input_group_0.find( ("#" + temp_parent_elemrnt.attr("id")) ).length;
             if( (temp_parent_elemrnt_length > 0) ){
                 form_hidden_input_group_0.find( ("#" + temp_parent_elemrnt.attr("id")) ).remove();
-            }  
+            }
+            */
         }
         $(document).setMyStorageData(id_prefix, temporaryDataArray);
         //element.find( ("#" + id_prefix_input + data.id) ).remove();

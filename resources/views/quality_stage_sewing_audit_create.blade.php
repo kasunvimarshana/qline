@@ -772,7 +772,7 @@
                     defect_category_id.val(null).trigger("change");
                     defect_id.val(null).trigger("change");
                 }
-                var count_defect_value = form1_hidden_input_group.find( ("." + id_defect_id_prefix) ).length;
+                var count_defect_value = form_hidden_input_group_0.find( ("." + id_defect_id_prefix) ).length;
                 count_defect.val(function(index, currentvalue){
                     return count_defect_value;
                 });
