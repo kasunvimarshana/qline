@@ -57,21 +57,6 @@
                                             <div id="id_tab_content_1" class="container tab-pane fade show active" role="tabpanel" aria-labelledby="id_nav_link_1"><br>
                                                 <!-- tab-content-body -->
                                                 
-                                                <!-- *********************************************************************** -->
-<!-- Modal -->
-<div class="modal fade bd-example-modal-xl" id="modalElement_1" tabindex="-1" role="dialog" aria-labelledby="modalElement_1_Title" aria-hidden="true">
-    <!-- class="modal-dialog modal-xl modal-dialog-centered modal-full" -->
-    <div class="modal-dialog modal-xl modal-full" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <!-- h5 class="modal-title" id="modalElement_1_Title">Title</h5 -->
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-<!-- .................................................................... -->
                                                 <!-- row -->
                                                 <div class="row">
 
@@ -615,20 +600,6 @@
 
                                                 </div>
                                                 <!-- /.row -->
-<!-- .................................................................... -->
-                </div>
-            </div>
-            <!--
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-            -->
-        </div>
-    </div>
-</div>
-<!-- /.Modal -->
-                                                <!-- *********************************************************************** -->
                                                 
                                                 <!-- /.tab-content-body -->
                                             </div>
@@ -1107,17 +1078,6 @@
             $(document).removeMyStorageData( id_prefix_defect );
             myStorageObject.clear();
         });
-    });
-    
-    $(function(){
-        var modalElement_1 = $("#modalElement_1");
-        modalElement_1.modal({
-            'backdrop': false,
-            'keyboard': true,
-            'focus': true,
-            'show': true
-        });
-        modalElement_1.modal('show');
     });
 </script>
 @endpush

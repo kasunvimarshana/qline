@@ -131,6 +131,15 @@ table.dataTable tbody td{
 
 /* element max-height */
 .element-max-height-1{
-    max-height: 60vh !important; /*1em*/
+    max-height: 45vh !important; /*1em*/
     overflow-y: scroll !important;
+}
+
+/* fullscreen-modal */
+.modal-full{
+    min-width: 100%;
+    margin: 0;
+}
+.modal-full .modal-content{
+    min-height: 100vh;
 }
