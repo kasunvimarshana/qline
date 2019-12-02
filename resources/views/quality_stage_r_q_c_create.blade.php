@@ -359,7 +359,7 @@
                                                                                                 <!-- btn-toolbar -->
                                                                                                 <div class="col text-center px-5">
                                                                                                     <!-- div class="btn-group btn-group-lg pull-right" -->
-                                                                                                        <button type="submit" class="btn btn-primary btn-block btn-lg ml-auto mr-auto px-5" id="submit">SUBMIT</button>
+                                                                                                        <button type="submit" class="btn btn-primary btn-block btn-lg ml-auto mr-auto px-md-5 px-sm-0" id="submit">SUBMIT</button>
                                                                                                     <!-- /div -->
                                                                                                 </div>
                                                                                             </div>
