@@ -34,21 +34,21 @@ $(function(){
     
     form1.data("is_dirty", is_dirty);
     
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    function doProcessData01(data){
+    function doProcessData01(parameter_event_source_object, parameter_event, parameter_data){
 /* ----- */
-//console.log(data);
-if( (data == void(0)) ){
+//console.log(parameter_event_source_object);
+//console.log(parameter_event);
+//console.log(parameter_data);
+if( (parameter_data == void(0)) ){
     /*
     console.log("error");
     return false;
     */
 }
                         /* *** */
-/* ========================================================================================================== */
 is_dirty = form1.data("is_dirty");
 var quality_recored_input_defect_data_object = null;
-var data = event.data;
+var data = parameter_event.data;
 var data_object = new Object();
 
 var data_object = JSON.parse(data, function (key, value) {
@@ -122,27 +122,25 @@ if( (is_dirty == false) ){
         form1_hidden_input_group.append(input_temp);
 
         setTimeout(function() {
-            eventSourceObject.close();
+            parameter_event_source_object.close();
         }, 0);
     }
 }
 
 /*
-if (event.id == "CLOSE") {
+if (parameter_event.id == "CLOSE") {
     setTimeout(function() {
-        event.target.close();
-        if (typeof(eventSourceObject) !== "undefined") {
-            eventSourceObject.close();
+        parameter_event.target.close();
+        if (typeof(parameter_event_source_object) !== "undefined") {
+            parameter_event_source_object.close();
         }
     }, 0);
 }
 */
-/* ========================================================================================================== */
                         /* *** */
 /* ----- */
     }
     
-    /* ------------------------------------------------------------------------------------------------------ */
     function isFunction(functionToCheck) {
         return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
     }
@@ -230,7 +228,8 @@ if (event.id == "CLOSE") {
                 */
                 try{
                     //
-                    var data = event.data;
+                    var data = null;
+                    //data = event.data;
                     /*
                     var data_object = new Object();//{}
                     var data_object = JSON.parse(data, function (key, value) {
@@ -240,12 +239,12 @@ if (event.id == "CLOSE") {
                         return value;
                     });
                     */
-                    var data = JSON.parse(data);
+                    //var data = JSON.parse(data);
                     //console.log( data );
                     if( ((is_dirty == void(0)) || (is_dirty == false)) ){
                         //console.log(is_dirty);
                         /* *** */
-                        doProcessData01(data);
+                        doProcessData01(eventSourceObject, event, data);
                         /* *** */
                     }
                 }catch(exception){
@@ -261,143 +260,6 @@ if (event.id == "CLOSE") {
         setupEventSource();
     }catch(exception){
         //console.log(exception);
-    }
-    /* ------------------------------------------------------------------------------------------------------ */
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    if( (!!window.EventSource) && (typeof(EventSource) !== "undefined") ){
-        //console.log( window.EventSource );
-        eventSourceObject = new EventSource( optionData.url );
-        /*
-        eventSourceObject = new EventSource( optionData.url, {
-            withCredentials: true
-        });
-        */
-        
-        eventSourceObject.addEventListener("open", function(event){
-            //console.log(event.data);
-        }, false);
-        
-        eventSourceObject.addEventListener("error", function(event){
-            //console.log(event.data);
-            /*
-            if( (event.readyState == EventSource.CLOSED) ){
-               console.log( EventSource.CLOSED );
-            }
-            */
-        }, false);
-        
-        eventSourceObject.addEventListener("message", function(event){
-            /*
-            if (event.origin != 'http://example.com') {
-                alert('Origin was not http://example.com');
-                return;
-            }
-            */
-            //console.log(event.data);
-            try{
-                is_dirty = form1.data("is_dirty");
-                var quality_recored_input_defect_data_object = null;
-                var data = event.data;
-                var data_object = new Object();
-                
-                var data_object = JSON.parse(data, function (key, value) {
-                    //return value;
-                    //console.log(key);
-                    //console.log(value);
-                    return value;
-                });
-                
-                if( (is_dirty == false) ){
-                    if( (data_object.hasOwnProperty("quality_recored_input_defect_data_object")) && (data_object.quality_recored_input_defect_data_object != null) ){
-                        quality_recored_input_defect_data_object = data_object.quality_recored_input_defect_data_object;
-                        parent_card.removeClass("bg-light");
-                        parent_card.addClass("bg-warning text-white");
-                        is_dirty = true;
-                        form1.data("is_dirty", is_dirty);
-                        submit_form1.attr("disabled", false);
-                        
-                        submit_form1.removeClass("btn-secondary");
-                        submit_form1.addClass("btn-primary");
-                        
-                        bootbox.confirm({
-                            size: "small",
-                            title: "Defect Card Tracer",
-                            message: "Picked Card No: <strong> ( " + quality_recored_input_defect_data_object.code + " ) </strong>",
-                            onEscape: true,
-                            show: true,
-                            scrollable: true,
-                            buttons: {
-                                confirm: {
-                                    label: 'Ok',
-                                    className: 'btn-danger btn-primary',
-                                    callback: function(){ /*console.log("callback");*/ }
-                                },
-                                cancel: {
-                                    label: 'Cancel',
-                                    className: 'btn-danger btn-primary d-none',
-                                    callback: function(){ /*console.log("callback");*/ }
-                                }
-                            },
-                            callback: function (result) {
-                                //console.log('This was logged in the callback: ' + result);
-                                if( result === true ){
-
-                                }else{}
-                            }
-                        })
-                        .find('.modal-header').addClass('bg-danger')
-                        /*.find('.bootbox-cancel:first').focus()
-                        .find('.bootbox-cancel').attr('autofocus', true)
-                        .on('shown.bs.modal', function(e){
-                        $(this).find(".bootbox-cancel:first").focus();
-                        })*/
-                        .init(function(e){
-                            //$(this).find(".bootbox-cancel").focus();
-                        });
-                        
-                        var form1_hidden_input_group = form1.find("#form1_hidden_input_group");
-                        var measure_point_id = form1.find("#measure_point_id");
-                        var temp_quality_record_input_defect_data_id = "quality_record_input_defect_data_id";
-                        
-                        form1_hidden_input_group.find( ("#" + temp_quality_record_input_defect_data_id) ).remove();
-                        
-                        var input_temp = $("<input/>");
-                        input_temp.attr("id", (temp_quality_record_input_defect_data_id));
-                        input_temp.attr("name", (temp_quality_record_input_defect_data_id));
-                        input_temp.attr("value", (quality_recored_input_defect_data_object.id));
-                        input_temp.attr("required", ("required"));
-                        input_temp.attr("readonly", ("readonly"));
-                        input_temp.addClass( temp_quality_record_input_defect_data_id );
-                        form1_hidden_input_group.append(input_temp);
-                        
-                        setTimeout(function() {
-                            eventSourceObject.close();
-                        }, 0);
-                    }
-                }
-                
-                /*
-                if (event.id == "CLOSE") {
-                    setTimeout(function() {
-                        event.target.close();
-                        if (typeof(eventSourceObject) !== "undefined") {
-                            eventSourceObject.close();
-                        }
-                    }, 0);
-                }
-                */
-            }catch(exception){
-                //console.log(exception);
-            }
-        }, false);
-        
-        //eventSourceObject.addEventListener('connections', function(event){}, false);
-        //eventSourceObject.addEventListener('requests', function(event){}, false);
-        //eventSourceObject.addEventListener('uptime', function(event){}, false);
-    }else{
-        alert("You're browser does not support EventSource needed for this page");
-        //route to xhr polling
     }
     
 });
