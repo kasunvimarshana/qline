@@ -586,13 +586,13 @@
 
 <!-- ---temp--- -->
 @push('stack_script')
-<script>
+<!-- script>
     $(function(){
         "use strict";
         $("#standard_r_q_c_id").select2("trigger", "select", {
-            data: { id: "3135373235313232343062303262383437622d333565322d343162312d386139612d626263323966316535353633" }
+            data: { id: null}
         });
     });
-</script>
+</script -->
 @endpush
 <!-- ---temp--- -->

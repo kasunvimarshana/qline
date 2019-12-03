@@ -118,7 +118,6 @@ class UserSyncCommand extends Command
                     throw new Exception("exception");
                 }
                 
-                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 $temp_user_array_hcm = Excel::toArray([], $file_uri_user_hcm);
                 $temp_user_array_ad = Excel::toArray([], $file_uri_user_ad);
                 $temp_user_array_hcm = array_pop(($temp_user_array_hcm));
@@ -128,16 +127,27 @@ class UserSyncCommand extends Command
                         //
                         // Start transaction!
                         DB::beginTransaction();
-                        /* ====================================================================================== */
-                        echo "\n ..... \n";
-                        echo $value_temp_user_hcm[0] . "\n";//employee number
-                        echo $value_temp_user_hcm[1] . "\n";//epf number
-                        echo $value_temp_user_hcm[2] . "\n";//full name
-                        echo $value_temp_user_hcm[3] . "\n";//designation
-                        echo $value_temp_user_hcm[4] . "\n";//department
-                        echo $value_temp_user_hcm[5] . "\n";//roster
-                        //$newUser = User::updateOrCreate([], []);
-                        /* ====================================================================================== */
+                        $temp_employee_number = $value_temp_user_hcm[0];
+                        $temp_epf_number = $value_temp_user_hcm[1];
+                        $temp_full_name = $value_temp_user_hcm[2];
+                        $temp_designation = $value_temp_user_hcm[3];
+                        $temp_department = $value_temp_user_hcm[4];
+                        $temp_roster = $value_temp_user_hcm[5];
+                        if( (isset($temp_epf_number)) && (!empty($temp_epf_number)) ){
+                            $newUser = User::updateOrCreate([
+                                'id' => $temp_epf_number
+                            ], [
+                                'id' => $temp_epf_number,
+                                'code' => $temp_epf_number,
+                                'is_visible' => true,
+                                'is_active' => true,
+                                'code' => $temp_epf_number,
+                                'code_epf' => $temp_epf_number,
+                                'name_first' => $temp_full_name,
+                                //'name_last' => $temp_full_name,
+                                'display_name' => $temp_full_name
+                            ]);
+                        }
                         // Commit transaction!
                         DB::commit();
                     }catch(Exception $e){
@@ -148,9 +158,32 @@ class UserSyncCommand extends Command
                 }
                 
                 foreach($temp_user_array_ad as $key_temp_user_ad => $value_temp_user_ad){
-                    //dd($value_temp_user_ad);
+                    try{
+                        //
+                        // Start transaction!
+                        DB::beginTransaction();
+                        $temp_dn = $value_temp_user_ad[0];
+                        $temp_given_name = $value_temp_user_ad[1];
+                        $temp_mail = $value_temp_user_ad[2];
+                        $temp_employee_type = $value_temp_user_ad[3];
+                        $temp_employee_number = $value_temp_user_ad[4];
+                        if( (isset($temp_employee_number)) && (!empty($temp_employee_number)) ){
+                            $userObject = User::where("id", "=", $temp_employee_number)->first();
+                            if( ($userObject) ){
+                                $userObject->update([
+                                    'email' => $temp_mail
+                                ]);
+                            }
+                        }
+                        // Commit transaction!
+                        DB::commit();
+                    }catch(Exception $e){
+                        // Rollback transaction!
+                        DB::rollback(); 
+                        //dd($e);
+                    }
                 }
-                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                
             }catch(Exception $e){
                 //dd($e);
             }

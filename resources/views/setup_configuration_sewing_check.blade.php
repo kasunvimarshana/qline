@@ -586,13 +586,13 @@
 
 <!-- ---temp--- -->
 @push('stack_script')
-<script>
+<!-- script>
     $(function(){
         "use strict";
         $("#standard_sewing_check_id").select2("trigger", "select", {
-            data: { id: "3135373235313232343062323833396334342d336437612d343864642d613733362d633538613236313739393136" }
+            data: { id: null }
         });
     });
-</script>
+</script -->
 @endpush
 <!-- ---temp--- -->
