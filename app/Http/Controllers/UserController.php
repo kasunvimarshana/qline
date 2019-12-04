@@ -63,8 +63,24 @@ class UserController extends Controller
         $current_user = null;
         $data = array();
         
+        try {
+            // Start transaction!
+            DB::beginTransaction();
+            $userObject = new User();
+            $userObject = $userObject->where("is_visible", "=", true);
+            $userObject = $userObject->where("is_active", "=", true);
+            $userObjectArray = $userObject->get();
+            $data['userObjectArray'] = $userObjectArray;
+            unset($dataArray);
+            // Commit transaction!
+            DB::commit();
+        }catch(Exception $e){
+            // Rollback transaction!
+            DB::rollback();
+        }
+        
         if(view()->exists('user')){
-            return View::make('user', array());
+            return View::make('user', $data);
         }else{
             return redirect()->back()->withInput();
         }
@@ -121,6 +137,7 @@ class UserController extends Controller
                 }
                 
                 $dataArray = array(
+                    'id' => $request->input('code'),
                     'is_visible' => $request->input('is_visible', true),
                     'is_active' => $request->input('is_active', true),
                     'code' => $request->input('code'),

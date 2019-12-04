@@ -497,21 +497,22 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                           <!-- @for($i =1; $i <= 5; $i++) -->                 
+                                           <!-- @if( (isset($userObjectArray)) ) -->
+                                           <!-- @foreach($userObjectArray as $key_temp_user => $value_temp_user) -->
                                            <!-- tr -->
-                                           <tr>
-                                                <th scope="row"># {{ $i }}</th>
-                                                <td>Line {{ $i }}</td>
+                                            <tr>
+                                                <th scope="row"># {{ $value_temp_user->code }}</th>
+                                                <td>{{ $value_temp_user->name_first }}</td>
                                                 <td>
                                                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown" tabindex="-1">
                                                         <div class="btn-group" role="group">
                                                             <!-- button type="button" role="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split">Action</button -->
-                                                            <button id="btnGroupDrop_1_{{ $i }}" type="button" role="button" class="btn btn-outline-primary" data-toggle="dropdown"
+                                                            <button id="btnGroupDrop_1_{{ $key_temp_user }}" type="button" role="button" class="btn btn-outline-primary" data-toggle="dropdown"
                                                             aria-haspopup="true" aria-expanded="false">
-                                                                <i class="fas fa-cogs fa-fw" aria-hidden="true"></i>
-                                                                <span class="sr-only">Toggle Dropdown</span>
+                                                            <i class="fas fa-cogs fa-fw" aria-hidden="true"></i>
+                                                            <span class="sr-only">Toggle Dropdown</span>
                                                             </button>
-                                                            <div class="dropdown-menu text-wrap text-break bg-light border-light" aria-labelledby="btnGroupDrop_1_{{ $i }}">
+                                                            <div class="dropdown-menu text-wrap text-break bg-light border-light" aria-labelledby="btnGroupDrop_1_{{ $key_temp_user }}">
                                                                 <!-- span class="dropdown-item-text ">Title</span -->
                                                                 <!-- div class="dropdown-item dropdown-divider"></div -->
                                                                 <div class="dropdown-item btn-group  pl-1 pr-1 m-0" role="group" aria-label="Button Group">
@@ -531,8 +532,9 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <!-- /.tr -->                 
-                                            <!-- @endfor -->
+                                           <!-- /.tr -->
+                                           <!-- @endforeach -->
+                                           <!-- @endif -->
                                         </tbody>
 
                                     </table>
