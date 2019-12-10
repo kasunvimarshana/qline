@@ -4,6 +4,8 @@ use Illuminate\Database\Seeder;
 
 use App\StrategicBusinessUnit;
 use App\Company;
+use App\Department;
+use App\Factory;
 
 class StrategicBusinessUnitSeeder extends Seeder
 {
@@ -16,43 +18,44 @@ class StrategicBusinessUnitSeeder extends Seeder
     {
         //
         $newStrategicBusinessUnit = StrategicBusinessUnit::firstOrCreate([
-            //'id' => 'bli',
+            //'id' => ucwords('BLI'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'BLI',
-            'name' => 'BLI',
-            'display_name' => 'BLI'
+            'code' => ucwords('BLI'),
+            'name' => ucwords('BLI'),
+            'display_name' => ucwords('BLI')
         ]);
         
         $newCompany = Company::firstOrCreate([
+            //'id' => ucwords('Brandix'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Brandix',
-            'name' => 'Brandix',
-            'display_name' => 'Brandix'
+            'code' => ucwords('Brandix'),
+            'name' => ucwords('Brandix'),
+            'display_name' => ucwords('Brandix')
         ]);
         
         $newStrategicBusinessUnit->company()->associate($newCompany)->save();
         
-        $newDepartment = $newStrategicBusinessUnit->departments()->firstOrCreate([
-            //'id' => 'quality',
+        $newDepartment = Department::firstOrCreate([
+            //'id' => ucwords('Quality'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Quality',
-            'name' => 'Quality',
-            'display_name' => 'Quality'
+            'code' => ucwords('Quality'),
+            'name' => ucwords('Quality'),
+            'display_name' => ucwords('Quality')
         ]);
         
         $newDepartment->company()->associate($newCompany)->save();
         $newDepartment->strategicBusinessUnit()->associate($newStrategicBusinessUnit)->save();
         
-        $newFactory = $newStrategicBusinessUnit->factories()->firstOrCreate([
-            //'id' => 'bli_1',
+        $newFactory = Factory::firstOrCreate([
+            //'id' => ucwords('BLI01'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'BLI01',
-            'name' => 'BLI01',
-            'display_name' => 'BLI01'
+            'code' => ucwords('BLI01'),
+            'name' => ucwords('BLI01'),
+            'display_name' => ucwords('BLI01')
         ]);
         
         $newFactory->company()->associate($newCompany)->save();

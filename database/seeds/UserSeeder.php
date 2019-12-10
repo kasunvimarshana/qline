@@ -23,12 +23,13 @@ class UserSeeder extends Seeder
         //
         /*
         $newUser = User::firstOrCreate([
+            //'id' => ucwords('admin'),
             'is_visible' => false,
             'is_active' => true,
-            'code' => 'admin',
-            'code_epf' => 'admin',
-            'name_first' => 'admin',
-            'name_last' => 'admin',
+            'code' => ucwords('admin'),
+            'code_epf' => ucwords('admin'),
+            'name_first' => ucwords('admin'),
+            'name_last' => ucwords('admin'),
             'password' => Hash::make('password')
         ]);
         */
@@ -84,34 +85,35 @@ class UserSeeder extends Seeder
         
         
         $newCompany = Company::firstOrCreate([
+            //'id' => ucwords('Brandix'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'brandix',
-            'name' => 'brandix',
-            'display_name' => 'brandix'
+            'code' => ucwords('Brandix'),
+            'name' => ucwords('Brandix'),
+            'display_name' => ucwords('Brandix')
         ]);
         
         $newUser->company()->associate($newCompany)->save();
         
         $newStrategicBusinessUnit = StrategicBusinessUnit::firstOrCreate([
-            //'id' => 'bli',
+            //'id' => ucwords('BLI'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'bli',
-            'name' => 'bli',
-            'display_name' => 'bli',
+            'code' => ucwords('BLI'),
+            'name' => ucwords('BLI'),
+            'display_name' => ucwords('BLI'),
             //'company_id' => $newCompany->id
         ]);
         
         $newUser->strategicBusinessUnit()->associate($newStrategicBusinessUnit)->save();
         
         $newDepartment = Department::firstOrCreate([
-            //'id' => 'quality',
+            //'id' => ucwords('Quality'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'quality',
-            'name' => 'quality',
-            'display_name' => 'quality',
+            'code' => ucwords('Quality'),
+            'name' => ucwords('Quality'),
+            'display_name' => ucwords('Quality'),
             //'strategic_business_unit_id' => $newStrategicBusinessUnit->id
         ]);
         

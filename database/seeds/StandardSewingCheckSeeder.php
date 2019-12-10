@@ -15,12 +15,12 @@ class StandardSewingCheckSeeder extends Seeder
     {
         //
         $newStandardSewingCheck = StandardSewingCheck::firstOrCreate([
-            //'id' => '100%',
+            'id' => ucwords('100%'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => '100%',
-            'name' => '100%',
-            'display_name' => '100%'
+            'code' => ucwords('100%'),
+            'name' => ucwords('100%'),
+            'display_name' => ucwords('100%')
         ]);
         
         $newStandardDataSewingCheck = $newStandardSewingCheck->standardDataSewingCheck()->firstOrCreate([

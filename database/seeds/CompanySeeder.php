@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 
 use Illuminate\Support\Facades\Hash;
 use App\Company;
+use App\StrategicBusinessUnit;
 
 class CompanySeeder extends Seeder
 {
@@ -16,21 +17,21 @@ class CompanySeeder extends Seeder
     {
         //
         $newCompany = Company::firstOrCreate([
-            //'id' => 'brandix',
+            //'id' => ucwords('Brandix'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Brandix',
-            'name' => 'Brandix',
-            'display_name' => 'Brandix'
+            'code' => ucwords('Brandix'),
+            'name' => ucwords('Brandix'),
+            'display_name' => ucwords('Brandix')
         ]);
         
-        $newStrategicBusinessUnit = $newCompany->strategicBusinessUnits()->firstOrCreate([
-            //'id' => 'bli',
+        $newStrategicBusinessUnit = StrategicBusinessUnit::firstOrCreate([
+            //'id' => ucwords('BLI'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'BLI',
-            'name' => 'BLI',
-            'display_name' => 'BLI'
+            'code' => ucwords('BLI'),
+            'name' => ucwords('BLI'),
+            'display_name' => ucwords('BLI')
         ]);
         
         $newCompany->strategicBusinessUnits()->save($newStrategicBusinessUnit);

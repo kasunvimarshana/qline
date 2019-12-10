@@ -15,27 +15,30 @@ class StyleSeeder extends Seeder
     {
         //
         $newStyle = Style::firstOrCreate([
+            'id' => ucwords('S0001'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'S0001',
-            'name' => 'S0001',
-            'display_name' => 'S0001'
-        ]);
-        
-        /*$newStyle = Style::firstOrCreate([
-            'is_visible' => true,
-            'is_active' => true,
-            'code' => 'S0002',
-            'name' => 'S0002',
-            'display_name' => 'S0002'
+            'code' => ucwords('S0001'),
+            'name' => ucwords('S0001'),
+            'display_name' => ucwords('S0001')
         ]);
         
         $newStyle = Style::firstOrCreate([
+            'id' => ucwords('S0002'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'S0003',
-            'name' => 'S0003',
-            'display_name' => 'S0003'
-        ]);*/
+            'code' => ucwords('S0002'),
+            'name' => ucwords('S0002'),
+            'display_name' => ucwords('S0002')
+        ]);
+        
+        $newStyle = Style::firstOrCreate([
+            'id' => ucwords('S0003'),
+            'is_visible' => true,
+            'is_active' => true,
+            'code' => ucwords('S0003'),
+            'name' => ucwords('S0003'),
+            'display_name' => ucwords('S0003')
+        ]);
     }
 }

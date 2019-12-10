@@ -15,12 +15,12 @@ class StandardSewingAuditSeeder extends Seeder
     {
         //
         $newStandardSewingAudit = StandardSewingAudit::firstOrCreate([
-            //'id' => '1.0',
+            'id' => ucwords('1.0'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => '1.0',
-            'name' => '1.0',
-            'display_name' => '1.0'
+            'code' => ucwords('1.0'),
+            'name' => ucwords('1.0'),
+            'display_name' => ucwords('1.0')
         ]);
         
         $standardDataSewingAuditArray = array(

@@ -15,115 +15,129 @@ class CustomerSeeder extends Seeder
     {
         //
         $newCustomer = Customer::firstOrCreate([
+            'id' => ucwords('ABG'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'ABG',
-            'name' => 'ABG',
-            'display_name' => 'ABG'
+            'code' => ucwords('ABG'),
+            'name' => ucwords('ABG'),
+            'display_name' => ucwords('ABG')
         ]);
         
         $newCustomer = Customer::firstOrCreate([
+            'id' => ucwords('Amazon'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Amazon',
-            'name' => 'Amazon',
-            'display_name' => 'Amazon'
+            'code' => ucwords('Amazon'),
+            'name' => ucwords('Amazon'),
+            'display_name' => ucwords('Amazon')
         ]);
         
         $newCustomer = Customer::firstOrCreate([
+            'id' => ucwords('Calvin Klein'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Calvin Klein',
-            'name' => 'Calvin Klein',
-            'display_name' => 'Calvin Klein'
+            'code' => ucwords('Calvin Klein'),
+            'name' => ucwords('Calvin Klein'),
+            'display_name' => ucwords('Calvin Klein')
         ]);
         
         $newCustomer = Customer::firstOrCreate([
+            'id' => ucwords('Caterines'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Catherines',
-            'name' => 'Catherines',
-            'display_name' => 'Catherines'
+            'code' => ucwords('Catherines'),
+            'name' => ucwords('Catherines'),
+            'display_name' => ucwords('Catherines')
         ]);
         
         $newCustomer = Customer::firstOrCreate([
+            'id' => ucwords('Jockey'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Jockey',
-            'name' => 'Jockey',
-            'display_name' => 'Jockey'
+            'code' => ucwords('Jockey'),
+            'name' => ucwords('Jockey'),
+            'display_name' => ucwords('Jockey')
         ]);
         
         $newCustomer = Customer::firstOrCreate([
+            'id' => ucwords('Lane Brayant'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Lane Brayant',
-            'name' => 'Lane Brayant',
-            'display_name' => 'Lane Brayant'
+            'code' => ucwords('Lane Brayant'),
+            'name' => ucwords('Lane Brayant'),
+            'display_name' => ucwords('Lane Brayant')
         ]);
         
         $newCustomer = Customer::firstOrCreate([
+            'id' => ucwords('Lidl'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Lidl',
-            'name' => 'Lidl',
-            'display_name' => 'Lidl'
+            'code' => ucwords('Lidl'),
+            'name' => ucwords('Lidl'),
+            'display_name' => ucwords('Lidl')
         ]);
         
         $newCustomer = Customer::firstOrCreate([
+            'id' => ucwords('Loungerie'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Loungerie',
-            'name' => 'Loungerie',
-            'display_name' => 'Loungerie'
+            'code' => ucwords('Loungerie'),
+            'name' => ucwords('Loungerie'),
+            'display_name' => ucwords('Loungerie')
         ]);
         
         $newCustomer = Customer::firstOrCreate([
+            'id' => ucwords('Marks & Spencer'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Marks & Spencer',
-            'name' => 'Marks & Spencer',
-            'display_name' => 'Marks & Spencer'
+            'code' => ucwords('Marks & Spencer'),
+            'name' => ucwords('Marks & Spencer'),
+            'display_name' => ucwords('Marks & Spencer')
         ]);
         
         $newCustomer = Customer::firstOrCreate([
+            'id' => ucwords('Nayomi'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Nayomi',
-            'name' => 'Nayomi',
-            'display_name' => 'Nayomi'
+            'code' => ucwords('Nayomi'),
+            'name' => ucwords('Nayomi'),
+            'display_name' => ucwords('Nayomi')
         ]);
         
         $newCustomer = Customer::firstOrCreate([
+            'id' => ucwords('Olga'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Olga',
-            'name' => 'Olga',
-            'display_name' => 'Olga'
+            'code' => ucwords('Olga'),
+            'name' => ucwords('Olga'),
+            'display_name' => ucwords('Olga')
         ]);
         
         $newCustomer = Customer::firstOrCreate([
+            'id' => ucwords('TRUE & CO'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'TRUE & CO.',
-            'name' => 'TRUE & CO.',
-            'display_name' => 'TRUE & CO.'
+            'code' => ucwords('TRUE & CO.'),
+            'name' => ucwords('TRUE & CO.'),
+            'display_name' => ucwords('TRUE & CO.')
         ]);
         
         $newCustomer = Customer::firstOrCreate([
+            'id' => ucwords('Warners'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Warners',
-            'name' => 'Warners',
-            'display_name' => 'Warners'
+            'code' => ucwords('Warners'),
+            'name' => ucwords('Warners'),
+            'display_name' => ucwords('Warners')
         ]);
         
         $newCustomer = Customer::firstOrCreate([
+            'id' => ucwords('Kohl\'s'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Kohl\'s',
-            'name' => 'Kohl\'s',
-            'display_name' => 'Kohl\'s'
+            'code' => ucwords('Kohl\'s'),
+            'name' => ucwords('Kohl\'s'),
+            'display_name' => ucwords('Kohl\'s')
         ]);
     }
 }

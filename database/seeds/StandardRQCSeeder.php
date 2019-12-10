@@ -15,11 +15,11 @@ class StandardRQCSeeder extends Seeder
     {
         //
         $newStandardRQC = StandardRQC::firstOrCreate([
-            //'id' => '5.0',
+            'id' => ucwords('5.0'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => '5.0',
-            'name' => '5.0',
+            'code' => ucwords('5.0'),
+            'name' => ucwords('5.0'),
             'display_name' => '5.0',
             'audit_frequency_type' => 'count',
             'audit_frequency_count' => '2'

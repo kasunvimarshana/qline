@@ -15,195 +15,219 @@ class ColourSeeder extends Seeder
     {
         //
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Red'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Red',
-            'name' => 'Red',
-            'display_name' => 'Red'
+            'code' => ucwords('Red'),
+            'name' => ucwords('Red'),
+            'display_name' => ucwords('Red')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Orange'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Orange',
-            'name' => 'Orange',
-            'display_name' => 'Orange'
+            'code' => ucwords('Orange'),
+            'name' => ucwords('Orange'),
+            'display_name' => ucwords('Orange')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Yellow'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Yellow',
-            'name' => 'Yellow',
-            'display_name' => 'Yellow'
-        ]);
-        
-        /*$newColour = Colour::firstOrCreate([
-            'is_visible' => true,
-            'is_active' => true,
-            'code' => 'Green',
-            'name' => 'Green',
-            'display_name' => 'Green'
+            'code' => ucwords('Yellow'),
+            'name' => ucwords('Yellow'),
+            'display_name' => ucwords('Yellow')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Green'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Blue',
-            'name' => 'Blue',
-            'display_name' => 'Blue'
+            'code' => ucwords('Green'),
+            'name' => ucwords('Green'),
+            'display_name' => ucwords('Green')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Blue'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Purple',
-            'name' => 'Purple',
-            'display_name' => 'Purple'
+            'code' => ucwords('Blue'),
+            'name' => ucwords('Blue'),
+            'display_name' => ucwords('Blue')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Purple'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Brown',
-            'name' => 'Brown',
-            'display_name' => 'Brown'
+            'code' => ucwords('Purple'),
+            'name' => ucwords('Purple'),
+            'display_name' => ucwords('Purple')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Brown'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Magenta',
-            'name' => 'Magenta',
-            'display_name' => 'Magenta'
+            'code' => ucwords('Brown'),
+            'name' => ucwords('Brown'),
+            'display_name' => ucwords('Brown')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Magenta'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Tan',
-            'name' => 'Tan',
-            'display_name' => 'Tan'
+            'code' => ucwords('Magenta'),
+            'name' => ucwords('Magenta'),
+            'display_name' => ucwords('Magenta')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Tan'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Cyan',
-            'name' => 'Cyan',
-            'display_name' => 'Cyan'
+            'code' => ucwords('Tan'),
+            'name' => ucwords('Tan'),
+            'display_name' => ucwords('Tan')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Cyan'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Olive',
-            'name' => 'Olive',
-            'display_name' => 'Olive'
+            'code' => ucwords('Cyan'),
+            'name' => ucwords('Cyan'),
+            'display_name' => ucwords('Cyan')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Olive'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Maroon',
-            'name' => 'Maroon',
-            'display_name' => 'Maroon'
+            'code' => ucwords('Olive'),
+            'name' => ucwords('Olive'),
+            'display_name' => ucwords('Olive')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Maroon'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Navy',
-            'name' => 'Navy',
-            'display_name' => 'Navy'
+            'code' => ucwords('Maroon'),
+            'name' => ucwords('Maroon'),
+            'display_name' => ucwords('Maroon')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Navy'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Aquamarine',
-            'name' => 'Aquamarine',
-            'display_name' => 'Aquamarine'
+            'code' => ucwords('Navy'),
+            'name' => ucwords('Navy'),
+            'display_name' => ucwords('Navy')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Aquamarine'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Turquoise',
-            'name' => 'Turquoise',
-            'display_name' => 'Turquoise'
+            'code' => ucwords('Aquamarine'),
+            'name' => ucwords('Aquamarine'),
+            'display_name' => ucwords('Aquamarine')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Turquoise'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Silver',
-            'name' => 'Silver',
-            'display_name' => 'Silver'
+            'code' => ucwords('Turquoise'),
+            'name' => ucwords('Turquoise'),
+            'display_name' => ucwords('Turquoise')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Silver'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Lime',
-            'name' => 'Lime',
-            'display_name' => 'Lime'
+            'code' => ucwords('Silver'),
+            'name' => ucwords('Silver'),
+            'display_name' => ucwords('Silver')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Lime'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Teal',
-            'name' => 'Teal',
-            'display_name' => 'Teal'
+            'code' => ucwords('Lime'),
+            'name' => ucwords('Lime'),
+            'display_name' => ucwords('Lime')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Teal'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Indigo',
-            'name' => 'Indigo',
-            'display_name' => 'Indigo'
+            'code' => ucwords('Teal'),
+            'name' => ucwords('Teal'),
+            'display_name' => ucwords('Teal')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Indigo'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Violet',
-            'name' => 'Violet',
-            'display_name' => 'Violet'
+            'code' => ucwords('Indigo'),
+            'name' => ucwords('Indigo'),
+            'display_name' => ucwords('Indigo')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Violet'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Pink',
-            'name' => 'Pink',
-            'display_name' => 'Pink'
+            'code' => ucwords('Violet'),
+            'name' => ucwords('Violet'),
+            'display_name' => ucwords('Violet')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Pink'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Black',
-            'name' => 'Black',
-            'display_name' => 'Black'
+            'code' => ucwords('Pink'),
+            'name' => ucwords('Pink'),
+            'display_name' => ucwords('Pink')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Black'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'White',
-            'name' => 'White',
-            'display_name' => 'White'
+            'code' => ucwords('Black'),
+            'name' => ucwords('Black'),
+            'display_name' => ucwords('Black')
         ]);
         
         $newColour = Colour::firstOrCreate([
+            'id' => ucwords('White'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Gray',
-            'name' => 'Gray',
-            'display_name' => 'Gray'
-        ]);*/
+            'code' => ucwords('White'),
+            'name' => ucwords('White'),
+            'display_name' => ucwords('White')
+        ]);
+        
+        $newColour = Colour::firstOrCreate([
+            'id' => ucwords('Gray'),
+            'is_visible' => true,
+            'is_active' => true,
+            'code' => ucwords('Gray'),
+            'name' => ucwords('Gray'),
+            'display_name' => ucwords('Gray')
+        ]);
     }
 }

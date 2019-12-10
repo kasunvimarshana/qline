@@ -14,1244 +14,1429 @@ class MeasurePointSeeder extends Seeder
     public function run()
     {
         //
+        //ucwords ( string $str [, string $delimiters = " \t\r\n\f\v" ] ) : string
+        /*
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Default'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Across Cup',
-            'name' => 'Across Cup',
-            'display_name' => 'Across Cup'
+            'code' => ucwords('Default'),
+            'name' => ucwords('Default'),
+            'display_name' => ucwords('Default')
         ]);
+        */
+        $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Wire Play'),
+            'is_visible' => true,
+            'is_active' => true,
+            'code' => ucwords('Wire Play'),
+            'name' => ucwords('Wire Play'),
+            'display_name' => ucwords('Wire Play')
+        ]);
+        
+        $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Wire inserting'),
+            'is_visible' => true,
+            'is_active' => true,
+            'code' => ucwords('Wire inserting'),
+            'name' => ucwords('Wire inserting'),
+            'display_name' => ucwords('Wire inserting')
+        ]);
+        
+        $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Wire Insert'),
+            'is_visible' => true,
+            'is_active' => true,
+            'code' => ucwords('Wire Insert'),
+            'name' => ucwords('Wire Insert'),
+            'display_name' => ucwords('Wire Insert')
+        ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Wire Casing'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Apex',
-            'name' => 'Apex',
-            'display_name' => 'Apex'
+            'code' => ucwords('Wire Casing'),
+            'name' => ucwords('Wire Casing'),
+            'display_name' => ucwords('Wire Casing')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Wing tack'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Armhole',
-            'name' => 'Armhole',
-            'display_name' => 'Armhole'
+            'code' => ucwords('Wing tack'),
+            'name' => ucwords('Wing tack'),
+            'display_name' => ucwords('Wing tack')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('wing panel'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Around Cup',
-            'name' => 'Around Cup',
-            'display_name' => 'Around Cup'
+            'code' => ucwords('wing panel'),
+            'name' => ucwords('wing panel'),
+            'display_name' => ucwords('wing panel')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('wing attache'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Around Tape',
-            'name' => 'Around Tape',
-            'display_name' => 'Around Tape'
+            'code' => ucwords('wing attache'),
+            'name' => ucwords('wing attache'),
+            'display_name' => ucwords('wing attache')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Waist Relaxed'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Back Scoop',
-            'name' => 'Attach Back Scoop',
-            'display_name' => 'Attach Back Scoop'
+            'code' => ucwords('Waist Relaxed'),
+            'name' => ucwords('Waist Relaxed'),
+            'display_name' => ucwords('Waist Relaxed')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Waist Extended'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Bone Casing & Insert Bones',
-            'name' => 'Aatach Bone Casing & Insert Bones',
-            'display_name' => 'Attach Bone Casing & Insert Bones'
+            'code' => ucwords('Waist Extended'),
+            'name' => ucwords('Waist Extended'),
+            'display_name' => ucwords('Waist Extended')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Waist Band'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Bow / Mottif',
-            'name' => 'Attach Bow / Mottif',
-            'display_name' => 'Attach Bow / Mottif'
+            'code' => ucwords('Waist Band'),
+            'name' => ucwords('Waist Band'),
+            'display_name' => ucwords('Waist Band')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Vertical seam'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Bra Wirecasing & Insert Wires',
-            'name' => 'Attach Bra Wirecasing & Insert Wires',
-            'display_name' => 'Attach Bra Wirecasing & Insert Wires'
+            'code' => ucwords('Vertical seam'),
+            'name' => ucwords('Vertical seam'),
+            'display_name' => ucwords('Vertical seam')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Vertical Cup'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Cup To Pu Cup Bottom',
-            'name' => 'Attach Cup To Pu Cup Bottom',
-            'display_name' => 'Attach Cup To Pu Cup Bottom'
+            'code' => ucwords('Vertical Cup'),
+            'name' => ucwords('Vertical Cup'),
+            'display_name' => ucwords('Vertical Cup')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('under band'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Cups Into Cradle',
-            'name' => 'Attach Cups Into Cradle',
-            'display_name' => 'Attach Cups Into Cradle'
+            'code' => ucwords('under band'),
+            'name' => ucwords('under band'),
+            'display_name' => ucwords('under band')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Under Arm'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Cups To CF & Wing',
-            'name' => 'Attach Cups To CF & Wing',
-            'display_name' => 'Attach Cups To CF & Wing'
+            'code' => ucwords('Under Arm'),
+            'name' => ucwords('Under Arm'),
+            'display_name' => ucwords('Under Arm')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Total Under band Relax'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Elastic To Around Cup',
-            'name' => 'Attach Elastic To Around Cup',
-            'display_name' => 'Attach Elastic To Around Cup'
+            'code' => ucwords('Total Under band Relax'),
+            'name' => ucwords('Total Under band Relax'),
+            'display_name' => ucwords('Total Under band Relax')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Total Under band Extended'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Elastic To Backscoop',
-            'name' => 'Attach Elastic To Backscoop',
-            'display_name' => 'Attach Elastic To Backscoop'
+            'code' => ucwords('Total Under band Extended'),
+            'name' => ucwords('Total Under band Extended'),
+            'display_name' => ucwords('Total Under band Extended')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Top Wing'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Elastic To Bottom Wing',
-            'name' => 'Attach Elastic To Bottom Wing',
-            'display_name' => 'Attach Elastic To Bottom Wing'
+            'code' => ucwords('Top Wing'),
+            'name' => ucwords('Top Wing'),
+            'display_name' => ucwords('Top Wing')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Tack Gusset'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Elastic To CF Cradle Top',
-            'name' => 'Attach Elastic To CF Cradle Top',
-            'display_name' => 'Attach Elastic To CF Cradle Top'
+            'code' => ucwords('Tack Gusset'),
+            'name' => ucwords('Tack Gusset'),
+            'display_name' => ucwords('Tack Gusset')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Tack Fr Strap'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Elastic To Cradle Bottom',
-            'name' => 'Attach Elastic To Cradle Bottom',
-            'display_name' => 'Attach Elastic To Cradle Bottom'
+            'code' => ucwords('Tack Fr Strap'),
+            'name' => ucwords('Tack Fr Strap'),
+            'display_name' => ucwords('Tack Fr Strap')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Tack Cradle Outer & Liner'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Elastic To Leg',
-            'name' => 'Attach Elastic To Leg',
-            'display_name' => 'Attach Elastic To Leg'
+            'code' => ucwords('Tack Cradle Outer & Liner'),
+            'name' => ucwords('Tack Cradle Outer & Liner'),
+            'display_name' => ucwords('Tack Cradle Outer & Liner')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Strap Making'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Elastic To Top Wing',
-            'name' => 'Attach Elastic To Top Wing',
-            'display_name' => 'Attach Elastic To Top Wing'
+            'code' => ucwords('Strap Making'),
+            'name' => ucwords('Strap Making'),
+            'display_name' => ucwords('Strap Making')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Strap Length'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Elastic To Top Wing With Loop',
-            'name' => 'Aatach elastic To Top Wing With Loop',
-            'display_name' => 'Attach Elastic To Top Wing With Loop'
+            'code' => ucwords('Strap Length'),
+            'name' => ucwords('Strap Length'),
+            'display_name' => ucwords('Strap Length')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Strap'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Elastic To Waist',
-            'name' => 'Attach Elastic To Waist',
-            'display_name' => 'Attach Elastic To Waist'
+            'code' => ucwords('Strap'),
+            'name' => ucwords('Strap'),
+            'display_name' => ucwords('Strap')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Strap'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach FR Strap To BK Strap',
-            'name' => 'Attach FR Strap To BK Strap',
-            'display_name' => 'Attach FR Strap To BK Strap'
+            'code' => ucwords('Strap'),
+            'name' => ucwords('Strap'),
+            'display_name' => ucwords('Strap')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('spot tag'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Gusset',
-            'name' => 'Attach Gusset',
-            'display_name' => 'Attach Gusset'
+            'code' => ucwords('spot tag'),
+            'name' => ucwords('spot tag'),
+            'display_name' => ucwords('spot tag')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Size tag'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Hook & Eye',
-            'name' => 'Attach Hook & Eye',
-            'display_name' => 'Attach Hook & Eye'
+            'code' => ucwords('Size tag'),
+            'name' => ucwords('Size tag'),
+            'display_name' => ucwords('Size tag')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Side wing'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Liner Cup To PU Cup',
-            'name' => 'Attach Liner Cup To PU Cup',
-            'display_name' => 'Attach Liner Cup To PU Cup'
+            'code' => ucwords('Side wing'),
+            'name' => ucwords('Side wing'),
+            'display_name' => ucwords('Side wing')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Side Seam'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Neck Line, Under Arm & Strap',
-            'name' => 'Attach Neck Line, Under Arm & Strap',
-            'display_name' => 'Attach Neck Line, Under Arm & Strap'
+            'code' => ucwords('Side Seam'),
+            'name' => ucwords('Side Seam'),
+            'display_name' => ucwords('Side Seam')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Side Lace'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Attach Stabi To PU Cup & U/A Side',
-            'name' => 'Attach Stabi To PU Cup & U/A Side',
-            'display_name' => 'Attach Stabi To PU Cup & U/A Side'
+            'code' => ucwords('Side Lace'),
+            'name' => ucwords('Side Lace'),
+            'display_name' => ucwords('Side Lace')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Shoulder seam'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Back Gusset Width',
-            'name' => 'Back Gusset Width',
-            'display_name' => 'Back Gusset Width'
+            'code' => ucwords('Shoulder seam'),
+            'name' => ucwords('Shoulder seam'),
+            'display_name' => ucwords('Shoulder seam')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Sew & Cut Strap'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Back Lace',
-            'name' => 'Back Lace',
-            'display_name' => 'Back Lace'
+            'code' => ucwords('Sew & Cut Strap'),
+            'name' => ucwords('Sew & Cut Strap'),
+            'display_name' => ucwords('Sew & Cut Strap')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Re cup'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Back Loop',
-            'name' => 'Back Loop',
-            'display_name' => 'Back Loop'
+            'code' => ucwords('Re cup'),
+            'name' => ucwords('Re cup'),
+            'display_name' => ucwords('Re cup')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Paper top'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Back Panel',
-            'name' => 'Back Panel',
-            'display_name' => 'Back Panel'
+            'code' => ucwords('Paper top'),
+            'name' => ucwords('Paper top'),
+            'display_name' => ucwords('Paper top')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Pad Print'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Back Rice',
-            'name' => 'Back Rice',
-            'display_name' => 'Back Rice'
+            'code' => ucwords('Pad Print'),
+            'name' => ucwords('Pad Print'),
+            'display_name' => ucwords('Pad Print')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Over Bust Seam'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Back Rice',
-            'name' => 'Back Rice',
-            'display_name' => 'Back Rice'
+            'code' => ucwords('Over Bust Seam'),
+            'name' => ucwords('Over Bust Seam'),
+            'display_name' => ucwords('Over Bust Seam')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Outter Cup'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Back Rise',
-            'name' => 'Back Rise',
-            'display_name' => 'Back Rise'
+            'code' => ucwords('Outter Cup'),
+            'name' => ucwords('Outter Cup'),
+            'display_name' => ucwords('Outter Cup')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Neckline'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Back Scoop',
-            'name' => 'Back Scoop',
-            'display_name' => 'Back Scoop'
+            'code' => ucwords('Neckline'),
+            'name' => ucwords('Neckline'),
+            'display_name' => ucwords('Neckline')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Neck line'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Back Seam',
-            'name' => 'Back Seam',
-            'display_name' => 'Back Seam'
+            'code' => ucwords('Neck line'),
+            'name' => ucwords('Neck line'),
+            'display_name' => ucwords('Neck line')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Neck code'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Back Strap',
-            'name' => 'Back Strap',
-            'display_name' => 'Back Strap'
+            'code' => ucwords('Neck code'),
+            'name' => ucwords('Neck code'),
+            'display_name' => ucwords('Neck code')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Neck'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Back Top',
-            'name' => 'Back Top',
-            'display_name' => 'Back Top'
+            'code' => ucwords('Neck'),
+            'name' => ucwords('Neck'),
+            'display_name' => ucwords('Neck')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Neaten Gusset'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Back Waist',
-            'name' => 'Back Waist',
-            'display_name' => 'Back Waist'
+            'code' => ucwords('Neaten Gusset'),
+            'name' => ucwords('Neaten Gusset'),
+            'display_name' => ucwords('Neaten Gusset')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Narrowest'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Back Wing',
-            'name' => 'Back Wing',
-            'display_name' => 'Back Wing'
+            'code' => ucwords('Narrowest'),
+            'name' => ucwords('Narrowest'),
+            'display_name' => ucwords('Narrowest')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('N/A'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Bagout & Baste Wing Sides',
-            'name' => 'Bagout & Baste Wing Sides',
-            'display_name' => 'Bagout & Baste Wing Sides'
+            'code' => ucwords('N/A'),
+            'name' => ucwords('N/A'),
+            'display_name' => ucwords('N/A')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Molding'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Bar Tack',
-            'name' => 'Bar Tack',
-            'display_name' => 'Bar Tack'
+            'code' => ucwords('Molding'),
+            'name' => ucwords('Molding'),
+            'display_name' => ucwords('Molding')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Measurment'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Baste Cradle Around',
-            'name' => 'Baste Cradle Around',
-            'display_name' => 'Baste Cradle Around'
+            'code' => ucwords('Measurment'),
+            'name' => ucwords('Measurment'),
+            'display_name' => ucwords('Measurment')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Locking'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Baste Top & Bottom Cup Outer & Liner',
-            'name' => 'Baste Top & Bottom Cup Outer & Liner',
-            'display_name' => 'Baste Top & Bottom Cup Outer & Liner'
+            'code' => ucwords('Locking'),
+            'name' => ucwords('Locking'),
+            'display_name' => ucwords('Locking')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Leg Opening Relax'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Binding',
-            'name' => 'Binding',
-            'display_name' => 'Binding'
+            'code' => ucwords('Leg Opening Relax'),
+            'name' => ucwords('Leg Opening Relax'),
+            'display_name' => ucwords('Leg Opening Relax')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Leg Opening Extended'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Bone Seam',
-            'name' => 'Bone Seam',
-            'display_name' => 'Bone Seam'
+            'code' => ucwords('Leg Opening Extended'),
+            'name' => ucwords('Leg Opening Extended'),
+            'display_name' => ucwords('Leg Opening Extended')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Leg Open'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Bottom Band',
-            'name' => 'Bottom Band',
-            'display_name' => 'Bottom Band'
+            'code' => ucwords('Leg Open'),
+            'name' => ucwords('Leg Open'),
+            'display_name' => ucwords('Leg Open')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Leg'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Bottom Wing',
-            'name' => 'Bottom Wing',
-            'display_name' => 'Bottom Wing'
+            'code' => ucwords('Leg'),
+            'name' => ucwords('Leg'),
+            'display_name' => ucwords('Leg')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Lace Attach'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Bow Attached',
-            'name' => 'Bow Attached',
-            'display_name' => 'Bow Attached'
+            'code' => ucwords('Lace Attach'),
+            'name' => ucwords('Lace Attach'),
+            'display_name' => ucwords('Lace Attach')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Lace'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Bra Wire',
-            'name' => 'Bra Wire',
-            'display_name' => 'Bra Wire'
+            'code' => ucwords('Lace'),
+            'name' => ucwords('Lace'),
+            'display_name' => ucwords('Lace')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Lable attached'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Bust Seam',
-            'name' => 'Bust Seam',
-            'display_name' => 'Bust Seam'
+            'code' => ucwords('Lable attached'),
+            'name' => ucwords('Lable attached'),
+            'display_name' => ucwords('Lable attached')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Label Attach'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Butt Join',
-            'name' => 'Butt Join',
-            'display_name' => 'Butt Join'
+            'code' => ucwords('Label Attach'),
+            'name' => ucwords('Label Attach'),
+            'display_name' => ucwords('Label Attach')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Key Hole'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Center Front',
-            'name' => 'Center Front',
-            'display_name' => 'Center Front'
+            'code' => ucwords('Key Hole'),
+            'name' => ucwords('Key Hole'),
+            'display_name' => ucwords('Key Hole')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Join Wing to Cradle Side Seam'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Center Front Bottom',
-            'name' => 'Center Front Bottom',
-            'display_name' => 'Center Front Bottom'
+            'code' => ucwords('Join Wing to Cradle Side Seam'),
+            'name' => ucwords('Join Wing to Cradle Side Seam'),
+            'display_name' => ucwords('Join Wing to Cradle Side Seam')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Join Top & Btm Cups together'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Close Bottom',
-            'name' => 'Close Bottom',
-            'display_name' => 'Close Bottom'
+            'code' => ucwords('Join Top & Btm Cups together'),
+            'name' => ucwords('Join Top & Btm Cups together'),
+            'display_name' => ucwords('Join Top & Btm Cups together')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Join Neck & Under Arm'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Close Bottom Wing',
-            'name' => 'Close Bottom Wing',
-            'display_name' => 'Close Bottom Wing'
+            'code' => ucwords('Join Neck & Under Arm'),
+            'name' => ucwords('Join Neck & Under Arm'),
+            'display_name' => ucwords('Join Neck & Under Arm')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Join Label to Wing'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Close Gusset Both Sides',
-            'name' => 'Close Gusset Both Sides',
-            'display_name' => 'Close Gusset Both Sides'
+            'code' => ucwords('Join Label to Wing'),
+            'name' => ucwords('Join Label to Wing'),
+            'display_name' => ucwords('Join Label to Wing')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Join Cradle Top & Bagout'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Cradle Seam',
-            'name' => 'Cradle Seam',
-            'display_name' => 'Cradle Seam'
+            'code' => ucwords('Join Cradle Top & Bagout'),
+            'name' => ucwords('Join Cradle Top & Bagout'),
+            'display_name' => ucwords('Join Cradle Top & Bagout')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Join Cradle Liner & Outer'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Cup',
-            'name' => 'Cup',
-            'display_name' => 'Cup'
+            'code' => ucwords('Join Cradle Liner & Outer'),
+            'name' => ucwords('Join Cradle Liner & Outer'),
+            'display_name' => ucwords('Join Cradle Liner & Outer')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Join Cf Liner & Outer & top Stitch On Cf Bottom'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Cup Inserting',
-            'name' => 'Cup Inserting',
-            'display_name' => 'Cup Inserting'
+            'code' => ucwords('Join Cf Liner & Outer & top Stitch On Cf Bottom'),
+            'name' => ucwords('Join Cf Liner & Outer & top Stitch On Cf Bottom'),
+            'display_name' => ucwords('Join Cf Liner & Outer & top Stitch On Cf Bottom')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Join Bagout & Tack Cf'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Cup Neck Line',
-            'name' => 'Cup Neck Line',
-            'display_name' => 'Cup Neck Line'
+            'code' => ucwords('Join Bagout & Tack Cf'),
+            'name' => ucwords('Join Bagout & Tack Cf'),
+            'display_name' => ucwords('Join Bagout & Tack Cf')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Jocker Tag '),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Cut Elastic',
-            'name' => 'Cut Elastic',
-            'display_name' => 'Cut Elastic'
+            'code' => ucwords('Jocker Tag'),
+            'name' => ucwords('Jocker Tag'),
+            'display_name' => ucwords('Jocker Tag')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Insert Fr Strap'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Dart Outline',
-            'name' => 'Dart Outline',
-            'display_name' => 'Dart Outline'
+            'code' => ucwords('Insert Fr Strap'),
+            'name' => ucwords('Insert Fr Strap'),
+            'display_name' => ucwords('Insert Fr Strap')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Hook up'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Dart Point',
-            'name' => 'Dart Point',
-            'display_name' => 'Dart Point'
+            'code' => ucwords('Hook up'),
+            'name' => ucwords('Hook up'),
+            'display_name' => ucwords('Hook up')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Hook tape'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Decoration',
-            'name' => 'Decoration',
-            'display_name' => 'Decoration'
+            'code' => ucwords('Hook tape'),
+            'name' => ucwords('Hook tape'),
+            'display_name' => ucwords('Hook tape')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Hook Attach'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Elastic',
-            'name' => 'Elastic',
-            'display_name' => 'Elastic'
+            'code' => ucwords('Hook Attach'),
+            'name' => ucwords('Hook Attach'),
+            'display_name' => ucwords('Hook Attach')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Hook & Eye'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Eye Attach',
-            'name' => 'Eye Attach',
-            'display_name' => 'Eye Attach'
+            'code' => ucwords('Hook & Eye'),
+            'name' => ucwords('Hook & Eye'),
+            'display_name' => ucwords('Hook & Eye')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Hook & Eye'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Eye Tape',
-            'name' => 'Eye Tape',
-            'display_name' => 'Eye Tape'
+            'code' => ucwords('Hook & Eye'),
+            'name' => ucwords('Hook & Eye'),
+            'display_name' => ucwords('Hook & Eye')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Hip'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Flat Seam',
-            'name' => 'Flat Seam',
-            'display_name' => 'Flat Seam'
+            'code' => ucwords('Hip'),
+            'name' => ucwords('Hip'),
+            'display_name' => ucwords('Hip')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Hem On Leg'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Fly Open',
-            'name' => 'Fly Open',
-            'display_name' => 'Fly Open'
+            'code' => ucwords('Hem On Leg'),
+            'name' => ucwords('Hem On Leg'),
+            'display_name' => ucwords('Hem On Leg')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Hem'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Front Panel',
-            'name' => 'Front Panel',
-            'display_name' => 'Front Panel'
+            'code' => ucwords('Hem'),
+            'name' => ucwords('Hem'),
+            'display_name' => ucwords('Hem')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Heat Transfer'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Front Rice',
-            'name' => 'Front Rice',
-            'display_name' => 'Front Rice'
+            'code' => ucwords('Heat Transfer'),
+            'name' => ucwords('Heat Transfer'),
+            'display_name' => ucwords('Heat Transfer')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Heat Seal Attach'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Front Scoop',
-            'name' => 'Front Scoop',
-            'display_name' => 'Front Scoop'
+            'code' => ucwords('Heat Seal Attach'),
+            'name' => ucwords('Heat Seal Attach'),
+            'display_name' => ucwords('Heat Seal Attach')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Gusset Seam'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Front Seam',
-            'name' => 'Front Seam',
-            'display_name' => 'Front Seam'
+            'code' => ucwords('Gusset Seam'),
+            'name' => ucwords('Gusset Seam'),
+            'display_name' => ucwords('Gusset Seam')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Gusset Narrowest Width'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Front Strap',
-            'name' => 'Front Strap',
-            'display_name' => 'Front Strap'
+            'code' => ucwords('Gusset Narrowest Width'),
+            'name' => ucwords('Gusset Narrowest Width'),
+            'display_name' => ucwords('Gusset Narrowest Width')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Gusset length'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Front Top',
-            'name' => 'Front Top',
-            'display_name' => 'Front Top'
+            'code' => ucwords('Gusset length'),
+            'name' => ucwords('Gusset length'),
+            'display_name' => ucwords('Gusset length')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Gusset'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Gusset',
-            'name' => 'Gusset',
-            'display_name' => 'Gusset'
+            'code' => ucwords('Gusset'),
+            'name' => ucwords('Gusset'),
+            'display_name' => ucwords('Gusset')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Front Top'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Gusset Length',
-            'name' => 'Gusset Length',
-            'display_name' => 'Gusset Length'
+            'code' => ucwords('Front Top'),
+            'name' => ucwords('Front Top'),
+            'display_name' => ucwords('Front Top')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Front Strap'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Gusset Narrowest Width',
-            'name' => 'Gusset Narrowest Width',
-            'display_name' => 'Gusset Narrowest Width'
+            'code' => ucwords('Front Strap'),
+            'name' => ucwords('Front Strap'),
+            'display_name' => ucwords('Front Strap')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Front Seam'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Gusset Seam',
-            'name' => 'Gusset Seam',
-            'display_name' => 'Gusset Seam'
+            'code' => ucwords('Front Seam'),
+            'name' => ucwords('Front Seam'),
+            'display_name' => ucwords('Front Seam')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Front Scoop'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Heat Seal Attach',
-            'name' => 'Heat Seal Attach',
-            'display_name' => 'Heat Seal Attach'
+            'code' => ucwords('Front Scoop'),
+            'name' => ucwords('Front Scoop'),
+            'display_name' => ucwords('Front Scoop')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Front Rise'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Heat Transfer',
-            'name' => 'Heat Transfer',
-            'display_name' => 'Heat Transfer'
+            'code' => ucwords('Front Rise'),
+            'name' => ucwords('Front Rise'),
+            'display_name' => ucwords('Front Rise')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Front Pannel'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Hem',
-            'name' => 'Hem',
-            'display_name' => 'Hem'
+            'code' => ucwords('Front Pannel'),
+            'name' => ucwords('Front Pannel'),
+            'display_name' => ucwords('Front Pannel')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Front Lace'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Hem On Leg',
-            'name' => 'Hem On Leg',
-            'display_name' => 'Hem On Leg'
+            'code' => ucwords('Front Lace'),
+            'name' => ucwords('Front Lace'),
+            'display_name' => ucwords('Front Lace')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Front Gusset Width'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Hip',
-            'name' => 'Hip',
-            'display_name' => 'Hip'
+            'code' => ucwords('Front Gusset Width'),
+            'name' => ucwords('Front Gusset Width'),
+            'display_name' => ucwords('Front Gusset Width')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Front  Panel'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Hook & Eye',
-            'name' => 'Hook & Eye',
-            'display_name' => 'Hook & Eye'
+            'code' => ucwords('Front  Panel'),
+            'name' => ucwords('Front  Panel'),
+            'display_name' => ucwords('Front  Panel')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Fly Open'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Hook & Eye',
-            'name' => 'Hook & Eye',
-            'display_name' => 'Hook & Eye'
+            'code' => ucwords('Fly Open'),
+            'name' => ucwords('Fly Open'),
+            'display_name' => ucwords('Fly Open')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Flat Seam'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Hook Attach',
-            'name' => 'Hook Attach',
-            'display_name' => 'Hook Attach'
+            'code' => ucwords('Flat Seam'),
+            'name' => ucwords('Flat Seam'),
+            'display_name' => ucwords('Flat Seam')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Eye Tape'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Hook Tape',
-            'name' => 'Hook Tape',
-            'display_name' => 'Hook Tape'
+            'code' => ucwords('Eye Tape'),
+            'name' => ucwords('Eye Tape'),
+            'display_name' => ucwords('Eye Tape')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Eye Attach'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Hook Up',
-            'name' => 'Hook Up',
-            'display_name' => 'Hook Up'
+            'code' => ucwords('Eye Attach'),
+            'name' => ucwords('Eye Attach'),
+            'display_name' => ucwords('Eye Attach')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Elastic'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'insert FR Strap',
-            'name' => 'insert FR Strap',
-            'display_name' => 'insert FR Strap'
+            'code' => ucwords('Elastic'),
+            'name' => ucwords('Elastic'),
+            'display_name' => ucwords('Elastic')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Decoration'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Jocker Tag',
-            'name' => 'Jocker Tag',
-            'display_name' => 'Jocker Tag'
+            'code' => ucwords('Decoration'),
+            'name' => ucwords('Decoration'),
+            'display_name' => ucwords('Decoration')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Dart Point'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Join Bagout & Tack CF',
-            'name' => 'Join Bagout & Tack CF',
-            'display_name' => 'Join Bagout & Tack CF'
+            'code' => ucwords('Dart Point'),
+            'name' => ucwords('Dart Point'),
+            'display_name' => ucwords('Dart Point')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Dart Out Line'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Join CF Liner & Outer & Top Stitch On CF Bottom',
-            'name' => 'Join CF Liner & Outer & Top Stitch On CF Bottom',
-            'display_name' => 'Join CF Liner & Outer & Top Stitch On CF Bottom'
+            'code' => ucwords('Dart Out Line'),
+            'name' => ucwords('Dart Out Line'),
+            'display_name' => ucwords('Dart Out Line')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Cut Elastic'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Join Cradle Liner & Outer',
-            'name' => 'Join Cradle Liner & Outer',
-            'display_name' => 'Join Cradle Liner & Outer'
+            'code' => ucwords('Cut Elastic'),
+            'name' => ucwords('Cut Elastic'),
+            'display_name' => ucwords('Cut Elastic')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Cup Neck Line'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Join Cradle Top & Bagout',
-            'name' => 'Join Cradle Top & Bagout',
-            'display_name' => 'Join Cradle Top & Bagout'
+            'code' => ucwords('Cup Neck Line'),
+            'name' => ucwords('Cup Neck Line'),
+            'display_name' => ucwords('Cup Neck Line')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Cup Inserting'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Join Label To Wing',
-            'name' => 'Join Label To Wing',
-            'display_name' => 'Join Label To Wing'
+            'code' => ucwords('Cup Inserting'),
+            'name' => ucwords('Cup Inserting'),
+            'display_name' => ucwords('Cup Inserting')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Cup'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Join Neck & Under Arm',
-            'name' => 'Join Neck & Under Arm',
-            'display_name' => 'Join Neck & Under Arm'
+            'code' => ucwords('Cup'),
+            'name' => ucwords('Cup'),
+            'display_name' => ucwords('Cup')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Cradle Seam'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Join Top & Btm Cups Together',
-            'name' => 'Join Top & Btm Cups Together',
-            'display_name' => 'Join Top & Btm Cups Together'
+            'code' => ucwords('Cradle Seam'),
+            'name' => ucwords('Cradle Seam'),
+            'display_name' => ucwords('Cradle Seam')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Close Gusset Both Sides'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Join Wing To Cradle Side Seam',
-            'name' => 'Join Wing To Cradle Side Seam',
-            'display_name' => 'Join Wing To Cradle Side Seam'
+            'code' => ucwords('Close Gusset Both Sides'),
+            'name' => ucwords('Close Gusset Both Sides'),
+            'display_name' => ucwords('Close Gusset Both Sides')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Close Bottom Wing'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Key Hole',
-            'name' => 'Key Hole',
-            'display_name' => 'Key Hole'
+            'code' => ucwords('Close Bottom Wing'),
+            'name' => ucwords('Close Bottom Wing'),
+            'display_name' => ucwords('Close Bottom Wing')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Close Bottom'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Label Attach',
-            'name' => 'Label Attach',
-            'display_name' => 'Label Attach'
+            'code' => ucwords('Close Bottom'),
+            'name' => ucwords('Close Bottom'),
+            'display_name' => ucwords('Close Bottom')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Center Front Bottom'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Label Attached',
-            'name' => 'Label Attached',
-            'display_name' => 'Label Attached'
+            'code' => ucwords('Center Front Bottom'),
+            'name' => ucwords('Center Front Bottom'),
+            'display_name' => ucwords('Center Front Bottom')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Center Front'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Lace',
-            'name' => 'Lace',
-            'display_name' => 'Lace'
+            'code' => ucwords('Center Front'),
+            'name' => ucwords('Center Front'),
+            'display_name' => ucwords('Center Front')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Butt Join'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Lace Attach',
-            'name' => 'Lace Attach',
-            'display_name' => 'Lace Attach'
+            'code' => ucwords('Butt Join'),
+            'name' => ucwords('Butt Join'),
+            'display_name' => ucwords('Butt Join')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Bust Seam'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Leg',
-            'name' => 'Leg',
-            'display_name' => 'Leg'
+            'code' => ucwords('Bust Seam'),
+            'name' => ucwords('Bust Seam'),
+            'display_name' => ucwords('Bust Seam')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Bra Wire'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Leg Open',
-            'name' => 'Leg Open',
-            'display_name' => 'Leg Open'
+            'code' => ucwords('Bra Wire'),
+            'name' => ucwords('Bra Wire'),
+            'display_name' => ucwords('Bra Wire')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Bow Attached'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Leg Opening Extended',
-            'name' => 'Leg Opening Extended',
-            'display_name' => 'Leg Opening Extended'
+            'code' => ucwords('Bow Attached'),
+            'name' => ucwords('Bow Attached'),
+            'display_name' => ucwords('Bow Attached')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Bottom Wing'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Leg Opening Relax',
-            'name' => 'Leg Opening Relax',
-            'display_name' => 'Leg Opening Relax'
+            'code' => ucwords('Bottom Wing'),
+            'name' => ucwords('Bottom Wing'),
+            'display_name' => ucwords('Bottom Wing')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Bottom Band'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Locking',
-            'name' => 'Locking',
-            'display_name' => 'Locking'
+            'code' => ucwords('Bottom Band'),
+            'name' => ucwords('Bottom Band'),
+            'display_name' => ucwords('Bottom Band')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Bone Seam'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Measurment',
-            'name' => 'Measurment',
-            'display_name' => 'Measurment'
+            'code' => ucwords('Bone Seam'),
+            'name' => ucwords('Bone Seam'),
+            'display_name' => ucwords('Bone Seam')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Binding'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Molding',
-            'name' => 'Molding',
-            'display_name' => 'Molding'
+            'code' => ucwords('Binding'),
+            'name' => ucwords('Binding'),
+            'display_name' => ucwords('Binding')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Baste top & Bottom Cup Outer & Liner'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'N/A',
-            'name' => 'N/A',
-            'display_name' => 'N/A'
+            'code' => ucwords('Baste top & Bottom Cup Outer & Liner'),
+            'name' => ucwords('Baste top & Bottom Cup Outer & Liner'),
+            'display_name' => ucwords('Baste top & Bottom Cup Outer & Liner')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Baste Cradle Around'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Narrowest',
-            'name' => 'Narrowest',
-            'display_name' => 'Narrowest'
+            'code' => ucwords('Baste Cradle Around'),
+            'name' => ucwords('Baste Cradle Around'),
+            'display_name' => ucwords('Baste Cradle Around')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Bar Tack'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Neaten Gusset',
-            'name' => 'Neaten Gusset',
-            'display_name' => 'Neaten Gusset'
+            'code' => ucwords('Bar Tack'),
+            'name' => ucwords('Bar Tack'),
+            'display_name' => ucwords('Bar Tack')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Bagout & Baste Wing Sides'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Neck',
-            'name' => 'Neck',
-            'display_name' => 'Neck'
+            'code' => ucwords('Bagout & Baste Wing Sides'),
+            'name' => ucwords('Bagout & Baste Wing Sides'),
+            'display_name' => ucwords('Bagout & Baste Wing Sides')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Back Wing'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Neck Code',
-            'name' => 'Neck Code',
-            'display_name' => 'Neck Code'
+            'code' => ucwords('Back Wing'),
+            'name' => ucwords('Back Wing'),
+            'display_name' => ucwords('Back Wing')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Back Waist'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Neck Line',
-            'name' => 'Neck Line',
-            'display_name' => 'Neck Line'
+            'code' => ucwords('Back Waist'),
+            'name' => ucwords('Back Waist'),
+            'display_name' => ucwords('Back Waist')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Back Top'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Neckline',
-            'name' => 'Neckline',
-            'display_name' => 'Neckline'
+            'code' => ucwords('Back Top'),
+            'name' => ucwords('Back Top'),
+            'display_name' => ucwords('Back Top')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Back Strap'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Outter Cup',
-            'name' => 'Outter Cup',
-            'display_name' => 'Outter Cup'
+            'code' => ucwords('Back Strap'),
+            'name' => ucwords('Back Strap'),
+            'display_name' => ucwords('Back Strap')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Back Seam'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Over Bust Seam',
-            'name' => 'Over Bust Seam',
-            'display_name' => 'Over Bust Seam'
+            'code' => ucwords('Back Seam'),
+            'name' => ucwords('Back Seam'),
+            'display_name' => ucwords('Back Seam')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Back Scoop'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Pad Print',
-            'name' => 'Pad Print',
-            'display_name' => 'Pad Print'
+            'code' => ucwords('Back Scoop'),
+            'name' => ucwords('Back Scoop'),
+            'display_name' => ucwords('Back Scoop')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Back Rise'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Paper Top',
-            'name' => 'Paper Top',
-            'display_name' => 'Paper Top'
+            'code' => ucwords('Back Rise'),
+            'name' => ucwords('Back Rise'),
+            'display_name' => ucwords('Back Rise')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Back Rice'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Re Cup',
-            'name' => 'Re Cup',
-            'display_name' => 'Re Cup'
+            'code' => ucwords('Back Rice'),
+            'name' => ucwords('Back Rice'),
+            'display_name' => ucwords('Back Rice')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Back Panel'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Sew & Cut Strap',
-            'name' => 'Sew & Cut Strap',
-            'display_name' => 'Sew & Cut Strap'
+            'code' => ucwords('Back Panel'),
+            'name' => ucwords('Back Panel'),
+            'display_name' => ucwords('Back Panel')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Back Loop'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Shoulder Seam',
-            'name' => 'Shoulder Seam',
-            'display_name' => 'Shoulder Seam'
+            'code' => ucwords('Back Loop'),
+            'name' => ucwords('Back Loop'),
+            'display_name' => ucwords('Back Loop')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Back Lace'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Side Lace',
-            'name' => 'Side Lace',
-            'display_name' => 'sSde Lace'
+            'code' => ucwords('Back Lace'),
+            'name' => ucwords('Back Lace'),
+            'display_name' => ucwords('Back Lace')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Back Gusset Width'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Side Seam',
-            'name' => 'Side Seam',
-            'display_name' => 'Side Seam'
+            'code' => ucwords('Back Gusset Width'),
+            'name' => ucwords('Back Gusset Width'),
+            'display_name' => ucwords('Back Gusset Width')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Stabi to Pu Cup & U/A Side'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Side Wing',
-            'name' => 'Side Wing',
-            'display_name' => 'Side Wing'
+            'code' => ucwords('Attach Stabi to Pu Cup & U/A Side'),
+            'name' => ucwords('Attach Stabi to Pu Cup & U/A Side'),
+            'display_name' => ucwords('Attach Stabi to Pu Cup & U/A Side')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Neck Line, Under Arm & Strap'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Size Tag',
-            'name' => 'Size Tag',
-            'display_name' => 'Size Tag'
+            'code' => ucwords('Attach Neck Line, Under Arm & Strap'),
+            'name' => ucwords('Attach Neck Line, Under Arm & Strap'),
+            'display_name' => ucwords('Attach Neck Line, Under Arm & Strap')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Liner Cup to Pu Cup'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Spot Tag',
-            'name' => 'Spot Tag',
-            'display_name' => 'Spot Tag'
+            'code' => ucwords('Attach Liner Cup to Pu Cup'),
+            'name' => ucwords('Attach Liner Cup to Pu Cup'),
+            'display_name' => ucwords('Attach Liner Cup to Pu Cup')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Hook & Eye'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Strap',
-            'name' => 'Strap',
-            'display_name' => 'Strap'
+            'code' => ucwords('Attach Hook & Eye'),
+            'name' => ucwords('Attach Hook & Eye'),
+            'display_name' => ucwords('Attach Hook & Eye')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Gusset'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Strap',
-            'name' => 'Strap',
-            'display_name' => 'Strap'
+            'code' => ucwords('Attach Gusset'),
+            'name' => ucwords('Attach Gusset'),
+            'display_name' => ucwords('Attach Gusset')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Fr Strap to Bk Strap'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Strap Length',
-            'name' => 'Strap Length',
-            'display_name' => 'Strap Length'
+            'code' => ucwords('Attach Fr Strap to Bk Strap'),
+            'name' => ucwords('Attach Fr Strap to Bk Strap'),
+            'display_name' => ucwords('Attach Fr Strap to Bk Strap')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Elastic to Waist'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Strap Making',
-            'name' => 'Strap Making',
-            'display_name' => 'Strap Making'
+            'code' => ucwords('Attach Elastic to Waist'),
+            'name' => ucwords('Attach Elastic to Waist'),
+            'display_name' => ucwords('Attach Elastic to Waist')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Elastic to top Wing With Loop'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Tack Cradle Outer & Liner',
-            'name' => 'Tack Cradle Outer & Liner',
-            'display_name' => 'Tack Cradle Outer & Liner'
+            'code' => ucwords('Attach Elastic to top Wing With Loop'),
+            'name' => ucwords('Attach Elastic to top Wing With Loop'),
+            'display_name' => ucwords('Attach Elastic to top Wing With Loop')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Elastic to top Wing'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Tack FR Strap',
-            'name' => 'Tack FR Strap',
-            'display_name' => 'Tack FR Strap'
+            'code' => ucwords('Attach Elastic to top Wing'),
+            'name' => ucwords('Attach Elastic to top Wing'),
+            'display_name' => ucwords('Attach Elastic to top Wing')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Elastic to Leg'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Tack Gusset',
-            'name' => 'Tack Gusset',
-            'display_name' => 'Tack Gusset'
+            'code' => ucwords('Attach Elastic to Leg'),
+            'name' => ucwords('Attach Elastic to Leg'),
+            'display_name' => ucwords('Attach Elastic to Leg')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Elastic to Cradle Bottom'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Top Wing',
-            'name' => 'Top Wing',
-            'display_name' => 'Top Wing'
+            'code' => ucwords('Attach Elastic to Cradle Bottom'),
+            'name' => ucwords('Attach Elastic to Cradle Bottom'),
+            'display_name' => ucwords('Attach Elastic to Cradle Bottom')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Elastic to Cf Cradle top'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Total Under Band Extended',
-            'name' => 'Total Under Band Extended',
-            'display_name' => 'Total Under Band Extended'
+            'code' => ucwords('Attach Elastic to Cf Cradle top'),
+            'name' => ucwords('Attach Elastic to Cf Cradle top'),
+            'display_name' => ucwords('Attach Elastic to Cf Cradle top')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Elastic to Bottom Wing'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Total Under Band Relax',
-            'name' => 'Total Under Band Relax',
-            'display_name' => 'Total Under Band Relax'
+            'code' => ucwords('Attach Elastic to Bottom Wing'),
+            'name' => ucwords('Attach Elastic to Bottom Wing'),
+            'display_name' => ucwords('Attach Elastic to Bottom Wing')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Elastic to Backscoop'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Under Arm',
-            'name' => 'Under Arm',
-            'display_name' => 'Under Arm'
+            'code' => ucwords('Attach Elastic to Backscoop'),
+            'name' => ucwords('Attach Elastic to Backscoop'),
+            'display_name' => ucwords('Attach Elastic to Backscoop')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Elastic to Around Cup'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Under Band',
-            'name' => 'Under Band',
-            'display_name' => 'Under Band'
+            'code' => ucwords('Attach Elastic to Around Cup'),
+            'name' => ucwords('Attach Elastic to Around Cup'),
+            'display_name' => ucwords('Attach Elastic to Around Cup')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Cups to Cf & Wing'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Vertical Cup',
-            'name' => 'Vertical Cup',
-            'display_name' => 'Vertical Cup'
+            'code' => ucwords('Attach Cups to Cf & Wing'),
+            'name' => ucwords('Attach Cups to Cf & Wing'),
+            'display_name' => ucwords('Attach Cups to Cf & Wing')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Cups Into Cradle'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Vertical Seam',
-            'name' => 'Vertical Seam',
-            'display_name' => 'Vertical Seam'
+            'code' => ucwords('Attach Cups Into Cradle'),
+            'name' => ucwords('Attach Cups Into Cradle'),
+            'display_name' => ucwords('Attach Cups Into Cradle')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Cup to Pu Cup Bottom'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Waist Band',
-            'name' => 'Waist Band',
-            'display_name' => 'Waist Band'
+            'code' => ucwords('Attach Cup to Pu Cup Bottom'),
+            'name' => ucwords('Attach Cup to Pu Cup Bottom'),
+            'display_name' => ucwords('Attach Cup to Pu Cup Bottom')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Bra Wirecasing & Insert Wires'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Waist Extended',
-            'name' => 'Waist Extended',
-            'display_name' => 'Waist Extended'
+            'code' => ucwords('Attach Bra Wirecasing & Insert Wires'),
+            'name' => ucwords('Attach Bra Wirecasing & Insert Wires'),
+            'display_name' => ucwords('Attach Bra Wirecasing & Insert Wires')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Bow / Mottif'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Waist Relaxed',
-            'name' => 'Waist Relaxed',
-            'display_name' => 'Waist Relaxed'
+            'code' => ucwords('Attach Bow / Mottif'),
+            'name' => ucwords('Attach Bow / Mottif'),
+            'display_name' => ucwords('Attach Bow / Mottif')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Bone Casing & Insert Bones'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Wing Attache',
-            'name' => 'Wing Attache',
-            'display_name' => 'Wing Attache'
+            'code' => ucwords('Attach Bone Casing & Insert Bones'),
+            'name' => ucwords('Attach Bone Casing & Insert Bones'),
+            'display_name' => ucwords('Attach Bone Casing & Insert Bones')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Attach Back Scoop'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Wing Panel',
-            'name' => 'Wing Panel',
-            'display_name' => 'Wing Panel'
+            'code' => ucwords('Attach Back Scoop'),
+            'name' => ucwords('Attach Back Scoop'),
+            'display_name' => ucwords('Attach Back Scoop')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Around Tape'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Wing Tack',
-            'name' => 'Wing Tack',
-            'display_name' => 'Wing Tack'
+            'code' => ucwords('Around Tape'),
+            'name' => ucwords('Around Tape'),
+            'display_name' => ucwords('Around Tape')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Around Cup'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Wire Casting',
-            'name' => 'Wire Casting',
-            'display_name' => 'Wire Casting'
+            'code' => ucwords('Around Cup'),
+            'name' => ucwords('Around Cup'),
+            'display_name' => ucwords('Around Cup')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Armhole'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Wire Insert',
-            'name' => 'Wire Insert',
-            'display_name' => 'Wire Insert'
+            'code' => ucwords('Armhole'),
+            'name' => ucwords('Armhole'),
+            'display_name' => ucwords('Armhole')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Apex'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Wire Inserting',
-            'name' => 'Wire Inserting',
-            'display_name' => 'Wire Inserting'
+            'code' => ucwords('Apex'),
+            'name' => ucwords('Apex'),
+            'display_name' => ucwords('Apex')
         ]);
         
         $newMeasurePoint = MeasurePoint::firstOrCreate([
+            'id' => ucwords('Across Cup'),
             'is_visible' => true,
             'is_active' => true,
-            'code' => 'Wire Play',
-            'name' => 'Wire Play',
-            'display_name' => 'Wire Play'
+            'code' => ucwords('Across Cup'),
+            'name' => ucwords('Across Cup'),
+            'display_name' => ucwords('Across Cup')
         ]);
+        
     }
 }
