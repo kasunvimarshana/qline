@@ -24,7 +24,7 @@
     @if( auth()->user()->can('create-quality_record_sewing_check') )
     <li class="nav-item flex-sm-fill text-sm-center" tabindex="1">
         <a id="id_nav_link_3" class="nav-link m-1 btn btn-outline-danger" data-toggle="false" href="{!! route('setupConfigurationSewingCheck.index', []) !!}" role="tab" aria-controls="id_tab_content_3" aria-selected="false">
-            <span><i class="fas fa-glasses"></i> SC 100%</span>
+            <span><i class="fas fa-glasses"></i> End Line QC</span>
         </a>
     </li>
     @endif
