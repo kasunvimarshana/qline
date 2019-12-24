@@ -131,37 +131,53 @@ class UserSyncCommand extends Command
                                 continue;
                             }
                             
-                            DB::transaction(function () use($value_temp_user_hcm, $index_2_column_employee_number, $index_2_column_e_p_f_number, $index_2_column_e_m_p_full_name, $index_2_designation, $index_2_department, $index_2_roster){
+                            DB::transaction(function () use($value_temp_user_hcm, $index_2_column_employee_number, $index_2_column_e_p_f_number, $index_2_column_e_m_p_barcode, $index_2_column_e_m_p_full_name, $index_2_column_e_m_p_calling_name, $index_2_designation, $index_2_cluster, $index_2_location, $index_2_department, $index_2_roster, $index_2_skill_grade, $index_2_direct_indirect_status, $index_2_supervisor_name){
+                                
                                 $temp_employee_number = $value_temp_user_hcm[ $index_2_column_employee_number ];
-                                $temp_epf_number = $value_temp_user_hcm[ $index_2_column_e_p_f_number ];
-                                $temp_full_name = $value_temp_user_hcm[ $index_2_column_e_m_p_full_name ];
+                                $temp_e_p_f_number = $value_temp_user_hcm[ $index_2_column_e_p_f_number ];
+                                $temp_e_m_p_barcode = $value_temp_user_hcm[ $index_2_column_e_m_p_barcode ];
+                                $temp_e_m_p_full_name = $value_temp_user_hcm[ $index_2_column_e_m_p_full_name ];
+                                $temp_e_m_p_calling_name = $value_temp_user_hcm[ $index_2_column_e_m_p_calling_name ];
                                 $temp_designation = $value_temp_user_hcm[ $index_2_designation ];
+                                $temp_cluster = $value_temp_user_hcm[ $index_2_cluster ];
+                                $temp_location = $value_temp_user_hcm[ $index_2_location ];
                                 $temp_department = $value_temp_user_hcm[ $index_2_department ];
                                 $temp_roster = $value_temp_user_hcm[ $index_2_roster ];
-
+                                $temp_skill_grade = $value_temp_user_hcm[ $index_2_skill_grade ];
+                                $temp_direct_indirect_status = $value_temp_user_hcm[ $index_2_direct_indirect_status ];
+                                $temp_supervisor_name = $value_temp_user_hcm[ $index_2_supervisor_name ];
+                                
                                 $temp_employee_number = trim($temp_employee_number);
-                                $temp_epf_number = trim($temp_epf_number);
-                                $temp_full_name = trim($temp_full_name);
+                                $temp_e_p_f_number = trim($temp_e_p_f_number);
+                                $temp_e_m_p_barcode = trim($temp_e_m_p_barcode);
+                                $temp_e_m_p_full_name = trim($temp_e_m_p_full_name);
+                                $temp_e_m_p_calling_name = trim($temp_e_m_p_calling_name);
                                 $temp_designation = trim($temp_designation);
+                                $temp_cluster = trim($temp_cluster);
+                                $temp_location = trim($temp_location);
                                 $temp_department = trim($temp_department);
                                 $temp_roster = trim($temp_roster);
+                                $temp_skill_grade = trim($temp_skill_grade);
+                                $temp_direct_indirect_status = trim($temp_direct_indirect_status);
+                                $temp_supervisor_name = trim($temp_supervisor_name);
 
                                 $temp_employee_number = intval( $temp_employee_number );
-                                $temp_epf_number = intval( $temp_epf_number );
+                                $temp_e_p_f_number = intval( $temp_e_p_f_number );
 
-                                if( (isset($temp_epf_number)) && (!empty($temp_epf_number)) ){
+                                if( (isset($temp_e_p_f_number)) && (!empty($temp_e_p_f_number)) ){
                                     $newUser = User::updateOrCreate([
-                                        'id' => $temp_epf_number
+                                        'id' => $temp_e_p_f_number
                                     ], [
-                                        //'id' => $temp_epf_number,
-                                        'code' => $temp_epf_number,
+                                        //'id' => $temp_e_p_f_number,
+                                        'code' => $temp_e_p_f_number,
                                         'is_visible' => true,
                                         'is_active' => true,
-                                        'code' => $temp_epf_number,
-                                        'code_epf' => $temp_epf_number,
-                                        'name_first' => $temp_full_name,
-                                        //'name_last' => $temp_full_name,
-                                        'display_name' => $temp_full_name
+                                        'code' => $temp_e_p_f_number,
+                                        'code_epf' => $temp_e_p_f_number,
+                                        'name_first' => $temp_e_m_p_full_name,
+                                        //'name_last' => $temp_e_m_p_full_name,
+                                        'display_name' => $temp_e_m_p_full_name,
+                                        'grade' => $temp_skill_grade
                                     ]);
                                 }
                             });
@@ -189,7 +205,7 @@ class UserSyncCommand extends Command
                                 continue;
                             }
                             
-                            DB::transaction(function () use($value_temp_user_ad, $index_1_column_dn, $index_1_column_given_name, $index_1_column_mail, $index_1_column_employee_type, $index_1_column_employee_number){
+                            DB::transaction(function () use($value_temp_user_ad, $index_1_column_dn, $index_1_column_given_name, $index_1_column_mail, $index_1_column_employee_number, $index_1_column_employee_type){
                                 $temp_dn = $value_temp_user_ad[ $index_1_column_dn ];
                                 $temp_given_name = $value_temp_user_ad[ $index_1_column_given_name ];
                                 $temp_mail = $value_temp_user_ad[ $index_1_column_mail ];
