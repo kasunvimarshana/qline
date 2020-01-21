@@ -329,6 +329,20 @@
                                                 </div>
                                                 <!-- /.form-group -->
                                                 <!-- ------------------------------------------------------------------------- -->
+                                                <!-- ------------------------------------------------------------------------- -->
+                                                <!-- form-group -->
+                                                <div class="form-group form-group-lg col col-12">
+                                                    <label for="defect_id" class="col col-lg-12 control-label col-form-label col-form-label-md text-justify font-weight-bold text-md-left">Description</label>
+                                                    <div class="col col-lg-12">
+                                                        <!-- p class="form-control-static"></p -->
+                                                        <div class="p-0 m-0">
+                                                            <textarea id="description" name="description" class="form-control" rows="3" placeholder="Description">{{ old('description') }}</textarea>
+                                                        </div>
+                                                    </div>
+                                                    <!-- span id="form-control" class="help-block"></span -->
+                                                </div>
+                                                <!-- /.form-group -->
+                                                <!-- ------------------------------------------------------------------------- -->
 
                                                 <!-- form-group-row -->
                                                 <div class="col col-12 w-100">

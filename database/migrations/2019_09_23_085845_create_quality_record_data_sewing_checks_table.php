@@ -38,6 +38,11 @@ class CreateQualityRecordDataSewingChecksTable extends Migration
             $table->string('defect_category_id')->nullable()->comment('comment');//->index()
             $table->string('defect_id')->nullable()->comment('comment');//->index()
             $table->double('count_defect')->nullable()->default(0)->comment('comment');//->index()
+            
+            $table->boolean('is_countable')->default(false)->nullable()->comment('comment');//->index()
+            //$table->text('description')->default(null)->nullable()->comment('comment');
+            $table->unsignedBigInteger('quality_record_data_sewing_check_id_parent')->unsigned()->nullable()->comment('comment');//->index()
+            $table->double('record_count')->nullable()->default(0)->comment('comment');//->index()
         });
         
         Schema::table($this->table_name_1, function($table) {

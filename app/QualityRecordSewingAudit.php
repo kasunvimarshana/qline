@@ -26,7 +26,8 @@ class QualityRecordSewingAudit extends Model
     //protected $appends = array('field1', 'field2');
     //protected $attributes = array();
     //protected $guarded = array();
-    protected $fillable = array('id', 'is_visible', 'is_active', 'time_create', 'count_sample', 'inspection_stage_id', 'standard_a_q_l_id', 'company_id', 'strategic_business_unit_id', 'factory_id', 'line_id', 'customer_id', 'style_id', 'colour_id', 'export_id', 'user_id_create', 'ip_address', 'status_id', 'description', 'quality_record_input_scan_data_ids', 'quantity_audit', 'quantity_pass', 'quantity_inspect');
+    protected $fillable = array('id', 'is_visible', 'is_active', 'time_create', 'count_sample', 'inspection_stage_id', 'standard_a_q_l_id', 'company_id', 'strategic_business_unit_id', 'factory_id', 'line_id', 'customer_id', 'style_id', 'colour_id', 'export_id', 'user_id_create', 'ip_address', 'status_id', 'description', 'quality_record_input_scan_data_ids', 'quantity_audit', 'quantity_pass', 'quantity_inspect', 'is_countable', 'quality_record_sewing_audit_id_parent', 'record_count');
+    
     //protected $hidden = array();
     protected $casts = array(
         'quality_record_input_scan_data_ids' => 'array'

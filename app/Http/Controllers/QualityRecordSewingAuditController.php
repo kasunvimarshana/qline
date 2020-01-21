@@ -523,7 +523,11 @@ class QualityRecordSewingAuditController extends Controller
                             'ip_address' => $request->ip(),
                             'quantity_audit' => $request->input('quantity_audit', $count_sample_temp),
                             //'quantity_pass' => $request->input('quantity_pass', $count_sample_temp),
-                            'quantity_inspect' => $request->input('quantity_inspect', $count_sample_temp)
+                            'quantity_inspect' => $request->input('quantity_inspect', $count_sample_temp),
+                            'description' => $request->input('description'),
+                            //'is_countable' => $request->input('is_countable', true),
+                            //'quality_record_sewing_audit_id_parent' => $request->input('quality_record_sewing_audit_id_parent'),
+                            //'record_count' => $request->input('record_count'),
                         );
 
                         $qualityRecordSewingAuditObject = QualityRecordSewingAudit::create( $dataArray );
@@ -544,6 +548,9 @@ class QualityRecordSewingAuditController extends Controller
                                 'defect_id' => $defectObject->id,
                                 //'count_defect' => $request->input('count_defect', 1),
                                 'count_defect' => 1,
+                                'is_countable' => $request->input('is_countable', true),
+                                'quality_record_data_sewing_audit_id_parent' => $request->input('quality_record_data_sewing_audit_id_parent'),
+                                //'record_count' => $request->input('record_count'),
                             ]);
 
                             $qualityRecordSewingAuditObject->qualityRecordDataSewingAudit()->save($qualityRecordDataSewingAuditObject);

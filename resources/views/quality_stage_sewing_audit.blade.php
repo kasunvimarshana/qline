@@ -189,6 +189,63 @@
                                                                                             </div>
                                                                                         </li>
                                                                                         <!-- /.list-group-item -->
+                                                                                        
+                                                                                        <!-- list-group-item -->
+                                                                                        <li class="list-group-item flex-column align-items-start bg-light h-100">
+                                                                                            <div class="d-flex w-100 justify-content-between">
+                                                                                                <span class="text-monospace text-justify">
+                                                                                                    <span class="text-wrap text-break font-weight-bold text-danger">
+                                                                                                        <b>AQL Standard</b>
+                                                                                                    </span>
+                                                                                                </span>
+                                                                                                <span class="text-monospace text-justify">
+                                                                                                    <span class="badge badge-secondary text-wrap text-break">
+                                                                                                        @isset($standard_sewing_audit_object)
+                                                                                                        {{ $standard_sewing_audit_object->name }}
+                                                                                                        @endisset
+                                                                                                    </span>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </li>
+                                                                                        <!-- /.list-group-item -->
+                                                                                        
+                                                                                        <!-- list-group-item -->
+                                                                                        <li class="list-group-item flex-column align-items-start bg-light h-100 p-1">
+                                                                                            <div class="d-flex w-100 justify-content-between">
+                                                                                                <!-- -->
+                                                                                                <div class="btn-toolbar w-100" role="toolbar" aria-label="btn toolbar">
+                                                                                                    <div class="btn-group w-100" role="group" aria-label="First group">
+                                                                                                        <!-- --- -->
+                                                                                                        <a class="btn btn-outline-danger btn-sm btn-block text-left" role="button" type="button" href="" target="_blank">
+                                                                                                            <i class="fa fa-barcode" aria-hidden="true"></i>
+                                                                                                            <span> Failed AQL</span>
+                                                                                                        </a>
+                                                                                                        <!-- --- -->
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <!-- -->
+                                                                                            </div>
+                                                                                        </li>
+                                                                                        <!-- /.list-group-item -->
+                                                                                        
+                                                                                        <!-- list-group-item -->
+                                                                                        <li class="list-group-item flex-column align-items-start bg-light h-100 p-1">
+                                                                                            <div class="d-flex w-100 justify-content-between">
+                                                                                                <!-- -->
+                                                                                                <div class="btn-toolbar w-100" role="toolbar" aria-label="btn toolbar">
+                                                                                                    <div class="btn-group w-100" role="group" aria-label="First group">
+                                                                                                        <!-- --- -->
+                                                                                                        <a class="btn btn-outline-warning btn-sm btn-block text-left" role="button" type="button" href="" target="_blank">
+                                                                                                            <i class="fa fa-barcode" aria-hidden="true"></i>
+                                                                                                            <span> Suspended AQL</span>
+                                                                                                        </a>
+                                                                                                        <!-- --- -->
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <!-- -->
+                                                                                            </div>
+                                                                                        </li>
+                                                                                        <!-- /.list-group-item -->
                                                                                     </ul>
                                                                                     <!-- /.list-group -->
                                                                                     

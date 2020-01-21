@@ -626,7 +626,8 @@ class LineController extends Controller
 
                 // order
                 //$query->orderBy('id', 'desc');
-                $query->orderBy('updated_at', 'desc');
+                //$query->orderBy('updated_at', 'desc');
+                $query->orderBy('name', 'asc');
 
                 // get data
                 $queryResult = $query->get();

@@ -136,7 +136,7 @@
                                                     <h5 class="mb-0">
                                                         <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse2_1" aria-expanded="false" aria-controls="idCollapse2_1" role="button" type="button">
                                                         <i class="fa fa-band-aid fa-fw"></i>
-                                                        <span class="text-decoration-none text-justify small"> Company</span>
+                                                        <span class="text-decoration-none text-justify small"> SBU</span>
                                                         </button>
                                                     </h5>
                                                 </div>

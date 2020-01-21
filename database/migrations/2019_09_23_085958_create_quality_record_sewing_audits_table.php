@@ -47,13 +47,18 @@ class CreateQualityRecordSewingAuditsTable extends Migration
             $table->string('user_id_create')->nullable()->comment('comment');//->index()
             $table->string('ip_address')->nullable()->comment('comment');//->index()
             $table->unsignedBigInteger('status_id')->unsigned()->nullable()->comment('comment');//->index()
-            $table->text('description')->default(null)->nullable()->comment('comment'); 
+            //$table->text('description')->default(null)->nullable()->comment('comment'); 
             //$table->nullableMorphs('recordable');
             //$table->json('quality_record_input_scan_data_ids')->nullable()->comment('comment');
             $table->text('quality_record_input_scan_data_ids')->default(null)->nullable()->comment('comment'); 
             $table->double('quantity_audit')->nullable()->default(0)->comment('comment');//->index()
             $table->double('quantity_pass')->nullable()->default(0)->comment('comment');//->index()
             $table->double('quantity_inspect')->nullable()->default(0)->comment('comment');//->index()
+            
+            $table->boolean('is_countable')->default(false)->nullable()->comment('comment');//->index()
+            $table->text('description')->default(null)->nullable()->comment('comment');
+            $table->unsignedBigInteger('quality_record_sewing_audit_id_parent')->unsigned()->nullable()->comment('comment');//->index()
+            $table->double('record_count')->nullable()->default(0)->comment('comment');//->index()
         });
         
         Schema::table($this->table_name_1, function($table) {

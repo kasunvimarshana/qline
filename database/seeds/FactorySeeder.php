@@ -684,7 +684,7 @@ class FactorySeeder extends Seeder
         */
         $lineArray = array();
         
-        for($i = 1; $i < 60; $i++){
+        for($i = 1; $i <= 1; $i++){
             $newLine = $newFactory->lines()->firstOrCreate([
                 //'id' => ucwords(('Line'.$i)),
                 'is_visible' => true,

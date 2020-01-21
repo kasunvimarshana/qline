@@ -120,5 +120,4 @@ class Status extends Model
         return $this->morphMany('App\UserAttachment', 'attachable', 'attachable_type', 'attachable_id', 'id');
     }
     */
-    
 }

@@ -118,5 +118,19 @@ class UserSeeder extends Seeder
         ]);
         
         $newUser->department()->associate($newDepartment)->save();
+        
+        /* *** */
+        /*if( ($newUser) ){
+            $newUser->givePermissionsTo( "create-event" );
+            $newUser->givePermissionsTo( "edit-event" );
+            $newUser->givePermissionsTo( "show-event" );
+            $newUser->givePermissionsTo( "create-quality_record_cutting" );
+            $newUser->givePermissionsTo( "create-quality_record_r_q_c" );
+            $newUser->givePermissionsTo( "create-quality_record_sewing_check" );
+            $newUser->givePermissionsTo( "create-quality_record_sewing_audit" );
+            $newUser->givePermissionsTo( "create-quality_record_finishing" );
+            $newUser->givePermissionsTo( "create-quality_record_c_n_i" );
+        }*/
+        /* *** */
     }
 }

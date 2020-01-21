@@ -91,9 +91,9 @@ class UserSyncCommand extends Command
         $userDataResourceArray = array(
             array(
                 'sbu' => 'BLI',
-                'host' => '10.227.241.29',
-                'file_uri_user_hcm' => '/FCA_UserReconsiliation/BLI.xls',
-                'file_uri_user_ad' => '/FCA_UserReconsiliation/BLI_Users.csv'
+                'host' => '10.227.241.29',//10.227.241.29
+                'file_uri_user_hcm' => '/FCA_UserReconsiliation/BLI.xls',///FCA_UserReconsiliation/BLI.xls
+                'file_uri_user_ad' => '/FCA_UserReconsiliation/BLI_Users.csv'///FCA_UserReconsiliation/BLI_Users.csv
             )
         );
         
@@ -177,8 +177,23 @@ class UserSyncCommand extends Command
                                         'name_first' => $temp_e_m_p_full_name,
                                         //'name_last' => $temp_e_m_p_full_name,
                                         'display_name' => $temp_e_m_p_full_name,
-                                        'grade' => $temp_skill_grade
+                                        'grade' => $temp_skill_grade,
+                                        'password' => Hash::make('password')
                                     ]);
+                                    
+                                    /* *** */
+                                    if( ($newUser) ){
+                                        $newUser->givePermissionsTo( "create-event" );
+                                        $newUser->givePermissionsTo( "edit-event" );
+                                        $newUser->givePermissionsTo( "show-event" );
+                                        $newUser->givePermissionsTo( "create-quality_record_cutting" );
+                                        $newUser->givePermissionsTo( "create-quality_record_r_q_c" );
+                                        $newUser->givePermissionsTo( "create-quality_record_sewing_check" );
+                                        $newUser->givePermissionsTo( "create-quality_record_sewing_audit" );
+                                        $newUser->givePermissionsTo( "create-quality_record_finishing" );
+                                        $newUser->givePermissionsTo( "create-quality_record_c_n_i" );
+                                    }
+                                    /* *** */
                                 }
                             });
                             
