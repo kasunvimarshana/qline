@@ -26,7 +26,7 @@ class QualityRecordInputScanDataStatusSewingAudit extends Model
     //protected $appends = array('field1', 'field2');
     //protected $attributes = array();
     //protected $guarded = array();
-    protected $fillable = array('id', 'is_visible', 'is_active', 'time_create', 'quality_record_input_scan_data_id', 'status_id', 'description', 'user_id_create');
+    protected $fillable = array('id', 'is_visible', 'is_active', 'time_create', 'quality_record_input_scan_data_id', 'status_id', 'description', 'user_id_create', 'is_countable', 'quality_record_input_scan_data_status_sewing_audit_id_parent', 'record_count');
     //protected $hidden = array();
     //protected $casts = array();
     /**
@@ -89,5 +89,10 @@ class QualityRecordInputScanDataStatusSewingAudit extends Model
     //one to many (inverse)
     public function qualityRecordInputScanData(){
         return $this->belongsTo('App\QualityRecordInputScanData', 'quality_record_input_scan_data_id', 'id');
+    }
+    
+    //one to many
+    public function qualityRecordInputScanDataStatusSewingAuditChildren(){
+        return $this->hasMany('App\QualityRecordInputScanDataStatusSewingAudit', 'quality_record_input_scan_data_status_sewing_audit_id_parent', 'id');
     }
 }

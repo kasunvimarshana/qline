@@ -35,6 +35,11 @@ class CreateQualityRecordInputScanDataStatusSewingAuditsTable extends Migration
             $table->string('user_id_create')->nullable()->comment('comment');//->index()
             //$table->string('standard_a_q_l_id')->nullable()->comment('comment');//->index()
             //$table->nullableMorphs('statusable');
+            
+            $table->boolean('is_countable')->default(false)->nullable()->comment('comment');//->index()
+            //$table->text('description')->default(null)->nullable()->comment('comment');
+            $table->unsignedBigInteger('quality_record_input_scan_data_status_sewing_audit_id_parent')->unsigned()->nullable()->comment('comment');//->index()
+            $table->double('record_count')->nullable()->default(0)->comment('comment');//->index()
         });
         
         Schema::table($this->table_name_1, function($table) {

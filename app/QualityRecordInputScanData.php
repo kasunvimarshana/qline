@@ -140,4 +140,32 @@ class QualityRecordInputScanData extends Model
     public function qualityRecordInputScanDataStatusFinishing(){
         return $this->hasOne('App\QualityRecordInputScanDataStatusFinishing', 'quality_record_input_scan_data_id', 'id');
     }
+    
+    //one to one
+    public function qualityRecordInputScanDataStatusSewingAuditFailActiveVisible(){
+        $tempQuery = null;
+        $statusObject = new Status();
+        $statusObject = $statusObject->where("code", "=", "fail")->first();
+        
+        $tempQuery = $this->hasOne('App\QualityRecordInputScanDataStatusSewingAudit', 'quality_record_input_scan_data_id', 'id');
+        $tempQuery = $tempQuery->where('status_id', "=", $statusObject->id);
+        $tempQuery = $tempQuery->where('is_visible', '=', true);
+        $tempQuery = $tempQuery->where('is_active', '=', true);
+        
+        return $tempQuery;
+    }
+    
+    //one to one
+    public function qualityRecordInputScanDataStatusSewingAuditSuspendActiveVisible(){
+        $tempQuery = null;
+        $statusObject = new Status();
+        $statusObject = $statusObject->where("code", "=", "suspend")->first();
+        
+        $tempQuery = $this->hasOne('App\QualityRecordInputScanDataStatusSewingAudit', 'quality_record_input_scan_data_id', 'id');
+        $tempQuery = $tempQuery->where('status_id', "=", $statusObject->id);
+        $tempQuery = $tempQuery->where('is_visible', '=', true);
+        $tempQuery = $tempQuery->where('is_active', '=', true);
+        
+        return $tempQuery;
+    }
 }

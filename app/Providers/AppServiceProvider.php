@@ -36,11 +36,13 @@ class AppServiceProvider extends ServiceProvider
             URL::forceSchema('https');
         }
         */
+        /*
         if (\App::environment('remote')) {
             URL::forceSchema('https');
         }
         if (!\App::environment('local')) {
             URL::forceSchema('https');
         }
+        */
     }
 }

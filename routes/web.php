@@ -98,6 +98,16 @@ Route::group(['middleware' => ['authorizedUserMiddleware', 'disablePreventBackMi
     Route::post('quality-record/c-n-i/store', array('uses' => 'QualityRecordCNIController@store'))->name('qualityRecordCNI.store');
     
     Route::get('/dashboard', array('uses' => 'DashboardController@index'))->name('dashboard');
+    
+    ///////////////////////////////////////////////////////////////////////////////
+    Route::get('quality-record-sewing-audits/create/fail', array('uses' => 'QualityRecordSewingAuditController@create_fail'))->name('qualityRecordSewingAudit.create_fail');
+    Route::get('quality-record-sewing-audits/create/suspend', array('uses' => 'QualityRecordSewingAuditController@create_suspend'))->name('qualityRecordSewingAudit.create_suspend');
+    
+    Route::post('quality-record-sewing-audits/store/fail', array('uses' => 'QualityRecordSewingAuditController@store_fail'))->name('qualityRecordSewingAudit.store_fail');
+    /*
+    Route::post('quality-record-sewing-audits/store/suspend', array('uses' => 'QualityRecordSewingAuditController@store'))->name('qualityRecordSewingAudit.store_suspend');
+    */
+    ///////////////////////////////////////////////////////////////////////////////
 });
 
 Route::group(['middleware' => ['disablePreventBackMiddleware', 'corsMiddleware']], function(){

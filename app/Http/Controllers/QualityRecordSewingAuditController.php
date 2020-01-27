@@ -43,6 +43,7 @@ use App\StandardSewingAudit;
 use App\Defect;
 use App\QualityRecordSewingAudit;
 use App\QualityRecordInputScanData;
+use App\QualityRecordInputScanDataStatusSewingAudit;
 use App\Status;
 
 use App\Events\QualityRecordSewingAuditCreateEvent;
@@ -206,6 +207,7 @@ class QualityRecordSewingAuditController extends Controller
                         $statusObject = $statusObject->where("code", "=", "pass")->first();
                         //$query->where('key', '=', 'value');
                         $query = $query->where("status_id", "=", $statusObject->id);
+                        $query = $query->where("is_countable", "=", true);
                     })
                     ->sum('count_data');
                 
@@ -223,6 +225,35 @@ class QualityRecordSewingAuditController extends Controller
                         $statusObject = $statusObject->where("code", "=", "fail")->first();
                         //$query->where('key', '=', 'value');
                         $query = $query->where("status_id", "=", $statusObject->id);
+                        $query = $query->where("is_countable", "=", true);
+                    })
+                    ->sum('count_data');
+                
+                $quality_record_input_scan_data_count_data_sum_fail_visible_1 = 0;
+                $qualityRecordInputScanDataObject = new QualityRecordInputScanData();
+                
+                $quality_record_input_scan_data_count_data_sum_fail_visible_1 = $qualityRecordInputScanDataObject
+                    ->where('company_id', '=', $companyObject->id)
+                    ->where('strategic_business_unit_id', '=', $strategicBusinessUnitObject->id)
+                    ->where('factory_id', '=', $factoryObject->id)
+                    ->where('line_id', '=', $lineObject->id)
+                    ->whereDate('time_create', '=', $date_today->format('Y-m-d'))
+                    ->whereHas('qualityRecordInputScanDataStatusSewingAuditFailActiveVisible', function($query){
+                        //$query = $query->where('key', '=', 'value');
+                    })
+                    ->sum('count_data');
+                
+                $quality_record_input_scan_data_count_data_sum_suspend_visible_1 = 0;
+                $qualityRecordInputScanDataObject = new QualityRecordInputScanData();
+                
+                $quality_record_input_scan_data_count_data_sum_suspend_visible_1 = $qualityRecordInputScanDataObject
+                    ->where('company_id', '=', $companyObject->id)
+                    ->where('strategic_business_unit_id', '=', $strategicBusinessUnitObject->id)
+                    ->where('factory_id', '=', $factoryObject->id)
+                    ->where('line_id', '=', $lineObject->id)
+                    ->whereDate('time_create', '=', $date_today->format('Y-m-d'))
+                    ->whereHas('qualityRecordInputScanDataStatusSewingAuditSuspendActiveVisible', function($query){
+                        //$query = $query->where('key', '=', 'value');
                     })
                     ->sum('count_data');
                 
@@ -243,6 +274,8 @@ class QualityRecordSewingAuditController extends Controller
                 $data['quality_record_sewing_audit_id_count'] = $quality_record_sewing_audit_id_count;
                 $data['quality_record_input_scan_data_count_data_sum_pass'] = $quality_record_input_scan_data_count_data_sum_pass;
                 $data['quality_record_input_scan_data_count_data_sum_fail'] = $quality_record_input_scan_data_count_data_sum_fail;
+                $data['quality_record_input_scan_data_count_data_sum_fail_visible_1'] = $quality_record_input_scan_data_count_data_sum_fail_visible_1;
+                $data['quality_record_input_scan_data_count_data_sum_suspend_visible_1'] = $quality_record_input_scan_data_count_data_sum_suspend_visible_1;
                 unset($dataArray);
                 
                 // Commit transaction!
@@ -365,6 +398,7 @@ class QualityRecordSewingAuditController extends Controller
                 
                 $qualityRecordInputScanDataObject = new QualityRecordInputScanData();
                 $qualityRecordInputScanDataArray = $qualityRecordInputScanDataObject
+                    //->where("is_visible", "=", true)
                     ->where('company_id', '=', $companyObject->id)
                     ->where('strategic_business_unit_id', '=', $strategicBusinessUnitObject->id)
                     ->where('factory_id', '=', $factoryObject->id)
@@ -524,7 +558,7 @@ class QualityRecordSewingAuditController extends Controller
                             'quantity_audit' => $request->input('quantity_audit', $count_sample_temp),
                             //'quantity_pass' => $request->input('quantity_pass', $count_sample_temp),
                             'quantity_inspect' => $request->input('quantity_inspect', $count_sample_temp),
-                            'description' => $request->input('description'),
+                            //'description' => $request->input('description'),
                             //'is_countable' => $request->input('is_countable', true),
                             //'quality_record_sewing_audit_id_parent' => $request->input('quality_record_sewing_audit_id_parent'),
                             //'record_count' => $request->input('record_count'),
@@ -548,8 +582,8 @@ class QualityRecordSewingAuditController extends Controller
                                 'defect_id' => $defectObject->id,
                                 //'count_defect' => $request->input('count_defect', 1),
                                 'count_defect' => 1,
-                                'is_countable' => $request->input('is_countable', true),
-                                'quality_record_data_sewing_audit_id_parent' => $request->input('quality_record_data_sewing_audit_id_parent'),
+                                //'is_countable' => $request->input('is_countable', true),
+                                //'quality_record_data_sewing_audit_id_parent' => $request->input('quality_record_data_sewing_audit_id_parent'),
                                 //'record_count' => $request->input('record_count'),
                             ]);
 
@@ -581,7 +615,13 @@ class QualityRecordSewingAuditController extends Controller
                             'is_active' => true,
                             'time_create' => $date_today->format('Y-m-d H:i:s'),
                             'status_id' => $statusObject->id,
-                            'user_id_create' => auth()->user()->id
+                            'user_id_create' => auth()->user()->id,
+                            'description' => $request->input('description'),
+                            //'is_countable' => $request->input('is_countable'),
+                            'is_countable' => true,
+                            'quality_record_input_scan_data_status_sewing_audit_id_parent' => $request->input('quality_record_input_scan_data_status_sewing_audit_id_parent'),
+                            //'record_count' => $request->input('record_count'),
+                            'record_count' => (1),
                         ]);
                         
                         $qualityRecordInputScanDataObject->qualityRecordInputScanDataStatusSewingAudit()->save($qualityRecordInputScanDataStatusSewingAuditObject);
@@ -603,6 +643,736 @@ class QualityRecordSewingAuditController extends Controller
                 // Commit transaction!
                 DB::commit();
             }catch(Exception $e){
+                // Rollback transaction!
+                DB::rollback(); 
+                //return redirect()->back()->withInput();
+                $data = array(
+                    'title' => 'error',
+                    'text' => 'error',
+                    'type' => 'warning',
+                    'timer' => 3000
+                );
+                return (new CommonResponseResource( $data ))->additional(array(
+                    'meta' => ['status_code' => HTTPStatusCodeEnum::HTTP_BAD_REQUEST]
+                ));
+            }
+        }
+        
+        //unset data
+        unset( $dataArray );
+        unset( $rules );
+        unset( $date_today );
+        unset( $current_user );
+        //unset( $data );
+        
+        if( (Route::has('qualityRecordSewingAudit.index')) ){
+            return redirect()->route('qualityRecordSewingAudit.index');
+        }else{
+            return redirect()->back()->withInput();
+        }
+    }
+    
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create_fail(Request $request){
+        //
+        $dataArray = array();
+        $rules = array();
+        $date_today = Carbon::now();//->format('Y-m-d');
+        $current_user = null;
+        $data = array();
+        
+        // validate the info, create rules for the inputs
+        $rules = array();
+        // run the validation rules on the inputs from the form
+        $validator = Validator::make(Input::all(), $rules);
+        // if the validator fails, redirect back to the form
+        if ($validator->fails()) {
+            /*
+            $data = array(
+                'title' => 'error',
+                'text' => $validator->errors()->first(),
+                'type' => 'warning',
+                'timer' => 3000
+            );
+            return (new CommonResponseResource( $data ))->additional(array(
+                'meta' => ['status_code' => HTTPStatusCodeEnum::HTTP_BAD_REQUEST]
+            ));
+            */
+            return redirect()->back()->withErrors($validator)->withInput();
+        } else {
+            // do process
+            try {
+                // Start transaction!
+                DB::beginTransaction();
+                
+                $companyObject = new Company();
+                $company_id = $request->session()->get('setup_configuration_company_id', null);
+                $companyObject = $companyObject->where('id', '=', $company_id)->first();
+                $companyObject->load(['strategicBusinessUnits']);
+                
+                $strategicBusinessUnitObject = new StrategicBusinessUnit();
+                $strategic_business_unit_id = $request->session()->get('setup_configuration_strategic_business_unit_id', null);
+                $strategicBusinessUnitObject = $strategicBusinessUnitObject->where('id', '=', $strategic_business_unit_id)->first();
+                
+                $factoryObject = new Factory();
+                $factory_id = $request->session()->get('setup_configuration_factory_id', null);
+                $factoryObject = $factoryObject->where('id', '=', $factory_id)->first();
+                
+                $lineObject = new Line();
+                $line_id = $request->session()->get('setup_configuration_line_id', null);
+                $lineObject = $lineObject->where('id', '=', $line_id)->first();
+                
+                $customerObject = new Customer();
+                $customer_id = $request->session()->get('setup_configuration_customer_id', null);
+                $customerObject = $customerObject->where('id', '=', $customer_id)->first();
+                
+                $styleObject = new Style();
+                $style_id = $request->session()->get('setup_configuration_style_id', null);
+                $styleObject = $styleObject->where('id', '=', $style_id)->first();
+                
+                $colourObject = new Colour();
+                $colour_id = $request->session()->get('setup_configuration_colour_id', null);
+                $colourObject = $colourObject->where('id', '=', $colour_id)->first();
+                
+                $exportObject = new Export();
+                $export_id = $request->session()->get('setup_configuration_export_id', null);
+                $exportObject = $exportObject->where('id', '=', $export_id)->first();
+                
+                $standardSewingAuditObject = new StandardSewingAudit();
+                $standard_sewing_audit_id = $request->session()->get('setup_configuration_standard_sewing_audit_id', null);
+                $standardSewingAuditObject = $standardSewingAuditObject
+                    ->where('id', '=', $standard_sewing_audit_id)
+                    ->whereHas('standardDataSewingAudit', function($query){
+                        //$query->where('key', '=', 'value');
+                    })
+                    ->first();
+                $standardSewingAuditObject->load(['standardDataSewingAudit']);
+                
+                $qualityRecordInputScanDataObject = new QualityRecordInputScanData();
+                $qualityRecordInputScanDataArray = $qualityRecordInputScanDataObject
+                    //->where("is_visible", "=", true)
+                    ->where('company_id', '=', $companyObject->id)
+                    ->where('strategic_business_unit_id', '=', $strategicBusinessUnitObject->id)
+                    ->where('factory_id', '=', $factoryObject->id)
+                    ->where('line_id', '=', $lineObject->id)
+                    ->whereDate('time_create', '=', $date_today->format('Y-m-d'))
+                    ->whereHas('qualityRecordInputScanDataStatusSewingAuditFailActiveVisible', function($query){
+                        //$query->where('key', '=', 'value');
+                    })
+                    ->whereDoesntHave('qualityRecordInputScanDataStatusFinishing', function($query){
+                        //$query->where('key', '=', 'value');
+                    })
+                    ->with(array('qualityRecordInputScanDataStatusSewingAuditFailActiveVisible' => function($query){
+                        //$query = $query->where('table.id', '=', $id);
+                    }))
+                    ->get();
+                
+                $qualityRecordInputScanDataArray->load(['company', 'strategicBusinessUnit', 'factory', 'line', 'customer', 'style', 'colour', 'export']);
+                
+                $standardSewingAuditObjectClone = clone $standardSewingAuditObject;
+                $standardDataSewingAuditArray = $standardSewingAuditObjectClone->standardDataSewingAudit()
+                    ->orderBy("batch_count_min", "asc")
+                    ->get();
+                
+                $data['company_object'] = $companyObject;
+                $data['strategic_business_unit_object'] = $strategicBusinessUnitObject;
+                $data['factory_object'] = $factoryObject;
+                $data['line_object'] = $lineObject;
+                $data['customer_object'] = $customerObject;
+                $data['style_object'] = $styleObject;
+                $data['colour_object'] = $colourObject;
+                $data['export_object'] = $exportObject;
+                $data['standard_sewing_audit_object'] = $standardSewingAuditObject;
+                $data['quality_record_input_scan_data_array'] = $qualityRecordInputScanDataArray;
+                $data['standard_data_sewing_audit_array'] = $standardDataSewingAuditArray;
+                unset($dataArray);
+                
+                // Commit transaction!
+                DB::commit();
+            }catch(Exception $e){
+                // Rollback transaction!
+                DB::rollback(); 
+                /*
+                $data = array(
+                    'title' => 'error',
+                    'text' => 'error',
+                    'type' => 'warning',
+                    'timer' => 3000
+                );
+                return (new CommonResponseResource( $data ))->additional(array(
+                    'meta' => ['status_code' => HTTPStatusCodeEnum::HTTP_BAD_REQUEST]
+                ));
+                */
+                return redirect()->back()->withInput();
+            }
+        }
+        
+        //unset data
+        unset( $dataArray );
+        unset( $rules );
+        unset( $date_today );
+        unset( $current_user );
+        //unset( $data );
+        
+        //return Response::json( $data );
+        //return redirect()->back();
+        //$http_response_code = http_response_code();
+        if(view()->exists('quality_stage_sewing_audit_create_fail')){
+            return View::make('quality_stage_sewing_audit_create_fail', $data);
+        }else{
+            return redirect()->back()->withInput();
+        }
+        
+    }
+    
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create_suspend(Request $request){
+        //
+        $dataArray = array();
+        $rules = array();
+        $date_today = Carbon::now();//->format('Y-m-d');
+        $current_user = null;
+        $data = array();
+        
+        // validate the info, create rules for the inputs
+        $rules = array();
+        // run the validation rules on the inputs from the form
+        $validator = Validator::make(Input::all(), $rules);
+        // if the validator fails, redirect back to the form
+        if ($validator->fails()) {
+            /*
+            $data = array(
+                'title' => 'error',
+                'text' => $validator->errors()->first(),
+                'type' => 'warning',
+                'timer' => 3000
+            );
+            return (new CommonResponseResource( $data ))->additional(array(
+                'meta' => ['status_code' => HTTPStatusCodeEnum::HTTP_BAD_REQUEST]
+            ));
+            */
+            return redirect()->back()->withErrors($validator)->withInput();
+        } else {
+            // do process
+            try {
+                // Start transaction!
+                DB::beginTransaction();
+                
+                $companyObject = new Company();
+                $company_id = $request->session()->get('setup_configuration_company_id', null);
+                $companyObject = $companyObject->where('id', '=', $company_id)->first();
+                $companyObject->load(['strategicBusinessUnits']);
+                
+                $strategicBusinessUnitObject = new StrategicBusinessUnit();
+                $strategic_business_unit_id = $request->session()->get('setup_configuration_strategic_business_unit_id', null);
+                $strategicBusinessUnitObject = $strategicBusinessUnitObject->where('id', '=', $strategic_business_unit_id)->first();
+                
+                $factoryObject = new Factory();
+                $factory_id = $request->session()->get('setup_configuration_factory_id', null);
+                $factoryObject = $factoryObject->where('id', '=', $factory_id)->first();
+                
+                $lineObject = new Line();
+                $line_id = $request->session()->get('setup_configuration_line_id', null);
+                $lineObject = $lineObject->where('id', '=', $line_id)->first();
+                
+                $customerObject = new Customer();
+                $customer_id = $request->session()->get('setup_configuration_customer_id', null);
+                $customerObject = $customerObject->where('id', '=', $customer_id)->first();
+                
+                $styleObject = new Style();
+                $style_id = $request->session()->get('setup_configuration_style_id', null);
+                $styleObject = $styleObject->where('id', '=', $style_id)->first();
+                
+                $colourObject = new Colour();
+                $colour_id = $request->session()->get('setup_configuration_colour_id', null);
+                $colourObject = $colourObject->where('id', '=', $colour_id)->first();
+                
+                $exportObject = new Export();
+                $export_id = $request->session()->get('setup_configuration_export_id', null);
+                $exportObject = $exportObject->where('id', '=', $export_id)->first();
+                
+                $standardSewingAuditObject = new StandardSewingAudit();
+                $standard_sewing_audit_id = $request->session()->get('setup_configuration_standard_sewing_audit_id', null);
+                $standardSewingAuditObject = $standardSewingAuditObject
+                    ->where('id', '=', $standard_sewing_audit_id)
+                    ->whereHas('standardDataSewingAudit', function($query){
+                        //$query->where('key', '=', 'value');
+                    })
+                    ->first();
+                $standardSewingAuditObject->load(['standardDataSewingAudit']);
+                
+                $qualityRecordInputScanDataObject = new QualityRecordInputScanData();
+                $qualityRecordInputScanDataArray = $qualityRecordInputScanDataObject
+                    //->where("is_visible", "=", true)
+                    ->where('company_id', '=', $companyObject->id)
+                    ->where('strategic_business_unit_id', '=', $strategicBusinessUnitObject->id)
+                    ->where('factory_id', '=', $factoryObject->id)
+                    ->where('line_id', '=', $lineObject->id)
+                    ->whereDate('time_create', '=', $date_today->format('Y-m-d'))
+                    ->whereHas('qualityRecordInputScanDataStatusSewingAuditSuspendActiveVisible', function($query){
+                        //$query->where('key', '=', 'value');
+                    })
+                    ->whereDoesntHave('qualityRecordInputScanDataStatusFinishing', function($query){
+                        //$query->where('key', '=', 'value');
+                    })
+                    ->with(array('qualityRecordInputScanDataStatusSewingAuditSuspendActiveVisible' => function($query){
+                        //$query = $query->where('table.id', '=', $id);
+                    }))
+                    ->get();
+                
+                $qualityRecordInputScanDataArray->load(['company', 'strategicBusinessUnit', 'factory', 'line', 'customer', 'style', 'colour', 'export']);
+                
+                $standardSewingAuditObjectClone = clone $standardSewingAuditObject;
+                $standardDataSewingAuditArray = $standardSewingAuditObjectClone->standardDataSewingAudit()
+                    ->orderBy("batch_count_min", "asc")
+                    ->get();
+                
+                $data['company_object'] = $companyObject;
+                $data['strategic_business_unit_object'] = $strategicBusinessUnitObject;
+                $data['factory_object'] = $factoryObject;
+                $data['line_object'] = $lineObject;
+                $data['customer_object'] = $customerObject;
+                $data['style_object'] = $styleObject;
+                $data['colour_object'] = $colourObject;
+                $data['export_object'] = $exportObject;
+                $data['standard_sewing_audit_object'] = $standardSewingAuditObject;
+                $data['quality_record_input_scan_data_array'] = $qualityRecordInputScanDataArray;
+                $data['standard_data_sewing_audit_array'] = $standardDataSewingAuditArray;
+                unset($dataArray);
+                
+                // Commit transaction!
+                DB::commit();
+            }catch(Exception $e){
+                // Rollback transaction!
+                DB::rollback(); 
+                /*
+                $data = array(
+                    'title' => 'error',
+                    'text' => 'error',
+                    'type' => 'warning',
+                    'timer' => 3000
+                );
+                return (new CommonResponseResource( $data ))->additional(array(
+                    'meta' => ['status_code' => HTTPStatusCodeEnum::HTTP_BAD_REQUEST]
+                ));
+                */
+                return redirect()->back()->withInput();
+            }
+        }
+        
+        //unset data
+        unset( $dataArray );
+        unset( $rules );
+        unset( $date_today );
+        unset( $current_user );
+        //unset( $data );
+        
+        //return Response::json( $data );
+        //return redirect()->back();
+        //$http_response_code = http_response_code();
+        if(view()->exists('quality_stage_sewing_audit_create_suspend')){
+            return View::make('quality_stage_sewing_audit_create_suspend', $data);
+        }else{
+            return redirect()->back()->withInput();
+        }
+        
+    }
+    
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store_fail(Request $request)
+    {
+        //
+        $dataArray = array();
+        $rules = array();
+        $date_today = Carbon::now();//->format('Y-m-d');
+        $current_user = null;
+        $data = array();
+        
+        // validate the info, create rules for the inputs
+        $rules = array(
+            'submit' => 'required',
+            'quality_record_input_scan_data_status_id_array' => 'required'
+        );
+        // run the validation rules on the inputs from the form
+        $validator = Validator::make(Input::all(), $rules);
+        // if the validator fails, redirect back to the form
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+            /*$data = array(
+                'title' => 'error',
+                'text' => $validator->errors()->first(),
+                'type' => 'warning',
+                'timer' => 3000
+            );
+            return (new CommonResponseResource( $data ))->additional(array(
+                'meta' => ['status_code' => HTTPStatusCodeEnum::HTTP_BAD_REQUEST]
+            ));*/
+        } else {
+            // do process
+            try {
+                // Start transaction!
+                DB::beginTransaction();
+                
+                if( ($request->has('submit')) && ($request->filled('submit')) ){
+                    $submit_value = $request->input("submit", null);
+                    $submit_value_pass = "submit_pass";
+                    $submit_value_fail = "submit_fail";
+                    $submit_value_suspend = "submit_suspend";
+                    
+                    $defect_id_array = array();
+                    $measure_point_id_array = array();
+                    $quality_record_input_scan_data_status_id_array = array();
+                    
+                    if( (($request->has('defect_id_array')) && ($request->filled('defect_id_array'))) ){
+                        $defect_id_array = (array) $request->input('defect_id_array');
+                    }
+                    
+                    if( (($request->has('measure_point_id_array')) && ($request->filled('measure_point_id_array'))) ){
+                        $measure_point_id_array = (array) $request->input('measure_point_id_array');
+                    }
+                    
+                    if( (($request->has('quality_record_input_scan_data_status_id_array')) && ($request->filled('quality_record_input_scan_data_status_id_array'))) ){
+                        $quality_record_input_scan_data_status_id_array = (array) $request->input('quality_record_input_scan_data_status_id_array');
+                    }
+                    
+                    $count_sample_temp = 0;
+                
+                    if( (($request->has('count_sample')) && ($request->filled('count_sample'))) ){
+                        $count_sample_temp = $request->input('count_sample');
+                    }
+                    
+                    if( (!empty($defect_id_array)) && (!empty($measure_point_id_array)) ){
+                        $dataArray = array(
+                            'is_visible' => $request->input('is_visible', true),
+                            'is_active' => $request->input('is_active', true),
+                            'time_create' => $request->input('time_create', $date_today->format('Y-m-d H:i:s')),
+                            //'count_sample' => $request->input('count_sample', $count_sample_temp),
+                            'inspection_stage_id' => $request->session()->get('setup_configuration_inspection_stage_id'),
+                            'standard_a_q_l_id' => $request->session()->get('setup_configuration_standard_sewing_audit_id'),
+                            'company_id' => $request->session()->get('setup_configuration_company_id'),
+                            'strategic_business_unit_id' => $request->session()->get('setup_configuration_strategic_business_unit_id'),
+                            'factory_id' => $request->session()->get('setup_configuration_factory_id'),
+                            'line_id' => $request->session()->get('setup_configuration_line_id'),
+                            'customer_id' => $request->session()->get('setup_configuration_customer_id'),
+                            'style_id' => $request->session()->get('setup_configuration_style_id'),
+                            'colour_id' => $request->session()->get('setup_configuration_colour_id'),
+                            'export_id' => $request->session()->get('setup_configuration_export_id'),
+                            'user_id_create' => auth()->user()->id,
+                            'ip_address' => $request->ip(),
+                            'quantity_audit' => $request->input('quantity_audit', $count_sample_temp),
+                            //'quantity_pass' => $request->input('quantity_pass', $count_sample_temp),
+                            'quantity_inspect' => $request->input('quantity_inspect', $count_sample_temp),
+                            //'description' => $request->input('description'),
+                            //'is_countable' => $request->input('is_countable', true),
+                            //'quality_record_sewing_audit_id_parent' => $request->input('quality_record_sewing_audit_id_parent'),
+                            //'record_count' => $request->input('record_count'),
+                        );
+
+                        $qualityRecordSewingAuditObject = QualityRecordSewingAudit::create( $dataArray );
+                        unset($dataArray);
+                        $data['quality_record_sewing_audit_object'] = $qualityRecordSewingAuditObject;
+                        
+                        foreach($defect_id_array as $key => $value){
+                            $defectObject = Defect::where("id", "=", $value)->first();
+
+                            $qualityRecordDataSewingAuditObject = $qualityRecordSewingAuditObject->qualityRecordDataSewingAudit()->create([
+                                'is_visible' => true,
+                                'is_active' => true,
+                                'time_create' => $date_today->format('Y-m-d H:i:s'),
+                                'quality_record_sewing_audit_id' => $qualityRecordSewingAuditObject->id,
+                                'user_id_create' => auth()->user()->id,
+                                'measure_point_id' => $measure_point_id_array[$key],
+                                'defect_category_id' => $defectObject->defect_category_id,
+                                'defect_id' => $defectObject->id,
+                                //'count_defect' => $request->input('count_defect', 1),
+                                'count_defect' => 1,
+                                //'is_countable' => $request->input('is_countable', true),
+                                //'quality_record_data_sewing_audit_id_parent' => $request->input('quality_record_data_sewing_audit_id_parent'),
+                                //'record_count' => $request->input('record_count'),
+                            ]);
+
+                            $qualityRecordSewingAuditObject->qualityRecordDataSewingAudit()->save($qualityRecordDataSewingAuditObject);
+                        }
+
+                        unset($dataArray);
+                    }
+                    
+                    $statusObject = new Status();
+                    if( (strcasecmp($submit_value, $submit_value_pass) == 0) ){
+                        //
+                        $statusObject = $statusObject->where("code", "=", "pass")->first();
+                    }else if( (strcasecmp($submit_value, $submit_value_fail) == 0) ){
+                        //
+                        $statusObject = $statusObject->where("code", "=", "fail")->first();
+                    }else if( (strcasecmp($submit_value, $submit_value_suspend) == 0) ){
+                        //
+                        $statusObject = $statusObject->where("code", "=", "suspend")->first();
+                    }
+                    
+                    $qualityRecordInputScanDataObjectArray = array();
+                    
+                    foreach( $quality_record_input_scan_data_status_id_array as $key => $value ){
+                        $qualityRecordInputScanDataStatusSewingAuditObject = new QualityRecordInputScanDataStatusSewingAudit();
+                        $qualityRecordInputScanDataStatusSewingAuditObject = $qualityRecordInputScanDataStatusSewingAuditObject->where("id", "=", $value)->first();
+                        $qualityRecordInputScanDataStatusSewingAuditChildrenObject = $qualityRecordInputScanDataStatusSewingAuditObject->qualityRecordInputScanDataStatusSewingAuditChildren()->create([
+                            'is_visible' => true,
+                            'is_active' => true,
+                            'time_create' => $date_today->format('Y-m-d H:i:s'),
+                            'quality_record_input_scan_data_id' => $qualityRecordInputScanDataStatusSewingAuditObject->qualityRecordInputScanData->id,
+                            'status_id' => $statusObject->id,
+                            'user_id_create' => auth()->user()->id,
+                            'description' => $request->input('description'),
+                            //'is_countable' => $request->input('is_countable'),
+                            'is_countable' => false,
+                            'quality_record_input_scan_data_status_sewing_audit_id_parent' => $qualityRecordInputScanDataStatusSewingAuditObject->id,
+                            //'record_count' => $request->input('record_count'),
+                            'record_count' => (intval($qualityRecordInputScanDataStatusSewingAuditObject->record_count) + 1),
+                        ]);
+                        
+                        $qualityRecordInputScanDataStatusSewingAuditObject->qualityRecordInputScanDataStatusSewingAuditChildren()->save($qualityRecordInputScanDataStatusSewingAuditChildrenObject);
+                        
+                        $qualityRecordInputScanDataStatusSewingAuditObject->update([
+                            'is_visible' => false,
+                        ]);
+                        
+                        //$qualityRecordInputScanDataObjectArray[$key] = $qualityRecordInputScanDataStatusSewingAuditObject->qualityRecordInputScanData;
+                    }
+                    
+                    if( (strcasecmp($submit_value, $submit_value_pass) == 0) ){
+                        
+                        //event(new QualityRecordSewingAuditCreateEvent($qualityRecordInputScanDataObjectArray));
+                        $emailJob = (new SendMessageFinishingJob($qualityRecordInputScanDataObjectArray));
+                        //->delay(Carbon::now()->addSeconds(10));
+                        dispatch($emailJob);
+                        
+                    }
+                }
+
+                unset($dataArray);
+                // Commit transaction!
+                DB::commit();
+            }catch(Exception $e){ 
+                // Rollback transaction!
+                DB::rollback(); 
+                //return redirect()->back()->withInput();
+                $data = array(
+                    'title' => 'error',
+                    'text' => 'error',
+                    'type' => 'warning',
+                    'timer' => 3000
+                );
+                return (new CommonResponseResource( $data ))->additional(array(
+                    'meta' => ['status_code' => HTTPStatusCodeEnum::HTTP_BAD_REQUEST]
+                ));
+            }
+        }
+        
+        //unset data
+        unset( $dataArray );
+        unset( $rules );
+        unset( $date_today );
+        unset( $current_user );
+        //unset( $data );
+        
+        if( (Route::has('qualityRecordSewingAudit.index')) ){
+            return redirect()->route('qualityRecordSewingAudit.index');
+        }else{
+            return redirect()->back()->withInput();
+        }
+    }
+    
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store_suspend(Request $request)
+    {
+        //
+        $dataArray = array();
+        $rules = array();
+        $date_today = Carbon::now();//->format('Y-m-d');
+        $current_user = null;
+        $data = array();
+        
+        // validate the info, create rules for the inputs
+        $rules = array(
+            'submit' => 'required',
+            'quality_record_input_scan_data_status_id_array' => 'required'
+        );
+        // run the validation rules on the inputs from the form
+        $validator = Validator::make(Input::all(), $rules);
+        // if the validator fails, redirect back to the form
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+            /*$data = array(
+                'title' => 'error',
+                'text' => $validator->errors()->first(),
+                'type' => 'warning',
+                'timer' => 3000
+            );
+            return (new CommonResponseResource( $data ))->additional(array(
+                'meta' => ['status_code' => HTTPStatusCodeEnum::HTTP_BAD_REQUEST]
+            ));*/
+        } else {
+            // do process
+            try {
+                // Start transaction!
+                DB::beginTransaction();
+                
+                if( ($request->has('submit')) && ($request->filled('submit')) ){
+                    $submit_value = $request->input("submit", null);
+                    $submit_value_pass = "submit_pass";
+                    $submit_value_fail = "submit_fail";
+                    $submit_value_suspend = "submit_suspend";
+                    
+                    $defect_id_array = array();
+                    $measure_point_id_array = array();
+                    $quality_record_input_scan_data_status_id_array = array();
+                    
+                    if( (($request->has('defect_id_array')) && ($request->filled('defect_id_array'))) ){
+                        $defect_id_array = (array) $request->input('defect_id_array');
+                    }
+                    
+                    if( (($request->has('measure_point_id_array')) && ($request->filled('measure_point_id_array'))) ){
+                        $measure_point_id_array = (array) $request->input('measure_point_id_array');
+                    }
+                    
+                    if( (($request->has('quality_record_input_scan_data_status_id_array')) && ($request->filled('quality_record_input_scan_data_status_id_array'))) ){
+                        $quality_record_input_scan_data_status_id_array = (array) $request->input('quality_record_input_scan_data_status_id_array');
+                    }
+                    
+                    $count_sample_temp = 0;
+                
+                    if( (($request->has('count_sample')) && ($request->filled('count_sample'))) ){
+                        $count_sample_temp = $request->input('count_sample');
+                    }
+                    
+                    if( (!empty($defect_id_array)) && (!empty($measure_point_id_array)) ){
+                        $dataArray = array(
+                            'is_visible' => $request->input('is_visible', true),
+                            'is_active' => $request->input('is_active', true),
+                            'time_create' => $request->input('time_create', $date_today->format('Y-m-d H:i:s')),
+                            //'count_sample' => $request->input('count_sample', $count_sample_temp),
+                            'inspection_stage_id' => $request->session()->get('setup_configuration_inspection_stage_id'),
+                            'standard_a_q_l_id' => $request->session()->get('setup_configuration_standard_sewing_audit_id'),
+                            'company_id' => $request->session()->get('setup_configuration_company_id'),
+                            'strategic_business_unit_id' => $request->session()->get('setup_configuration_strategic_business_unit_id'),
+                            'factory_id' => $request->session()->get('setup_configuration_factory_id'),
+                            'line_id' => $request->session()->get('setup_configuration_line_id'),
+                            'customer_id' => $request->session()->get('setup_configuration_customer_id'),
+                            'style_id' => $request->session()->get('setup_configuration_style_id'),
+                            'colour_id' => $request->session()->get('setup_configuration_colour_id'),
+                            'export_id' => $request->session()->get('setup_configuration_export_id'),
+                            'user_id_create' => auth()->user()->id,
+                            'ip_address' => $request->ip(),
+                            'quantity_audit' => $request->input('quantity_audit', $count_sample_temp),
+                            //'quantity_pass' => $request->input('quantity_pass', $count_sample_temp),
+                            'quantity_inspect' => $request->input('quantity_inspect', $count_sample_temp),
+                            //'description' => $request->input('description'),
+                            //'is_countable' => $request->input('is_countable', true),
+                            //'quality_record_sewing_audit_id_parent' => $request->input('quality_record_sewing_audit_id_parent'),
+                            //'record_count' => $request->input('record_count'),
+                        );
+
+                        $qualityRecordSewingAuditObject = QualityRecordSewingAudit::create( $dataArray );
+                        unset($dataArray);
+                        $data['quality_record_sewing_audit_object'] = $qualityRecordSewingAuditObject;
+                        
+                        foreach($defect_id_array as $key => $value){
+                            $defectObject = Defect::where("id", "=", $value)->first();
+
+                            $qualityRecordDataSewingAuditObject = $qualityRecordSewingAuditObject->qualityRecordDataSewingAudit()->create([
+                                'is_visible' => true,
+                                'is_active' => true,
+                                'time_create' => $date_today->format('Y-m-d H:i:s'),
+                                'quality_record_sewing_audit_id' => $qualityRecordSewingAuditObject->id,
+                                'user_id_create' => auth()->user()->id,
+                                'measure_point_id' => $measure_point_id_array[$key],
+                                'defect_category_id' => $defectObject->defect_category_id,
+                                'defect_id' => $defectObject->id,
+                                //'count_defect' => $request->input('count_defect', 1),
+                                'count_defect' => 1,
+                                //'is_countable' => $request->input('is_countable', true),
+                                //'quality_record_data_sewing_audit_id_parent' => $request->input('quality_record_data_sewing_audit_id_parent'),
+                                //'record_count' => $request->input('record_count'),
+                            ]);
+
+                            $qualityRecordSewingAuditObject->qualityRecordDataSewingAudit()->save($qualityRecordDataSewingAuditObject);
+                        }
+
+                        unset($dataArray);
+                    }
+                    
+                    $statusObject = new Status();
+                    if( (strcasecmp($submit_value, $submit_value_pass) == 0) ){
+                        //
+                        $statusObject = $statusObject->where("code", "=", "pass")->first();
+                    }else if( (strcasecmp($submit_value, $submit_value_fail) == 0) ){
+                        //
+                        $statusObject = $statusObject->where("code", "=", "fail")->first();
+                    }else if( (strcasecmp($submit_value, $submit_value_suspend) == 0) ){
+                        //
+                        $statusObject = $statusObject->where("code", "=", "suspend")->first();
+                    }
+                    
+                    $qualityRecordInputScanDataObjectArray = array();
+                    
+                    foreach( $quality_record_input_scan_data_status_id_array as $key => $value ){
+                        $qualityRecordInputScanDataStatusSewingAuditObject = new QualityRecordInputScanDataStatusSewingAudit();
+                        $qualityRecordInputScanDataStatusSewingAuditObject = $qualityRecordInputScanDataStatusSewingAuditObject->where("id", "=", $value)->first();
+                        $qualityRecordInputScanDataStatusSewingAuditChildrenObject = $qualityRecordInputScanDataStatusSewingAuditObject->qualityRecordInputScanDataStatusSewingAuditChildren()->create([
+                            'is_visible' => true,
+                            'is_active' => true,
+                            'time_create' => $date_today->format('Y-m-d H:i:s'),
+                            'quality_record_input_scan_data_id' => $qualityRecordInputScanDataStatusSewingAuditObject->qualityRecordInputScanData->id,
+                            'status_id' => $statusObject->id,
+                            'user_id_create' => auth()->user()->id,
+                            'description' => $request->input('description'),
+                            //'is_countable' => $request->input('is_countable'),
+                            'is_countable' => false,
+                            'quality_record_input_scan_data_status_sewing_audit_id_parent' => $qualityRecordInputScanDataStatusSewingAuditObject->id,
+                            //'record_count' => $request->input('record_count'),
+                            'record_count' => (intval($qualityRecordInputScanDataStatusSewingAuditObject->record_count) + 1),
+                        ]);
+                        
+                        $qualityRecordInputScanDataStatusSewingAuditObject->qualityRecordInputScanDataStatusSewingAuditChildren()->save($qualityRecordInputScanDataStatusSewingAuditChildrenObject);
+                        
+                        $qualityRecordInputScanDataStatusSewingAuditObject->update([
+                            'is_visible' => false,
+                        ]);
+                        
+                        //$qualityRecordInputScanDataObjectArray[$key] = $qualityRecordInputScanDataStatusSewingAuditObject->qualityRecordInputScanData;
+                    }
+                    
+                    if( (strcasecmp($submit_value, $submit_value_pass) == 0) ){
+                        
+                        //event(new QualityRecordSewingAuditCreateEvent($qualityRecordInputScanDataObjectArray));
+                        $emailJob = (new SendMessageFinishingJob($qualityRecordInputScanDataObjectArray));
+                        //->delay(Carbon::now()->addSeconds(10));
+                        dispatch($emailJob);
+                        
+                    }
+                }
+
+                unset($dataArray);
+                // Commit transaction!
+                DB::commit();
+            }catch(Exception $e){ 
                 // Rollback transaction!
                 DB::rollback(); 
                 //return redirect()->back()->withInput();

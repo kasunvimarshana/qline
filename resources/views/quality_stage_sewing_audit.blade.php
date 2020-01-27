@@ -216,9 +216,16 @@
                                                                                                 <div class="btn-toolbar w-100" role="toolbar" aria-label="btn toolbar">
                                                                                                     <div class="btn-group w-100" role="group" aria-label="First group">
                                                                                                         <!-- --- -->
-                                                                                                        <a class="btn btn-outline-danger btn-sm btn-block text-left" role="button" type="button" href="" target="_blank">
-                                                                                                            <i class="fa fa-barcode" aria-hidden="true"></i>
+                                                                                                        <a class="btn btn-outline-danger btn-sm btn-block text-left justify-content-between d-flex" role="button" type="button" href="{!! route('qualityRecordSewingAudit.create_fail', []) !!}" target="_self">
+                                                                                                            <!-- i class="fa fa-barcode" aria-hidden="true"></i -->
+                                                                                                            
                                                                                                             <span> Failed AQL</span>
+                                                                                                            
+                                                                                                            <span class="badge badge-danger text-wrap text-break text-right">
+                                                                                                            @isset($quality_record_input_scan_data_count_data_sum_fail_visible_1)
+                                                                                                                {{ $quality_record_input_scan_data_count_data_sum_fail_visible_1 }}
+                                                                                                            @endisset
+                                                                                                            </span>
                                                                                                         </a>
                                                                                                         <!-- --- -->
                                                                                                     </div>
@@ -235,9 +242,15 @@
                                                                                                 <div class="btn-toolbar w-100" role="toolbar" aria-label="btn toolbar">
                                                                                                     <div class="btn-group w-100" role="group" aria-label="First group">
                                                                                                         <!-- --- -->
-                                                                                                        <a class="btn btn-outline-warning btn-sm btn-block text-left" role="button" type="button" href="" target="_blank">
-                                                                                                            <i class="fa fa-barcode" aria-hidden="true"></i>
+                                                                                                        <a class="btn btn-outline-warning btn-sm btn-block text-left text-left justify-content-between d-flex" role="button" type="button" href="{!! route('qualityRecordSewingAudit.create_suspend', []) !!}" target="_self">
+                                                                                                            <!-- i class="fa fa-barcode" aria-hidden="true"></i -->
                                                                                                             <span> Suspended AQL</span>
+                                                                                                            
+                                                                                                            <span class="badge badge-danger text-wrap text-break text-right">
+                                                                                                            @isset($quality_record_input_scan_data_count_data_sum_suspend_visible_1)
+                                                                                                                {{ $quality_record_input_scan_data_count_data_sum_suspend_visible_1 }}
+                                                                                                            @endisset
+                                                                                                            </span>
                                                                                                         </a>
                                                                                                         <!-- --- -->
                                                                                                     </div>
