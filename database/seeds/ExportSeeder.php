@@ -14,6 +14,7 @@ class ExportSeeder extends Seeder
     public function run()
     {
         //
+        /*
         $newExport = Export::firstOrCreate([
             'id' => ucwords('E0001'),
             'is_visible' => true,
@@ -22,6 +23,7 @@ class ExportSeeder extends Seeder
             'name' => ucwords('E0001'),
             'display_name' => ucwords('E0001')
         ]);
+        */
         /*
         $newExport = Export::firstOrCreate([
             'id' => ucwords('E0002'),
@@ -41,5 +43,22 @@ class ExportSeeder extends Seeder
             'display_name' => ucwords('E0003')
         ]);
         */
+        $newExport = Export::firstOrCreate([
+            'id' => ucwords('0015105663'),
+            'is_visible' => true,
+            'is_active' => true,
+            'code' => ucwords('0015105663'),
+            'name' => ucwords('0015105663'),
+            'display_name' => ucwords('0015105663')
+        ]);
+        
+        $newExport = Export::firstOrCreate([
+            'id' => ucwords('0015105895'),
+            'is_visible' => true,
+            'is_active' => true,
+            'code' => ucwords('0015105895'),
+            'name' => ucwords('0015105895'),
+            'display_name' => ucwords('0015105895')
+        ]);
     }
 }

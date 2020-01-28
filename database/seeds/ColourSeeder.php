@@ -14,6 +14,7 @@ class ColourSeeder extends Seeder
     public function run()
     {
         //
+        /*
         $newColour = Colour::firstOrCreate([
             'id' => ucwords('Red'),
             'is_visible' => true,
@@ -228,6 +229,25 @@ class ColourSeeder extends Seeder
             'code' => ucwords('Gray'),
             'name' => ucwords('Gray'),
             'display_name' => ucwords('Gray')
+        ]);
+        */
+        
+        $newColour = Colour::firstOrCreate([
+            'id' => ucwords('CAFMOCHA'),
+            'is_visible' => true,
+            'is_active' => true,
+            'code' => ucwords('CAFMOCHA'),
+            'name' => ucwords('CAFMOCHA'),
+            'display_name' => ucwords('CAFMOCHA')
+        ]);
+        
+        $newColour = Colour::firstOrCreate([
+            'id' => ucwords('PANTTAPSHO'),
+            'is_visible' => true,
+            'is_active' => true,
+            'code' => ucwords('PANTTAPSHO'),
+            'name' => ucwords('PANTTAPSHO'),
+            'display_name' => ucwords('PANTTAPSHO')
         ]);
     }
 }
