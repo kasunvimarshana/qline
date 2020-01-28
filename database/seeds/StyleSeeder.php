@@ -14,6 +14,7 @@ class StyleSeeder extends Seeder
     public function run()
     {
         //
+        /*
         $newStyle = Style::firstOrCreate([
             'id' => ucwords('S0001'),
             'is_visible' => true,
@@ -39,6 +40,16 @@ class StyleSeeder extends Seeder
             'code' => ucwords('S0003'),
             'name' => ucwords('S0003'),
             'display_name' => ucwords('S0003')
+        ]);
+        */
+        
+        $newStyle = Style::firstOrCreate([
+            'id' => ucwords('1107980'),
+            'is_visible' => true,
+            'is_active' => true,
+            'code' => ucwords('1107980'),
+            'name' => ucwords('1107980'),
+            'display_name' => ucwords('1107980')
         ]);
     }
 }

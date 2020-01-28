@@ -68,10 +68,18 @@ trait HasPermissionsTrait{
     //function
     public function givePermissionsTo(... $permissions) {
         $permissions = $this->getAllPermissions($permissions);
-        //dd($permissions);
         if($permissions === null) {
             return $this;
         }
+        //$this->permissions()->saveMany($permissions);
+        //$this->permissions()->attach($permissions);
+        //$this->permissions()->sync($permissions);
+        //$this->permissions()->syncWithoutDetaching($permissions);
+        /*
+        foreach( $permissions as $key => $value ){
+            $this->permissions()->attach( $value->id );
+        }
+        */
         $this->permissions()->saveMany($permissions);
         return $this;
     }

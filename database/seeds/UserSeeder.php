@@ -63,7 +63,7 @@ class UserSeeder extends Seeder
         
         //$newUser->roles()->attach($newRole);
         //$newUser->roles()->sync($newRole);
-        $newUser->roles()->syncWithoutDetaching($newRole);
+        //$newUser->roles()->syncWithoutDetaching($newRole);
         
         $newPermission = Permission::firstOrCreate([
             'slug' => 'show-event',
@@ -72,7 +72,7 @@ class UserSeeder extends Seeder
         
         //$newUser->permissions()->attach($newPermission);
         //$newUser->permissions()->sync($newPermission);
-        $newUser->permissions()->syncWithoutDetaching($newPermission);
+        //$newUser->permissions()->syncWithoutDetaching($newPermission);
         
         $newUserAPIToken = $newUser->userAPITokens()->firstOrCreate([
             'is_visible' => false,
@@ -120,7 +120,7 @@ class UserSeeder extends Seeder
         $newUser->department()->associate($newDepartment)->save();
         
         /* *** */
-        /*if( ($newUser) ){
+        if( ($newUser) ){
             $newUser->givePermissionsTo( "create-event" );
             $newUser->givePermissionsTo( "edit-event" );
             $newUser->givePermissionsTo( "show-event" );
@@ -130,7 +130,7 @@ class UserSeeder extends Seeder
             $newUser->givePermissionsTo( "create-quality_record_sewing_audit" );
             $newUser->givePermissionsTo( "create-quality_record_finishing" );
             $newUser->givePermissionsTo( "create-quality_record_c_n_i" );
-        }*/
+        }
         /* *** */
     }
 }

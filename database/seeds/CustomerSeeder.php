@@ -139,5 +139,14 @@ class CustomerSeeder extends Seeder
             'name' => ucwords('Kohl\'s'),
             'display_name' => ucwords('Kohl\'s')
         ]);
+        
+        $newCustomer = Customer::firstOrCreate([
+            'id' => ucwords('LBI'),
+            'is_visible' => true,
+            'is_active' => true,
+            'code' => ucwords('LBI'),
+            'name' => ucwords('LBI'),
+            'display_name' => ucwords('LBI')
+        ]);
     }
 }
