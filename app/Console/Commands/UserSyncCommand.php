@@ -69,9 +69,9 @@ class UserSyncCommand extends Command
         //
         $index_1_column_dn = 0;
         $index_1_column_given_name = 1;
-        $index_1_column_mail = 4;
-        $index_1_column_employee_number = 2;
-        $index_1_column_employee_type = 3;
+        $index_1_column_mail = 2;
+        $index_1_column_employee_number = 3;
+        $index_1_column_employee_type = 4;
 
         $index_2_column_employee_number = 0;
         $index_2_column_e_p_f_number = 1;
@@ -172,7 +172,6 @@ class UserSyncCommand extends Command
                                         'code' => $temp_e_p_f_number,
                                         'is_visible' => true,
                                         'is_active' => true,
-                                        'code' => $temp_e_p_f_number,
                                         'code_epf' => $temp_e_p_f_number,
                                         'name_first' => $temp_e_m_p_full_name,
                                         //'name_last' => $temp_e_m_p_full_name,
