@@ -2283,6 +2283,31 @@ class DefectCategorySeeder extends Seeder
         );
         $newDefectCategory->defects()->saveMany($defectArray);
         /* *** */
+        /* *** */
+        $newDefectCategory = DefectCategory::firstOrCreate([
+            //'id' => ucwords('Pass'),
+            'is_visible' => true,
+            'is_active' => true,
+            'code' => ucwords('Pass'),
+            'name' => ucwords('Pass'),
+            'display_name' => ucwords('Pass'),
+            'colour_id' => $this->generateColour()->id
+        ]);
+        
+        $defectArray = array(
+            $newDefectCategory->defects()->firstOrCreate([
+                //'id' => ucwords('Pass'),
+                'is_visible' => true,
+                'is_active' => true,
+                'code' => ucwords('Pass'),
+                'name' => ucwords('Pass'),
+                'display_name' => ucwords('Pass'),
+                'colour_id' => $this->generateColour()->id
+            ]),
+        );
+        
+        $newDefectCategory->defects()->saveMany($defectArray);
+        /* *** */
     }
     
     protected function generateColour(){
