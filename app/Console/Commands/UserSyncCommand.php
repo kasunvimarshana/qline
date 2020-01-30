@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Session as Session;
 use Excel as Excel;
 use App\User as User;
+use App\Company as Company;
+use App\StrategicBusinessUnit as StrategicBusinessUnit;
+use App\Department as Department;
 
 class UserSyncCommand extends Command
 {
@@ -119,6 +122,38 @@ class UserSyncCommand extends Command
                     $temp_user_array_ad = Excel::toArray([], $file_uri_user_ad);
                     $temp_user_array_hcm = array_pop(($temp_user_array_hcm));
                     $temp_user_array_ad = array_pop(($temp_user_array_ad));
+                    
+                    /* ***** */
+                    $newCompany = Company::firstOrCreate([
+                        //'id' => ucwords('Brandix'),
+                        'is_visible' => true,
+                        'is_active' => true,
+                        'code' => ucwords('Brandix'),
+                        'name' => ucwords('Brandix'),
+                        'display_name' => ucwords('Brandix')
+                    ]);
+                    
+                    $newStrategicBusinessUnit = StrategicBusinessUnit::firstOrCreate([
+                        //'id' => ucwords('BLI'),
+                        'is_visible' => true,
+                        'is_active' => true,
+                        'code' => ucwords('BLI'),
+                        'name' => ucwords('BLI'),
+                        'display_name' => ucwords('BLI'),
+                        //'company_id' => $newCompany->id
+                    ]);
+                    
+                    $newDepartment = Department::firstOrCreate([
+                        //'id' => ucwords('Quality'),
+                        'is_visible' => true,
+                        'is_active' => true,
+                        'code' => ucwords('Quality'),
+                        'name' => ucwords('Quality'),
+                        'display_name' => ucwords('Quality'),
+                        //'strategic_business_unit_id' => $newStrategicBusinessUnit->id
+                    ]);
+                    /* ***** */
+                    
                     /* *** */
                     foreach($temp_user_array_hcm as $key_temp_user_hcm => &$value_temp_user_hcm){
                         try{
@@ -191,6 +226,18 @@ class UserSyncCommand extends Command
                                         $newUser->givePermissionsTo( "create-quality_record_sewing_audit" );
                                         $newUser->givePermissionsTo( "create-quality_record_finishing" );
                                         $newUser->givePermissionsTo( "create-quality_record_c_n_i" );
+                                        
+                                        /* *** */
+                                        if( ($newCompany) ){
+                                            $newUser->company()->associate($newCompany)->save();    
+                                        }
+                                        if( ($newCompany) ){
+                                            $newUser->strategicBusinessUnit()->associate($newStrategicBusinessUnit)->save();    
+                                        }
+                                        if( ($newCompany) ){
+                                            $newUser->department()->associate($newDepartment)->save();   
+                                        }
+                                        /* *** */
                                     }
                                     /* *** */
                                 }
