@@ -99,15 +99,14 @@ Route::group(['middleware' => ['authorizedUserMiddleware', 'disablePreventBackMi
     
     Route::get('/dashboard', array('uses' => 'DashboardController@index'))->name('dashboard');
     
-    ///////////////////////////////////////////////////////////////////////////////
     Route::get('quality-record-sewing-audits/create/fail', array('uses' => 'QualityRecordSewingAuditController@create_fail'))->name('qualityRecordSewingAudit.create_fail');
     Route::get('quality-record-sewing-audits/create/suspend', array('uses' => 'QualityRecordSewingAuditController@create_suspend'))->name('qualityRecordSewingAudit.create_suspend');
     
     Route::post('quality-record-sewing-audits/store/fail', array('uses' => 'QualityRecordSewingAuditController@store_fail'))->name('qualityRecordSewingAudit.store_fail');
-    /*
     Route::post('quality-record-sewing-audits/store/suspend', array('uses' => 'QualityRecordSewingAuditController@store'))->name('qualityRecordSewingAudit.store_suspend');
-    */
-    ///////////////////////////////////////////////////////////////////////////////
+    
+    
+    Route::get('quality-record-input-defect-data', array('uses' => 'QualityRecordSewingCheckController@flushQualityRecoredInputDefectData'))->name('qualityRecordSewingCheck.flushQualityRecoredInputDefectData');
 });
 
 Route::group(['middleware' => ['disablePreventBackMiddleware', 'corsMiddleware']], function(){

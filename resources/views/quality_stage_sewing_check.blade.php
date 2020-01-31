@@ -27,6 +27,14 @@
                             <i class="fab fa-buromobelexperte fa-fw"></i>
                             <span class="text-decoration-none text-justify small"> Quality Stage ( End Line QC )</span>
                             </button>
+                            
+                            <!-- --- -->
+                            <span class="btn-group ml-3">
+                                <a type="button" class="btn btn-danger text-white" href="{!! route('qualityRecordSewingCheck.flushQualityRecoredInputDefectData', []) !!}">
+                                    <i class="fas fa-sync fa-fw" aria-hidden="true"></i>
+                                </a>
+                            </span>
+                            <!-- --- -->
                         </h5>
                     </div>
 

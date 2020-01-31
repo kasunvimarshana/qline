@@ -343,4 +343,96 @@ class QualityRecordSewingCheckController extends Controller
         }
     }
     
+    public function flushQualityRecoredInputDefectData(Request $request){
+        //
+        $dataArray = array();
+        $rules = array();
+        $date_today = Carbon::now();//->format('Y-m-d');
+        $current_user = null;
+        $data = array();
+        
+        // validate the info, create rules for the inputs
+        $rules = array();
+        // run the validation rules on the inputs from the form
+        $validator = Validator::make(Input::all(), $rules);
+        // if the validator fails, redirect back to the form
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+            /*$data = array(
+                'title' => 'error',
+                'text' => $validator->errors()->first(),
+                'type' => 'warning',
+                'timer' => 3000
+            );
+            return (new CommonResponseResource( $data ))->additional(array(
+                'meta' => ['status_code' => HTTPStatusCodeEnum::HTTP_BAD_REQUEST]
+            ));*/
+        } else {
+            // do process
+            try {
+                // Start transaction!
+                DB::beginTransaction();
+                
+                $company_id = $request->session()->get('setup_configuration_company_id', null);
+                $strategic_business_unit_id = $request->session()->get('setup_configuration_strategic_business_unit_id', null);
+                $factory_id = $request->session()->get('setup_configuration_factory_id', null);
+                $line_id = $request->session()->get('setup_configuration_line_id', null);
+                $customer_id = $request->session()->get('setup_configuration_customer_id', null);
+                $style_id = $request->session()->get('setup_configuration_style_id', null);
+                $colour_id = $request->session()->get('setup_configuration_colour_id', null);
+                $export_id = $request->session()->get('setup_configuration_export_id', null);
+                $standard_sewing_check_id = $request->session()->get('setup_configuration_standard_sewing_check_id', null);
+                
+                $qualityRecoredInputDefectDataObject = new QualityRecoredInputDefectData();
+                
+                $qualityRecoredInputDefectDataObject = $qualityRecoredInputDefectDataObject->where('is_visible', '=', true);
+                $qualityRecoredInputDefectDataObject = $qualityRecoredInputDefectDataObject->where('is_active', '=', true);
+                //$qualityRecoredInputDefectDataObject = $qualityRecoredInputDefectDataObject->where('company_id', '=', $company_id);
+                //$qualityRecoredInputDefectDataObject = $qualityRecoredInputDefectDataObject->where('strategic_business_unit_id', '=', $strategic_business_unit_id);
+                $qualityRecoredInputDefectDataObject = $qualityRecoredInputDefectDataObject->where('factory_id', '=', $factory_id);
+                $qualityRecoredInputDefectDataObject = $qualityRecoredInputDefectDataObject->where('line_id', '=', $line_id);
+                $qualityRecoredInputDefectDataObject = $qualityRecoredInputDefectDataObject->where('customer_id', '=', $customer_id);
+                $qualityRecoredInputDefectDataObject = $qualityRecoredInputDefectDataObject->where('style_id', '=', $style_id);
+                $qualityRecoredInputDefectDataObject = $qualityRecoredInputDefectDataObject->where('colour_id', '=', $colour_id);
+                $qualityRecoredInputDefectDataObject = $qualityRecoredInputDefectDataObject->where('export_id', '=', $export_id);
+                
+                $qualityRecoredInputDefectDataObject->delete();
+                
+                unset($dataArray);
+                // Commit transaction!
+                DB::commit();
+            }catch(Exception $e){
+                // Rollback transaction!
+                DB::rollback(); 
+                //return redirect()->back()->withInput();
+                $data = array(
+                    'title' => 'error',
+                    'text' => 'error',
+                    'type' => 'warning',
+                    'timer' => 3000
+                );
+                return (new CommonResponseResource( $data ))->additional(array(
+                    'meta' => ['status_code' => HTTPStatusCodeEnum::HTTP_BAD_REQUEST]
+                ));
+            }
+        }
+        
+        //unset data
+        unset( $dataArray );
+        unset( $rules );
+        unset( $date_today );
+        unset( $current_user );
+        //unset( $data );
+        
+        /*
+        if( (Route::has('route')) ){
+            return redirect()->route('route');
+        }else{
+            return redirect()->back()->withInput();
+        }
+        */
+        
+        return redirect()->back()->withInput();
+    }
+    
 }
