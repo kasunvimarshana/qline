@@ -267,7 +267,7 @@
                                                 </button>
                                             <!-- /div -->
                                         </div>
-                                        <select class="form-control form-control-lg select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" autocomplete="off" data-placeholder="Operation" data-minimum-results-for-search="Infinity">
+                                        <select class="form-control form-control-lg select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" autocomplete="off" data-placeholder="Operation" data-minimum-results-for-search="1">
                                             <!-- option> Option </option -->
                                         </select>
                                     </div>
@@ -768,10 +768,6 @@
                             //console.log(value);
                             if( ((value.localeCompare(v.id)) == 0) ){
                                 td_temp = $("<td></td>");
-                                td_temp.html(v.data.name);
-                                tr_temp.append(td_temp);
-                                
-                                td_temp = $("<td></td>");
                                 if( (v.data) ){
                                     var data = v.data;
                                     if( (data.defect_category) ){
@@ -779,6 +775,10 @@
                                         td_temp.html(defect_category.name);
                                     }
                                 }
+                                tr_temp.append(td_temp);
+                                
+                                td_temp = $("<td></td>");
+                                td_temp.html(v.data.name);
                                 tr_temp.append(td_temp);
                             }
                         });

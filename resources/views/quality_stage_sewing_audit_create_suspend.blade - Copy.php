@@ -25,7 +25,7 @@
                         <h5 class="mb-0">
                             <button class="btn btn-default m-0 p-0 text-white" data-toggle="collapse" data-target="#idCollapse_accordion_1_content_1" aria-expanded="true" aria-controls="idCollapse_accordion_1_content_1" role="button" type="button">
                             <i class="fab fa-buromobelexperte fa-fw"></i>
-                            <span class="text-decoration-none text-justify small"> Quality Stage ( Sewing Audit ) [Failed]</span>
+                            <span class="text-decoration-none text-justify small"> Quality Stage ( Sewing Audit ) [Suspend]</span>
                             </button>
                         </h5>
                     </div>
@@ -233,7 +233,7 @@
                                 <!-- col -->
                                 <div class="col col-sm-8 align-self-center">
                                     <!-- form -->
-                                    <form action="{!! route('qualityRecordSewingAudit.store_fail', []) !!}" method="POST" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
+                                    <form action="{!! route('qualityRecordSewingAudit.store_suspend', []) !!}" method="POST" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
                                         @csrf
                                         <!-- ------------------------------------------------------------------------------------- -->
                                         <div id="form1_hidden_input_group" name="form1_hidden_input_group" class="d-none">
@@ -271,7 +271,7 @@
                                                                     </button>
                                                                 <!-- /div -->
                                                             </div>
-                                                            <select class="form-control form-control-lg select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" autocomplete="off" data-placeholder="Operation" data-minimum-results-for-search="1">
+                                                            <select class="form-control form-control-lg select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" autocomplete="off" data-placeholder="Operation" data-minimum-results-for-search="Infinity">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>

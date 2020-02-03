@@ -283,7 +283,7 @@
                                                                     </button>
                                                                 <!-- /div -->
                                                             </div>
-                                                            <select class="form-control form-control-lg select2 select2-multiple select2-allow-clear" id="defect_category_id" name="defect_category_id" value="{{ old('defect_category_id') }}" autocomplete="off" data-placeholder="Defect Category" aria-hidden="true" multiple="multiple" data-minimum-results-for-search="Infinity">
+                                                            <select class="form-control form-control-lg select2 select2-multiple select2-allow-clear" id="defect_category_id" name="defect_category_id" value="{{ old('defect_category_id') }}" autocomplete="off" data-placeholder="Defect Category" aria-hidden="true" multiple="multiple" data-minimum-results-for-search="1">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                             <div class="input-group-addon input-group-append">
@@ -676,10 +676,6 @@
                             //console.log(value);
                             if( ((value.localeCompare(v.id)) == 0) ){
                                 td_temp = $("<td></td>");
-                                td_temp.html(v.data.name);
-                                tr_temp.append(td_temp);
-                                
-                                td_temp = $("<td></td>");
                                 if( (v.data) ){
                                     var data = v.data;
                                     if( (data.defect_category) ){
@@ -687,6 +683,10 @@
                                         td_temp.html(defect_category.name);
                                     }
                                 }
+                                tr_temp.append(td_temp);
+                                
+                                td_temp = $("<td></td>");
+                                td_temp.html(v.data.name);
                                 tr_temp.append(td_temp);
                             }
                         });

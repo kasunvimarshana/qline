@@ -45,7 +45,7 @@ $(function(){
         //maximumSelectionLength: 0,
         //minimumInputLength : 2,
         //minimumResultsForSearch: -1,
-        minimumResultsForSearch: Infinity,
+        //minimumResultsForSearch: Infinity,
         //dropdownAutoWidth: false,
         //dropdownCss: false,
         multiple : false,
@@ -150,7 +150,7 @@ $(function(){
     });//.select2('val', []);
     
     //<select class="select2" data-minimum-results-for-search="Infinity"></select>
-    selectOptionObject.on('select2:opening select2:closing select2:open select2:close', function( event ) {
+    /*selectOptionObject.on('select2:opening select2:closing select2:open select2:close', function( event ) {
         //console.log(event);
         var searchfield = $(this).parent().find('.select2-search__field');
         searchfield.prop('disabled', true);
@@ -159,6 +159,6 @@ $(function(){
         //readonly on all select2 input
         $(".select2-search input").prop("readonly", true);
         $(".select2-search, .select2-focusser").remove();
-    });
+    });*/
 });
 </script>

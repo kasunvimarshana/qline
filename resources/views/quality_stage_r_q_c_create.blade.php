@@ -357,9 +357,14 @@
                                                                                             <!-- form-group -->
                                                                                             <div class="form-group form-group-lg col col-sm-12 w-100">
                                                                                                 <!-- btn-toolbar -->
-                                                                                                <div class="col text-center px-5">
+                                                                                                <div class="col text-center px-5 my-3">
                                                                                                     <!-- div class="btn-group btn-group-lg pull-right" -->
-                                                                                                        <button type="submit" class="btn btn-primary btn-block btn-lg ml-auto mr-auto px-md-5 px-sm-0" id="submit">SUBMIT</button>
+                                                                                                        <button type="submit" name="submit_pass" value="submit_pass" class="btn btn-success btn-block btn-lg ml-auto mr-auto px-md-5 px-sm-0" id="submit">PASS</button>
+                                                                                                    <!-- /div -->
+                                                                                                </div>
+                                                                                                <div class="col text-center px-5 my-3">
+                                                                                                    <!-- div class="btn-group btn-group-lg pull-right" -->
+                                                                                                        <button type="submit_defect" name="submit_defect" value="submit" class="btn btn-danger btn-block btn-lg ml-auto mr-auto px-md-5 px-sm-0" id="submit">SUBMIT</button>
                                                                                                     <!-- /div -->
                                                                                                 </div>
                                                                                             </div>

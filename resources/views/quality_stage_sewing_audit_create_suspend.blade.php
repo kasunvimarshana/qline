@@ -95,8 +95,8 @@
                                                                     </td>
                                                                     <td>{{ $value->size_id }}</td>
                                                                     <td>
-                                                                        @if($value->qualityRecordInputScanDataStatusSewingAuditFailActiveVisible)
-                                                                        {{  $value->qualityRecordInputScanDataStatusSewingAuditFailActiveVisible->description }}
+                                                                        @if($value->qualityRecordInputScanDataStatusSewingAuditSuspendActiveVisible)
+                                                                        {{  $value->qualityRecordInputScanDataStatusSewingAuditSuspendActiveVisible->description }}
                                                                         @endif
                                                                     </td>
                                                                     <td>
@@ -136,8 +136,8 @@
                                                                                 count_data = {!! $value->count_data !!};
                                                                             }
                                                                             @endisset
-                                                                            @if( ($value->qualityRecordInputScanDataStatusSewingAuditFailActiveVisible) )
-                                                                                quality_record_input_scan_data_status_id = "{!!  $value->qualityRecordInputScanDataStatusSewingAuditFailActiveVisible->id !!}";
+                                                                            @if( ($value->qualityRecordInputScanDataStatusSewingAuditSuspendActiveVisible) )
+                                                                                quality_record_input_scan_data_status_id = "{!!  $value->qualityRecordInputScanDataStatusSewingAuditSuspendActiveVisible->id !!}";
                                                                             @endif
                                                                             
                                                                             var data = new Object();
@@ -233,7 +233,7 @@
                                 <!-- col -->
                                 <div class="col col-sm-8 align-self-center">
                                     <!-- form -->
-                                    <form action="{!! route('qualityRecordSewingAudit.store', []) !!}" method="POST" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
+                                    <form action="{!! route('qualityRecordSewingAudit.store_suspend', []) !!}" method="POST" class="col col-sm-12 p-0 m-0" autocomplete="off" id="form1" enctype="multipart/form-data">
                                         @csrf
                                         <!-- ------------------------------------------------------------------------------------- -->
                                         <div id="form1_hidden_input_group" name="form1_hidden_input_group" class="d-none">
@@ -271,7 +271,7 @@
                                                                     </button>
                                                                 <!-- /div -->
                                                             </div>
-                                                            <select class="form-control form-control-lg select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" autocomplete="off" data-placeholder="Operation" data-minimum-results-for-search="Infinity">
+                                                            <select class="form-control form-control-lg select2" id="measure_point_id" name="measure_point_id" value="{{ old('measure_point_id') }}" autocomplete="off" data-placeholder="Operation" data-minimum-results-for-search="1">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                         </div>

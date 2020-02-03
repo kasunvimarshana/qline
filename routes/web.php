@@ -103,7 +103,7 @@ Route::group(['middleware' => ['authorizedUserMiddleware', 'disablePreventBackMi
     Route::get('quality-record-sewing-audits/create/suspend', array('uses' => 'QualityRecordSewingAuditController@create_suspend'))->name('qualityRecordSewingAudit.create_suspend');
     
     Route::post('quality-record-sewing-audits/store/fail', array('uses' => 'QualityRecordSewingAuditController@store_fail'))->name('qualityRecordSewingAudit.store_fail');
-    Route::post('quality-record-sewing-audits/store/suspend', array('uses' => 'QualityRecordSewingAuditController@store'))->name('qualityRecordSewingAudit.store_suspend');
+    Route::post('quality-record-sewing-audits/store/suspend', array('uses' => 'QualityRecordSewingAuditController@store_suspend'))->name('qualityRecordSewingAudit.store_suspend');
     
     
     Route::get('quality-record-input-defect-data', array('uses' => 'QualityRecordSewingCheckController@flushQualityRecoredInputDefectData'))->name('qualityRecordSewingCheck.flushQualityRecoredInputDefectData');
