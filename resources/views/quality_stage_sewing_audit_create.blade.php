@@ -313,7 +313,7 @@
                                                                     </button>
                                                                 <!-- /div -->
                                                             </div>
-                                                            <select class="form-control form-control-lg select2 select2-multiple select2-allow-clear" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" autocomplete="off" data-placeholder="Defect" aria-hidden="true" multiple="multiple" data-minimum-results-for-search="Infinity">
+                                                            <select class="form-control form-control-lg select2 select2-multiple select2-allow-clear" id="defect_id" name="defect_id" value="{{ old('defect_id') }}" autocomplete="off" data-placeholder="Defect" aria-hidden="true" multiple="multiple" data-minimum-results-for-search="1">
                                                                 <!-- option> Option </option -->
                                                             </select>
                                                             <div class="input-group-addon input-group-append">
